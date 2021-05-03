@@ -36,11 +36,11 @@ PDK_PATH?=/ef/tech/SW/sky130A
 SIM?=RTL
 
 # include the modules that cocotb needs for test
-export PYTHONPATH := $(UPRJ_RTL_PATH)/wrapped_project/project/test
+export PYTHONPATH := $(UPRJ_RTL_PATH)/wrapped_myip1/myip1/test
 
 .SUFFIXES:
 
-PATTERN = project
+PATTERN = myip1
 
 all:  coco_test
 
@@ -49,12 +49,12 @@ hex:  ${PATTERN:=.hex}
 coco_test: ${PATTERN}.hex
 	rm -rf sim_build/
 	mkdir sim_build/
-	iverilog -o sim_build/sim.vvp -s project_tb project_tb.v -DSIM -DFUNCTIONAL \
+	iverilog -o sim_build/sim.vvp -s myip1_tb myip1_tb.v -DSIM -DFUNCTIONAL \
 	-I $(PDK_PATH) \
 	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) \
 	-I $(UPRJ_BEHAVIOURAL_MODELS)    -I $(UPRJ_RTL_PATH)
 	
-	MODULE=test_project vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
+	MODULE=test_myip1 vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 
 %.vvp: %_tb.v %.hex
 ifeq ($(SIM),RTL)

@@ -1,25 +1,25 @@
 --- 
 # information
 project: 
-  title: "title"
-  description: "description"
-  picture: docs/empty.png
-  author: "Author"
+  title: "myip1"
+  description: "myip1"
+  author: "Konrad Beckmann"
+  picture: doc/myip1.png
   github: https://github.com/link
-  license: LICENSE
+  license: APACHE
 
 # test within caravel
 caravel_test:
   recipe: "coco_test"
-  directory: "caravel_test"
-  id: 1
-  module_name: "wrapped_project"
-  instance_name: "wrapped_project"
+  directory: "caravel_myip1"
+  id: 0
+  module_name: "wrapped_myip1"
+  instance_name: "wrapped_myip1"
 
 # module test
 module_test:
   recipe: "all" 
-  directory: "project directory"
+  directory: "myip1"
   makefile: "Makefile"
 
 # run the wrapper formal proof
@@ -34,11 +34,11 @@ openlane:
 # source required for various configs and module instantiation
 source:
     - wrapper.v
-    - other source files here
+    - myip1/src/myip1.v
 
 # gds - check size = 300x300, nothing on metal 5, do a DRC, check 141 tristate buffers, check LVS
 gds:
   directory: "gds"
-  gds_filename: "project.gds"
-  lvs_filename: "project.lvs.powered.v"
-  lef_filename: "project.lef"
+  gds_filename: "myip1.gds"
+  lvs_filename: "myip1.lvs.powered.v"
+  lef_filename: "myip1.lef"

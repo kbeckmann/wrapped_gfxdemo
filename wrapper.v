@@ -2,8 +2,7 @@
 `ifdef FORMAL
     `define MPRJ_IO_PADS 38    
 `endif
-// update this to the name of your module
-module wrapped_project(
+module wrapped_myip1(
 `ifdef USE_POWER_PINS
     inout vdda1,	// User area 1 3.3V supply
     inout vdda2,	// User area 2 3.3V supply
@@ -69,6 +68,18 @@ module wrapped_project(
     assign buf_io_oeb = {`MPRJ_IO_PADS{1'b0}};
 
     // instantiate your module here, connecting what you need of the above signals
+    myip1 myip1_0(
+        .clk        (wb_clk_i),
+        .reset      (la_data_in[0]),
+        .enc0_a     (io_in[8]),
+        .enc0_b     (io_in[9]),
+        .enc1_a     (io_in[10]),
+        .enc1_b     (io_in[11]),
+        .enc2_a     (io_in[12]),
+        .enc2_b     (io_in[13]),
+        .pwm0_out   (buf_io_out[14]),
+        .pwm1_out   (buf_io_out[15]),
+        .pwm2_out   (buf_io_out[16]));
 
 endmodule 
 `default_nettype wire

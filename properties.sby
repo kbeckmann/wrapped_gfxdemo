@@ -11,4 +11,4 @@ prep -top wrapped_project
 [files]
 wrapper.v
 properties.v
-rest of your source files.v
+myip1/src/myip1.v

@@ -1,7 +1,7 @@
 # User config
 set script_dir [file dirname [file normalize [info script]]]
 
-set ::env(DESIGN_NAME) project_name
+set ::env(DESIGN_NAME) myip1
 
 # Change if needed
 set ::env(VERILOG_FILES) "$::env(DESIGN_DIR)/wrapper.v \

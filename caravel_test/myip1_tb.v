@@ -21,10 +21,10 @@
 `include "caravel_netlists.v"
 `include "spiflash.v"
 
-module project_tb;
+module myip1_tb;
     initial begin
-        $dumpfile ("project.vcd");
-        $dumpvars (0, project_tb);
+        $dumpfile ("myip1.vcd");
+        $dumpvars (0, myip1_tb);
         #1;
     end
 
@@ -79,7 +79,7 @@ module project_tb;
 	);
 
 	spiflash #(
-		.FILENAME("project.hex")
+		.FILENAME("myip1.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),
