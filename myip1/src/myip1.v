@@ -22,9 +22,15 @@ module myip1 (
     assign pwm2_out = pwm2_out_r;
 
     always @(posedge clk) begin
-        pwm0_out_r <= enc0_a;
-        pwm1_out_r <= enc1_a;
-        pwm2_out_r <= enc2_a;
+        if (reset) begin
+            pwm0_out_r <= 1'b0;
+            pwm1_out_r <= 1'b0;
+            pwm2_out_r <= 1'b0;
+        end else begin
+            pwm0_out_r <= enc0_a;
+            pwm1_out_r <= enc1_a;
+            pwm2_out_r <= enc2_a;
+        end
     end
 
 endmodule

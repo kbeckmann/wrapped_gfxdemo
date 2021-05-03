@@ -29,7 +29,7 @@ module myip1_tb;
     end
 
 	reg clk;
-    reg RSTB;
+    reg reset;
 	reg power1, power2;
 	reg power3, power4;
 
@@ -37,10 +37,20 @@ module myip1_tb;
     wire [37:0] mprj_io;
 
     ///// convenience signals that match what the cocotb test modules are looking for
+    wire pwm0_out = mprj_io[14];
+    wire pwm1_out = mprj_io[15];
+    wire pwm2_out = mprj_io[16];
 
+    wire enc0_a, enc0_b, enc1_a, enc1_b, enc2_a, enc2_b;
 
+    assign mprj_io[ 8] = enc0_a;
+    assign mprj_io[ 9] = enc0_b;
+    assign mprj_io[10] = enc1_a;
+    assign mprj_io[11] = enc1_b;
+    assign mprj_io[12] = enc2_a;
+    assign mprj_io[13] = enc2_b;
     /////
-
+    
 
 	wire flash_csb;
 	wire flash_clk;
@@ -75,7 +85,7 @@ module myip1_tb;
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
 		.flash_io1(flash_io1),
-		.resetb	  (RSTB)
+		.resetb	  (reset)
 	);
 
 	spiflash #(
