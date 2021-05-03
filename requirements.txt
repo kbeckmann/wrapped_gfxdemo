@@ -1,0 +1,6 @@
+Jinja2==2.11.3
+MarkupSafe==2.0.1
+nmigen @ git+https://github.com/nmigen/nmigen@e974a31022d8ba1ee67bd49c82a11fa7a0a71145
+nmigen-boards @ git+https://github.com/nmigen/nmigen-boards@4aa9eeeb16f12a850e361673d4a7ce68829a3ba9
+pergola-projects @ git+https://github.com/kbeckmann/pergola_projects@564c1e3a0e4431ad719a0fd9b406661b759ced6e
+pyvcd==0.2.4

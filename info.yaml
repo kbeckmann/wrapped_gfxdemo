@@ -1,25 +1,25 @@
 --- 
 # information
 project: 
-  title: "myip1"
-  description: "myip1"
+  title: "gfxdemo"
+  description: "gfxdemo"
   author: "Konrad Beckmann"
-  picture: doc/myip1.png
-  github: https://github.com/link
+  picture: doc/gfxdemo.png
+  github: https://github.com/kbeckmann/wrapped_gfxdemo
   license: APACHE
 
 # test within caravel
 caravel_test:
   recipe: "coco_test"
-  directory: "caravel_myip1"
-  id: 0
-  module_name: "wrapped_myip1"
-  instance_name: "wrapped_myip1"
+  directory: "caravel_test"
+  id: 12
+  module_name: "wrapped_gfxdemo"
+  instance_name: "wrapped_gfxdemo"
 
 # module test
 module_test:
   recipe: "all" 
-  directory: "myip1"
+  directory: "gfxdemo"
   makefile: "Makefile"
 
 # run the wrapper formal proof
@@ -34,11 +34,11 @@ openlane:
 # source required for various configs and module instantiation
 source:
     - wrapper.v
-    - myip1/src/myip1.v
+    - gfxdemo/src/gfxdemo.v
 
 # gds - check size = 300x300, nothing on metal 5, do a DRC, check 141 tristate buffers, check LVS
 gds:
   directory: "gds"
-  gds_filename: "myip1.gds"
-  lvs_filename: "myip1.lvs.powered.v"
-  lef_filename: "myip1.lef"
+  gds_filename: "wrapped_gfxdemo.gds"
+  lvs_filename: "wrapped_gfxdemo.lvs.powered.v"
+  lef_filename: "wrapped_gfxdemo.lef"

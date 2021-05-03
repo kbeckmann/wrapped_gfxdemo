@@ -5,10 +5,10 @@ mode prove
 smtbmc
 
 [script]
-read -formal wrapper.v rest of your source files.v
-prep -top wrapped_project
+read -formal wrapper.v gfxdemo.v
+prep -top wrapped_gfxdemo
 
 [files]
 wrapper.v
 properties.v
-myip1/src/myip1.v
+gfxdemo/src/gfxdemo.v
