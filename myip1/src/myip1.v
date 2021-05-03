@@ -17,6 +17,10 @@ module myip1 (
     reg pwm1_out_r;
     reg pwm2_out_r;
 
+    assign pwm0_out = pwm0_out_r;
+    assign pwm1_out = pwm1_out_r;
+    assign pwm2_out = pwm2_out_r;
+
     always @(posedge clk) begin
         pwm0_out_r <= enc0_a;
         pwm1_out_r <= enc1_a;
