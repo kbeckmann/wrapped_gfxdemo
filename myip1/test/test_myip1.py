@@ -25,6 +25,9 @@ async def test_all(dut):
 
     await ClockCycles(dut.clk, 2)
 
+
+    await ClockCycles(dut.clk, 200)
+
     # await reset(dut)
 
     # # pwm should all be low at start

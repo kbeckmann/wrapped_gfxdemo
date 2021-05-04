@@ -29,7 +29,7 @@ module myip1_tb;
     end
 
 	reg clk;
-    reg reset;
+    reg RSTB;
 	reg power1, power2;
 	reg power3, power4;
 
@@ -85,7 +85,7 @@ module myip1_tb;
 		.flash_clk(flash_clk),
 		.flash_io0(flash_io0),
 		.flash_io1(flash_io1),
-		.resetb	  (reset)
+		.resetb	  (RSTB)
 	);
 
 	spiflash #(

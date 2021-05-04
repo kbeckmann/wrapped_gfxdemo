@@ -41,21 +41,30 @@ void main()
 
 	*/
 
-    // 1 input for input signal
+    // 6 inputs for encoder
 	reg_mprj_io_8 =   GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_9 =   GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_10 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_11 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_12 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_13 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
 
-    // 1 output for segments, starting at 9
-	reg_mprj_io_9 =   GPIO_MODE_USER_STD_OUTPUT;
+    // 3 outputs for PWM, starting at 8
+	reg_mprj_io_14 =  GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_15 =  GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_16 =  GPIO_MODE_USER_STD_OUTPUT;
 
     /* Apply configuration */
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    // activate the project by setting the 1st bit of 2nd bank of LA - depends on the project ID
+    // activate the project by setting the 0th bit of 2nd bank of LA
     reg_la1_ena  = 0;
-    reg_la1_data = 1 << 1;
+    reg_la1_data = 1;
 
-    // do something with the logic analyser
-    reg_la0_data |= 100;
+    // reset design with 0bit of 1st bank of LA
+    reg_la0_ena  = 0;
+    reg_la0_data = 1;
+    reg_la0_data = 0;
 }
 
