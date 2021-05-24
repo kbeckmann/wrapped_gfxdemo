@@ -2,261 +2,2183 @@
 
 (* \nmigen.hierarchy  = "myip1.dvid_signal_generator.U$$0" *)
 (* generator = "nMigen" *)
-module \U$$0 (h_ctr, v_ctr, pixel_rst, vga_output__vs, b, g, r, pixel_clk);
-  reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:46" *)
-  wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:49" *)
-  wire [7:0] \$10 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:49" *)
-  wire [7:0] \$12 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:56" *)
-  wire [17:0] \$15 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:56" *)
-  wire [7:0] \$16 ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:742" *)
-  wire \$17 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *)
-  wire [15:0] \$18 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *)
-  wire [15:0] \$20 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *)
-  wire [15:0] \$22 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:56" *)
-  wire [15:0] \$24 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:56" *)
-  wire [17:0] \$28 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:46" *)
-  wire \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *)
-  wire [24:0] \$30 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *)
-  wire [16:0] \$31 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:50" *)
-  wire [7:0] \$32 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:50" *)
-  wire [7:0] \$34 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *)
-  wire [15:0] \$36 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *)
-  wire [15:0] \$38 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *)
-  wire [15:0] \$40 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *)
-  wire [15:0] \$42 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *)
-  wire [16:0] \$44 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *)
-  wire [24:0] \$47 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:47" *)
-  wire [16:0] \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:47" *)
-  wire [16:0] \$6 ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *)
-  wire [7:0] \$8 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:49" *)
-  wire [7:0] \$9 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:31" *)
+module \U$$0 (pixel_rst, h_ctr, h_en, v_en, vga_output__vs, b, g, r, pixel_clk);
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:36" *)
   output [7:0] b;
-  reg [7:0] b = 8'h00;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:31" *)
-  reg [7:0] \b$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:30" *)
-  reg [15:0] frame = 16'h0000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:30" *)
-  reg [15:0] \frame$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:30" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:151" *)
+  wire [10:0] buf_r_addr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:151" *)
+  wire buf_r_data;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:35" *)
   output [7:0] g;
-  reg [7:0] g = 8'h00;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:30" *)
-  reg [7:0] \g$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
   input [9:0] h_ctr;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  input h_en;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:29" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:34" *)
   output [7:0] r;
-  reg [7:0] r = 8'h00;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:29" *)
-  reg [7:0] \r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
-  input [9:0] v_ctr;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  input v_en;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   input vga_output__vs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:44" *)
-  reg vsync_r = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:44" *)
-  reg \vsync_r$next ;
-  assign \$10  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:49" *) frame[7:0];
-  assign \$12  = frame[8] ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:49" *) \$10  : frame[7:0];
-  assign \$8  = + (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *) \$9 [7:1];
-  assign \$18  = h_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *) frame[15:1];
-  assign \$1  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:46" *) vsync_r;
-  assign \$20  = h_ctr - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *) frame[15:1];
-  assign \$22  = v_ctr[6] ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *) \$18  : \$20 ;
-  assign \$24  = \$22  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:56" *) v_ctr;
-  assign \$17  = | (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:742" *) \$24 ;
-  assign \$16  = \$17  ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:56" *) 8'hff : 8'h00;
-  assign \$28  = v_ctr * (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:56" *) \$16 ;
-  assign \$32  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:50" *) frame[8:1];
-  assign \$34  = frame[9] ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:50" *) \$32  : frame[8:1];
-  assign \$36  = h_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *) frame[15:1];
-  assign \$38  = h_ctr - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *) frame[15:1];
-  assign \$3  = \$1  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:46" *) vga_output__vs;
-  assign \$40  = v_ctr[6] ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:52" *) \$36  : \$38 ;
-  assign \$42  = \$40  ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *) v_ctr;
-  assign \$44  = \$34  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *) \$42 ;
-  assign \$31  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *) \$44 ;
-  assign \$47  = \$31  * (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:57" *) 8'hff;
-  assign \$6  = frame + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:47" *) 1'h1;
-  always @(posedge pixel_clk)
-    frame <= \frame$next ;
-  always @(posedge pixel_clk)
-    vsync_r <= \vsync_r$next ;
-  always @(posedge pixel_clk)
-    b <= \b$next ;
-  always @(posedge pixel_clk)
-    g <= \g$next ;
-  always @(posedge pixel_clk)
-    r <= \r$next ;
-  always @* begin
-    if (\initial ) begin end
-    \vsync_r$next  = vga_output__vs;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
-    casez (pixel_rst)
-      1'h1:
-          \vsync_r$next  = 1'h0;
-    endcase
+  reg [0:0] \buf  [2047:0];
+  initial begin
+    \buf [0] = 1'h0;
+    \buf [1] = 1'h0;
+    \buf [2] = 1'h0;
+    \buf [3] = 1'h0;
+    \buf [4] = 1'h0;
+    \buf [5] = 1'h0;
+    \buf [6] = 1'h0;
+    \buf [7] = 1'h0;
+    \buf [8] = 1'h0;
+    \buf [9] = 1'h0;
+    \buf [10] = 1'h0;
+    \buf [11] = 1'h0;
+    \buf [12] = 1'h0;
+    \buf [13] = 1'h0;
+    \buf [14] = 1'h0;
+    \buf [15] = 1'h0;
+    \buf [16] = 1'h0;
+    \buf [17] = 1'h0;
+    \buf [18] = 1'h0;
+    \buf [19] = 1'h0;
+    \buf [20] = 1'h0;
+    \buf [21] = 1'h0;
+    \buf [22] = 1'h0;
+    \buf [23] = 1'h0;
+    \buf [24] = 1'h0;
+    \buf [25] = 1'h0;
+    \buf [26] = 1'h0;
+    \buf [27] = 1'h0;
+    \buf [28] = 1'h0;
+    \buf [29] = 1'h0;
+    \buf [30] = 1'h0;
+    \buf [31] = 1'h0;
+    \buf [32] = 1'h0;
+    \buf [33] = 1'h0;
+    \buf [34] = 1'h0;
+    \buf [35] = 1'h0;
+    \buf [36] = 1'h0;
+    \buf [37] = 1'h0;
+    \buf [38] = 1'h0;
+    \buf [39] = 1'h0;
+    \buf [40] = 1'h0;
+    \buf [41] = 1'h0;
+    \buf [42] = 1'h0;
+    \buf [43] = 1'h0;
+    \buf [44] = 1'h0;
+    \buf [45] = 1'h0;
+    \buf [46] = 1'h0;
+    \buf [47] = 1'h0;
+    \buf [48] = 1'h0;
+    \buf [49] = 1'h0;
+    \buf [50] = 1'h0;
+    \buf [51] = 1'h0;
+    \buf [52] = 1'h0;
+    \buf [53] = 1'h0;
+    \buf [54] = 1'h0;
+    \buf [55] = 1'h0;
+    \buf [56] = 1'h0;
+    \buf [57] = 1'h0;
+    \buf [58] = 1'h0;
+    \buf [59] = 1'h0;
+    \buf [60] = 1'h0;
+    \buf [61] = 1'h0;
+    \buf [62] = 1'h0;
+    \buf [63] = 1'h0;
+    \buf [64] = 1'h0;
+    \buf [65] = 1'h0;
+    \buf [66] = 1'h0;
+    \buf [67] = 1'h0;
+    \buf [68] = 1'h0;
+    \buf [69] = 1'h0;
+    \buf [70] = 1'h0;
+    \buf [71] = 1'h0;
+    \buf [72] = 1'h0;
+    \buf [73] = 1'h0;
+    \buf [74] = 1'h0;
+    \buf [75] = 1'h0;
+    \buf [76] = 1'h0;
+    \buf [77] = 1'h0;
+    \buf [78] = 1'h0;
+    \buf [79] = 1'h0;
+    \buf [80] = 1'h0;
+    \buf [81] = 1'h0;
+    \buf [82] = 1'h0;
+    \buf [83] = 1'h0;
+    \buf [84] = 1'h0;
+    \buf [85] = 1'h0;
+    \buf [86] = 1'h0;
+    \buf [87] = 1'h0;
+    \buf [88] = 1'h0;
+    \buf [89] = 1'h0;
+    \buf [90] = 1'h0;
+    \buf [91] = 1'h0;
+    \buf [92] = 1'h0;
+    \buf [93] = 1'h0;
+    \buf [94] = 1'h0;
+    \buf [95] = 1'h0;
+    \buf [96] = 1'h0;
+    \buf [97] = 1'h0;
+    \buf [98] = 1'h0;
+    \buf [99] = 1'h0;
+    \buf [100] = 1'h0;
+    \buf [101] = 1'h0;
+    \buf [102] = 1'h0;
+    \buf [103] = 1'h0;
+    \buf [104] = 1'h0;
+    \buf [105] = 1'h0;
+    \buf [106] = 1'h0;
+    \buf [107] = 1'h0;
+    \buf [108] = 1'h0;
+    \buf [109] = 1'h0;
+    \buf [110] = 1'h0;
+    \buf [111] = 1'h0;
+    \buf [112] = 1'h0;
+    \buf [113] = 1'h0;
+    \buf [114] = 1'h0;
+    \buf [115] = 1'h0;
+    \buf [116] = 1'h0;
+    \buf [117] = 1'h0;
+    \buf [118] = 1'h0;
+    \buf [119] = 1'h0;
+    \buf [120] = 1'h0;
+    \buf [121] = 1'h0;
+    \buf [122] = 1'h0;
+    \buf [123] = 1'h0;
+    \buf [124] = 1'h0;
+    \buf [125] = 1'h0;
+    \buf [126] = 1'h0;
+    \buf [127] = 1'h0;
+    \buf [128] = 1'h0;
+    \buf [129] = 1'h0;
+    \buf [130] = 1'h0;
+    \buf [131] = 1'h0;
+    \buf [132] = 1'h0;
+    \buf [133] = 1'h0;
+    \buf [134] = 1'h0;
+    \buf [135] = 1'h0;
+    \buf [136] = 1'h0;
+    \buf [137] = 1'h0;
+    \buf [138] = 1'h0;
+    \buf [139] = 1'h0;
+    \buf [140] = 1'h0;
+    \buf [141] = 1'h0;
+    \buf [142] = 1'h0;
+    \buf [143] = 1'h0;
+    \buf [144] = 1'h0;
+    \buf [145] = 1'h0;
+    \buf [146] = 1'h0;
+    \buf [147] = 1'h0;
+    \buf [148] = 1'h0;
+    \buf [149] = 1'h0;
+    \buf [150] = 1'h0;
+    \buf [151] = 1'h0;
+    \buf [152] = 1'h0;
+    \buf [153] = 1'h0;
+    \buf [154] = 1'h0;
+    \buf [155] = 1'h0;
+    \buf [156] = 1'h0;
+    \buf [157] = 1'h0;
+    \buf [158] = 1'h0;
+    \buf [159] = 1'h0;
+    \buf [160] = 1'h0;
+    \buf [161] = 1'h0;
+    \buf [162] = 1'h0;
+    \buf [163] = 1'h0;
+    \buf [164] = 1'h0;
+    \buf [165] = 1'h0;
+    \buf [166] = 1'h0;
+    \buf [167] = 1'h0;
+    \buf [168] = 1'h0;
+    \buf [169] = 1'h0;
+    \buf [170] = 1'h0;
+    \buf [171] = 1'h0;
+    \buf [172] = 1'h0;
+    \buf [173] = 1'h0;
+    \buf [174] = 1'h0;
+    \buf [175] = 1'h0;
+    \buf [176] = 1'h0;
+    \buf [177] = 1'h0;
+    \buf [178] = 1'h0;
+    \buf [179] = 1'h0;
+    \buf [180] = 1'h0;
+    \buf [181] = 1'h0;
+    \buf [182] = 1'h0;
+    \buf [183] = 1'h0;
+    \buf [184] = 1'h0;
+    \buf [185] = 1'h0;
+    \buf [186] = 1'h0;
+    \buf [187] = 1'h0;
+    \buf [188] = 1'h0;
+    \buf [189] = 1'h0;
+    \buf [190] = 1'h0;
+    \buf [191] = 1'h0;
+    \buf [192] = 1'h0;
+    \buf [193] = 1'h0;
+    \buf [194] = 1'h0;
+    \buf [195] = 1'h0;
+    \buf [196] = 1'h0;
+    \buf [197] = 1'h0;
+    \buf [198] = 1'h0;
+    \buf [199] = 1'h0;
+    \buf [200] = 1'h0;
+    \buf [201] = 1'h0;
+    \buf [202] = 1'h0;
+    \buf [203] = 1'h0;
+    \buf [204] = 1'h0;
+    \buf [205] = 1'h0;
+    \buf [206] = 1'h0;
+    \buf [207] = 1'h0;
+    \buf [208] = 1'h0;
+    \buf [209] = 1'h0;
+    \buf [210] = 1'h0;
+    \buf [211] = 1'h0;
+    \buf [212] = 1'h0;
+    \buf [213] = 1'h0;
+    \buf [214] = 1'h0;
+    \buf [215] = 1'h0;
+    \buf [216] = 1'h0;
+    \buf [217] = 1'h0;
+    \buf [218] = 1'h0;
+    \buf [219] = 1'h0;
+    \buf [220] = 1'h0;
+    \buf [221] = 1'h0;
+    \buf [222] = 1'h0;
+    \buf [223] = 1'h0;
+    \buf [224] = 1'h0;
+    \buf [225] = 1'h0;
+    \buf [226] = 1'h0;
+    \buf [227] = 1'h0;
+    \buf [228] = 1'h0;
+    \buf [229] = 1'h0;
+    \buf [230] = 1'h0;
+    \buf [231] = 1'h0;
+    \buf [232] = 1'h0;
+    \buf [233] = 1'h0;
+    \buf [234] = 1'h0;
+    \buf [235] = 1'h0;
+    \buf [236] = 1'h0;
+    \buf [237] = 1'h0;
+    \buf [238] = 1'h0;
+    \buf [239] = 1'h0;
+    \buf [240] = 1'h0;
+    \buf [241] = 1'h0;
+    \buf [242] = 1'h0;
+    \buf [243] = 1'h0;
+    \buf [244] = 1'h0;
+    \buf [245] = 1'h0;
+    \buf [246] = 1'h0;
+    \buf [247] = 1'h0;
+    \buf [248] = 1'h0;
+    \buf [249] = 1'h0;
+    \buf [250] = 1'h0;
+    \buf [251] = 1'h0;
+    \buf [252] = 1'h0;
+    \buf [253] = 1'h0;
+    \buf [254] = 1'h0;
+    \buf [255] = 1'h0;
+    \buf [256] = 1'h0;
+    \buf [257] = 1'h0;
+    \buf [258] = 1'h0;
+    \buf [259] = 1'h0;
+    \buf [260] = 1'h0;
+    \buf [261] = 1'h0;
+    \buf [262] = 1'h0;
+    \buf [263] = 1'h0;
+    \buf [264] = 1'h0;
+    \buf [265] = 1'h0;
+    \buf [266] = 1'h0;
+    \buf [267] = 1'h0;
+    \buf [268] = 1'h0;
+    \buf [269] = 1'h0;
+    \buf [270] = 1'h0;
+    \buf [271] = 1'h0;
+    \buf [272] = 1'h0;
+    \buf [273] = 1'h0;
+    \buf [274] = 1'h0;
+    \buf [275] = 1'h0;
+    \buf [276] = 1'h0;
+    \buf [277] = 1'h0;
+    \buf [278] = 1'h0;
+    \buf [279] = 1'h0;
+    \buf [280] = 1'h0;
+    \buf [281] = 1'h0;
+    \buf [282] = 1'h0;
+    \buf [283] = 1'h0;
+    \buf [284] = 1'h0;
+    \buf [285] = 1'h0;
+    \buf [286] = 1'h0;
+    \buf [287] = 1'h0;
+    \buf [288] = 1'h0;
+    \buf [289] = 1'h0;
+    \buf [290] = 1'h0;
+    \buf [291] = 1'h0;
+    \buf [292] = 1'h0;
+    \buf [293] = 1'h0;
+    \buf [294] = 1'h0;
+    \buf [295] = 1'h0;
+    \buf [296] = 1'h0;
+    \buf [297] = 1'h0;
+    \buf [298] = 1'h0;
+    \buf [299] = 1'h0;
+    \buf [300] = 1'h0;
+    \buf [301] = 1'h0;
+    \buf [302] = 1'h0;
+    \buf [303] = 1'h0;
+    \buf [304] = 1'h0;
+    \buf [305] = 1'h0;
+    \buf [306] = 1'h0;
+    \buf [307] = 1'h0;
+    \buf [308] = 1'h0;
+    \buf [309] = 1'h0;
+    \buf [310] = 1'h0;
+    \buf [311] = 1'h0;
+    \buf [312] = 1'h0;
+    \buf [313] = 1'h0;
+    \buf [314] = 1'h0;
+    \buf [315] = 1'h0;
+    \buf [316] = 1'h0;
+    \buf [317] = 1'h0;
+    \buf [318] = 1'h0;
+    \buf [319] = 1'h0;
+    \buf [320] = 1'h0;
+    \buf [321] = 1'h0;
+    \buf [322] = 1'h0;
+    \buf [323] = 1'h0;
+    \buf [324] = 1'h0;
+    \buf [325] = 1'h0;
+    \buf [326] = 1'h0;
+    \buf [327] = 1'h0;
+    \buf [328] = 1'h0;
+    \buf [329] = 1'h0;
+    \buf [330] = 1'h0;
+    \buf [331] = 1'h0;
+    \buf [332] = 1'h0;
+    \buf [333] = 1'h0;
+    \buf [334] = 1'h0;
+    \buf [335] = 1'h0;
+    \buf [336] = 1'h0;
+    \buf [337] = 1'h0;
+    \buf [338] = 1'h0;
+    \buf [339] = 1'h0;
+    \buf [340] = 1'h0;
+    \buf [341] = 1'h0;
+    \buf [342] = 1'h0;
+    \buf [343] = 1'h0;
+    \buf [344] = 1'h0;
+    \buf [345] = 1'h0;
+    \buf [346] = 1'h0;
+    \buf [347] = 1'h0;
+    \buf [348] = 1'h0;
+    \buf [349] = 1'h0;
+    \buf [350] = 1'h0;
+    \buf [351] = 1'h0;
+    \buf [352] = 1'h0;
+    \buf [353] = 1'h0;
+    \buf [354] = 1'h0;
+    \buf [355] = 1'h0;
+    \buf [356] = 1'h0;
+    \buf [357] = 1'h0;
+    \buf [358] = 1'h0;
+    \buf [359] = 1'h0;
+    \buf [360] = 1'h0;
+    \buf [361] = 1'h0;
+    \buf [362] = 1'h0;
+    \buf [363] = 1'h0;
+    \buf [364] = 1'h0;
+    \buf [365] = 1'h0;
+    \buf [366] = 1'h0;
+    \buf [367] = 1'h0;
+    \buf [368] = 1'h0;
+    \buf [369] = 1'h0;
+    \buf [370] = 1'h0;
+    \buf [371] = 1'h0;
+    \buf [372] = 1'h0;
+    \buf [373] = 1'h0;
+    \buf [374] = 1'h0;
+    \buf [375] = 1'h0;
+    \buf [376] = 1'h0;
+    \buf [377] = 1'h0;
+    \buf [378] = 1'h0;
+    \buf [379] = 1'h0;
+    \buf [380] = 1'h0;
+    \buf [381] = 1'h0;
+    \buf [382] = 1'h0;
+    \buf [383] = 1'h0;
+    \buf [384] = 1'h0;
+    \buf [385] = 1'h0;
+    \buf [386] = 1'h0;
+    \buf [387] = 1'h0;
+    \buf [388] = 1'h0;
+    \buf [389] = 1'h0;
+    \buf [390] = 1'h0;
+    \buf [391] = 1'h0;
+    \buf [392] = 1'h0;
+    \buf [393] = 1'h0;
+    \buf [394] = 1'h0;
+    \buf [395] = 1'h0;
+    \buf [396] = 1'h0;
+    \buf [397] = 1'h0;
+    \buf [398] = 1'h0;
+    \buf [399] = 1'h0;
+    \buf [400] = 1'h0;
+    \buf [401] = 1'h0;
+    \buf [402] = 1'h0;
+    \buf [403] = 1'h0;
+    \buf [404] = 1'h0;
+    \buf [405] = 1'h0;
+    \buf [406] = 1'h0;
+    \buf [407] = 1'h0;
+    \buf [408] = 1'h0;
+    \buf [409] = 1'h0;
+    \buf [410] = 1'h0;
+    \buf [411] = 1'h0;
+    \buf [412] = 1'h0;
+    \buf [413] = 1'h0;
+    \buf [414] = 1'h0;
+    \buf [415] = 1'h0;
+    \buf [416] = 1'h0;
+    \buf [417] = 1'h0;
+    \buf [418] = 1'h0;
+    \buf [419] = 1'h0;
+    \buf [420] = 1'h0;
+    \buf [421] = 1'h0;
+    \buf [422] = 1'h0;
+    \buf [423] = 1'h0;
+    \buf [424] = 1'h0;
+    \buf [425] = 1'h0;
+    \buf [426] = 1'h0;
+    \buf [427] = 1'h0;
+    \buf [428] = 1'h0;
+    \buf [429] = 1'h0;
+    \buf [430] = 1'h0;
+    \buf [431] = 1'h0;
+    \buf [432] = 1'h0;
+    \buf [433] = 1'h0;
+    \buf [434] = 1'h0;
+    \buf [435] = 1'h0;
+    \buf [436] = 1'h0;
+    \buf [437] = 1'h0;
+    \buf [438] = 1'h0;
+    \buf [439] = 1'h0;
+    \buf [440] = 1'h0;
+    \buf [441] = 1'h0;
+    \buf [442] = 1'h0;
+    \buf [443] = 1'h0;
+    \buf [444] = 1'h0;
+    \buf [445] = 1'h0;
+    \buf [446] = 1'h0;
+    \buf [447] = 1'h0;
+    \buf [448] = 1'h0;
+    \buf [449] = 1'h0;
+    \buf [450] = 1'h0;
+    \buf [451] = 1'h0;
+    \buf [452] = 1'h0;
+    \buf [453] = 1'h0;
+    \buf [454] = 1'h0;
+    \buf [455] = 1'h0;
+    \buf [456] = 1'h0;
+    \buf [457] = 1'h0;
+    \buf [458] = 1'h0;
+    \buf [459] = 1'h0;
+    \buf [460] = 1'h0;
+    \buf [461] = 1'h0;
+    \buf [462] = 1'h0;
+    \buf [463] = 1'h0;
+    \buf [464] = 1'h0;
+    \buf [465] = 1'h0;
+    \buf [466] = 1'h0;
+    \buf [467] = 1'h0;
+    \buf [468] = 1'h0;
+    \buf [469] = 1'h0;
+    \buf [470] = 1'h0;
+    \buf [471] = 1'h0;
+    \buf [472] = 1'h0;
+    \buf [473] = 1'h0;
+    \buf [474] = 1'h0;
+    \buf [475] = 1'h0;
+    \buf [476] = 1'h0;
+    \buf [477] = 1'h0;
+    \buf [478] = 1'h0;
+    \buf [479] = 1'h0;
+    \buf [480] = 1'h0;
+    \buf [481] = 1'h0;
+    \buf [482] = 1'h0;
+    \buf [483] = 1'h0;
+    \buf [484] = 1'h0;
+    \buf [485] = 1'h0;
+    \buf [486] = 1'h0;
+    \buf [487] = 1'h0;
+    \buf [488] = 1'h0;
+    \buf [489] = 1'h0;
+    \buf [490] = 1'h0;
+    \buf [491] = 1'h0;
+    \buf [492] = 1'h0;
+    \buf [493] = 1'h0;
+    \buf [494] = 1'h0;
+    \buf [495] = 1'h0;
+    \buf [496] = 1'h0;
+    \buf [497] = 1'h0;
+    \buf [498] = 1'h0;
+    \buf [499] = 1'h0;
+    \buf [500] = 1'h0;
+    \buf [501] = 1'h0;
+    \buf [502] = 1'h0;
+    \buf [503] = 1'h0;
+    \buf [504] = 1'h0;
+    \buf [505] = 1'h0;
+    \buf [506] = 1'h0;
+    \buf [507] = 1'h0;
+    \buf [508] = 1'h0;
+    \buf [509] = 1'h0;
+    \buf [510] = 1'h0;
+    \buf [511] = 1'h0;
+    \buf [512] = 1'h0;
+    \buf [513] = 1'h0;
+    \buf [514] = 1'h0;
+    \buf [515] = 1'h0;
+    \buf [516] = 1'h0;
+    \buf [517] = 1'h0;
+    \buf [518] = 1'h0;
+    \buf [519] = 1'h0;
+    \buf [520] = 1'h0;
+    \buf [521] = 1'h0;
+    \buf [522] = 1'h0;
+    \buf [523] = 1'h0;
+    \buf [524] = 1'h0;
+    \buf [525] = 1'h0;
+    \buf [526] = 1'h0;
+    \buf [527] = 1'h0;
+    \buf [528] = 1'h0;
+    \buf [529] = 1'h0;
+    \buf [530] = 1'h0;
+    \buf [531] = 1'h0;
+    \buf [532] = 1'h0;
+    \buf [533] = 1'h0;
+    \buf [534] = 1'h0;
+    \buf [535] = 1'h0;
+    \buf [536] = 1'h0;
+    \buf [537] = 1'h0;
+    \buf [538] = 1'h0;
+    \buf [539] = 1'h0;
+    \buf [540] = 1'h0;
+    \buf [541] = 1'h0;
+    \buf [542] = 1'h0;
+    \buf [543] = 1'h0;
+    \buf [544] = 1'h0;
+    \buf [545] = 1'h0;
+    \buf [546] = 1'h0;
+    \buf [547] = 1'h0;
+    \buf [548] = 1'h0;
+    \buf [549] = 1'h0;
+    \buf [550] = 1'h0;
+    \buf [551] = 1'h0;
+    \buf [552] = 1'h0;
+    \buf [553] = 1'h0;
+    \buf [554] = 1'h0;
+    \buf [555] = 1'h0;
+    \buf [556] = 1'h0;
+    \buf [557] = 1'h0;
+    \buf [558] = 1'h0;
+    \buf [559] = 1'h0;
+    \buf [560] = 1'h0;
+    \buf [561] = 1'h0;
+    \buf [562] = 1'h0;
+    \buf [563] = 1'h0;
+    \buf [564] = 1'h0;
+    \buf [565] = 1'h0;
+    \buf [566] = 1'h0;
+    \buf [567] = 1'h0;
+    \buf [568] = 1'h0;
+    \buf [569] = 1'h0;
+    \buf [570] = 1'h0;
+    \buf [571] = 1'h0;
+    \buf [572] = 1'h0;
+    \buf [573] = 1'h0;
+    \buf [574] = 1'h0;
+    \buf [575] = 1'h0;
+    \buf [576] = 1'h0;
+    \buf [577] = 1'h0;
+    \buf [578] = 1'h0;
+    \buf [579] = 1'h0;
+    \buf [580] = 1'h0;
+    \buf [581] = 1'h0;
+    \buf [582] = 1'h0;
+    \buf [583] = 1'h0;
+    \buf [584] = 1'h0;
+    \buf [585] = 1'h0;
+    \buf [586] = 1'h0;
+    \buf [587] = 1'h0;
+    \buf [588] = 1'h0;
+    \buf [589] = 1'h0;
+    \buf [590] = 1'h0;
+    \buf [591] = 1'h0;
+    \buf [592] = 1'h0;
+    \buf [593] = 1'h0;
+    \buf [594] = 1'h0;
+    \buf [595] = 1'h0;
+    \buf [596] = 1'h0;
+    \buf [597] = 1'h0;
+    \buf [598] = 1'h0;
+    \buf [599] = 1'h0;
+    \buf [600] = 1'h0;
+    \buf [601] = 1'h0;
+    \buf [602] = 1'h0;
+    \buf [603] = 1'h0;
+    \buf [604] = 1'h0;
+    \buf [605] = 1'h0;
+    \buf [606] = 1'h0;
+    \buf [607] = 1'h0;
+    \buf [608] = 1'h0;
+    \buf [609] = 1'h0;
+    \buf [610] = 1'h0;
+    \buf [611] = 1'h0;
+    \buf [612] = 1'h0;
+    \buf [613] = 1'h0;
+    \buf [614] = 1'h0;
+    \buf [615] = 1'h0;
+    \buf [616] = 1'h0;
+    \buf [617] = 1'h0;
+    \buf [618] = 1'h0;
+    \buf [619] = 1'h0;
+    \buf [620] = 1'h0;
+    \buf [621] = 1'h0;
+    \buf [622] = 1'h0;
+    \buf [623] = 1'h0;
+    \buf [624] = 1'h0;
+    \buf [625] = 1'h0;
+    \buf [626] = 1'h0;
+    \buf [627] = 1'h0;
+    \buf [628] = 1'h0;
+    \buf [629] = 1'h0;
+    \buf [630] = 1'h0;
+    \buf [631] = 1'h0;
+    \buf [632] = 1'h0;
+    \buf [633] = 1'h0;
+    \buf [634] = 1'h0;
+    \buf [635] = 1'h0;
+    \buf [636] = 1'h0;
+    \buf [637] = 1'h0;
+    \buf [638] = 1'h0;
+    \buf [639] = 1'h0;
+    \buf [640] = 1'h0;
+    \buf [641] = 1'h0;
+    \buf [642] = 1'h0;
+    \buf [643] = 1'h0;
+    \buf [644] = 1'h0;
+    \buf [645] = 1'h0;
+    \buf [646] = 1'h0;
+    \buf [647] = 1'h0;
+    \buf [648] = 1'h0;
+    \buf [649] = 1'h0;
+    \buf [650] = 1'h0;
+    \buf [651] = 1'h0;
+    \buf [652] = 1'h0;
+    \buf [653] = 1'h0;
+    \buf [654] = 1'h0;
+    \buf [655] = 1'h0;
+    \buf [656] = 1'h0;
+    \buf [657] = 1'h0;
+    \buf [658] = 1'h0;
+    \buf [659] = 1'h0;
+    \buf [660] = 1'h0;
+    \buf [661] = 1'h0;
+    \buf [662] = 1'h0;
+    \buf [663] = 1'h0;
+    \buf [664] = 1'h0;
+    \buf [665] = 1'h0;
+    \buf [666] = 1'h0;
+    \buf [667] = 1'h0;
+    \buf [668] = 1'h0;
+    \buf [669] = 1'h0;
+    \buf [670] = 1'h0;
+    \buf [671] = 1'h0;
+    \buf [672] = 1'h0;
+    \buf [673] = 1'h0;
+    \buf [674] = 1'h0;
+    \buf [675] = 1'h0;
+    \buf [676] = 1'h0;
+    \buf [677] = 1'h0;
+    \buf [678] = 1'h0;
+    \buf [679] = 1'h0;
+    \buf [680] = 1'h0;
+    \buf [681] = 1'h0;
+    \buf [682] = 1'h0;
+    \buf [683] = 1'h0;
+    \buf [684] = 1'h0;
+    \buf [685] = 1'h0;
+    \buf [686] = 1'h0;
+    \buf [687] = 1'h0;
+    \buf [688] = 1'h0;
+    \buf [689] = 1'h0;
+    \buf [690] = 1'h0;
+    \buf [691] = 1'h0;
+    \buf [692] = 1'h0;
+    \buf [693] = 1'h0;
+    \buf [694] = 1'h0;
+    \buf [695] = 1'h0;
+    \buf [696] = 1'h0;
+    \buf [697] = 1'h0;
+    \buf [698] = 1'h0;
+    \buf [699] = 1'h0;
+    \buf [700] = 1'h0;
+    \buf [701] = 1'h0;
+    \buf [702] = 1'h0;
+    \buf [703] = 1'h0;
+    \buf [704] = 1'h0;
+    \buf [705] = 1'h0;
+    \buf [706] = 1'h0;
+    \buf [707] = 1'h0;
+    \buf [708] = 1'h0;
+    \buf [709] = 1'h0;
+    \buf [710] = 1'h0;
+    \buf [711] = 1'h0;
+    \buf [712] = 1'h0;
+    \buf [713] = 1'h0;
+    \buf [714] = 1'h0;
+    \buf [715] = 1'h0;
+    \buf [716] = 1'h0;
+    \buf [717] = 1'h0;
+    \buf [718] = 1'h0;
+    \buf [719] = 1'h0;
+    \buf [720] = 1'h0;
+    \buf [721] = 1'h0;
+    \buf [722] = 1'h0;
+    \buf [723] = 1'h0;
+    \buf [724] = 1'h0;
+    \buf [725] = 1'h0;
+    \buf [726] = 1'h0;
+    \buf [727] = 1'h0;
+    \buf [728] = 1'h0;
+    \buf [729] = 1'h0;
+    \buf [730] = 1'h0;
+    \buf [731] = 1'h0;
+    \buf [732] = 1'h0;
+    \buf [733] = 1'h0;
+    \buf [734] = 1'h0;
+    \buf [735] = 1'h0;
+    \buf [736] = 1'h0;
+    \buf [737] = 1'h0;
+    \buf [738] = 1'h0;
+    \buf [739] = 1'h0;
+    \buf [740] = 1'h0;
+    \buf [741] = 1'h0;
+    \buf [742] = 1'h0;
+    \buf [743] = 1'h0;
+    \buf [744] = 1'h0;
+    \buf [745] = 1'h0;
+    \buf [746] = 1'h0;
+    \buf [747] = 1'h0;
+    \buf [748] = 1'h0;
+    \buf [749] = 1'h0;
+    \buf [750] = 1'h0;
+    \buf [751] = 1'h0;
+    \buf [752] = 1'h0;
+    \buf [753] = 1'h0;
+    \buf [754] = 1'h0;
+    \buf [755] = 1'h0;
+    \buf [756] = 1'h0;
+    \buf [757] = 1'h0;
+    \buf [758] = 1'h0;
+    \buf [759] = 1'h0;
+    \buf [760] = 1'h0;
+    \buf [761] = 1'h0;
+    \buf [762] = 1'h0;
+    \buf [763] = 1'h0;
+    \buf [764] = 1'h0;
+    \buf [765] = 1'h0;
+    \buf [766] = 1'h0;
+    \buf [767] = 1'h0;
+    \buf [768] = 1'h0;
+    \buf [769] = 1'h0;
+    \buf [770] = 1'h0;
+    \buf [771] = 1'h0;
+    \buf [772] = 1'h0;
+    \buf [773] = 1'h0;
+    \buf [774] = 1'h0;
+    \buf [775] = 1'h0;
+    \buf [776] = 1'h0;
+    \buf [777] = 1'h0;
+    \buf [778] = 1'h0;
+    \buf [779] = 1'h0;
+    \buf [780] = 1'h0;
+    \buf [781] = 1'h0;
+    \buf [782] = 1'h0;
+    \buf [783] = 1'h0;
+    \buf [784] = 1'h0;
+    \buf [785] = 1'h0;
+    \buf [786] = 1'h0;
+    \buf [787] = 1'h0;
+    \buf [788] = 1'h0;
+    \buf [789] = 1'h0;
+    \buf [790] = 1'h0;
+    \buf [791] = 1'h0;
+    \buf [792] = 1'h0;
+    \buf [793] = 1'h0;
+    \buf [794] = 1'h0;
+    \buf [795] = 1'h0;
+    \buf [796] = 1'h0;
+    \buf [797] = 1'h0;
+    \buf [798] = 1'h0;
+    \buf [799] = 1'h0;
+    \buf [800] = 1'h0;
+    \buf [801] = 1'h0;
+    \buf [802] = 1'h0;
+    \buf [803] = 1'h0;
+    \buf [804] = 1'h0;
+    \buf [805] = 1'h0;
+    \buf [806] = 1'h0;
+    \buf [807] = 1'h0;
+    \buf [808] = 1'h0;
+    \buf [809] = 1'h0;
+    \buf [810] = 1'h0;
+    \buf [811] = 1'h0;
+    \buf [812] = 1'h0;
+    \buf [813] = 1'h0;
+    \buf [814] = 1'h0;
+    \buf [815] = 1'h0;
+    \buf [816] = 1'h0;
+    \buf [817] = 1'h0;
+    \buf [818] = 1'h0;
+    \buf [819] = 1'h0;
+    \buf [820] = 1'h0;
+    \buf [821] = 1'h0;
+    \buf [822] = 1'h0;
+    \buf [823] = 1'h0;
+    \buf [824] = 1'h0;
+    \buf [825] = 1'h0;
+    \buf [826] = 1'h0;
+    \buf [827] = 1'h0;
+    \buf [828] = 1'h0;
+    \buf [829] = 1'h0;
+    \buf [830] = 1'h0;
+    \buf [831] = 1'h0;
+    \buf [832] = 1'h0;
+    \buf [833] = 1'h0;
+    \buf [834] = 1'h0;
+    \buf [835] = 1'h0;
+    \buf [836] = 1'h0;
+    \buf [837] = 1'h0;
+    \buf [838] = 1'h0;
+    \buf [839] = 1'h0;
+    \buf [840] = 1'h0;
+    \buf [841] = 1'h0;
+    \buf [842] = 1'h0;
+    \buf [843] = 1'h0;
+    \buf [844] = 1'h0;
+    \buf [845] = 1'h0;
+    \buf [846] = 1'h0;
+    \buf [847] = 1'h0;
+    \buf [848] = 1'h0;
+    \buf [849] = 1'h0;
+    \buf [850] = 1'h0;
+    \buf [851] = 1'h0;
+    \buf [852] = 1'h0;
+    \buf [853] = 1'h0;
+    \buf [854] = 1'h0;
+    \buf [855] = 1'h0;
+    \buf [856] = 1'h0;
+    \buf [857] = 1'h0;
+    \buf [858] = 1'h0;
+    \buf [859] = 1'h0;
+    \buf [860] = 1'h0;
+    \buf [861] = 1'h0;
+    \buf [862] = 1'h0;
+    \buf [863] = 1'h0;
+    \buf [864] = 1'h0;
+    \buf [865] = 1'h0;
+    \buf [866] = 1'h0;
+    \buf [867] = 1'h0;
+    \buf [868] = 1'h0;
+    \buf [869] = 1'h0;
+    \buf [870] = 1'h0;
+    \buf [871] = 1'h0;
+    \buf [872] = 1'h0;
+    \buf [873] = 1'h0;
+    \buf [874] = 1'h0;
+    \buf [875] = 1'h0;
+    \buf [876] = 1'h0;
+    \buf [877] = 1'h0;
+    \buf [878] = 1'h0;
+    \buf [879] = 1'h0;
+    \buf [880] = 1'h0;
+    \buf [881] = 1'h0;
+    \buf [882] = 1'h0;
+    \buf [883] = 1'h0;
+    \buf [884] = 1'h0;
+    \buf [885] = 1'h0;
+    \buf [886] = 1'h0;
+    \buf [887] = 1'h0;
+    \buf [888] = 1'h0;
+    \buf [889] = 1'h0;
+    \buf [890] = 1'h0;
+    \buf [891] = 1'h0;
+    \buf [892] = 1'h0;
+    \buf [893] = 1'h0;
+    \buf [894] = 1'h0;
+    \buf [895] = 1'h0;
+    \buf [896] = 1'h0;
+    \buf [897] = 1'h0;
+    \buf [898] = 1'h0;
+    \buf [899] = 1'h0;
+    \buf [900] = 1'h0;
+    \buf [901] = 1'h0;
+    \buf [902] = 1'h0;
+    \buf [903] = 1'h0;
+    \buf [904] = 1'h0;
+    \buf [905] = 1'h0;
+    \buf [906] = 1'h0;
+    \buf [907] = 1'h0;
+    \buf [908] = 1'h0;
+    \buf [909] = 1'h0;
+    \buf [910] = 1'h0;
+    \buf [911] = 1'h0;
+    \buf [912] = 1'h0;
+    \buf [913] = 1'h0;
+    \buf [914] = 1'h0;
+    \buf [915] = 1'h0;
+    \buf [916] = 1'h0;
+    \buf [917] = 1'h0;
+    \buf [918] = 1'h0;
+    \buf [919] = 1'h0;
+    \buf [920] = 1'h0;
+    \buf [921] = 1'h0;
+    \buf [922] = 1'h0;
+    \buf [923] = 1'h0;
+    \buf [924] = 1'h0;
+    \buf [925] = 1'h0;
+    \buf [926] = 1'h0;
+    \buf [927] = 1'h0;
+    \buf [928] = 1'h0;
+    \buf [929] = 1'h0;
+    \buf [930] = 1'h0;
+    \buf [931] = 1'h0;
+    \buf [932] = 1'h0;
+    \buf [933] = 1'h0;
+    \buf [934] = 1'h0;
+    \buf [935] = 1'h0;
+    \buf [936] = 1'h0;
+    \buf [937] = 1'h0;
+    \buf [938] = 1'h0;
+    \buf [939] = 1'h0;
+    \buf [940] = 1'h0;
+    \buf [941] = 1'h0;
+    \buf [942] = 1'h0;
+    \buf [943] = 1'h0;
+    \buf [944] = 1'h0;
+    \buf [945] = 1'h0;
+    \buf [946] = 1'h0;
+    \buf [947] = 1'h0;
+    \buf [948] = 1'h0;
+    \buf [949] = 1'h0;
+    \buf [950] = 1'h0;
+    \buf [951] = 1'h0;
+    \buf [952] = 1'h0;
+    \buf [953] = 1'h0;
+    \buf [954] = 1'h0;
+    \buf [955] = 1'h0;
+    \buf [956] = 1'h0;
+    \buf [957] = 1'h0;
+    \buf [958] = 1'h0;
+    \buf [959] = 1'h0;
+    \buf [960] = 1'h0;
+    \buf [961] = 1'h0;
+    \buf [962] = 1'h0;
+    \buf [963] = 1'h0;
+    \buf [964] = 1'h0;
+    \buf [965] = 1'h0;
+    \buf [966] = 1'h0;
+    \buf [967] = 1'h0;
+    \buf [968] = 1'h0;
+    \buf [969] = 1'h0;
+    \buf [970] = 1'h0;
+    \buf [971] = 1'h0;
+    \buf [972] = 1'h0;
+    \buf [973] = 1'h0;
+    \buf [974] = 1'h0;
+    \buf [975] = 1'h0;
+    \buf [976] = 1'h0;
+    \buf [977] = 1'h0;
+    \buf [978] = 1'h0;
+    \buf [979] = 1'h0;
+    \buf [980] = 1'h0;
+    \buf [981] = 1'h0;
+    \buf [982] = 1'h0;
+    \buf [983] = 1'h0;
+    \buf [984] = 1'h0;
+    \buf [985] = 1'h0;
+    \buf [986] = 1'h0;
+    \buf [987] = 1'h0;
+    \buf [988] = 1'h0;
+    \buf [989] = 1'h0;
+    \buf [990] = 1'h0;
+    \buf [991] = 1'h0;
+    \buf [992] = 1'h0;
+    \buf [993] = 1'h0;
+    \buf [994] = 1'h0;
+    \buf [995] = 1'h0;
+    \buf [996] = 1'h0;
+    \buf [997] = 1'h0;
+    \buf [998] = 1'h0;
+    \buf [999] = 1'h0;
+    \buf [1000] = 1'h0;
+    \buf [1001] = 1'h0;
+    \buf [1002] = 1'h0;
+    \buf [1003] = 1'h0;
+    \buf [1004] = 1'h0;
+    \buf [1005] = 1'h0;
+    \buf [1006] = 1'h0;
+    \buf [1007] = 1'h0;
+    \buf [1008] = 1'h0;
+    \buf [1009] = 1'h0;
+    \buf [1010] = 1'h0;
+    \buf [1011] = 1'h0;
+    \buf [1012] = 1'h0;
+    \buf [1013] = 1'h0;
+    \buf [1014] = 1'h0;
+    \buf [1015] = 1'h0;
+    \buf [1016] = 1'h0;
+    \buf [1017] = 1'h0;
+    \buf [1018] = 1'h0;
+    \buf [1019] = 1'h0;
+    \buf [1020] = 1'h0;
+    \buf [1021] = 1'h0;
+    \buf [1022] = 1'h0;
+    \buf [1023] = 1'h0;
+    \buf [1024] = 1'h0;
+    \buf [1025] = 1'h0;
+    \buf [1026] = 1'h0;
+    \buf [1027] = 1'h0;
+    \buf [1028] = 1'h0;
+    \buf [1029] = 1'h0;
+    \buf [1030] = 1'h0;
+    \buf [1031] = 1'h0;
+    \buf [1032] = 1'h0;
+    \buf [1033] = 1'h0;
+    \buf [1034] = 1'h0;
+    \buf [1035] = 1'h0;
+    \buf [1036] = 1'h0;
+    \buf [1037] = 1'h0;
+    \buf [1038] = 1'h0;
+    \buf [1039] = 1'h0;
+    \buf [1040] = 1'h0;
+    \buf [1041] = 1'h0;
+    \buf [1042] = 1'h0;
+    \buf [1043] = 1'h0;
+    \buf [1044] = 1'h0;
+    \buf [1045] = 1'h0;
+    \buf [1046] = 1'h0;
+    \buf [1047] = 1'h0;
+    \buf [1048] = 1'h0;
+    \buf [1049] = 1'h0;
+    \buf [1050] = 1'h0;
+    \buf [1051] = 1'h0;
+    \buf [1052] = 1'h0;
+    \buf [1053] = 1'h0;
+    \buf [1054] = 1'h0;
+    \buf [1055] = 1'h0;
+    \buf [1056] = 1'h0;
+    \buf [1057] = 1'h0;
+    \buf [1058] = 1'h0;
+    \buf [1059] = 1'h0;
+    \buf [1060] = 1'h0;
+    \buf [1061] = 1'h0;
+    \buf [1062] = 1'h0;
+    \buf [1063] = 1'h0;
+    \buf [1064] = 1'h0;
+    \buf [1065] = 1'h0;
+    \buf [1066] = 1'h0;
+    \buf [1067] = 1'h0;
+    \buf [1068] = 1'h0;
+    \buf [1069] = 1'h0;
+    \buf [1070] = 1'h0;
+    \buf [1071] = 1'h0;
+    \buf [1072] = 1'h0;
+    \buf [1073] = 1'h0;
+    \buf [1074] = 1'h0;
+    \buf [1075] = 1'h0;
+    \buf [1076] = 1'h0;
+    \buf [1077] = 1'h0;
+    \buf [1078] = 1'h0;
+    \buf [1079] = 1'h0;
+    \buf [1080] = 1'h0;
+    \buf [1081] = 1'h0;
+    \buf [1082] = 1'h0;
+    \buf [1083] = 1'h0;
+    \buf [1084] = 1'h0;
+    \buf [1085] = 1'h0;
+    \buf [1086] = 1'h0;
+    \buf [1087] = 1'h0;
+    \buf [1088] = 1'h0;
+    \buf [1089] = 1'h0;
+    \buf [1090] = 1'h0;
+    \buf [1091] = 1'h0;
+    \buf [1092] = 1'h0;
+    \buf [1093] = 1'h0;
+    \buf [1094] = 1'h0;
+    \buf [1095] = 1'h0;
+    \buf [1096] = 1'h0;
+    \buf [1097] = 1'h0;
+    \buf [1098] = 1'h0;
+    \buf [1099] = 1'h0;
+    \buf [1100] = 1'h0;
+    \buf [1101] = 1'h0;
+    \buf [1102] = 1'h0;
+    \buf [1103] = 1'h0;
+    \buf [1104] = 1'h0;
+    \buf [1105] = 1'h0;
+    \buf [1106] = 1'h0;
+    \buf [1107] = 1'h0;
+    \buf [1108] = 1'h0;
+    \buf [1109] = 1'h0;
+    \buf [1110] = 1'h0;
+    \buf [1111] = 1'h0;
+    \buf [1112] = 1'h0;
+    \buf [1113] = 1'h0;
+    \buf [1114] = 1'h0;
+    \buf [1115] = 1'h0;
+    \buf [1116] = 1'h0;
+    \buf [1117] = 1'h0;
+    \buf [1118] = 1'h0;
+    \buf [1119] = 1'h0;
+    \buf [1120] = 1'h0;
+    \buf [1121] = 1'h0;
+    \buf [1122] = 1'h0;
+    \buf [1123] = 1'h0;
+    \buf [1124] = 1'h0;
+    \buf [1125] = 1'h0;
+    \buf [1126] = 1'h0;
+    \buf [1127] = 1'h0;
+    \buf [1128] = 1'h0;
+    \buf [1129] = 1'h0;
+    \buf [1130] = 1'h0;
+    \buf [1131] = 1'h0;
+    \buf [1132] = 1'h0;
+    \buf [1133] = 1'h0;
+    \buf [1134] = 1'h0;
+    \buf [1135] = 1'h0;
+    \buf [1136] = 1'h0;
+    \buf [1137] = 1'h0;
+    \buf [1138] = 1'h0;
+    \buf [1139] = 1'h0;
+    \buf [1140] = 1'h0;
+    \buf [1141] = 1'h0;
+    \buf [1142] = 1'h0;
+    \buf [1143] = 1'h0;
+    \buf [1144] = 1'h0;
+    \buf [1145] = 1'h0;
+    \buf [1146] = 1'h0;
+    \buf [1147] = 1'h0;
+    \buf [1148] = 1'h0;
+    \buf [1149] = 1'h0;
+    \buf [1150] = 1'h0;
+    \buf [1151] = 1'h0;
+    \buf [1152] = 1'h0;
+    \buf [1153] = 1'h0;
+    \buf [1154] = 1'h0;
+    \buf [1155] = 1'h0;
+    \buf [1156] = 1'h0;
+    \buf [1157] = 1'h0;
+    \buf [1158] = 1'h0;
+    \buf [1159] = 1'h0;
+    \buf [1160] = 1'h0;
+    \buf [1161] = 1'h0;
+    \buf [1162] = 1'h0;
+    \buf [1163] = 1'h0;
+    \buf [1164] = 1'h0;
+    \buf [1165] = 1'h0;
+    \buf [1166] = 1'h0;
+    \buf [1167] = 1'h0;
+    \buf [1168] = 1'h0;
+    \buf [1169] = 1'h0;
+    \buf [1170] = 1'h0;
+    \buf [1171] = 1'h0;
+    \buf [1172] = 1'h0;
+    \buf [1173] = 1'h0;
+    \buf [1174] = 1'h0;
+    \buf [1175] = 1'h0;
+    \buf [1176] = 1'h0;
+    \buf [1177] = 1'h0;
+    \buf [1178] = 1'h0;
+    \buf [1179] = 1'h0;
+    \buf [1180] = 1'h0;
+    \buf [1181] = 1'h0;
+    \buf [1182] = 1'h0;
+    \buf [1183] = 1'h0;
+    \buf [1184] = 1'h0;
+    \buf [1185] = 1'h0;
+    \buf [1186] = 1'h0;
+    \buf [1187] = 1'h0;
+    \buf [1188] = 1'h0;
+    \buf [1189] = 1'h0;
+    \buf [1190] = 1'h0;
+    \buf [1191] = 1'h0;
+    \buf [1192] = 1'h0;
+    \buf [1193] = 1'h0;
+    \buf [1194] = 1'h0;
+    \buf [1195] = 1'h0;
+    \buf [1196] = 1'h0;
+    \buf [1197] = 1'h0;
+    \buf [1198] = 1'h0;
+    \buf [1199] = 1'h0;
+    \buf [1200] = 1'h0;
+    \buf [1201] = 1'h0;
+    \buf [1202] = 1'h0;
+    \buf [1203] = 1'h0;
+    \buf [1204] = 1'h0;
+    \buf [1205] = 1'h0;
+    \buf [1206] = 1'h0;
+    \buf [1207] = 1'h0;
+    \buf [1208] = 1'h0;
+    \buf [1209] = 1'h0;
+    \buf [1210] = 1'h0;
+    \buf [1211] = 1'h0;
+    \buf [1212] = 1'h0;
+    \buf [1213] = 1'h0;
+    \buf [1214] = 1'h0;
+    \buf [1215] = 1'h0;
+    \buf [1216] = 1'h0;
+    \buf [1217] = 1'h0;
+    \buf [1218] = 1'h0;
+    \buf [1219] = 1'h0;
+    \buf [1220] = 1'h0;
+    \buf [1221] = 1'h0;
+    \buf [1222] = 1'h0;
+    \buf [1223] = 1'h0;
+    \buf [1224] = 1'h0;
+    \buf [1225] = 1'h0;
+    \buf [1226] = 1'h0;
+    \buf [1227] = 1'h0;
+    \buf [1228] = 1'h0;
+    \buf [1229] = 1'h0;
+    \buf [1230] = 1'h0;
+    \buf [1231] = 1'h0;
+    \buf [1232] = 1'h0;
+    \buf [1233] = 1'h0;
+    \buf [1234] = 1'h0;
+    \buf [1235] = 1'h0;
+    \buf [1236] = 1'h0;
+    \buf [1237] = 1'h0;
+    \buf [1238] = 1'h0;
+    \buf [1239] = 1'h0;
+    \buf [1240] = 1'h0;
+    \buf [1241] = 1'h0;
+    \buf [1242] = 1'h0;
+    \buf [1243] = 1'h0;
+    \buf [1244] = 1'h0;
+    \buf [1245] = 1'h0;
+    \buf [1246] = 1'h0;
+    \buf [1247] = 1'h0;
+    \buf [1248] = 1'h0;
+    \buf [1249] = 1'h0;
+    \buf [1250] = 1'h0;
+    \buf [1251] = 1'h0;
+    \buf [1252] = 1'h0;
+    \buf [1253] = 1'h0;
+    \buf [1254] = 1'h0;
+    \buf [1255] = 1'h0;
+    \buf [1256] = 1'h0;
+    \buf [1257] = 1'h0;
+    \buf [1258] = 1'h0;
+    \buf [1259] = 1'h0;
+    \buf [1260] = 1'h0;
+    \buf [1261] = 1'h0;
+    \buf [1262] = 1'h0;
+    \buf [1263] = 1'h0;
+    \buf [1264] = 1'h0;
+    \buf [1265] = 1'h0;
+    \buf [1266] = 1'h0;
+    \buf [1267] = 1'h0;
+    \buf [1268] = 1'h0;
+    \buf [1269] = 1'h0;
+    \buf [1270] = 1'h0;
+    \buf [1271] = 1'h0;
+    \buf [1272] = 1'h0;
+    \buf [1273] = 1'h0;
+    \buf [1274] = 1'h0;
+    \buf [1275] = 1'h0;
+    \buf [1276] = 1'h0;
+    \buf [1277] = 1'h0;
+    \buf [1278] = 1'h0;
+    \buf [1279] = 1'h0;
+    \buf [1280] = 1'h0;
+    \buf [1281] = 1'h0;
+    \buf [1282] = 1'h0;
+    \buf [1283] = 1'h0;
+    \buf [1284] = 1'h0;
+    \buf [1285] = 1'h0;
+    \buf [1286] = 1'h0;
+    \buf [1287] = 1'h0;
+    \buf [1288] = 1'h0;
+    \buf [1289] = 1'h0;
+    \buf [1290] = 1'h0;
+    \buf [1291] = 1'h0;
+    \buf [1292] = 1'h0;
+    \buf [1293] = 1'h0;
+    \buf [1294] = 1'h0;
+    \buf [1295] = 1'h0;
+    \buf [1296] = 1'h0;
+    \buf [1297] = 1'h0;
+    \buf [1298] = 1'h0;
+    \buf [1299] = 1'h0;
+    \buf [1300] = 1'h0;
+    \buf [1301] = 1'h0;
+    \buf [1302] = 1'h0;
+    \buf [1303] = 1'h0;
+    \buf [1304] = 1'h0;
+    \buf [1305] = 1'h0;
+    \buf [1306] = 1'h0;
+    \buf [1307] = 1'h0;
+    \buf [1308] = 1'h0;
+    \buf [1309] = 1'h0;
+    \buf [1310] = 1'h0;
+    \buf [1311] = 1'h0;
+    \buf [1312] = 1'h0;
+    \buf [1313] = 1'h0;
+    \buf [1314] = 1'h0;
+    \buf [1315] = 1'h0;
+    \buf [1316] = 1'h0;
+    \buf [1317] = 1'h0;
+    \buf [1318] = 1'h0;
+    \buf [1319] = 1'h0;
+    \buf [1320] = 1'h0;
+    \buf [1321] = 1'h0;
+    \buf [1322] = 1'h0;
+    \buf [1323] = 1'h0;
+    \buf [1324] = 1'h0;
+    \buf [1325] = 1'h0;
+    \buf [1326] = 1'h0;
+    \buf [1327] = 1'h0;
+    \buf [1328] = 1'h0;
+    \buf [1329] = 1'h0;
+    \buf [1330] = 1'h0;
+    \buf [1331] = 1'h0;
+    \buf [1332] = 1'h0;
+    \buf [1333] = 1'h0;
+    \buf [1334] = 1'h0;
+    \buf [1335] = 1'h0;
+    \buf [1336] = 1'h0;
+    \buf [1337] = 1'h0;
+    \buf [1338] = 1'h0;
+    \buf [1339] = 1'h0;
+    \buf [1340] = 1'h0;
+    \buf [1341] = 1'h0;
+    \buf [1342] = 1'h0;
+    \buf [1343] = 1'h0;
+    \buf [1344] = 1'h0;
+    \buf [1345] = 1'h0;
+    \buf [1346] = 1'h0;
+    \buf [1347] = 1'h0;
+    \buf [1348] = 1'h0;
+    \buf [1349] = 1'h0;
+    \buf [1350] = 1'h0;
+    \buf [1351] = 1'h0;
+    \buf [1352] = 1'h0;
+    \buf [1353] = 1'h0;
+    \buf [1354] = 1'h0;
+    \buf [1355] = 1'h0;
+    \buf [1356] = 1'h0;
+    \buf [1357] = 1'h0;
+    \buf [1358] = 1'h0;
+    \buf [1359] = 1'h0;
+    \buf [1360] = 1'h0;
+    \buf [1361] = 1'h0;
+    \buf [1362] = 1'h0;
+    \buf [1363] = 1'h0;
+    \buf [1364] = 1'h0;
+    \buf [1365] = 1'h0;
+    \buf [1366] = 1'h0;
+    \buf [1367] = 1'h0;
+    \buf [1368] = 1'h0;
+    \buf [1369] = 1'h0;
+    \buf [1370] = 1'h0;
+    \buf [1371] = 1'h0;
+    \buf [1372] = 1'h0;
+    \buf [1373] = 1'h0;
+    \buf [1374] = 1'h0;
+    \buf [1375] = 1'h0;
+    \buf [1376] = 1'h0;
+    \buf [1377] = 1'h0;
+    \buf [1378] = 1'h0;
+    \buf [1379] = 1'h0;
+    \buf [1380] = 1'h0;
+    \buf [1381] = 1'h0;
+    \buf [1382] = 1'h0;
+    \buf [1383] = 1'h0;
+    \buf [1384] = 1'h0;
+    \buf [1385] = 1'h0;
+    \buf [1386] = 1'h0;
+    \buf [1387] = 1'h0;
+    \buf [1388] = 1'h0;
+    \buf [1389] = 1'h0;
+    \buf [1390] = 1'h0;
+    \buf [1391] = 1'h0;
+    \buf [1392] = 1'h0;
+    \buf [1393] = 1'h0;
+    \buf [1394] = 1'h0;
+    \buf [1395] = 1'h0;
+    \buf [1396] = 1'h0;
+    \buf [1397] = 1'h0;
+    \buf [1398] = 1'h0;
+    \buf [1399] = 1'h0;
+    \buf [1400] = 1'h0;
+    \buf [1401] = 1'h0;
+    \buf [1402] = 1'h0;
+    \buf [1403] = 1'h0;
+    \buf [1404] = 1'h0;
+    \buf [1405] = 1'h0;
+    \buf [1406] = 1'h0;
+    \buf [1407] = 1'h0;
+    \buf [1408] = 1'h0;
+    \buf [1409] = 1'h0;
+    \buf [1410] = 1'h0;
+    \buf [1411] = 1'h0;
+    \buf [1412] = 1'h0;
+    \buf [1413] = 1'h0;
+    \buf [1414] = 1'h0;
+    \buf [1415] = 1'h0;
+    \buf [1416] = 1'h0;
+    \buf [1417] = 1'h0;
+    \buf [1418] = 1'h0;
+    \buf [1419] = 1'h0;
+    \buf [1420] = 1'h0;
+    \buf [1421] = 1'h0;
+    \buf [1422] = 1'h0;
+    \buf [1423] = 1'h0;
+    \buf [1424] = 1'h0;
+    \buf [1425] = 1'h0;
+    \buf [1426] = 1'h0;
+    \buf [1427] = 1'h0;
+    \buf [1428] = 1'h0;
+    \buf [1429] = 1'h0;
+    \buf [1430] = 1'h0;
+    \buf [1431] = 1'h0;
+    \buf [1432] = 1'h0;
+    \buf [1433] = 1'h0;
+    \buf [1434] = 1'h0;
+    \buf [1435] = 1'h0;
+    \buf [1436] = 1'h0;
+    \buf [1437] = 1'h0;
+    \buf [1438] = 1'h0;
+    \buf [1439] = 1'h0;
+    \buf [1440] = 1'h0;
+    \buf [1441] = 1'h0;
+    \buf [1442] = 1'h0;
+    \buf [1443] = 1'h0;
+    \buf [1444] = 1'h0;
+    \buf [1445] = 1'h0;
+    \buf [1446] = 1'h0;
+    \buf [1447] = 1'h0;
+    \buf [1448] = 1'h0;
+    \buf [1449] = 1'h0;
+    \buf [1450] = 1'h0;
+    \buf [1451] = 1'h0;
+    \buf [1452] = 1'h0;
+    \buf [1453] = 1'h0;
+    \buf [1454] = 1'h0;
+    \buf [1455] = 1'h0;
+    \buf [1456] = 1'h0;
+    \buf [1457] = 1'h0;
+    \buf [1458] = 1'h0;
+    \buf [1459] = 1'h0;
+    \buf [1460] = 1'h0;
+    \buf [1461] = 1'h0;
+    \buf [1462] = 1'h0;
+    \buf [1463] = 1'h0;
+    \buf [1464] = 1'h0;
+    \buf [1465] = 1'h0;
+    \buf [1466] = 1'h0;
+    \buf [1467] = 1'h0;
+    \buf [1468] = 1'h0;
+    \buf [1469] = 1'h0;
+    \buf [1470] = 1'h0;
+    \buf [1471] = 1'h0;
+    \buf [1472] = 1'h0;
+    \buf [1473] = 1'h0;
+    \buf [1474] = 1'h0;
+    \buf [1475] = 1'h0;
+    \buf [1476] = 1'h0;
+    \buf [1477] = 1'h0;
+    \buf [1478] = 1'h0;
+    \buf [1479] = 1'h0;
+    \buf [1480] = 1'h0;
+    \buf [1481] = 1'h0;
+    \buf [1482] = 1'h0;
+    \buf [1483] = 1'h0;
+    \buf [1484] = 1'h0;
+    \buf [1485] = 1'h0;
+    \buf [1486] = 1'h0;
+    \buf [1487] = 1'h0;
+    \buf [1488] = 1'h0;
+    \buf [1489] = 1'h0;
+    \buf [1490] = 1'h0;
+    \buf [1491] = 1'h0;
+    \buf [1492] = 1'h0;
+    \buf [1493] = 1'h0;
+    \buf [1494] = 1'h0;
+    \buf [1495] = 1'h0;
+    \buf [1496] = 1'h0;
+    \buf [1497] = 1'h0;
+    \buf [1498] = 1'h0;
+    \buf [1499] = 1'h0;
+    \buf [1500] = 1'h0;
+    \buf [1501] = 1'h0;
+    \buf [1502] = 1'h0;
+    \buf [1503] = 1'h0;
+    \buf [1504] = 1'h0;
+    \buf [1505] = 1'h0;
+    \buf [1506] = 1'h0;
+    \buf [1507] = 1'h0;
+    \buf [1508] = 1'h0;
+    \buf [1509] = 1'h0;
+    \buf [1510] = 1'h0;
+    \buf [1511] = 1'h0;
+    \buf [1512] = 1'h0;
+    \buf [1513] = 1'h0;
+    \buf [1514] = 1'h0;
+    \buf [1515] = 1'h0;
+    \buf [1516] = 1'h0;
+    \buf [1517] = 1'h0;
+    \buf [1518] = 1'h0;
+    \buf [1519] = 1'h0;
+    \buf [1520] = 1'h0;
+    \buf [1521] = 1'h0;
+    \buf [1522] = 1'h0;
+    \buf [1523] = 1'h0;
+    \buf [1524] = 1'h0;
+    \buf [1525] = 1'h0;
+    \buf [1526] = 1'h0;
+    \buf [1527] = 1'h0;
+    \buf [1528] = 1'h0;
+    \buf [1529] = 1'h0;
+    \buf [1530] = 1'h0;
+    \buf [1531] = 1'h0;
+    \buf [1532] = 1'h0;
+    \buf [1533] = 1'h0;
+    \buf [1534] = 1'h0;
+    \buf [1535] = 1'h0;
+    \buf [1536] = 1'h0;
+    \buf [1537] = 1'h0;
+    \buf [1538] = 1'h0;
+    \buf [1539] = 1'h0;
+    \buf [1540] = 1'h0;
+    \buf [1541] = 1'h0;
+    \buf [1542] = 1'h0;
+    \buf [1543] = 1'h0;
+    \buf [1544] = 1'h0;
+    \buf [1545] = 1'h0;
+    \buf [1546] = 1'h0;
+    \buf [1547] = 1'h0;
+    \buf [1548] = 1'h0;
+    \buf [1549] = 1'h0;
+    \buf [1550] = 1'h0;
+    \buf [1551] = 1'h0;
+    \buf [1552] = 1'h0;
+    \buf [1553] = 1'h0;
+    \buf [1554] = 1'h0;
+    \buf [1555] = 1'h0;
+    \buf [1556] = 1'h0;
+    \buf [1557] = 1'h0;
+    \buf [1558] = 1'h0;
+    \buf [1559] = 1'h0;
+    \buf [1560] = 1'h0;
+    \buf [1561] = 1'h0;
+    \buf [1562] = 1'h0;
+    \buf [1563] = 1'h0;
+    \buf [1564] = 1'h0;
+    \buf [1565] = 1'h0;
+    \buf [1566] = 1'h0;
+    \buf [1567] = 1'h0;
+    \buf [1568] = 1'h0;
+    \buf [1569] = 1'h0;
+    \buf [1570] = 1'h0;
+    \buf [1571] = 1'h0;
+    \buf [1572] = 1'h0;
+    \buf [1573] = 1'h0;
+    \buf [1574] = 1'h0;
+    \buf [1575] = 1'h0;
+    \buf [1576] = 1'h0;
+    \buf [1577] = 1'h0;
+    \buf [1578] = 1'h0;
+    \buf [1579] = 1'h0;
+    \buf [1580] = 1'h0;
+    \buf [1581] = 1'h0;
+    \buf [1582] = 1'h0;
+    \buf [1583] = 1'h0;
+    \buf [1584] = 1'h0;
+    \buf [1585] = 1'h0;
+    \buf [1586] = 1'h0;
+    \buf [1587] = 1'h0;
+    \buf [1588] = 1'h0;
+    \buf [1589] = 1'h0;
+    \buf [1590] = 1'h0;
+    \buf [1591] = 1'h0;
+    \buf [1592] = 1'h0;
+    \buf [1593] = 1'h0;
+    \buf [1594] = 1'h0;
+    \buf [1595] = 1'h0;
+    \buf [1596] = 1'h0;
+    \buf [1597] = 1'h0;
+    \buf [1598] = 1'h0;
+    \buf [1599] = 1'h0;
+    \buf [1600] = 1'h0;
+    \buf [1601] = 1'h0;
+    \buf [1602] = 1'h0;
+    \buf [1603] = 1'h0;
+    \buf [1604] = 1'h0;
+    \buf [1605] = 1'h0;
+    \buf [1606] = 1'h0;
+    \buf [1607] = 1'h0;
+    \buf [1608] = 1'h0;
+    \buf [1609] = 1'h0;
+    \buf [1610] = 1'h0;
+    \buf [1611] = 1'h0;
+    \buf [1612] = 1'h0;
+    \buf [1613] = 1'h0;
+    \buf [1614] = 1'h0;
+    \buf [1615] = 1'h0;
+    \buf [1616] = 1'h0;
+    \buf [1617] = 1'h0;
+    \buf [1618] = 1'h0;
+    \buf [1619] = 1'h0;
+    \buf [1620] = 1'h0;
+    \buf [1621] = 1'h0;
+    \buf [1622] = 1'h0;
+    \buf [1623] = 1'h0;
+    \buf [1624] = 1'h0;
+    \buf [1625] = 1'h0;
+    \buf [1626] = 1'h0;
+    \buf [1627] = 1'h0;
+    \buf [1628] = 1'h0;
+    \buf [1629] = 1'h0;
+    \buf [1630] = 1'h0;
+    \buf [1631] = 1'h0;
+    \buf [1632] = 1'h0;
+    \buf [1633] = 1'h0;
+    \buf [1634] = 1'h0;
+    \buf [1635] = 1'h0;
+    \buf [1636] = 1'h0;
+    \buf [1637] = 1'h0;
+    \buf [1638] = 1'h0;
+    \buf [1639] = 1'h0;
+    \buf [1640] = 1'h0;
+    \buf [1641] = 1'h0;
+    \buf [1642] = 1'h0;
+    \buf [1643] = 1'h0;
+    \buf [1644] = 1'h0;
+    \buf [1645] = 1'h0;
+    \buf [1646] = 1'h0;
+    \buf [1647] = 1'h0;
+    \buf [1648] = 1'h0;
+    \buf [1649] = 1'h0;
+    \buf [1650] = 1'h0;
+    \buf [1651] = 1'h0;
+    \buf [1652] = 1'h0;
+    \buf [1653] = 1'h0;
+    \buf [1654] = 1'h0;
+    \buf [1655] = 1'h0;
+    \buf [1656] = 1'h0;
+    \buf [1657] = 1'h0;
+    \buf [1658] = 1'h0;
+    \buf [1659] = 1'h0;
+    \buf [1660] = 1'h0;
+    \buf [1661] = 1'h0;
+    \buf [1662] = 1'h0;
+    \buf [1663] = 1'h0;
+    \buf [1664] = 1'h0;
+    \buf [1665] = 1'h0;
+    \buf [1666] = 1'h0;
+    \buf [1667] = 1'h0;
+    \buf [1668] = 1'h0;
+    \buf [1669] = 1'h0;
+    \buf [1670] = 1'h0;
+    \buf [1671] = 1'h0;
+    \buf [1672] = 1'h0;
+    \buf [1673] = 1'h0;
+    \buf [1674] = 1'h0;
+    \buf [1675] = 1'h0;
+    \buf [1676] = 1'h0;
+    \buf [1677] = 1'h0;
+    \buf [1678] = 1'h0;
+    \buf [1679] = 1'h0;
+    \buf [1680] = 1'h0;
+    \buf [1681] = 1'h0;
+    \buf [1682] = 1'h0;
+    \buf [1683] = 1'h0;
+    \buf [1684] = 1'h0;
+    \buf [1685] = 1'h0;
+    \buf [1686] = 1'h0;
+    \buf [1687] = 1'h0;
+    \buf [1688] = 1'h0;
+    \buf [1689] = 1'h0;
+    \buf [1690] = 1'h0;
+    \buf [1691] = 1'h0;
+    \buf [1692] = 1'h0;
+    \buf [1693] = 1'h0;
+    \buf [1694] = 1'h0;
+    \buf [1695] = 1'h0;
+    \buf [1696] = 1'h0;
+    \buf [1697] = 1'h0;
+    \buf [1698] = 1'h0;
+    \buf [1699] = 1'h0;
+    \buf [1700] = 1'h0;
+    \buf [1701] = 1'h0;
+    \buf [1702] = 1'h0;
+    \buf [1703] = 1'h0;
+    \buf [1704] = 1'h0;
+    \buf [1705] = 1'h0;
+    \buf [1706] = 1'h0;
+    \buf [1707] = 1'h0;
+    \buf [1708] = 1'h0;
+    \buf [1709] = 1'h0;
+    \buf [1710] = 1'h0;
+    \buf [1711] = 1'h0;
+    \buf [1712] = 1'h0;
+    \buf [1713] = 1'h0;
+    \buf [1714] = 1'h0;
+    \buf [1715] = 1'h0;
+    \buf [1716] = 1'h0;
+    \buf [1717] = 1'h0;
+    \buf [1718] = 1'h0;
+    \buf [1719] = 1'h0;
+    \buf [1720] = 1'h0;
+    \buf [1721] = 1'h0;
+    \buf [1722] = 1'h0;
+    \buf [1723] = 1'h0;
+    \buf [1724] = 1'h0;
+    \buf [1725] = 1'h0;
+    \buf [1726] = 1'h0;
+    \buf [1727] = 1'h0;
+    \buf [1728] = 1'h0;
+    \buf [1729] = 1'h0;
+    \buf [1730] = 1'h0;
+    \buf [1731] = 1'h0;
+    \buf [1732] = 1'h0;
+    \buf [1733] = 1'h0;
+    \buf [1734] = 1'h0;
+    \buf [1735] = 1'h0;
+    \buf [1736] = 1'h0;
+    \buf [1737] = 1'h0;
+    \buf [1738] = 1'h0;
+    \buf [1739] = 1'h0;
+    \buf [1740] = 1'h0;
+    \buf [1741] = 1'h0;
+    \buf [1742] = 1'h0;
+    \buf [1743] = 1'h0;
+    \buf [1744] = 1'h0;
+    \buf [1745] = 1'h0;
+    \buf [1746] = 1'h0;
+    \buf [1747] = 1'h0;
+    \buf [1748] = 1'h0;
+    \buf [1749] = 1'h0;
+    \buf [1750] = 1'h0;
+    \buf [1751] = 1'h0;
+    \buf [1752] = 1'h0;
+    \buf [1753] = 1'h0;
+    \buf [1754] = 1'h0;
+    \buf [1755] = 1'h0;
+    \buf [1756] = 1'h0;
+    \buf [1757] = 1'h0;
+    \buf [1758] = 1'h0;
+    \buf [1759] = 1'h0;
+    \buf [1760] = 1'h0;
+    \buf [1761] = 1'h0;
+    \buf [1762] = 1'h0;
+    \buf [1763] = 1'h0;
+    \buf [1764] = 1'h0;
+    \buf [1765] = 1'h0;
+    \buf [1766] = 1'h0;
+    \buf [1767] = 1'h0;
+    \buf [1768] = 1'h0;
+    \buf [1769] = 1'h0;
+    \buf [1770] = 1'h0;
+    \buf [1771] = 1'h0;
+    \buf [1772] = 1'h0;
+    \buf [1773] = 1'h0;
+    \buf [1774] = 1'h0;
+    \buf [1775] = 1'h0;
+    \buf [1776] = 1'h0;
+    \buf [1777] = 1'h0;
+    \buf [1778] = 1'h0;
+    \buf [1779] = 1'h0;
+    \buf [1780] = 1'h0;
+    \buf [1781] = 1'h0;
+    \buf [1782] = 1'h0;
+    \buf [1783] = 1'h0;
+    \buf [1784] = 1'h0;
+    \buf [1785] = 1'h0;
+    \buf [1786] = 1'h0;
+    \buf [1787] = 1'h0;
+    \buf [1788] = 1'h0;
+    \buf [1789] = 1'h0;
+    \buf [1790] = 1'h0;
+    \buf [1791] = 1'h0;
+    \buf [1792] = 1'h0;
+    \buf [1793] = 1'h0;
+    \buf [1794] = 1'h0;
+    \buf [1795] = 1'h0;
+    \buf [1796] = 1'h0;
+    \buf [1797] = 1'h0;
+    \buf [1798] = 1'h0;
+    \buf [1799] = 1'h0;
+    \buf [1800] = 1'h0;
+    \buf [1801] = 1'h0;
+    \buf [1802] = 1'h0;
+    \buf [1803] = 1'h0;
+    \buf [1804] = 1'h0;
+    \buf [1805] = 1'h0;
+    \buf [1806] = 1'h0;
+    \buf [1807] = 1'h0;
+    \buf [1808] = 1'h0;
+    \buf [1809] = 1'h0;
+    \buf [1810] = 1'h0;
+    \buf [1811] = 1'h0;
+    \buf [1812] = 1'h0;
+    \buf [1813] = 1'h0;
+    \buf [1814] = 1'h0;
+    \buf [1815] = 1'h0;
+    \buf [1816] = 1'h0;
+    \buf [1817] = 1'h0;
+    \buf [1818] = 1'h0;
+    \buf [1819] = 1'h0;
+    \buf [1820] = 1'h0;
+    \buf [1821] = 1'h0;
+    \buf [1822] = 1'h0;
+    \buf [1823] = 1'h0;
+    \buf [1824] = 1'h0;
+    \buf [1825] = 1'h0;
+    \buf [1826] = 1'h0;
+    \buf [1827] = 1'h0;
+    \buf [1828] = 1'h0;
+    \buf [1829] = 1'h0;
+    \buf [1830] = 1'h0;
+    \buf [1831] = 1'h0;
+    \buf [1832] = 1'h0;
+    \buf [1833] = 1'h0;
+    \buf [1834] = 1'h0;
+    \buf [1835] = 1'h0;
+    \buf [1836] = 1'h0;
+    \buf [1837] = 1'h0;
+    \buf [1838] = 1'h0;
+    \buf [1839] = 1'h0;
+    \buf [1840] = 1'h0;
+    \buf [1841] = 1'h0;
+    \buf [1842] = 1'h0;
+    \buf [1843] = 1'h0;
+    \buf [1844] = 1'h0;
+    \buf [1845] = 1'h0;
+    \buf [1846] = 1'h0;
+    \buf [1847] = 1'h0;
+    \buf [1848] = 1'h0;
+    \buf [1849] = 1'h0;
+    \buf [1850] = 1'h0;
+    \buf [1851] = 1'h0;
+    \buf [1852] = 1'h0;
+    \buf [1853] = 1'h0;
+    \buf [1854] = 1'h0;
+    \buf [1855] = 1'h0;
+    \buf [1856] = 1'h0;
+    \buf [1857] = 1'h0;
+    \buf [1858] = 1'h0;
+    \buf [1859] = 1'h0;
+    \buf [1860] = 1'h0;
+    \buf [1861] = 1'h0;
+    \buf [1862] = 1'h0;
+    \buf [1863] = 1'h0;
+    \buf [1864] = 1'h0;
+    \buf [1865] = 1'h0;
+    \buf [1866] = 1'h0;
+    \buf [1867] = 1'h0;
+    \buf [1868] = 1'h0;
+    \buf [1869] = 1'h0;
+    \buf [1870] = 1'h0;
+    \buf [1871] = 1'h0;
+    \buf [1872] = 1'h0;
+    \buf [1873] = 1'h0;
+    \buf [1874] = 1'h0;
+    \buf [1875] = 1'h0;
+    \buf [1876] = 1'h0;
+    \buf [1877] = 1'h0;
+    \buf [1878] = 1'h0;
+    \buf [1879] = 1'h0;
+    \buf [1880] = 1'h0;
+    \buf [1881] = 1'h0;
+    \buf [1882] = 1'h0;
+    \buf [1883] = 1'h0;
+    \buf [1884] = 1'h0;
+    \buf [1885] = 1'h0;
+    \buf [1886] = 1'h0;
+    \buf [1887] = 1'h0;
+    \buf [1888] = 1'h0;
+    \buf [1889] = 1'h0;
+    \buf [1890] = 1'h0;
+    \buf [1891] = 1'h0;
+    \buf [1892] = 1'h0;
+    \buf [1893] = 1'h0;
+    \buf [1894] = 1'h0;
+    \buf [1895] = 1'h0;
+    \buf [1896] = 1'h0;
+    \buf [1897] = 1'h0;
+    \buf [1898] = 1'h0;
+    \buf [1899] = 1'h0;
+    \buf [1900] = 1'h0;
+    \buf [1901] = 1'h0;
+    \buf [1902] = 1'h0;
+    \buf [1903] = 1'h0;
+    \buf [1904] = 1'h0;
+    \buf [1905] = 1'h0;
+    \buf [1906] = 1'h0;
+    \buf [1907] = 1'h0;
+    \buf [1908] = 1'h0;
+    \buf [1909] = 1'h0;
+    \buf [1910] = 1'h0;
+    \buf [1911] = 1'h0;
+    \buf [1912] = 1'h0;
+    \buf [1913] = 1'h0;
+    \buf [1914] = 1'h0;
+    \buf [1915] = 1'h0;
+    \buf [1916] = 1'h0;
+    \buf [1917] = 1'h0;
+    \buf [1918] = 1'h0;
+    \buf [1919] = 1'h0;
+    \buf [1920] = 1'h0;
+    \buf [1921] = 1'h0;
+    \buf [1922] = 1'h0;
+    \buf [1923] = 1'h0;
+    \buf [1924] = 1'h0;
+    \buf [1925] = 1'h0;
+    \buf [1926] = 1'h0;
+    \buf [1927] = 1'h0;
+    \buf [1928] = 1'h0;
+    \buf [1929] = 1'h0;
+    \buf [1930] = 1'h0;
+    \buf [1931] = 1'h0;
+    \buf [1932] = 1'h0;
+    \buf [1933] = 1'h0;
+    \buf [1934] = 1'h0;
+    \buf [1935] = 1'h0;
+    \buf [1936] = 1'h0;
+    \buf [1937] = 1'h0;
+    \buf [1938] = 1'h0;
+    \buf [1939] = 1'h0;
+    \buf [1940] = 1'h0;
+    \buf [1941] = 1'h0;
+    \buf [1942] = 1'h0;
+    \buf [1943] = 1'h0;
+    \buf [1944] = 1'h0;
+    \buf [1945] = 1'h0;
+    \buf [1946] = 1'h0;
+    \buf [1947] = 1'h0;
+    \buf [1948] = 1'h0;
+    \buf [1949] = 1'h0;
+    \buf [1950] = 1'h0;
+    \buf [1951] = 1'h0;
+    \buf [1952] = 1'h0;
+    \buf [1953] = 1'h0;
+    \buf [1954] = 1'h0;
+    \buf [1955] = 1'h0;
+    \buf [1956] = 1'h0;
+    \buf [1957] = 1'h0;
+    \buf [1958] = 1'h0;
+    \buf [1959] = 1'h0;
+    \buf [1960] = 1'h0;
+    \buf [1961] = 1'h0;
+    \buf [1962] = 1'h0;
+    \buf [1963] = 1'h0;
+    \buf [1964] = 1'h0;
+    \buf [1965] = 1'h0;
+    \buf [1966] = 1'h0;
+    \buf [1967] = 1'h0;
+    \buf [1968] = 1'h0;
+    \buf [1969] = 1'h0;
+    \buf [1970] = 1'h0;
+    \buf [1971] = 1'h0;
+    \buf [1972] = 1'h0;
+    \buf [1973] = 1'h0;
+    \buf [1974] = 1'h0;
+    \buf [1975] = 1'h0;
+    \buf [1976] = 1'h0;
+    \buf [1977] = 1'h0;
+    \buf [1978] = 1'h0;
+    \buf [1979] = 1'h0;
+    \buf [1980] = 1'h0;
+    \buf [1981] = 1'h0;
+    \buf [1982] = 1'h0;
+    \buf [1983] = 1'h0;
+    \buf [1984] = 1'h0;
+    \buf [1985] = 1'h0;
+    \buf [1986] = 1'h0;
+    \buf [1987] = 1'h0;
+    \buf [1988] = 1'h0;
+    \buf [1989] = 1'h0;
+    \buf [1990] = 1'h0;
+    \buf [1991] = 1'h0;
+    \buf [1992] = 1'h0;
+    \buf [1993] = 1'h0;
+    \buf [1994] = 1'h0;
+    \buf [1995] = 1'h0;
+    \buf [1996] = 1'h0;
+    \buf [1997] = 1'h0;
+    \buf [1998] = 1'h0;
+    \buf [1999] = 1'h0;
+    \buf [2000] = 1'h0;
+    \buf [2001] = 1'h0;
+    \buf [2002] = 1'h0;
+    \buf [2003] = 1'h0;
+    \buf [2004] = 1'h0;
+    \buf [2005] = 1'h0;
+    \buf [2006] = 1'h0;
+    \buf [2007] = 1'h0;
+    \buf [2008] = 1'h0;
+    \buf [2009] = 1'h0;
+    \buf [2010] = 1'h0;
+    \buf [2011] = 1'h0;
+    \buf [2012] = 1'h0;
+    \buf [2013] = 1'h0;
+    \buf [2014] = 1'h0;
+    \buf [2015] = 1'h0;
+    \buf [2016] = 1'h0;
+    \buf [2017] = 1'h0;
+    \buf [2018] = 1'h0;
+    \buf [2019] = 1'h0;
+    \buf [2020] = 1'h0;
+    \buf [2021] = 1'h0;
+    \buf [2022] = 1'h0;
+    \buf [2023] = 1'h0;
+    \buf [2024] = 1'h0;
+    \buf [2025] = 1'h0;
+    \buf [2026] = 1'h0;
+    \buf [2027] = 1'h0;
+    \buf [2028] = 1'h0;
+    \buf [2029] = 1'h0;
+    \buf [2030] = 1'h0;
+    \buf [2031] = 1'h0;
+    \buf [2032] = 1'h0;
+    \buf [2033] = 1'h0;
+    \buf [2034] = 1'h0;
+    \buf [2035] = 1'h0;
+    \buf [2036] = 1'h0;
+    \buf [2037] = 1'h0;
+    \buf [2038] = 1'h0;
+    \buf [2039] = 1'h0;
+    \buf [2040] = 1'h0;
+    \buf [2041] = 1'h0;
+    \buf [2042] = 1'h0;
+    \buf [2043] = 1'h0;
+    \buf [2044] = 1'h0;
+    \buf [2045] = 1'h0;
+    \buf [2046] = 1'h0;
+    \buf [2047] = 1'h0;
   end
-  always @* begin
-    if (\initial ) begin end
-    \frame$next  = frame;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:46" *)
-    casez (\$3 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:46" */
-      1'h1:
-          \frame$next  = \$5 [15:0];
-    endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
-    casez (pixel_rst)
-      1'h1:
-          \frame$next  = 16'h0000;
-    endcase
+  reg [10:0] _0_;
+  always @(posedge pixel_clk) begin
+    _0_ <= buf_r_addr;
   end
-  always @* begin
-    if (\initial ) begin end
-    \r$next  = \$8 ;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
-    casez (pixel_rst)
-      1'h1:
-          \r$next  = 8'h00;
-    endcase
-  end
-  always @* begin
-    if (\initial ) begin end
-    \g$next  = \$15 [7:0];
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
-    casez (pixel_rst)
-      1'h1:
-          \g$next  = 8'h00;
-    endcase
-  end
-  always @* begin
-    if (\initial ) begin end
-    \b$next  = \$30 [7:0];
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
-    casez (pixel_rst)
-      1'h1:
-          \b$next  = 8'h00;
-    endcase
-  end
-  assign \$5  = \$6 ;
-  assign \$9  = \$12 ;
-  assign \$15  = \$28 ;
-  assign \$30  = \$47 ;
+  assign buf_r_data = \buf [_0_];
+  fbrenderer fbrenderer (
+    .b(b),
+    .buf_r_addr(buf_r_addr),
+    .buf_r_data(buf_r_data),
+    .g(g),
+    .h_ctr(h_ctr),
+    .h_en(h_en),
+    .pixel_clk(pixel_clk),
+    .pixel_rst(pixel_rst),
+    .r(r),
+    .v_en(v_en),
+    .vga_output__vs(vga_output__vs)
+  );
 endmodule
 
 (* \nmigen.hierarchy  = "myip1.dvid_signal_generator" *)
 (* generator = "nMigen" *)
-module dvid_signal_generator(rst, clk, dvid_out_clk, dvid_out, pixel_clk);
+module dvid_signal_generator(rst, pixel_rst, clk, dvid_out_clk, dvid_out, pixel_clk);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:220" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:248" *)
   output [2:0] dvid_out;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:219" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:247" *)
   output dvid_out_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:72" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:77" *)
   reg pixel_b_r = 1'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:72" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:77" *)
   reg \pixel_b_r$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:69" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:74" *)
   reg pixel_clk_r = 1'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:69" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:74" *)
   reg \pixel_clk_r$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:71" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:76" *)
   reg pixel_g_r = 1'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:71" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:76" *)
   reg \pixel_g_r$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:70" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:75" *)
   reg pixel_r_r = 1'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:70" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:75" *)
   reg \pixel_r_r$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
+  input pixel_rst;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:31" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:36" *)
   wire [7:0] vga2dvid_b;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:30" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:35" *)
   wire [7:0] vga2dvid_g;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:35" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:40" *)
   wire vga2dvid_pixel_b;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:36" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:41" *)
   wire vga2dvid_pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:34" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:39" *)
   wire vga2dvid_pixel_g;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:33" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:38" *)
   wire vga2dvid_pixel_r;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:29" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:34" *)
   wire [7:0] vga2dvid_r;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
   wire [9:0] vga_h_ctr;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
-  wire vga_pixel_rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
-  wire [9:0] vga_v_ctr;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  wire vga_h_en;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  wire vga_v_en;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   wire vga_vga_output__blank;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   wire vga_vga_output__hs;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   wire vga_vga_output__vs;
-  always @(posedge clk)
-    pixel_b_r <= \pixel_b_r$next ;
   always @(posedge clk)
     pixel_g_r <= \pixel_g_r$next ;
   always @(posedge clk)
     pixel_r_r <= \pixel_r_r$next ;
   always @(posedge clk)
     pixel_clk_r <= \pixel_clk_r$next ;
+  always @(posedge clk)
+    pixel_b_r <= \pixel_b_r$next ;
   \U$$0  \U$$0  (
     .b(vga2dvid_b),
     .g(vga2dvid_g),
     .h_ctr(vga_h_ctr),
+    .h_en(vga_h_en),
     .pixel_clk(pixel_clk),
-    .pixel_rst(vga_pixel_rst),
+    .pixel_rst(pixel_rst),
     .r(vga2dvid_r),
-    .v_ctr(vga_v_ctr),
+    .v_en(vga_v_en),
     .vga_output__vs(vga_vga_output__vs)
   );
   vga vga (
     .h_ctr(vga_h_ctr),
+    .h_en(vga_h_en),
     .pixel_clk(pixel_clk),
-    .pixel_rst(vga_pixel_rst),
-    .v_ctr(vga_v_ctr),
+    .pixel_rst(pixel_rst),
+    .v_en(vga_v_en),
     .vga_output__blank(vga_vga_output__blank),
     .vga_output__hs(vga_vga_output__hs),
     .vga_output__vs(vga_vga_output__vs)
@@ -270,7 +2192,7 @@ module dvid_signal_generator(rst, clk, dvid_out_clk, dvid_out, pixel_clk);
     .\pixel_clk$1 (vga2dvid_pixel_clk),
     .pixel_g(vga2dvid_pixel_g),
     .pixel_r(vga2dvid_pixel_r),
-    .pixel_rst(vga_pixel_rst),
+    .pixel_rst(pixel_rst),
     .r(vga2dvid_r),
     .rst(rst),
     .vga_output__blank(vga_vga_output__blank),
@@ -313,70 +2235,504 @@ module dvid_signal_generator(rst, clk, dvid_out_clk, dvid_out, pixel_clk);
           \pixel_b_r$next  = 1'h0;
     endcase
   end
-  assign vga_pixel_rst = 1'h0;
   assign dvid_out = { pixel_r_r, pixel_g_r, pixel_b_r };
   assign dvid_out_clk = pixel_clk_r;
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.dvid_signal_generator.U$$0.fbrenderer" *)
+(* generator = "nMigen" *)
+module fbrenderer(pixel_rst, h_ctr, h_en, v_en, vga_output__vs, b, g, r, buf_r_addr, buf_r_data, pixel_clk);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:35" *)
+  wire \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *)
+  wire \$10 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *)
+  wire \$12 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" *)
+  wire \$14 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:51" *)
+  wire [5:0] \$16 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:51" *)
+  wire [5:0] \$17 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *)
+  wire \$19 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *)
+  wire \$21 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" *)
+  wire \$23 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:54" *)
+  wire [5:0] \$25 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:54" *)
+  wire [5:0] \$26 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" *)
+  wire \$28 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:35" *)
+  wire \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:59" *)
+  wire [5:0] \$30 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:59" *)
+  wire [5:0] \$31 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" *)
+  wire \$33 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:62" *)
+  wire [5:0] \$35 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:62" *)
+  wire [5:0] \$36 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" *)
+  wire \$38 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:66" *)
+  wire [11:0] \$40 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:66" *)
+  wire [10:0] \$41 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:66" *)
+  wire [11:0] \$43 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" *)
+  wire \$45 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:81" *)
+  wire [7:0] \$47 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:82" *)
+  wire [7:0] \$49 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:41" *)
+  wire \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:83" *)
+  wire [7:0] \$51 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:42" *)
+  wire [16:0] \$7 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:42" *)
+  wire [16:0] \$8 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:36" *)
+  output [7:0] b;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:151" *)
+  output [10:0] buf_r_addr;
+  reg [10:0] buf_r_addr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:151" *)
+  input buf_r_data;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:35" *)
+  output [7:0] g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:30" *)
+  reg [4:0] h_buf_ctr = 5'h00;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:30" *)
+  reg [4:0] \h_buf_ctr$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  input [9:0] h_ctr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  input h_en;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:28" *)
+  reg [15:0] pix_ctr = 16'h0000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:28" *)
+  reg [15:0] \pix_ctr$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:78" *)
+  wire [7:0] pixel_b;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
+  input pixel_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:77" *)
+  wire [7:0] pixel_g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:44" *)
+  reg pixel_on = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:44" *)
+  reg \pixel_on$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:76" *)
+  wire [7:0] pixel_r;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
+  input pixel_rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:34" *)
+  output [7:0] r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:45" *)
+  reg [4:0] skip_ctr_h = 5'h00;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:45" *)
+  reg [4:0] \skip_ctr_h$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:46" *)
+  reg [4:0] skip_ctr_v = 5'h00;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:46" *)
+  reg [4:0] \skip_ctr_v$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:31" *)
+  reg [4:0] v_buf_ctr = 5'h00;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:31" *)
+  reg [4:0] \v_buf_ctr$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  input v_en;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
+  input vga_output__vs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:33" *)
+  reg vsync_r = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:33" *)
+  reg \vsync_r$next ;
+  assign \$10  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *) 10'h31b;
+  assign \$12  = \$10  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *) v_en;
+  assign \$14  = skip_ctr_v == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" *) 4'he;
+  assign \$17  = v_buf_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:51" *) 1'h1;
+  assign \$1  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:35" *) vsync_r;
+  assign \$19  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *) 10'h31b;
+  assign \$21  = \$19  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *) v_en;
+  assign \$23  = skip_ctr_v == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" *) 4'he;
+  assign \$26  = skip_ctr_v + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:54" *) 1'h1;
+  assign \$28  = skip_ctr_h == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" *) 5'h13;
+  assign \$31  = h_buf_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:59" *) 1'h1;
+  assign \$33  = skip_ctr_h == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" *) 5'h13;
+  assign \$36  = skip_ctr_h + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:62" *) 1'h1;
+  assign \$38  = h_en & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" *) v_en;
+  assign \$3  = \$1  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:35" *) vga_output__vs;
+  assign \$41  = v_buf_ctr * (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:66" *) 6'h20;
+  assign \$43  = h_buf_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:66" *) \$41 ;
+  assign \$45  = h_en & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" *) v_en;
+  assign \$47  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:81" *) 8'hff : 8'h00;
+  assign \$49  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:82" *) 8'hff : 8'h00;
+  assign \$51  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:83" *) 8'hff : 8'h00;
+  assign \$5  = h_en & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:41" *) v_en;
+  assign \$8  = pix_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:42" *) 1'h1;
+  always @(posedge pixel_clk)
+    pixel_on <= \pixel_on$next ;
+  always @(posedge pixel_clk)
+    skip_ctr_h <= \skip_ctr_h$next ;
+  always @(posedge pixel_clk)
+    h_buf_ctr <= \h_buf_ctr$next ;
+  always @(posedge pixel_clk)
+    skip_ctr_v <= \skip_ctr_v$next ;
+  always @(posedge pixel_clk)
+    v_buf_ctr <= \v_buf_ctr$next ;
+  always @(posedge pixel_clk)
+    pix_ctr <= \pix_ctr$next ;
+  always @(posedge pixel_clk)
+    vsync_r <= \vsync_r$next ;
+  always @* begin
+    if (\initial ) begin end
+    \vsync_r$next  = vga_output__vs;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \vsync_r$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \pix_ctr$next  = pix_ctr;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:35" *)
+    casez (\$3 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:35" */
+      1'h1:
+          \pix_ctr$next  = 16'h0000;
+    endcase
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:41" *)
+    casez (\$5 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:41" */
+      1'h1:
+          \pix_ctr$next  = \$7 [15:0];
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \pix_ctr$next  = 16'h0000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \v_buf_ctr$next  = v_buf_ctr;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *)
+    casez (\$12 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" *)
+          casez (\$14 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" */
+            1'h1:
+                \v_buf_ctr$next  = \$16 [4:0];
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \v_buf_ctr$next  = 5'h00;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \skip_ctr_v$next  = skip_ctr_v;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" *)
+    casez (\$21 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:49" */
+      1'h1:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" *)
+          casez (\$23 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:50" */
+            1'h1:
+                \skip_ctr_v$next  = 5'h00;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:53" */
+            default:
+                \skip_ctr_v$next  = \$25 [4:0];
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \skip_ctr_v$next  = 5'h00;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \h_buf_ctr$next  = h_buf_ctr;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:57" *)
+    casez (h_en)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:57" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" *)
+          casez (\$28 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" */
+            1'h1:
+                \h_buf_ctr$next  = \$30 [4:0];
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \h_buf_ctr$next  = 5'h00;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \skip_ctr_h$next  = skip_ctr_h;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:57" *)
+    casez (h_en)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:57" */
+      1'h1:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" *)
+          casez (\$33 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:58" */
+            1'h1:
+                \skip_ctr_h$next  = 5'h00;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:61" */
+            default:
+                \skip_ctr_h$next  = \$35 [4:0];
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \skip_ctr_h$next  = 5'h00;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    buf_r_addr = 11'h000;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" *)
+    casez (\$38 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" */
+      1'h1:
+          buf_r_addr = \$40 [10:0];
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \pixel_on$next  = pixel_on;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" *)
+    casez (\$45 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/gameoflife.py:64" */
+      1'h1:
+          \pixel_on$next  = buf_r_data;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \pixel_on$next  = 1'h0;
+    endcase
+  end
+  assign \$7  = \$8 ;
+  assign \$16  = \$17 ;
+  assign \$25  = \$26 ;
+  assign \$30  = \$31 ;
+  assign \$35  = \$36 ;
+  assign \$40  = \$43 ;
+  assign b = pixel_b;
+  assign g = pixel_g;
+  assign r = pixel_r;
+  assign pixel_b = \$51 ;
+  assign pixel_g = \$49 ;
+  assign pixel_r = \$47 ;
 endmodule
 
 (* \nmigen.hierarchy  = "myip1" *)
 (* top =  1  *)
 (* generator = "nMigen" *)
-module myip1(dvid_out_clk, dvid_out, clk, rst, reset);
+module myip1(dvid_out_clk, dvid_out, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb, wb__we, wb__ack, sel, clk, rst, reset);
   reg \initial  = 0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" *)
   wire \$1 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:229" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$11 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$13 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$15 ;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *)
+  wire [7:0] \$17 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$19 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$21 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$23 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$25 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$27 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$29 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:257" *)
   wire [4:0] \$3 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:229" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$31 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$33 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$35 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$37 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$39 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:257" *)
   wire [4:0] \$4 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" *)
-  wire \$6 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:227" *)
-  wire \$8 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+  wire \$41 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:329" *)
+  wire [16:0] \$43 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:329" *)
+  wire [16:0] \$44 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:330" *)
+  wire [16:0] \$46 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:330" *)
+  wire [16:0] \$47 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" *)
+  wire \$7 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:255" *)
+  wire \$9 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:307" *)
+  reg ack_r = 1'h0;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:307" *)
+  reg \ack_r$next ;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:220" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:327" *)
+  reg [15:0] counter1 = 16'h0000;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:327" *)
+  reg [15:0] \counter1$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:328" *)
+  reg [15:0] counter2 = 16'h0000;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:328" *)
+  reg [15:0] \counter2$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:248" *)
   output [2:0] dvid_out;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:219" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:247" *)
   output dvid_out_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
-  wire dvid_signal_generator_pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:224" *)
-  reg pixel_clk = 1'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:224" *)
-  reg \pixel_clk$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:223" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
+  wire pixel_clk;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:252" *)
+  reg \pixel_clk$6  = 1'h0;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:252" *)
+  reg \pixel_clk$6$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:251" *)
   reg [3:0] pixel_ctr = 4'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:223" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:251" *)
   reg [3:0] \pixel_ctr$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
+  wire pixel_rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:323" *)
   input reset;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   output rst;
-  assign \$1  = pixel_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" *) 3'h5;
-  assign \$4  = pixel_ctr + (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:229" *) 1'h1;
-  assign \$6  = pixel_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" *) 3'h5;
-  assign \$8  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:227" *) pixel_clk;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:332" *)
+  input [3:0] sel;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  output wb__ack;
+  reg wb__ack = 1'h0;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  reg \wb__ack$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  input [31:0] wb__adr;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  input wb__cyc;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  output [31:0] wb__dat_r;
+  reg [31:0] wb__dat_r;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  input [31:0] wb__dat_w;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  input wb__sel;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  input wb__stb;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:301" *)
+  input wb__we;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:16" *)
+  wire [7:0] wrapper_addr;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:14" *)
+  reg wrapper_cs;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:18" *)
+  wire [31:0] wrapper_read_data;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:15" *)
+  wire wrapper_we;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:17" *)
+  reg [31:0] wrapper_write_data;
+  assign \$9  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:255" *) \pixel_clk$6 ;
+  assign \$11  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) wb__cyc;
+  assign \$13  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) 22'h300000;
+  assign \$15  = \$11  & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) \$13 ;
+  assign \$17  = + (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *) wb__adr[7:2];
+  assign \$1  = pixel_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" *) 3'h5;
+  assign \$19  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) wb__cyc;
+  assign \$21  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) 22'h300000;
+  assign \$23  = \$19  & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) \$21 ;
+  assign \$25  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) wb__cyc;
+  assign \$27  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) 22'h300000;
+  assign \$29  = \$25  & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) \$27 ;
+  assign \$31  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) wb__cyc;
+  assign \$33  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) 22'h300000;
+  assign \$35  = \$31  & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) \$33 ;
+  assign \$37  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) wb__cyc;
+  assign \$39  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) 22'h300000;
+  assign \$41  = \$37  & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *) \$39 ;
+  assign \$44  = counter1 + (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:329" *) 1'h1;
+  assign \$47  = counter2 + (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:330" *) 1'h1;
+  assign \$4  = pixel_ctr + (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:257" *) 1'h1;
+  assign \$7  = pixel_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" *) 3'h5;
+  always @(posedge pixel_clk)
+    counter2 <= \counter2$next ;
   always @(posedge clk)
-    pixel_clk <= \pixel_clk$next ;
+    counter1 <= \counter1$next ;
+  always @(posedge clk)
+    ack_r <= \ack_r$next ;
+  always @(posedge clk)
+    wb__ack <= \wb__ack$next ;
+  always @(posedge clk)
+    \pixel_clk$6  <= \pixel_clk$6$next ;
   always @(posedge clk)
     pixel_ctr <= \pixel_ctr$next ;
   dvid_signal_generator dvid_signal_generator (
     .clk(clk),
     .dvid_out(dvid_out),
     .dvid_out_clk(dvid_out_clk),
-    .pixel_clk(dvid_signal_generator_pixel_clk),
+    .pixel_clk(pixel_clk),
+    .pixel_rst(pixel_rst),
     .rst(rst)
+  );
+  wrapper wrapper (
+    .addr(wrapper_addr),
+    .clk(clk),
+    .cs(wrapper_cs),
+    .read_data(wrapper_read_data),
+    .rst(rst),
+    .we(wrapper_we),
+    .write_data(wrapper_write_data)
   );
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" *)
     casez (\$1 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" */
       1'h1:
           \pixel_ctr$next  = 4'h0;
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:228" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:256" */
       default:
           \pixel_ctr$next  = \$3 [3:0];
     endcase
@@ -388,22 +2744,108 @@ module myip1(dvid_out_clk, dvid_out, clk, rst, reset);
   end
   always @* begin
     if (\initial ) begin end
-    \pixel_clk$next  = pixel_clk;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" *)
-    casez (\$6 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:225" */
+    \pixel_clk$6$next  = \pixel_clk$6 ;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" *)
+    casez (\$7 )
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:253" */
       1'h1:
-          \pixel_clk$next  = \$8 ;
+          \pixel_clk$6$next  = \$9 ;
     endcase
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
-          \pixel_clk$next  = 1'h0;
+          \pixel_clk$6$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \counter1$next  = \$43 [15:0];
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \counter1$next  = 16'h0000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \counter2$next  = \$46 [15:0];
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (pixel_rst)
+      1'h1:
+          \counter2$next  = 16'h0000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    wrapper_cs = 1'h0;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+    casez (\$15 )
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" */
+      1'h1:
+          wrapper_cs = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    wb__dat_r = 32'd0;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+    casez (\$23 )
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" */
+      1'h1:
+          wb__dat_r = wrapper_read_data;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    wrapper_write_data = 32'd0;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+    casez (\$29 )
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" */
+      1'h1:
+          wrapper_write_data = wb__dat_w;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \wb__ack$next  = wb__ack;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+    casez (\$35 )
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" */
+      1'h1:
+          \wb__ack$next  = ack_r;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \wb__ack$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" *)
+    casez (\$41 )
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:309" */
+      1'h1:
+          \ack_r$next  = 1'h0;
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:315" */
+      default:
+          \ack_r$next  = 1'h1;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \ack_r$next  = 1'h0;
     endcase
   end
   assign \$3  = \$4 ;
+  assign \$43  = \$44 ;
+  assign \$46  = \$47 ;
+  assign pixel_rst = reset;
   assign rst = reset;
-  assign dvid_signal_generator_pixel_clk = pixel_clk;
+  assign wrapper_addr = \$17 ;
+  assign wrapper_we = wb__we;
+  assign pixel_clk = \pixel_clk$6 ;
 endmodule
 
 (* \nmigen.hierarchy  = "myip1.dvid_signal_generator.vga.output" *)
@@ -413,11 +2855,11 @@ module \output (hs, vs, vga_output__hs, vga_output__vs, vga_output__blank, blank
   input blank;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
   input hs;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   output vga_output__blank;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   output vga_output__hs;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   output vga_output__vs;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
   input vs;
@@ -680,7 +3122,7 @@ module tmds_b(pixel_rst, vga_output__blank, c0, encoded_blue, b, pixel_clk);
   wire [7:0] \$97 ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$99 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:31" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:36" *)
   input [7:0] b;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:95" *)
   input [1:0] c0;
@@ -707,11 +3149,11 @@ module tmds_b(pixel_rst, vga_output__blank, c0, encoded_blue, b, pixel_clk);
   reg [9:0] \encoded_blue$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   input vga_output__blank;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
   wire [8:0] xnored;
@@ -1291,15 +3733,15 @@ module tmds_g(pixel_rst, vga_output__blank, encoded_green, g, pixel_clk);
   reg [9:0] encoded_green = 10'h000;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
   reg [9:0] \encoded_green$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:30" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:35" *)
   input [7:0] g;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   input vga_output__blank;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
   wire [8:0] xnored;
@@ -1866,13 +4308,13 @@ module tmds_r(pixel_rst, vga_output__blank, encoded_red, r, pixel_clk);
   reg [9:0] \encoded_red$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:29" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:34" *)
   input [7:0] r;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   input vga_output__blank;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
   wire [8:0] xnored;
@@ -2164,7 +4606,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.dvid_signal_generator.vga" *)
 (* generator = "nMigen" *)
-module vga(h_ctr, v_ctr, pixel_rst, vga_output__hs, vga_output__vs, vga_output__blank, pixel_clk);
+module vga(pixel_rst, h_ctr, h_en, v_en, vga_output__hs, vga_output__vs, vga_output__blank, pixel_clk);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
   wire \$1 ;
@@ -2226,6 +4668,7 @@ module vga(h_ctr, v_ctr, pixel_rst, vga_output__hs, vga_output__vs, vga_output__
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
   reg [9:0] \h_ctr$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  output h_en;
   reg h_en = 1'h0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
   reg \h_en$next ;
@@ -2239,28 +4682,28 @@ module vga(h_ctr, v_ctr, pixel_rst, vga_output__hs, vga_output__vs, vga_output__
   reg output_vs = 1'h0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
   reg \output_vs$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_rst;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
   reg reset = 1'h0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
   reg \reset$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
-  output [9:0] v_ctr;
   reg [9:0] v_ctr = 10'h000;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
   reg [9:0] \v_ctr$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  output v_en;
   reg v_en = 1'h0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
   reg \v_en$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   output vga_output__blank;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   output vga_output__hs;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   output vga_output__vs;
   assign \$9  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *) 10'h31b;
   assign \$11  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *) 10'h20a;
@@ -2469,7 +4912,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.dvid_signal_generator.vga2dvid" *)
 (* generator = "nMigen" *)
-module vga2dvid(rst, clk, \pixel_clk$1 , pixel_r, pixel_g, pixel_b, pixel_rst, vga_output__hs, vga_output__vs, vga_output__blank, b, g, r, pixel_clk);
+module vga2dvid(rst, pixel_rst, clk, \pixel_clk$1 , pixel_r, pixel_g, pixel_b, vga_output__hs, vga_output__vs, vga_output__blank, b, g, r, pixel_clk);
   reg \initial  = 0;
   wire [4:0] \$2 ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
@@ -2480,11 +4923,11 @@ module vga2dvid(rst, clk, \pixel_clk$1 , pixel_r, pixel_g, pixel_b, pixel_rst, v
   wire [4:0] \$8 ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
   wire \$9 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:31" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:36" *)
   input [7:0] b;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:30" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:35" *)
   input [7:0] g;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:117" *)
   reg [9:0] latched_blue = 10'h000;
@@ -2498,19 +4941,19 @@ module vga2dvid(rst, clk, \pixel_clk$1 , pixel_r, pixel_g, pixel_b, pixel_rst, v
   reg [9:0] latched_red = 10'h000;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:115" *)
   reg [9:0] \latched_red$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:35" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:40" *)
   output pixel_b;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:36" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:41" *)
   output \pixel_clk$1 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:34" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:39" *)
   output pixel_g;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:33" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:38" *)
   output pixel_r;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:231" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:259" *)
   input pixel_rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:29" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:34" *)
   input [7:0] r;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
@@ -2538,11 +4981,11 @@ module vga2dvid(rst, clk, \pixel_clk$1 , pixel_r, pixel_g, pixel_b, pixel_rst, v
   wire [9:0] tmds_g_encoded_green;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
   wire [9:0] tmds_r_encoded_red;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   input vga_output__blank;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   input vga_output__hs;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_tmds.py:23" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:28" *)
   input vga_output__vs;
   assign \$9  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$8 [4];
   assign \$3  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$2 [4];
@@ -2681,5 +5124,118 @@ module vga2dvid(rst, clk, \pixel_clk$1 , pixel_r, pixel_g, pixel_b, pixel_rst, v
   assign pixel_g = shift_green[0];
   assign pixel_r = shift_red[0];
   assign tmds_b_c0 = { vga_output__vs, vga_output__hs };
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.wrapper" *)
+(* generator = "nMigen" *)
+module wrapper(we, addr, read_data, write_data, rst, clk, cs);
+  reg \initial  = 0;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:16" *)
+  input [7:0] addr;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:14" *)
+  input cs;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:18" *)
+  output [31:0] read_data;
+  reg [31:0] read_data;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:278" *)
+  reg [31:0] rw0 = 32'd0;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:278" *)
+  reg [31:0] \rw0$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:279" *)
+  reg [31:0] rw1 = 32'd0;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:279" *)
+  reg [31:0] \rw1$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:15" *)
+  input we;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:17" *)
+  input [31:0] write_data;
+  always @(posedge clk)
+    rw1 <= \rw1$next ;
+  always @(posedge clk)
+    rw0 <= \rw0$next ;
+  always @* begin
+    if (\initial ) begin end
+    \rw0$next  = rw0;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:71" *)
+    casez (cs)
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:71" */
+      1'h1:
+          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:72" *)
+          casez (we)
+            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:72" */
+            1'h1:
+                (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:73" *)
+                casez (addr)
+                  /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:75" */
+                  8'h00:
+                      \rw0$next  = write_data;
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \rw0$next  = 32'd0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \rw1$next  = rw1;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:71" *)
+    casez (cs)
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:71" */
+      1'h1:
+          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:72" *)
+          casez (we)
+            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:72" */
+            1'h1:
+                (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:73" *)
+                casez (addr)
+                  /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:75" */
+                  8'h00:
+                      /* empty */;
+                  /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:75" */
+                  8'h01:
+                      \rw1$next  = write_data;
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \rw1$next  = 32'd0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    read_data = 32'd0;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:71" *)
+    casez (cs)
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:71" */
+      1'h1:
+          (* full_case = 32'd1 *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:72" *)
+          casez (we)
+            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:72" */
+            1'h1:
+                /* empty */;
+            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:77" */
+            default:
+                (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:78" *)
+                casez (addr)
+                  /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:80" */
+                  8'h00:
+                      read_data = rw0;
+                  /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/buswrapper.py:80" */
+                  8'h01:
+                      read_data = rw1;
+                endcase
+          endcase
+    endcase
+  end
 endmodule
 

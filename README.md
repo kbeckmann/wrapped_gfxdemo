@@ -11,6 +11,12 @@ You need to fill in the fields of [info.yaml](info.yaml)
 
 See [here for more information](https://github.com/mattvenn/multi_project_tools/blob/main/docs/project_spec.md)
 
+# Build GDS
+
+```bash
+docker run -it -v $OPENLANE_ROOT:/openLANE_flow -v $PWD:/proj -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:current '/bin/bash' '-c' 'cd /proj; /openLANE_flow/flow.tcl -design .'
+```
+
 # License
 
 This project is [licensed under Apache 2](LICENSE)
