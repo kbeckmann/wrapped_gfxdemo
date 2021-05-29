@@ -81,14 +81,79 @@ module wrapped_myip1(
     //     .pwm1_out   (buf_io_out[15]),
     //     .pwm2_out   (buf_io_out[16]));
 
+
+    // simple test
+    // myip1 myip1_0(
+    //     .clk        (wb_clk_i),
+    //     .reset      (la_data_in[0])
+    // );
+
     // TMDS test
+//     myip1 myip1_0(
+//         .clk        (wb_clk_i),
+//         .reset      (la_data_in[0]),
+
+//         .dvid_out_clk (buf_io_out[0]),
+//         .dvid_out     (buf_io_out[3:1]),
+
+// //        .mem_ren      (     io_in[4]),
+//         .mem_data     ( buf_io_out[15:8]),
+//         .mem_addr     (     io_in[31:16])
+//     );
+
+    // GOL test
     myip1 myip1_0(
         .clk        (wb_clk_i),
         .reset      (la_data_in[0]),
 
-        .dvid_out_clk (buf_io_out[0]),
-        .dvid_out     (buf_io_out[3:1])
+        // FIXME: *MUST* route to user_clock2 later!!!
+        .shift_clk  (wb_clk_i),
+
+        // Route 8 output pins
+        .buf_io_out (buf_io_out[15:8]),
+
+        .wb__adr   (wbs_adr_i),
+        .wb__dat_w (wbs_dat_i),
+        .wb__dat_r (buf_wbs_dat_o),
+        //.wb__sel   (wbs_sel_i),
+        .sel       (wbs_sel_i),
+        .wb__cyc   (wbs_cyc_i),
+        .wb__stb   (wbs_stb_i),
+        .wb__we    (wbs_we_i),
+        .wb__ack   (buf_wbs_ack_o)
     );
+
+    // WB test
+    // myip1 myip1_0(
+    //     .clk        (wb_clk_i),
+    //     .reset      (la_data_in[0]),
+
+    //     .wb__adr   (wbs_adr_i),
+    //     .wb__dat_w (wbs_dat_i),
+    //     .wb__dat_r (buf_wbs_dat_o),
+    //     //.wb__sel   (wbs_sel_i),
+    //     .sel       (wbs_sel_i),
+    //     .wb__cyc   (wbs_cyc_i),
+    //     .wb__stb   (wbs_stb_i),
+    //     .wb__we    (wbs_we_i),
+    //     .wb__ack   (buf_wbs_ack_o)
+    // );
+
+    // WB test2
+    // myip1 myip1_0(
+    //     .clk        (wb_clk_i),
+    //     .reset      (la_data_in[0]),
+
+    //     .wb__adr   (wbs_adr_i),
+    //     .wb__dat_w (wbs_dat_i),
+    //     .wb__dat_r (buf_wbs_dat_o),
+    //     //.wb__sel   (wbs_sel_i),
+    //     .sel       (wbs_sel_i),
+    //     .wb__cyc   (wbs_cyc_i),
+    //     .wb__stb   (wbs_stb_i),
+    //     .wb__we    (wbs_we_i),
+    //     .wb__ack   (buf_wbs_ack_o)
+    // );
 
 endmodule 
 `default_nettype wire

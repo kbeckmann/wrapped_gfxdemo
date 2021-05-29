@@ -31,45 +31,45 @@ async def test_start(dut):
     # wait for reset to go low
     await FallingEdge(dut.uut.mprj.wrapped_myip1.myip1_0.reset)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
+    # await ClockCycles(dut.clk, 2)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
+    # await ClockCycles(dut.clk, 2)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
+    # await ClockCycles(dut.clk, 2)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 0
+    # await ClockCycles(dut.clk, 2)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
+    # await ClockCycles(dut.clk, 2)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
+    # await ClockCycles(dut.clk, 2)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
+    # await ClockCycles(dut.clk, 2)
 
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
-    dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
-    await ClockCycles(dut.clk, 2)
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 1
+    # dut.uut.mprj.wrapped_myip1.myip1_0.enc2_a <= 1
+    # await ClockCycles(dut.clk, 2)
 
 
 

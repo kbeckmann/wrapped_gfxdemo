@@ -15,6 +15,8 @@ See [here for more information](https://github.com/mattvenn/multi_project_tools/
 
 ```bash
 docker run -it -v $OPENLANE_ROOT:/openLANE_flow -v $PWD:/proj -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:current '/bin/bash' '-c' 'cd /proj; /openLANE_flow/flow.tcl -design .'
+
+cp ./runs/24-05_05-38/results/magic/wrapped_myip1.lef ./runs/24-05_05-38/results/lvs/wrapped_myip1.lvs.powered.v ./runs/24-05_05-38/results/magic/wrapped_myip1.gds gds/
 ```
 
 # License
