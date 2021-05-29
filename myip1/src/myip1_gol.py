@@ -1,22 +1,28 @@
 from nmigen import *
 from nmigen.cli import main_parser, main_runner
 from nmigen.lib.fifo import SyncFIFOBuffered
+from nmigen.lib.cdc import ResetSynchronizer
 
 from random import randint
 
+from pergola.gateware.bus.buswrapper import BusWrapper
 from pergola.gateware.tmds import TMDSEncoder
 from pergola.gateware.vga import VGAOutput, VGAOutputSubtarget, VGAParameters
 from pergola.gateware.vga2dvid import VGA2DVID
 from pergola.gateware.vga_testimage import StaticTestImageGenerator
+from pergola.gateware.gameoflife import GameOfLifeGenerator
 
+from nmigen.hdl.rec import Direction
 
-
+MPRJ_BASE_ADR = 0x3000_0000
+MPRJ_FB_ADR = MPRJ_BASE_ADR + 0x100
 
 class DVIDSignalGenerator(Elaboratable):
-    def __init__(self, dvid_out_clk, dvid_out, vga_parameters):
+    def __init__(self, dvid_out_clk, dvid_out, vga_parameters, xdr=1):
         self.dvid_out_clk = dvid_out_clk
         self.dvid_out = dvid_out
         self.vga_parameters = vga_parameters
+        self.xdr = xdr
 
     def elaborate(self, platform):
         m = Module()
@@ -26,6 +32,8 @@ class DVIDSignalGenerator(Elaboratable):
             ('vs', 1),
             ('blank', 1),
         ])
+
+        xdr = self.xdr
 
         r = Signal(8)
         g = Signal(8)
@@ -54,33 +62,48 @@ class DVIDSignalGenerator(Elaboratable):
             out_g = pixel_g,
             out_b = pixel_b,
             out_clock = pixel_clk,
+            xdr = xdr,
         )
 
         # m.submodules += TestImageGenerator(
-        m.submodules += StaticTestImageGenerator(
+        m.submodules += GameOfLifeGenerator(
             vsync=vga_output.vs,
-            h_ctr=m.submodules.vga.h_ctr,
-            v_ctr=m.submodules.vga.v_ctr,
+            vga=m.submodules.vga,
             r=r,
             g=g,
             b=b)
 
         # Store output bits in separate registers
-        #
-        # Also invert signals based on parameters
-        pixel_clk_r = Signal()
-        pixel_r_r = Signal()
-        pixel_g_r = Signal()
-        pixel_b_r = Signal()
+        pixel_clk_r = Signal(xdr)
+        pixel_r_r = Signal(xdr)
+        pixel_g_r = Signal(xdr)
+        pixel_b_r = Signal(xdr)
         m.d.shift += pixel_clk_r.eq(pixel_clk)
         m.d.shift += pixel_r_r  .eq(pixel_r)
         m.d.shift += pixel_g_r  .eq(pixel_g)
         m.d.shift += pixel_b_r  .eq(pixel_b)
 
-        m.d.comb += [
-            self.dvid_out_clk.eq(pixel_clk_r[0]),
-            self.dvid_out.eq(Cat(pixel_b_r[0], pixel_g_r[0], pixel_r_r[0])),
-        ]
+        if xdr == 1:
+            # SDR
+            m.d.comb += [
+                self.dvid_out_clk.eq(pixel_clk_r[0]),
+                self.dvid_out.eq(Cat(pixel_b_r[0], pixel_g_r[0], pixel_r_r[0])),
+            ]
+        elif xdr == 2:
+            # DDR using both edges of the shift clock
+            m.d.comb += [
+                self.dvid_out_clk.eq(Mux(
+                    ClockSignal("shift"),
+                    pixel_clk_r[0],
+                    pixel_clk_r[1]
+                )),
+
+                self.dvid_out.eq(Mux(
+                    ClockSignal("shift"),
+                    Cat(pixel_b_r[0], pixel_g_r[0], pixel_r_r[0]),
+                    Cat(pixel_b_r[1], pixel_g_r[1], pixel_r_r[1])
+                ))
+            ]
 
         return m
 
@@ -205,29 +228,6 @@ dvid_configs = {
         ), 100, 228),
 }
 
-class ROM(Elaboratable):
-    def __init__(self, data, width=8):
-        assert type(data) == list
-
-        self.width = width
-        self.rom = data
-
-        self.addr = Signal(range(len(data)))
-        self.data = Signal(width)
-
-    def elaborate(self, platform):
-        m = Module()
-
-        with m.Switch(self.addr):
-            for i, word in enumerate(self.rom):
-                with m.Case(i):
-                    m.d.comb += self.data.eq(word)
-            with m.Default():
-                m.d.comb += self.data.eq(0)
-
-        return m
-
-
 
 if __name__ == "__main__":
     parser = main_parser()
@@ -244,45 +244,103 @@ if __name__ == "__main__":
     dvid_out_clk = Signal()
     dvid_out = Signal(3)
 
-    # # Really ugly. Create a fake pixel clock that runs at 1/10 of the sync clock
-    # pixel_ctr = Signal(4)
-    # pixel_clk = Signal()
-    # with m.If(pixel_ctr == 5):
-    #     m.d.sync += pixel_ctr.eq(0)
-    #     m.d.sync += pixel_clk.eq(~pixel_clk)
-    # with m.Else():
-    #     m.d.sync += pixel_ctr.eq(pixel_ctr + 1)
-
-    # m.domains += ClockDomain("pixel")
-    # m.d.comb += ClockSignal("pixel").eq(pixel_clk)
-
-    # dvid_config = dvid_configs["640x480p60"]
-    # m.submodules.dvid_signal_generator = DomainRenamer({"sync": "pixel", "shift": "sync"})(DVIDSignalGenerator(
+    dvid_config = dvid_configs["640x480p60"]
+    # m.submodules.dvid_signal_generator = DVIDSignalGenerator(
     #     dvid_out_clk=dvid_out_clk,
     #     dvid_out=dvid_out,
     #     vga_parameters=dvid_config.vga_parameters,
-    # ))
+    #     xdr=2,
+    # )
 
+    #####################
+    # Wishbone interface
+    #####################
 
-    mem_data = Signal(8)
-    mem_addr = Signal(16)
+    rw0 = Signal(32)
+    rw1 = Signal(32)
+    rw2 = Signal(32)
+    rw3 = Signal(32)
 
-    # m.submodules.rom = rom = ROM(width=8, data=[randint(0, 255) for _ in range(256)])
-    # m.d.comb += [
-    #     rom.addr.eq(mem_addr),
-    #     mem_data.eq(rom.data),
-    # ]
+    # m.submodules.wrapper = wrapper = BusWrapper(
+    #     signals_rw=[rw0, rw1, rw2, rw3],
+    # )
 
-    mem = Memory(width=8, depth=2048, init=[randint(0, 31) for _ in range(2048)])
-    m.submodules.mem_rd = mem_rd = mem.read_port()
+    addr_width = 32
+    data_width = 32
+    granularity = 32
+
+    wb = Record([
+        ("adr",   addr_width, Direction.FANOUT),
+        ("dat_w", data_width, Direction.FANOUT),
+        ("dat_r", data_width, Direction.FANIN),
+        ("sel",   data_width // granularity, Direction.FANOUT),
+        ("cyc",   1, Direction.FANOUT),
+        ("stb",   1, Direction.FANOUT),
+        ("we",    1, Direction.FANOUT),
+        ("ack",   1, Direction.FANIN),
+    ])
+
     m.d.comb += [
-        mem_rd.addr.eq(mem_addr),
-        mem_data.eq(mem_rd.data),
+        # wrapper.cs.eq(0),
+        # wrapper.we.eq(wb.we),
+        # wrapper.addr.eq(wb.adr[2:8]),
     ]
 
+    ack_r = Signal()
+
+    #fb = Memory(width=32, depth=32)
+    fb = Memory(width=1, depth=32*32)
+    m.submodules.mem_rd = mem_rd = fb.read_port()
+    m.submodules.mem_wr = mem_wr = fb.write_port()
+
+    with m.If(wb.stb & wb.cyc):
+        with m.If(wb.adr[8:] == (MPRJ_BASE_ADR >> 8)):
+            # m.d.comb += wrapper.cs.eq(1)
+            # m.d.comb += wb.dat_r.eq(wrapper.read_data)
+            # m.d.comb += wrapper.write_data.eq(wb.dat_w)
+            # m.d.sync += wb.ack.eq(ack_r)
+            m.d.sync += ack_r.eq(0)
+        with m.Elif(wb.adr[8:] == (MPRJ_FB_ADR >> 8)):
+            m.d.comb += mem_wr.en.eq(wb.we)
+            m.d.comb += mem_wr.addr.eq(wb.adr[2:12])
+            m.d.comb += mem_wr.data.eq(wb.dat_w)
+            m.d.comb += mem_rd.addr.eq(wb.adr[2:12])
+            m.d.comb += wb.dat_r.eq(mem_rd.data)
+            m.d.sync += wb.ack.eq(ack_r)
+            m.d.sync += ack_r.eq(0)
+    with m.Else():
+        m.d.sync += ack_r.eq(1)
+
+    #################
+
+    # Create a global active high reset signal called `reset`
     reset = Signal()
-    m.d.sync += ResetSignal().eq(reset)
-    m.d.sync += dvid_out.eq(~dvid_out)
+    m.d.comb += ResetSignal(domain="sync").eq(reset)
+
+    # Create `shift` clockdomain for the fast clock domain (5x pixel clock)
+    shift_clk = ClockSignal("shift")
+    m.domains += ClockDomain("shift")
+    m.submodules += ResetSynchronizer(reset, domain="shift")
+
+    sel = Signal(4)
+
+    # Raw output signals
+    buf_io_out = Signal(8)
+
+    # Fake differential signals
+    m.d.comb += [
+        buf_io_out[0].eq( dvid_out_clk),
+        buf_io_out[1].eq(~dvid_out_clk),
+
+        buf_io_out[2].eq( dvid_out[0]),
+        buf_io_out[3].eq(~dvid_out[0]),
+
+        buf_io_out[4].eq( dvid_out[1]),
+        buf_io_out[5].eq(~dvid_out[1]),
+
+        buf_io_out[6].eq( dvid_out[2]),
+        buf_io_out[7].eq(~dvid_out[2]),
+    ]
 
     # python myip1_tmds.py generate -t v > myip1.v
     main_runner(parser, args, m, name="myip1", ports=[
@@ -290,11 +348,20 @@ if __name__ == "__main__":
         reset,
 
         # in
+        shift_clk,
 
         # out
-        dvid_out_clk,
-        dvid_out,
+        buf_io_out,
 
-        mem_addr,
-        mem_data,
+        # wishbone
+        wb.adr,
+        wb.dat_w,
+        wb.dat_r,
+        wb.sel,
+        wb.cyc,
+        wb.stb,
+        wb.we,
+        wb.ack,
+        sel,
+
     ])
