@@ -288,8 +288,8 @@ if __name__ == "__main__":
 
     ack_r = Signal()
 
-    #fb = Memory(width=32, depth=32)
-    fb = Memory(width=1, depth=32*32)
+    fb = Memory(width=32, depth=32)
+    #fb = Memory(width=1, depth=32*32)
     m.submodules.mem_rd = mem_rd = fb.read_port()
     m.submodules.mem_wr = mem_wr = fb.write_port()
 

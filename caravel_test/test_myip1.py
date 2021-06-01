@@ -26,10 +26,10 @@ async def test_start(dut):
     dut.RSTB <= 1
 
     # wait for the project to become active
-    await RisingEdge(dut.uut.mprj.wrapped_myip1.active)
+#    await RisingEdge(dut.uut.mprj.wrapped_myip1.active)
 
     # wait for reset to go low
-    await FallingEdge(dut.uut.mprj.wrapped_myip1.myip1_0.reset)
+#    await FallingEdge(dut.uut.mprj.wrapped_myip1.myip1_0.reset)
 
     # dut.uut.mprj.wrapped_myip1.myip1_0.enc0_a <= 0
     # dut.uut.mprj.wrapped_myip1.myip1_0.enc1_a <= 0

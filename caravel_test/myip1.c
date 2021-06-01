@@ -72,12 +72,15 @@ void main()
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    // activate the project by setting the 0th bit of 2nd bank of LA
-    reg_la1_ena  = 0;
-    reg_la1_data = 1;
+    // activate the project by setting the 1st bit of 2nd bank of LA - depends on the project ID
+    reg_la1_iena = 0; // input enable off
+    reg_la1_oenb = 0; // output enable on
+    reg_la1_data = 1 << 0;
+
 
     // reset design with 0bit of 1st bank of LA
-    reg_la0_ena  = 0;
+    reg_la0_iena = 0;
+    reg_la0_oenb = 0;
     reg_la0_data = 1;
     reg_la0_data = 0;
 
@@ -119,26 +122,24 @@ void main()
     reg_spimaster_config = 0x2102;	// Release housekeeping SPI
 #endif
 
-    *FB0 = 0x01010101;
-    *FB1 = 0x02020202;
-    *FB2 = 0x04040404;
-    *FB3 = 0x08080808;
+    // *FB0 = 0x01010101;
+    // *FB1 = 0x02020202;
+    // *FB2 = 0x04040404;
+    // *FB3 = 0x08080808;
 
-    *REG0 = *FB0;
-    *REG1 = *FB1;
-    *REG2 = *FB2;
-    *REG3 = *FB3;
+    // *REG0 = *FB0;
+    // *REG1 = *FB1;
+    // *REG2 = *FB2;
+    // *REG3 = *FB3;
 
-/*
     *REG0 = 0x01020304;
     *REG1 = 0x10203040;
-    *REG2 = 0x11223344;
-    *REG3 = 0xcafef00d;
-    *REG0 = *REG1;
-    *REG1 = *REG2;
-    *REG2 = *REG3;
-    *REG3 = *REG0;
-*/
+    // *REG2 = 0x11223344;
+    // *REG3 = 0xcafef00d;
+    // *REG0 = *REG1;
+    // *REG1 = *REG2;
+    // *REG2 = *REG3;
+    // *REG3 = *REG0;
 
 }
 

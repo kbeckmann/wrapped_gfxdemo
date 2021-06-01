@@ -14,8 +14,8 @@ set ::env(FP_SIZING) absolute
 set ::env(SYNTH_DEFINES) "MPRJ_IO_PADS=38"
 
 # Fill this
-set ::env(CLOCK_PERIOD) "5"
-set ::env(CLOCK_PORT) "wb_clk_i"
+set ::env(CLOCK_PERIOD) "1"
+set ::env(CLOCK_PORT) "user_clock2"
 
 set ::env(DESIGN_IS_CORE) 0
 set ::env(GLB_RT_MAXLAYER) 5

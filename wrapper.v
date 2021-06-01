@@ -13,28 +13,34 @@ module wrapped_myip1(
     inout vssd1,	// User area 1 digital ground
     inout vssd2,	// User area 2 digital ground
 `endif
-    // interface as user_proj_example.v
-    input wire wb_clk_i,
-    input wire wb_rst_i,
-    input wire wbs_stb_i,
-    input wire wbs_cyc_i,
-    input wire wbs_we_i,
-    input wire [3:0] wbs_sel_i,
-    input wire [31:0] wbs_dat_i,
-    input wire [31:0] wbs_adr_i,
-    output wire wbs_ack_o,
-    output wire [31:0] wbs_dat_o,
+    // wishbone interface
+    input wire wb_clk_i,            // clock, runs at system clock
+    input wire wb_rst_i,            // main system reset
+    input wire wbs_stb_i,           // wishbone write strobe
+    input wire wbs_cyc_i,           // wishbone cycle
+    input wire wbs_we_i,            // wishbone write enable
+    input wire [3:0] wbs_sel_i,     // wishbone write word select
+    input wire [31:0] wbs_dat_i,    // wishbone data in
+    input wire [31:0] wbs_adr_i,    // wishbone address
+    output wire wbs_ack_o,          // wishbone ack
+    output wire [31:0] wbs_dat_o,   // wishbone data out
 
     // Logic Analyzer Signals
     // only provide first 32 bits to reduce wiring congestion
-    input  wire [31:0] la_data_in,
-    output wire [31:0] la_data_out,
-    input  wire [31:0] la_oen,
+    input  wire [31:0] la_data_in,  // from PicoRV32 to your project
+    output wire [31:0] la_data_out, // from your project to PicoRV32
+    input  wire [31:0] la_oenb,     // output enable bar (low for active)
 
     // IOs
-    input  wire [`MPRJ_IO_PADS-1:0] io_in,
-    output wire [`MPRJ_IO_PADS-1:0] io_out,
-    output wire [`MPRJ_IO_PADS-1:0] io_oeb,
+    input  wire [`MPRJ_IO_PADS-1:0] io_in,  // in to your project
+    output wire [`MPRJ_IO_PADS-1:0] io_out, // out fro your project
+    output wire [`MPRJ_IO_PADS-1:0] io_oeb, // out enable bar (low active)
+
+    // Independent clock (on independent integer divider)
+    input wire user_clock2,
+
+    // IRQ
+    output wire [2:0] irq,          // interrupt from project to PicoRV32
     
     // active input, only connect tristated outputs if this is high
     input wire active
@@ -46,6 +52,7 @@ module wrapped_myip1(
     wire [31:0] buf_la_data_out;
     wire [`MPRJ_IO_PADS-1:0] buf_io_out;
     wire [`MPRJ_IO_PADS-1:0] buf_io_oeb;
+    wire [2:0] buf_irq;
 
     `ifdef FORMAL
     // formal can't deal with z, so set all outputs to 0 if not active
@@ -54,6 +61,7 @@ module wrapped_myip1(
     assign la_data_out  = active ? buf_la_data_out  : 32'b0;
     assign io_out       = active ? buf_io_out       : {`MPRJ_IO_PADS{1'b0}};
     assign io_oeb       = active ? buf_io_oeb       : {`MPRJ_IO_PADS{1'b0}};
+    assign irq          = active ? buf_irq          : 3'b0;
     `include "properties.v"
     `else
     // tristate buffers
@@ -62,6 +70,7 @@ module wrapped_myip1(
     assign la_data_out  = active ? buf_la_data_out  : 32'bz;
     assign io_out       = active ? buf_io_out       : {`MPRJ_IO_PADS{1'bz}};
     assign io_oeb       = active ? buf_io_oeb       : {`MPRJ_IO_PADS{1'bz}};
+    assign irq          = active ? buf_irq          : 3'bz;
     `endif
 
     // permanently set oeb so that outputs are always enabled: 0 is output, 1 is high-impedance
@@ -89,39 +98,52 @@ module wrapped_myip1(
     // );
 
     // TMDS test
-//     myip1 myip1_0(
-//         .clk        (wb_clk_i),
-//         .reset      (la_data_in[0]),
-
-//         .dvid_out_clk (buf_io_out[0]),
-//         .dvid_out     (buf_io_out[3:1]),
-
-// //        .mem_ren      (     io_in[4]),
-//         .mem_data     ( buf_io_out[15:8]),
-//         .mem_addr     (     io_in[31:16])
-//     );
-
-    // GOL test
     myip1 myip1_0(
         .clk        (wb_clk_i),
         .reset      (la_data_in[0]),
 
-        // FIXME: *MUST* route to user_clock2 later!!!
-        .shift_clk  (wb_clk_i),
+        // Fast clock
+        .shift_clk  (user_clock2),
 
-        // Route 8 output pins
-        .buf_io_out (buf_io_out[15:8]),
-
+        // Wishbone
         .wb__adr   (wbs_adr_i),
         .wb__dat_w (wbs_dat_i),
         .wb__dat_r (buf_wbs_dat_o),
-        //.wb__sel   (wbs_sel_i),
         .sel       (wbs_sel_i),
         .wb__cyc   (wbs_cyc_i),
         .wb__stb   (wbs_stb_i),
         .wb__we    (wbs_we_i),
-        .wb__ack   (buf_wbs_ack_o)
+        .wb__ack   (buf_wbs_ack_o),
+
+
+        // Route 9 output pins
+        .buf_io_out (buf_io_out[16:8]),
+
+        .buf_irq    (buf_irq)
+
     );
+
+    // GOL test
+    // myip1 myip1_0(
+    //     .clk        (wb_clk_i),
+    //     .reset      (la_data_in[0]),
+
+    //     // Fast clock
+    //     .shift_clk  (user_clock2),
+
+    //     // Route 8 output pins
+    //     .buf_io_out (buf_io_out[15:8]),
+
+    //     .wb__adr   (wbs_adr_i),
+    //     .wb__dat_w (wbs_dat_i),
+    //     .wb__dat_r (buf_wbs_dat_o),
+    //     //.wb__sel   (wbs_sel_i),
+    //     .sel       (wbs_sel_i),
+    //     .wb__cyc   (wbs_cyc_i),
+    //     .wb__stb   (wbs_stb_i),
+    //     .wb__we    (wbs_we_i),
+    //     .wb__ack   (buf_wbs_ack_o)
+    // );
 
     // WB test
     // myip1 myip1_0(

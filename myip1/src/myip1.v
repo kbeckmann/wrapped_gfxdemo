@@ -2,18 +2,18 @@
 
 (* \nmigen.hierarchy  = "myip1.U$$0" *)
 (* generator = "nMigen" *)
-module \U$$0 (shift_clk, reset);
+module \U$$0 (shift_clk, shift_rst, reset);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:163" *)
   wire async_ff_clk;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:163" *)
   wire async_ff_rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:317" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:151" *)
   input reset;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:322" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
   input shift_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:322" *)
-  wire shift_rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  output shift_rst;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:164" *)
   reg stage0 = 1'h1;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:164" *)
@@ -41,1198 +41,405 @@ module \U$$0 (shift_clk, reset);
   assign async_ff_rst = reset;
 endmodule
 
-(* \nmigen.hierarchy  = "myip1" *)
-(* top =  1  *)
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator" *)
 (* generator = "nMigen" *)
-module myip1(shift_clk, buf_io_out, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb, wb__we, wb__ack, sel, clk, rst, reset);
+module dvid_signal_generator(dvid_out_clk, dvid_out, irq, clk, intensity, shift_clk, shift_rst, rst);
   reg \initial  = 0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-  wire \$10 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *)
-  wire \$12 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-  wire \$14 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-  wire \$16 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *)
-  wire \$18 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-  wire \$2 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-  wire \$20 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-  wire \$22 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *)
-  wire \$24 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-  wire \$26 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-  wire \$28 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *)
-  wire \$30 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-  wire \$32 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-  wire \$34 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *)
-  wire \$36 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:293" *)
-  wire [31:0] \$38 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-  wire \$4 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-  wire \$40 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-  wire \$42 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *)
-  wire \$44 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:333" *)
-  wire \$46 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:336" *)
-  wire \$48 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:339" *)
-  wire \$50 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:342" *)
-  wire \$52 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *)
-  wire \$6 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-  wire \$8 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:289" *)
-  reg ack_r = 1'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:289" *)
-  reg \ack_r$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:328" *)
-  output [7:0] buf_io_out;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:96" *)
+  wire \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:97" *)
+  wire \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:120" *)
+  wire \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:126" *)
+  wire [2:0] \$7 ;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:245" *)
-  wire [2:0] dvid_out;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:244" *)
-  wire dvid_out_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:293" *)
-  reg [9:0] fb_r_addr;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:293" *)
-  wire fb_r_data;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:294" *)
-  reg [9:0] fb_w_addr;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:294" *)
-  reg fb_w_data;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:294" *)
-  reg fb_w_en;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:317" *)
-  input reset;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:148" *)
+  output [2:0] dvid_out;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:147" *)
+  output dvid_out_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
+  input [7:0] intensity;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:30" *)
+  output [1:0] irq;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:107" *)
+  reg [1:0] pixel_b_r = 2'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:107" *)
+  reg [1:0] \pixel_b_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *)
+  reg [1:0] pixel_clk_r = 2'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *)
+  reg [1:0] \pixel_clk_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:106" *)
+  reg [1:0] pixel_g_r = 2'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:106" *)
+  reg [1:0] \pixel_g_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:105" *)
+  reg [1:0] pixel_r_r = 2'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:105" *)
+  reg [1:0] \pixel_r_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:74" *)
+  wire [7:0] rotozoom_intensity;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
-  output rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:325" *)
-  input [3:0] sel;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:322" *)
+  input rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
   input shift_clk;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  output wb__ack;
-  reg wb__ack = 1'h0;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  reg \wb__ack$next ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  input [31:0] wb__adr;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  input wb__cyc;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  output [31:0] wb__dat_r;
-  reg [31:0] wb__dat_r;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  input [31:0] wb__dat_w;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  input wb__sel;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  input wb__stb;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:272" *)
-  input wb__we;
-  reg [0:0] fb [1023:0];
-  initial begin
-    fb[0] = 1'h0;
-    fb[1] = 1'h0;
-    fb[2] = 1'h0;
-    fb[3] = 1'h0;
-    fb[4] = 1'h0;
-    fb[5] = 1'h0;
-    fb[6] = 1'h0;
-    fb[7] = 1'h0;
-    fb[8] = 1'h0;
-    fb[9] = 1'h0;
-    fb[10] = 1'h0;
-    fb[11] = 1'h0;
-    fb[12] = 1'h0;
-    fb[13] = 1'h0;
-    fb[14] = 1'h0;
-    fb[15] = 1'h0;
-    fb[16] = 1'h0;
-    fb[17] = 1'h0;
-    fb[18] = 1'h0;
-    fb[19] = 1'h0;
-    fb[20] = 1'h0;
-    fb[21] = 1'h0;
-    fb[22] = 1'h0;
-    fb[23] = 1'h0;
-    fb[24] = 1'h0;
-    fb[25] = 1'h0;
-    fb[26] = 1'h0;
-    fb[27] = 1'h0;
-    fb[28] = 1'h0;
-    fb[29] = 1'h0;
-    fb[30] = 1'h0;
-    fb[31] = 1'h0;
-    fb[32] = 1'h0;
-    fb[33] = 1'h0;
-    fb[34] = 1'h0;
-    fb[35] = 1'h0;
-    fb[36] = 1'h0;
-    fb[37] = 1'h0;
-    fb[38] = 1'h0;
-    fb[39] = 1'h0;
-    fb[40] = 1'h0;
-    fb[41] = 1'h0;
-    fb[42] = 1'h0;
-    fb[43] = 1'h0;
-    fb[44] = 1'h0;
-    fb[45] = 1'h0;
-    fb[46] = 1'h0;
-    fb[47] = 1'h0;
-    fb[48] = 1'h0;
-    fb[49] = 1'h0;
-    fb[50] = 1'h0;
-    fb[51] = 1'h0;
-    fb[52] = 1'h0;
-    fb[53] = 1'h0;
-    fb[54] = 1'h0;
-    fb[55] = 1'h0;
-    fb[56] = 1'h0;
-    fb[57] = 1'h0;
-    fb[58] = 1'h0;
-    fb[59] = 1'h0;
-    fb[60] = 1'h0;
-    fb[61] = 1'h0;
-    fb[62] = 1'h0;
-    fb[63] = 1'h0;
-    fb[64] = 1'h0;
-    fb[65] = 1'h0;
-    fb[66] = 1'h0;
-    fb[67] = 1'h0;
-    fb[68] = 1'h0;
-    fb[69] = 1'h0;
-    fb[70] = 1'h0;
-    fb[71] = 1'h0;
-    fb[72] = 1'h0;
-    fb[73] = 1'h0;
-    fb[74] = 1'h0;
-    fb[75] = 1'h0;
-    fb[76] = 1'h0;
-    fb[77] = 1'h0;
-    fb[78] = 1'h0;
-    fb[79] = 1'h0;
-    fb[80] = 1'h0;
-    fb[81] = 1'h0;
-    fb[82] = 1'h0;
-    fb[83] = 1'h0;
-    fb[84] = 1'h0;
-    fb[85] = 1'h0;
-    fb[86] = 1'h0;
-    fb[87] = 1'h0;
-    fb[88] = 1'h0;
-    fb[89] = 1'h0;
-    fb[90] = 1'h0;
-    fb[91] = 1'h0;
-    fb[92] = 1'h0;
-    fb[93] = 1'h0;
-    fb[94] = 1'h0;
-    fb[95] = 1'h0;
-    fb[96] = 1'h0;
-    fb[97] = 1'h0;
-    fb[98] = 1'h0;
-    fb[99] = 1'h0;
-    fb[100] = 1'h0;
-    fb[101] = 1'h0;
-    fb[102] = 1'h0;
-    fb[103] = 1'h0;
-    fb[104] = 1'h0;
-    fb[105] = 1'h0;
-    fb[106] = 1'h0;
-    fb[107] = 1'h0;
-    fb[108] = 1'h0;
-    fb[109] = 1'h0;
-    fb[110] = 1'h0;
-    fb[111] = 1'h0;
-    fb[112] = 1'h0;
-    fb[113] = 1'h0;
-    fb[114] = 1'h0;
-    fb[115] = 1'h0;
-    fb[116] = 1'h0;
-    fb[117] = 1'h0;
-    fb[118] = 1'h0;
-    fb[119] = 1'h0;
-    fb[120] = 1'h0;
-    fb[121] = 1'h0;
-    fb[122] = 1'h0;
-    fb[123] = 1'h0;
-    fb[124] = 1'h0;
-    fb[125] = 1'h0;
-    fb[126] = 1'h0;
-    fb[127] = 1'h0;
-    fb[128] = 1'h0;
-    fb[129] = 1'h0;
-    fb[130] = 1'h0;
-    fb[131] = 1'h0;
-    fb[132] = 1'h0;
-    fb[133] = 1'h0;
-    fb[134] = 1'h0;
-    fb[135] = 1'h0;
-    fb[136] = 1'h0;
-    fb[137] = 1'h0;
-    fb[138] = 1'h0;
-    fb[139] = 1'h0;
-    fb[140] = 1'h0;
-    fb[141] = 1'h0;
-    fb[142] = 1'h0;
-    fb[143] = 1'h0;
-    fb[144] = 1'h0;
-    fb[145] = 1'h0;
-    fb[146] = 1'h0;
-    fb[147] = 1'h0;
-    fb[148] = 1'h0;
-    fb[149] = 1'h0;
-    fb[150] = 1'h0;
-    fb[151] = 1'h0;
-    fb[152] = 1'h0;
-    fb[153] = 1'h0;
-    fb[154] = 1'h0;
-    fb[155] = 1'h0;
-    fb[156] = 1'h0;
-    fb[157] = 1'h0;
-    fb[158] = 1'h0;
-    fb[159] = 1'h0;
-    fb[160] = 1'h0;
-    fb[161] = 1'h0;
-    fb[162] = 1'h0;
-    fb[163] = 1'h0;
-    fb[164] = 1'h0;
-    fb[165] = 1'h0;
-    fb[166] = 1'h0;
-    fb[167] = 1'h0;
-    fb[168] = 1'h0;
-    fb[169] = 1'h0;
-    fb[170] = 1'h0;
-    fb[171] = 1'h0;
-    fb[172] = 1'h0;
-    fb[173] = 1'h0;
-    fb[174] = 1'h0;
-    fb[175] = 1'h0;
-    fb[176] = 1'h0;
-    fb[177] = 1'h0;
-    fb[178] = 1'h0;
-    fb[179] = 1'h0;
-    fb[180] = 1'h0;
-    fb[181] = 1'h0;
-    fb[182] = 1'h0;
-    fb[183] = 1'h0;
-    fb[184] = 1'h0;
-    fb[185] = 1'h0;
-    fb[186] = 1'h0;
-    fb[187] = 1'h0;
-    fb[188] = 1'h0;
-    fb[189] = 1'h0;
-    fb[190] = 1'h0;
-    fb[191] = 1'h0;
-    fb[192] = 1'h0;
-    fb[193] = 1'h0;
-    fb[194] = 1'h0;
-    fb[195] = 1'h0;
-    fb[196] = 1'h0;
-    fb[197] = 1'h0;
-    fb[198] = 1'h0;
-    fb[199] = 1'h0;
-    fb[200] = 1'h0;
-    fb[201] = 1'h0;
-    fb[202] = 1'h0;
-    fb[203] = 1'h0;
-    fb[204] = 1'h0;
-    fb[205] = 1'h0;
-    fb[206] = 1'h0;
-    fb[207] = 1'h0;
-    fb[208] = 1'h0;
-    fb[209] = 1'h0;
-    fb[210] = 1'h0;
-    fb[211] = 1'h0;
-    fb[212] = 1'h0;
-    fb[213] = 1'h0;
-    fb[214] = 1'h0;
-    fb[215] = 1'h0;
-    fb[216] = 1'h0;
-    fb[217] = 1'h0;
-    fb[218] = 1'h0;
-    fb[219] = 1'h0;
-    fb[220] = 1'h0;
-    fb[221] = 1'h0;
-    fb[222] = 1'h0;
-    fb[223] = 1'h0;
-    fb[224] = 1'h0;
-    fb[225] = 1'h0;
-    fb[226] = 1'h0;
-    fb[227] = 1'h0;
-    fb[228] = 1'h0;
-    fb[229] = 1'h0;
-    fb[230] = 1'h0;
-    fb[231] = 1'h0;
-    fb[232] = 1'h0;
-    fb[233] = 1'h0;
-    fb[234] = 1'h0;
-    fb[235] = 1'h0;
-    fb[236] = 1'h0;
-    fb[237] = 1'h0;
-    fb[238] = 1'h0;
-    fb[239] = 1'h0;
-    fb[240] = 1'h0;
-    fb[241] = 1'h0;
-    fb[242] = 1'h0;
-    fb[243] = 1'h0;
-    fb[244] = 1'h0;
-    fb[245] = 1'h0;
-    fb[246] = 1'h0;
-    fb[247] = 1'h0;
-    fb[248] = 1'h0;
-    fb[249] = 1'h0;
-    fb[250] = 1'h0;
-    fb[251] = 1'h0;
-    fb[252] = 1'h0;
-    fb[253] = 1'h0;
-    fb[254] = 1'h0;
-    fb[255] = 1'h0;
-    fb[256] = 1'h0;
-    fb[257] = 1'h0;
-    fb[258] = 1'h0;
-    fb[259] = 1'h0;
-    fb[260] = 1'h0;
-    fb[261] = 1'h0;
-    fb[262] = 1'h0;
-    fb[263] = 1'h0;
-    fb[264] = 1'h0;
-    fb[265] = 1'h0;
-    fb[266] = 1'h0;
-    fb[267] = 1'h0;
-    fb[268] = 1'h0;
-    fb[269] = 1'h0;
-    fb[270] = 1'h0;
-    fb[271] = 1'h0;
-    fb[272] = 1'h0;
-    fb[273] = 1'h0;
-    fb[274] = 1'h0;
-    fb[275] = 1'h0;
-    fb[276] = 1'h0;
-    fb[277] = 1'h0;
-    fb[278] = 1'h0;
-    fb[279] = 1'h0;
-    fb[280] = 1'h0;
-    fb[281] = 1'h0;
-    fb[282] = 1'h0;
-    fb[283] = 1'h0;
-    fb[284] = 1'h0;
-    fb[285] = 1'h0;
-    fb[286] = 1'h0;
-    fb[287] = 1'h0;
-    fb[288] = 1'h0;
-    fb[289] = 1'h0;
-    fb[290] = 1'h0;
-    fb[291] = 1'h0;
-    fb[292] = 1'h0;
-    fb[293] = 1'h0;
-    fb[294] = 1'h0;
-    fb[295] = 1'h0;
-    fb[296] = 1'h0;
-    fb[297] = 1'h0;
-    fb[298] = 1'h0;
-    fb[299] = 1'h0;
-    fb[300] = 1'h0;
-    fb[301] = 1'h0;
-    fb[302] = 1'h0;
-    fb[303] = 1'h0;
-    fb[304] = 1'h0;
-    fb[305] = 1'h0;
-    fb[306] = 1'h0;
-    fb[307] = 1'h0;
-    fb[308] = 1'h0;
-    fb[309] = 1'h0;
-    fb[310] = 1'h0;
-    fb[311] = 1'h0;
-    fb[312] = 1'h0;
-    fb[313] = 1'h0;
-    fb[314] = 1'h0;
-    fb[315] = 1'h0;
-    fb[316] = 1'h0;
-    fb[317] = 1'h0;
-    fb[318] = 1'h0;
-    fb[319] = 1'h0;
-    fb[320] = 1'h0;
-    fb[321] = 1'h0;
-    fb[322] = 1'h0;
-    fb[323] = 1'h0;
-    fb[324] = 1'h0;
-    fb[325] = 1'h0;
-    fb[326] = 1'h0;
-    fb[327] = 1'h0;
-    fb[328] = 1'h0;
-    fb[329] = 1'h0;
-    fb[330] = 1'h0;
-    fb[331] = 1'h0;
-    fb[332] = 1'h0;
-    fb[333] = 1'h0;
-    fb[334] = 1'h0;
-    fb[335] = 1'h0;
-    fb[336] = 1'h0;
-    fb[337] = 1'h0;
-    fb[338] = 1'h0;
-    fb[339] = 1'h0;
-    fb[340] = 1'h0;
-    fb[341] = 1'h0;
-    fb[342] = 1'h0;
-    fb[343] = 1'h0;
-    fb[344] = 1'h0;
-    fb[345] = 1'h0;
-    fb[346] = 1'h0;
-    fb[347] = 1'h0;
-    fb[348] = 1'h0;
-    fb[349] = 1'h0;
-    fb[350] = 1'h0;
-    fb[351] = 1'h0;
-    fb[352] = 1'h0;
-    fb[353] = 1'h0;
-    fb[354] = 1'h0;
-    fb[355] = 1'h0;
-    fb[356] = 1'h0;
-    fb[357] = 1'h0;
-    fb[358] = 1'h0;
-    fb[359] = 1'h0;
-    fb[360] = 1'h0;
-    fb[361] = 1'h0;
-    fb[362] = 1'h0;
-    fb[363] = 1'h0;
-    fb[364] = 1'h0;
-    fb[365] = 1'h0;
-    fb[366] = 1'h0;
-    fb[367] = 1'h0;
-    fb[368] = 1'h0;
-    fb[369] = 1'h0;
-    fb[370] = 1'h0;
-    fb[371] = 1'h0;
-    fb[372] = 1'h0;
-    fb[373] = 1'h0;
-    fb[374] = 1'h0;
-    fb[375] = 1'h0;
-    fb[376] = 1'h0;
-    fb[377] = 1'h0;
-    fb[378] = 1'h0;
-    fb[379] = 1'h0;
-    fb[380] = 1'h0;
-    fb[381] = 1'h0;
-    fb[382] = 1'h0;
-    fb[383] = 1'h0;
-    fb[384] = 1'h0;
-    fb[385] = 1'h0;
-    fb[386] = 1'h0;
-    fb[387] = 1'h0;
-    fb[388] = 1'h0;
-    fb[389] = 1'h0;
-    fb[390] = 1'h0;
-    fb[391] = 1'h0;
-    fb[392] = 1'h0;
-    fb[393] = 1'h0;
-    fb[394] = 1'h0;
-    fb[395] = 1'h0;
-    fb[396] = 1'h0;
-    fb[397] = 1'h0;
-    fb[398] = 1'h0;
-    fb[399] = 1'h0;
-    fb[400] = 1'h0;
-    fb[401] = 1'h0;
-    fb[402] = 1'h0;
-    fb[403] = 1'h0;
-    fb[404] = 1'h0;
-    fb[405] = 1'h0;
-    fb[406] = 1'h0;
-    fb[407] = 1'h0;
-    fb[408] = 1'h0;
-    fb[409] = 1'h0;
-    fb[410] = 1'h0;
-    fb[411] = 1'h0;
-    fb[412] = 1'h0;
-    fb[413] = 1'h0;
-    fb[414] = 1'h0;
-    fb[415] = 1'h0;
-    fb[416] = 1'h0;
-    fb[417] = 1'h0;
-    fb[418] = 1'h0;
-    fb[419] = 1'h0;
-    fb[420] = 1'h0;
-    fb[421] = 1'h0;
-    fb[422] = 1'h0;
-    fb[423] = 1'h0;
-    fb[424] = 1'h0;
-    fb[425] = 1'h0;
-    fb[426] = 1'h0;
-    fb[427] = 1'h0;
-    fb[428] = 1'h0;
-    fb[429] = 1'h0;
-    fb[430] = 1'h0;
-    fb[431] = 1'h0;
-    fb[432] = 1'h0;
-    fb[433] = 1'h0;
-    fb[434] = 1'h0;
-    fb[435] = 1'h0;
-    fb[436] = 1'h0;
-    fb[437] = 1'h0;
-    fb[438] = 1'h0;
-    fb[439] = 1'h0;
-    fb[440] = 1'h0;
-    fb[441] = 1'h0;
-    fb[442] = 1'h0;
-    fb[443] = 1'h0;
-    fb[444] = 1'h0;
-    fb[445] = 1'h0;
-    fb[446] = 1'h0;
-    fb[447] = 1'h0;
-    fb[448] = 1'h0;
-    fb[449] = 1'h0;
-    fb[450] = 1'h0;
-    fb[451] = 1'h0;
-    fb[452] = 1'h0;
-    fb[453] = 1'h0;
-    fb[454] = 1'h0;
-    fb[455] = 1'h0;
-    fb[456] = 1'h0;
-    fb[457] = 1'h0;
-    fb[458] = 1'h0;
-    fb[459] = 1'h0;
-    fb[460] = 1'h0;
-    fb[461] = 1'h0;
-    fb[462] = 1'h0;
-    fb[463] = 1'h0;
-    fb[464] = 1'h0;
-    fb[465] = 1'h0;
-    fb[466] = 1'h0;
-    fb[467] = 1'h0;
-    fb[468] = 1'h0;
-    fb[469] = 1'h0;
-    fb[470] = 1'h0;
-    fb[471] = 1'h0;
-    fb[472] = 1'h0;
-    fb[473] = 1'h0;
-    fb[474] = 1'h0;
-    fb[475] = 1'h0;
-    fb[476] = 1'h0;
-    fb[477] = 1'h0;
-    fb[478] = 1'h0;
-    fb[479] = 1'h0;
-    fb[480] = 1'h0;
-    fb[481] = 1'h0;
-    fb[482] = 1'h0;
-    fb[483] = 1'h0;
-    fb[484] = 1'h0;
-    fb[485] = 1'h0;
-    fb[486] = 1'h0;
-    fb[487] = 1'h0;
-    fb[488] = 1'h0;
-    fb[489] = 1'h0;
-    fb[490] = 1'h0;
-    fb[491] = 1'h0;
-    fb[492] = 1'h0;
-    fb[493] = 1'h0;
-    fb[494] = 1'h0;
-    fb[495] = 1'h0;
-    fb[496] = 1'h0;
-    fb[497] = 1'h0;
-    fb[498] = 1'h0;
-    fb[499] = 1'h0;
-    fb[500] = 1'h0;
-    fb[501] = 1'h0;
-    fb[502] = 1'h0;
-    fb[503] = 1'h0;
-    fb[504] = 1'h0;
-    fb[505] = 1'h0;
-    fb[506] = 1'h0;
-    fb[507] = 1'h0;
-    fb[508] = 1'h0;
-    fb[509] = 1'h0;
-    fb[510] = 1'h0;
-    fb[511] = 1'h0;
-    fb[512] = 1'h0;
-    fb[513] = 1'h0;
-    fb[514] = 1'h0;
-    fb[515] = 1'h0;
-    fb[516] = 1'h0;
-    fb[517] = 1'h0;
-    fb[518] = 1'h0;
-    fb[519] = 1'h0;
-    fb[520] = 1'h0;
-    fb[521] = 1'h0;
-    fb[522] = 1'h0;
-    fb[523] = 1'h0;
-    fb[524] = 1'h0;
-    fb[525] = 1'h0;
-    fb[526] = 1'h0;
-    fb[527] = 1'h0;
-    fb[528] = 1'h0;
-    fb[529] = 1'h0;
-    fb[530] = 1'h0;
-    fb[531] = 1'h0;
-    fb[532] = 1'h0;
-    fb[533] = 1'h0;
-    fb[534] = 1'h0;
-    fb[535] = 1'h0;
-    fb[536] = 1'h0;
-    fb[537] = 1'h0;
-    fb[538] = 1'h0;
-    fb[539] = 1'h0;
-    fb[540] = 1'h0;
-    fb[541] = 1'h0;
-    fb[542] = 1'h0;
-    fb[543] = 1'h0;
-    fb[544] = 1'h0;
-    fb[545] = 1'h0;
-    fb[546] = 1'h0;
-    fb[547] = 1'h0;
-    fb[548] = 1'h0;
-    fb[549] = 1'h0;
-    fb[550] = 1'h0;
-    fb[551] = 1'h0;
-    fb[552] = 1'h0;
-    fb[553] = 1'h0;
-    fb[554] = 1'h0;
-    fb[555] = 1'h0;
-    fb[556] = 1'h0;
-    fb[557] = 1'h0;
-    fb[558] = 1'h0;
-    fb[559] = 1'h0;
-    fb[560] = 1'h0;
-    fb[561] = 1'h0;
-    fb[562] = 1'h0;
-    fb[563] = 1'h0;
-    fb[564] = 1'h0;
-    fb[565] = 1'h0;
-    fb[566] = 1'h0;
-    fb[567] = 1'h0;
-    fb[568] = 1'h0;
-    fb[569] = 1'h0;
-    fb[570] = 1'h0;
-    fb[571] = 1'h0;
-    fb[572] = 1'h0;
-    fb[573] = 1'h0;
-    fb[574] = 1'h0;
-    fb[575] = 1'h0;
-    fb[576] = 1'h0;
-    fb[577] = 1'h0;
-    fb[578] = 1'h0;
-    fb[579] = 1'h0;
-    fb[580] = 1'h0;
-    fb[581] = 1'h0;
-    fb[582] = 1'h0;
-    fb[583] = 1'h0;
-    fb[584] = 1'h0;
-    fb[585] = 1'h0;
-    fb[586] = 1'h0;
-    fb[587] = 1'h0;
-    fb[588] = 1'h0;
-    fb[589] = 1'h0;
-    fb[590] = 1'h0;
-    fb[591] = 1'h0;
-    fb[592] = 1'h0;
-    fb[593] = 1'h0;
-    fb[594] = 1'h0;
-    fb[595] = 1'h0;
-    fb[596] = 1'h0;
-    fb[597] = 1'h0;
-    fb[598] = 1'h0;
-    fb[599] = 1'h0;
-    fb[600] = 1'h0;
-    fb[601] = 1'h0;
-    fb[602] = 1'h0;
-    fb[603] = 1'h0;
-    fb[604] = 1'h0;
-    fb[605] = 1'h0;
-    fb[606] = 1'h0;
-    fb[607] = 1'h0;
-    fb[608] = 1'h0;
-    fb[609] = 1'h0;
-    fb[610] = 1'h0;
-    fb[611] = 1'h0;
-    fb[612] = 1'h0;
-    fb[613] = 1'h0;
-    fb[614] = 1'h0;
-    fb[615] = 1'h0;
-    fb[616] = 1'h0;
-    fb[617] = 1'h0;
-    fb[618] = 1'h0;
-    fb[619] = 1'h0;
-    fb[620] = 1'h0;
-    fb[621] = 1'h0;
-    fb[622] = 1'h0;
-    fb[623] = 1'h0;
-    fb[624] = 1'h0;
-    fb[625] = 1'h0;
-    fb[626] = 1'h0;
-    fb[627] = 1'h0;
-    fb[628] = 1'h0;
-    fb[629] = 1'h0;
-    fb[630] = 1'h0;
-    fb[631] = 1'h0;
-    fb[632] = 1'h0;
-    fb[633] = 1'h0;
-    fb[634] = 1'h0;
-    fb[635] = 1'h0;
-    fb[636] = 1'h0;
-    fb[637] = 1'h0;
-    fb[638] = 1'h0;
-    fb[639] = 1'h0;
-    fb[640] = 1'h0;
-    fb[641] = 1'h0;
-    fb[642] = 1'h0;
-    fb[643] = 1'h0;
-    fb[644] = 1'h0;
-    fb[645] = 1'h0;
-    fb[646] = 1'h0;
-    fb[647] = 1'h0;
-    fb[648] = 1'h0;
-    fb[649] = 1'h0;
-    fb[650] = 1'h0;
-    fb[651] = 1'h0;
-    fb[652] = 1'h0;
-    fb[653] = 1'h0;
-    fb[654] = 1'h0;
-    fb[655] = 1'h0;
-    fb[656] = 1'h0;
-    fb[657] = 1'h0;
-    fb[658] = 1'h0;
-    fb[659] = 1'h0;
-    fb[660] = 1'h0;
-    fb[661] = 1'h0;
-    fb[662] = 1'h0;
-    fb[663] = 1'h0;
-    fb[664] = 1'h0;
-    fb[665] = 1'h0;
-    fb[666] = 1'h0;
-    fb[667] = 1'h0;
-    fb[668] = 1'h0;
-    fb[669] = 1'h0;
-    fb[670] = 1'h0;
-    fb[671] = 1'h0;
-    fb[672] = 1'h0;
-    fb[673] = 1'h0;
-    fb[674] = 1'h0;
-    fb[675] = 1'h0;
-    fb[676] = 1'h0;
-    fb[677] = 1'h0;
-    fb[678] = 1'h0;
-    fb[679] = 1'h0;
-    fb[680] = 1'h0;
-    fb[681] = 1'h0;
-    fb[682] = 1'h0;
-    fb[683] = 1'h0;
-    fb[684] = 1'h0;
-    fb[685] = 1'h0;
-    fb[686] = 1'h0;
-    fb[687] = 1'h0;
-    fb[688] = 1'h0;
-    fb[689] = 1'h0;
-    fb[690] = 1'h0;
-    fb[691] = 1'h0;
-    fb[692] = 1'h0;
-    fb[693] = 1'h0;
-    fb[694] = 1'h0;
-    fb[695] = 1'h0;
-    fb[696] = 1'h0;
-    fb[697] = 1'h0;
-    fb[698] = 1'h0;
-    fb[699] = 1'h0;
-    fb[700] = 1'h0;
-    fb[701] = 1'h0;
-    fb[702] = 1'h0;
-    fb[703] = 1'h0;
-    fb[704] = 1'h0;
-    fb[705] = 1'h0;
-    fb[706] = 1'h0;
-    fb[707] = 1'h0;
-    fb[708] = 1'h0;
-    fb[709] = 1'h0;
-    fb[710] = 1'h0;
-    fb[711] = 1'h0;
-    fb[712] = 1'h0;
-    fb[713] = 1'h0;
-    fb[714] = 1'h0;
-    fb[715] = 1'h0;
-    fb[716] = 1'h0;
-    fb[717] = 1'h0;
-    fb[718] = 1'h0;
-    fb[719] = 1'h0;
-    fb[720] = 1'h0;
-    fb[721] = 1'h0;
-    fb[722] = 1'h0;
-    fb[723] = 1'h0;
-    fb[724] = 1'h0;
-    fb[725] = 1'h0;
-    fb[726] = 1'h0;
-    fb[727] = 1'h0;
-    fb[728] = 1'h0;
-    fb[729] = 1'h0;
-    fb[730] = 1'h0;
-    fb[731] = 1'h0;
-    fb[732] = 1'h0;
-    fb[733] = 1'h0;
-    fb[734] = 1'h0;
-    fb[735] = 1'h0;
-    fb[736] = 1'h0;
-    fb[737] = 1'h0;
-    fb[738] = 1'h0;
-    fb[739] = 1'h0;
-    fb[740] = 1'h0;
-    fb[741] = 1'h0;
-    fb[742] = 1'h0;
-    fb[743] = 1'h0;
-    fb[744] = 1'h0;
-    fb[745] = 1'h0;
-    fb[746] = 1'h0;
-    fb[747] = 1'h0;
-    fb[748] = 1'h0;
-    fb[749] = 1'h0;
-    fb[750] = 1'h0;
-    fb[751] = 1'h0;
-    fb[752] = 1'h0;
-    fb[753] = 1'h0;
-    fb[754] = 1'h0;
-    fb[755] = 1'h0;
-    fb[756] = 1'h0;
-    fb[757] = 1'h0;
-    fb[758] = 1'h0;
-    fb[759] = 1'h0;
-    fb[760] = 1'h0;
-    fb[761] = 1'h0;
-    fb[762] = 1'h0;
-    fb[763] = 1'h0;
-    fb[764] = 1'h0;
-    fb[765] = 1'h0;
-    fb[766] = 1'h0;
-    fb[767] = 1'h0;
-    fb[768] = 1'h0;
-    fb[769] = 1'h0;
-    fb[770] = 1'h0;
-    fb[771] = 1'h0;
-    fb[772] = 1'h0;
-    fb[773] = 1'h0;
-    fb[774] = 1'h0;
-    fb[775] = 1'h0;
-    fb[776] = 1'h0;
-    fb[777] = 1'h0;
-    fb[778] = 1'h0;
-    fb[779] = 1'h0;
-    fb[780] = 1'h0;
-    fb[781] = 1'h0;
-    fb[782] = 1'h0;
-    fb[783] = 1'h0;
-    fb[784] = 1'h0;
-    fb[785] = 1'h0;
-    fb[786] = 1'h0;
-    fb[787] = 1'h0;
-    fb[788] = 1'h0;
-    fb[789] = 1'h0;
-    fb[790] = 1'h0;
-    fb[791] = 1'h0;
-    fb[792] = 1'h0;
-    fb[793] = 1'h0;
-    fb[794] = 1'h0;
-    fb[795] = 1'h0;
-    fb[796] = 1'h0;
-    fb[797] = 1'h0;
-    fb[798] = 1'h0;
-    fb[799] = 1'h0;
-    fb[800] = 1'h0;
-    fb[801] = 1'h0;
-    fb[802] = 1'h0;
-    fb[803] = 1'h0;
-    fb[804] = 1'h0;
-    fb[805] = 1'h0;
-    fb[806] = 1'h0;
-    fb[807] = 1'h0;
-    fb[808] = 1'h0;
-    fb[809] = 1'h0;
-    fb[810] = 1'h0;
-    fb[811] = 1'h0;
-    fb[812] = 1'h0;
-    fb[813] = 1'h0;
-    fb[814] = 1'h0;
-    fb[815] = 1'h0;
-    fb[816] = 1'h0;
-    fb[817] = 1'h0;
-    fb[818] = 1'h0;
-    fb[819] = 1'h0;
-    fb[820] = 1'h0;
-    fb[821] = 1'h0;
-    fb[822] = 1'h0;
-    fb[823] = 1'h0;
-    fb[824] = 1'h0;
-    fb[825] = 1'h0;
-    fb[826] = 1'h0;
-    fb[827] = 1'h0;
-    fb[828] = 1'h0;
-    fb[829] = 1'h0;
-    fb[830] = 1'h0;
-    fb[831] = 1'h0;
-    fb[832] = 1'h0;
-    fb[833] = 1'h0;
-    fb[834] = 1'h0;
-    fb[835] = 1'h0;
-    fb[836] = 1'h0;
-    fb[837] = 1'h0;
-    fb[838] = 1'h0;
-    fb[839] = 1'h0;
-    fb[840] = 1'h0;
-    fb[841] = 1'h0;
-    fb[842] = 1'h0;
-    fb[843] = 1'h0;
-    fb[844] = 1'h0;
-    fb[845] = 1'h0;
-    fb[846] = 1'h0;
-    fb[847] = 1'h0;
-    fb[848] = 1'h0;
-    fb[849] = 1'h0;
-    fb[850] = 1'h0;
-    fb[851] = 1'h0;
-    fb[852] = 1'h0;
-    fb[853] = 1'h0;
-    fb[854] = 1'h0;
-    fb[855] = 1'h0;
-    fb[856] = 1'h0;
-    fb[857] = 1'h0;
-    fb[858] = 1'h0;
-    fb[859] = 1'h0;
-    fb[860] = 1'h0;
-    fb[861] = 1'h0;
-    fb[862] = 1'h0;
-    fb[863] = 1'h0;
-    fb[864] = 1'h0;
-    fb[865] = 1'h0;
-    fb[866] = 1'h0;
-    fb[867] = 1'h0;
-    fb[868] = 1'h0;
-    fb[869] = 1'h0;
-    fb[870] = 1'h0;
-    fb[871] = 1'h0;
-    fb[872] = 1'h0;
-    fb[873] = 1'h0;
-    fb[874] = 1'h0;
-    fb[875] = 1'h0;
-    fb[876] = 1'h0;
-    fb[877] = 1'h0;
-    fb[878] = 1'h0;
-    fb[879] = 1'h0;
-    fb[880] = 1'h0;
-    fb[881] = 1'h0;
-    fb[882] = 1'h0;
-    fb[883] = 1'h0;
-    fb[884] = 1'h0;
-    fb[885] = 1'h0;
-    fb[886] = 1'h0;
-    fb[887] = 1'h0;
-    fb[888] = 1'h0;
-    fb[889] = 1'h0;
-    fb[890] = 1'h0;
-    fb[891] = 1'h0;
-    fb[892] = 1'h0;
-    fb[893] = 1'h0;
-    fb[894] = 1'h0;
-    fb[895] = 1'h0;
-    fb[896] = 1'h0;
-    fb[897] = 1'h0;
-    fb[898] = 1'h0;
-    fb[899] = 1'h0;
-    fb[900] = 1'h0;
-    fb[901] = 1'h0;
-    fb[902] = 1'h0;
-    fb[903] = 1'h0;
-    fb[904] = 1'h0;
-    fb[905] = 1'h0;
-    fb[906] = 1'h0;
-    fb[907] = 1'h0;
-    fb[908] = 1'h0;
-    fb[909] = 1'h0;
-    fb[910] = 1'h0;
-    fb[911] = 1'h0;
-    fb[912] = 1'h0;
-    fb[913] = 1'h0;
-    fb[914] = 1'h0;
-    fb[915] = 1'h0;
-    fb[916] = 1'h0;
-    fb[917] = 1'h0;
-    fb[918] = 1'h0;
-    fb[919] = 1'h0;
-    fb[920] = 1'h0;
-    fb[921] = 1'h0;
-    fb[922] = 1'h0;
-    fb[923] = 1'h0;
-    fb[924] = 1'h0;
-    fb[925] = 1'h0;
-    fb[926] = 1'h0;
-    fb[927] = 1'h0;
-    fb[928] = 1'h0;
-    fb[929] = 1'h0;
-    fb[930] = 1'h0;
-    fb[931] = 1'h0;
-    fb[932] = 1'h0;
-    fb[933] = 1'h0;
-    fb[934] = 1'h0;
-    fb[935] = 1'h0;
-    fb[936] = 1'h0;
-    fb[937] = 1'h0;
-    fb[938] = 1'h0;
-    fb[939] = 1'h0;
-    fb[940] = 1'h0;
-    fb[941] = 1'h0;
-    fb[942] = 1'h0;
-    fb[943] = 1'h0;
-    fb[944] = 1'h0;
-    fb[945] = 1'h0;
-    fb[946] = 1'h0;
-    fb[947] = 1'h0;
-    fb[948] = 1'h0;
-    fb[949] = 1'h0;
-    fb[950] = 1'h0;
-    fb[951] = 1'h0;
-    fb[952] = 1'h0;
-    fb[953] = 1'h0;
-    fb[954] = 1'h0;
-    fb[955] = 1'h0;
-    fb[956] = 1'h0;
-    fb[957] = 1'h0;
-    fb[958] = 1'h0;
-    fb[959] = 1'h0;
-    fb[960] = 1'h0;
-    fb[961] = 1'h0;
-    fb[962] = 1'h0;
-    fb[963] = 1'h0;
-    fb[964] = 1'h0;
-    fb[965] = 1'h0;
-    fb[966] = 1'h0;
-    fb[967] = 1'h0;
-    fb[968] = 1'h0;
-    fb[969] = 1'h0;
-    fb[970] = 1'h0;
-    fb[971] = 1'h0;
-    fb[972] = 1'h0;
-    fb[973] = 1'h0;
-    fb[974] = 1'h0;
-    fb[975] = 1'h0;
-    fb[976] = 1'h0;
-    fb[977] = 1'h0;
-    fb[978] = 1'h0;
-    fb[979] = 1'h0;
-    fb[980] = 1'h0;
-    fb[981] = 1'h0;
-    fb[982] = 1'h0;
-    fb[983] = 1'h0;
-    fb[984] = 1'h0;
-    fb[985] = 1'h0;
-    fb[986] = 1'h0;
-    fb[987] = 1'h0;
-    fb[988] = 1'h0;
-    fb[989] = 1'h0;
-    fb[990] = 1'h0;
-    fb[991] = 1'h0;
-    fb[992] = 1'h0;
-    fb[993] = 1'h0;
-    fb[994] = 1'h0;
-    fb[995] = 1'h0;
-    fb[996] = 1'h0;
-    fb[997] = 1'h0;
-    fb[998] = 1'h0;
-    fb[999] = 1'h0;
-    fb[1000] = 1'h0;
-    fb[1001] = 1'h0;
-    fb[1002] = 1'h0;
-    fb[1003] = 1'h0;
-    fb[1004] = 1'h0;
-    fb[1005] = 1'h0;
-    fb[1006] = 1'h0;
-    fb[1007] = 1'h0;
-    fb[1008] = 1'h0;
-    fb[1009] = 1'h0;
-    fb[1010] = 1'h0;
-    fb[1011] = 1'h0;
-    fb[1012] = 1'h0;
-    fb[1013] = 1'h0;
-    fb[1014] = 1'h0;
-    fb[1015] = 1'h0;
-    fb[1016] = 1'h0;
-    fb[1017] = 1'h0;
-    fb[1018] = 1'h0;
-    fb[1019] = 1'h0;
-    fb[1020] = 1'h0;
-    fb[1021] = 1'h0;
-    fb[1022] = 1'h0;
-    fb[1023] = 1'h0;
-  end
-  reg [9:0] _0_;
-  always @(posedge clk) begin
-    _0_ <= fb_r_addr;
-    if (fb_w_en) fb[fb_w_addr] <= fb_w_data;
-  end
-  assign fb_r_data = fb[_0_];
-  assign \$10  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *) 22'h300000;
-  assign \$12  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *) 22'h300001;
-  assign \$14  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *) wb__cyc;
-  assign \$16  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *) 22'h300000;
-  assign \$18  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *) 22'h300001;
-  assign \$20  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *) wb__cyc;
-  assign \$22  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *) 22'h300000;
-  assign \$24  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *) 22'h300001;
-  assign \$26  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *) wb__cyc;
-  assign \$28  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *) 22'h300000;
-  assign \$2  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *) wb__cyc;
-  assign \$30  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *) 22'h300001;
-  assign \$32  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *) wb__cyc;
-  assign \$34  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *) 22'h300000;
-  assign \$36  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *) 22'h300001;
-  assign \$38  = + (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:293" *) fb_r_data;
-  assign \$40  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *) wb__cyc;
-  assign \$42  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *) 22'h300000;
-  assign \$44  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *) 22'h300001;
-  assign \$46  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:333" *) dvid_out_clk;
-  assign \$48  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:336" *) dvid_out[0];
-  assign \$4  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *) 22'h300000;
-  assign \$50  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:339" *) dvid_out[1];
-  assign \$52  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:342" *) dvid_out[2];
-  assign \$6  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" *) 22'h300001;
-  assign \$8  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *) wb__cyc;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  input shift_rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  reg [3:0] vga2dvid_blank_r = 4'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  reg [3:0] \vga2dvid_blank_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:60" *)
+  reg [3:0] vga2dvid_hs_r = 4'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:60" *)
+  reg [3:0] \vga2dvid_hs_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:50" *)
+  wire [1:0] vga2dvid_pixel_b;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:51" *)
+  wire [1:0] vga2dvid_pixel_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:49" *)
+  wire [1:0] vga2dvid_pixel_g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:48" *)
+  wire [1:0] vga2dvid_pixel_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
+  wire [7:0] vga2dvid_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:61" *)
+  reg [3:0] vga2dvid_vs_r = 4'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:61" *)
+  reg [3:0] \vga2dvid_vs_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  wire [9:0] vga_h_ctr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
+  wire [9:0] vga_v_ctr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  wire vga_vga_output__blank;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  wire vga_vga_output__hs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  wire vga_vga_output__vs;
+  assign \$1  = vga_h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:96" *) 1'h0;
+  assign \$3  = vga_v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:97" *) 1'h0;
+  assign \$5  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:120" *) pixel_clk_r[0] : pixel_clk_r[1];
+  assign \$7  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:126" *) { pixel_r_r[0], pixel_g_r[0], pixel_b_r[0] } : { pixel_r_r[1], pixel_g_r[1], pixel_b_r[1] };
+  always @(posedge shift_clk)
+    pixel_r_r <= \pixel_r_r$next ;
+  always @(posedge shift_clk)
+    pixel_clk_r <= \pixel_clk_r$next ;
   always @(posedge clk)
-    wb__ack <= \wb__ack$next ;
+    vga2dvid_vs_r <= \vga2dvid_vs_r$next ;
   always @(posedge clk)
-    ack_r <= \ack_r$next ;
-  \U$$0  \U$$0  (
-    .reset(reset),
-    .shift_clk(shift_clk)
+    vga2dvid_hs_r <= \vga2dvid_hs_r$next ;
+  always @(posedge clk)
+    vga2dvid_blank_r <= \vga2dvid_blank_r$next ;
+  always @(posedge shift_clk)
+    pixel_b_r <= \pixel_b_r$next ;
+  always @(posedge shift_clk)
+    pixel_g_r <= \pixel_g_r$next ;
+  rotozoom rotozoom (
+    .clk(clk),
+    .h_ctr(vga_h_ctr),
+    .intensity(rotozoom_intensity),
+    .r(vga2dvid_r),
+    .rst(rst),
+    .v_ctr(vga_v_ctr),
+    .vga_output__vs(vga_vga_output__vs)
+  );
+  vga vga (
+    .clk(clk),
+    .h_ctr(vga_h_ctr),
+    .rst(rst),
+    .v_ctr(vga_v_ctr),
+    .vga_output__blank(vga_vga_output__blank),
+    .vga_output__hs(vga_vga_output__hs),
+    .vga_output__vs(vga_vga_output__vs)
+  );
+  vga2dvid vga2dvid (
+    .blank_r(vga2dvid_blank_r),
+    .clk(clk),
+    .hs_r(vga2dvid_hs_r),
+    .pixel_b(vga2dvid_pixel_b),
+    .pixel_clk(vga2dvid_pixel_clk),
+    .pixel_g(vga2dvid_pixel_g),
+    .pixel_r(vga2dvid_pixel_r),
+    .r(vga2dvid_r),
+    .rst(rst),
+    .shift_clk(shift_clk),
+    .shift_rst(shift_rst),
+    .vs_r(vga2dvid_vs_r)
   );
   always @* begin
     if (\initial ) begin end
-    \ack_r$next  = ack_r;
-    (* full_case = 32'd1 *)
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-    casez (\$2 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" */
+    \vga2dvid_blank_r$next  = { vga_vga_output__blank, vga2dvid_blank_r[3:1] };
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
       1'h1:
-          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-          casez ({ \$6 , \$4  })
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" */
-            2'b?1:
-                \ack_r$next  = 1'h0;
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" */
-            2'b1?:
-                \ack_r$next  = 1'h0;
-          endcase
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:311" */
+          \vga2dvid_blank_r$next  = 4'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \vga2dvid_hs_r$next  = { vga_vga_output__hs, vga2dvid_hs_r[3:1] };
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \vga2dvid_hs_r$next  = 4'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \vga2dvid_vs_r$next  = { vga_vga_output__vs, vga2dvid_vs_r[3:1] };
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \vga2dvid_vs_r$next  = 4'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \pixel_clk_r$next  = vga2dvid_pixel_clk;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \pixel_clk_r$next  = 2'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \pixel_r_r$next  = vga2dvid_pixel_r;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \pixel_r_r$next  = 2'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \pixel_g_r$next  = vga2dvid_pixel_g;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \pixel_g_r$next  = 2'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \pixel_b_r$next  = vga2dvid_pixel_b;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \pixel_b_r$next  = 2'h0;
+    endcase
+  end
+  assign dvid_out = \$7 ;
+  assign dvid_out_clk = \$5 ;
+  assign irq = { \$3 , \$1  };
+  assign rotozoom_intensity = intensity;
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo" *)
+(* generator = "nMigen" *)
+module gfxdemo(dvid_out_clk, dvid_out, pdm_out, irq, wb__we, wb__adr, wb__stb, wb__cyc, wb__dat_r, wb__dat_w, wb__ack, clk, shift_clk, shift_rst, rst);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:228" *)
+  wire [16:0] \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$11 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$13 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$15 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$17 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$19 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$21 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$23 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$25 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$27 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$29 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$31 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$33 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+  wire \$7 ;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *)
+  wire [7:0] \$9 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:258" *)
+  reg ack_r = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:258" *)
+  reg \ack_r$next ;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:148" *)
+  output [2:0] dvid_out;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:147" *)
+  output dvid_out_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
+  wire [7:0] dvid_signal_generator_intensity;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:30" *)
+  wire [1:0] dvid_signal_generator_irq;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *)
+  output [1:0] irq;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:227" *)
+  reg [16:0] pdm = 17'h00000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:227" *)
+  reg [16:0] \pdm$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:161" *)
+  output pdm_out;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:19" *)
+  wire [31:0] read_data;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  input shift_clk;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  input shift_rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  output wb__ack;
+  reg wb__ack = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  reg \wb__ack$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input [31:0] wb__adr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input wb__cyc;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  output [31:0] wb__dat_r;
+  reg [31:0] wb__dat_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input [31:0] wb__dat_w;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input wb__stb;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input wb__we;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:17" *)
+  wire [7:0] wrapper_addr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:15" *)
+  reg wrapper_cs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:200" *)
+  wire [15:0] wrapper_pdm_in;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:16" *)
+  wire wrapper_we;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:18" *)
+  reg [31:0] wrapper_write_data;
+  assign \$9  = + (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *) wb__adr[7:2];
+  assign \$11  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
+  assign \$13  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
+  assign \$15  = \$11  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$13 ;
+  assign \$17  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
+  assign \$1  = pdm[15:0] + (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:228" *) wrapper_pdm_in;
+  assign \$19  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
+  assign \$21  = \$17  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$19 ;
+  assign \$23  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
+  assign \$25  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
+  assign \$27  = \$23  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$25 ;
+  assign \$29  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
+  assign \$31  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
+  assign \$33  = \$29  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$31 ;
+  assign \$3  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
+  assign \$5  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
+  assign \$7  = \$3  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$5 ;
+  always @(posedge clk)
+    ack_r <= \ack_r$next ;
+  always @(posedge clk)
+    wb__ack <= \wb__ack$next ;
+  always @(posedge clk)
+    pdm <= \pdm$next ;
+  dvid_signal_generator dvid_signal_generator (
+    .clk(clk),
+    .dvid_out(dvid_out),
+    .dvid_out_clk(dvid_out_clk),
+    .intensity(dvid_signal_generator_intensity),
+    .irq(dvid_signal_generator_irq),
+    .rst(rst),
+    .shift_clk(shift_clk),
+    .shift_rst(shift_rst)
+  );
+  wrapper wrapper (
+    .addr(wrapper_addr),
+    .clk(clk),
+    .cs(wrapper_cs),
+    .intensity(dvid_signal_generator_intensity),
+    .pdm_in(wrapper_pdm_in),
+    .rst(rst),
+    .we(wrapper_we),
+    .write_data(wrapper_write_data)
+  );
+  always @* begin
+    if (\initial ) begin end
+    \pdm$next  = \$1 ;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \pdm$next  = 17'h00000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    wrapper_cs = 1'h0;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+    casez (\$7 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
+      1'h1:
+          wrapper_cs = 1'h1;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    wb__dat_r = 32'd0;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+    casez (\$15 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
+      1'h1:
+          wb__dat_r = read_data;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    wrapper_write_data = 32'd0;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+    casez (\$21 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
+      1'h1:
+          wrapper_write_data = wb__dat_w;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \wb__ack$next  = wb__ack;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+    casez (\$27 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
+      1'h1:
+          \wb__ack$next  = ack_r;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \wb__ack$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
+    casez (\$33 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
+      1'h1:
+          \ack_r$next  = 1'h0;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:266" */
       default:
           \ack_r$next  = 1'h1;
     endcase
@@ -1242,129 +449,2765 @@ module myip1(shift_clk, buf_io_out, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__
           \ack_r$next  = 1'h0;
     endcase
   end
+  assign read_data = 32'd0;
+  assign wrapper_addr = \$9 ;
+  assign wrapper_we = wb__we;
+  assign irq = dvid_signal_generator_irq;
+  assign pdm_out = pdm[16];
+endmodule
+
+(* \nmigen.hierarchy  = "myip1" *)
+(* top =  1  *)
+(* generator = "nMigen" *)
+module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb, wb__we, wb__ack, sel, buf_io_out, buf_irq, clk, rst, reset);
+  reg \initial  = 0;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:178" *)
+  wire \$1 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *)
+  wire \$11 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:181" *)
+  wire \$3 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:184" *)
+  wire \$5 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:187" *)
+  wire \$7 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *)
+  wire [2:0] \$9 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:171" *)
+  output [8:0] buf_io_out;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:173" *)
+  output [2:0] buf_irq;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:148" *)
+  wire [2:0] gfxdemo_dvid_out;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:147" *)
+  wire gfxdemo_dvid_out_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *)
+  wire [1:0] gfxdemo_irq;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:161" *)
+  wire gfxdemo_pdm_out;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  wire gfxdemo_shift_rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:151" *)
+  input reset;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  output rst;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:195" *)
+  input [3:0] sel;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  input shift_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  output wb__ack;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input [31:0] wb__adr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input wb__cyc;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  output [31:0] wb__dat_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input [31:0] wb__dat_w;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  output wb__sel;
+  reg wb__sel;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input wb__stb;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input wb__we;
+  assign \$9  = + (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *) gfxdemo_irq;
+  assign \$11  = sel != (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *) 1'h0;
+  assign \$1  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:178" *) gfxdemo_dvid_out_clk;
+  assign \$3  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:181" *) gfxdemo_dvid_out[0];
+  assign \$5  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:184" *) gfxdemo_dvid_out[1];
+  assign \$7  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:187" *) gfxdemo_dvid_out[2];
+  \U$$0  \U$$0  (
+    .reset(reset),
+    .shift_clk(shift_clk),
+    .shift_rst(gfxdemo_shift_rst)
+  );
+  gfxdemo gfxdemo (
+    .clk(clk),
+    .dvid_out(gfxdemo_dvid_out),
+    .dvid_out_clk(gfxdemo_dvid_out_clk),
+    .irq(gfxdemo_irq),
+    .pdm_out(gfxdemo_pdm_out),
+    .rst(rst),
+    .shift_clk(shift_clk),
+    .shift_rst(gfxdemo_shift_rst),
+    .wb__ack(wb__ack),
+    .wb__adr(wb__adr),
+    .wb__cyc(wb__cyc),
+    .wb__dat_r(wb__dat_r),
+    .wb__dat_w(wb__dat_w),
+    .wb__stb(wb__stb),
+    .wb__we(wb__we)
+  );
   always @* begin
     if (\initial ) begin end
-    fb_w_en = 1'h0;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-    casez (\$8 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" */
+    wb__sel = 1'h0;
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *)
+    casez (\$11 )
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" */
       1'h1:
-          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-          casez ({ \$12 , \$10  })
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" */
-            2'b?1:
-                /* empty */;
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" */
-            2'b1?:
-                fb_w_en = wb__we;
-          endcase
+          wb__sel = 1'h1;
+    endcase
+  end
+  assign buf_irq = \$9 ;
+  assign buf_io_out[8] = gfxdemo_pdm_out;
+  assign buf_io_out[7] = \$7 ;
+  assign buf_io_out[6] = gfxdemo_dvid_out[2];
+  assign buf_io_out[5] = \$5 ;
+  assign buf_io_out[4] = gfxdemo_dvid_out[1];
+  assign buf_io_out[3] = \$3 ;
+  assign buf_io_out[2] = gfxdemo_dvid_out[0];
+  assign buf_io_out[1] = \$1 ;
+  assign buf_io_out[0] = gfxdemo_dvid_out_clk;
+  assign rst = reset;
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga.output" *)
+(* generator = "nMigen" *)
+module \output (vga_output__hs, vga_output__vs, blank, hs, vs, vga_output__blank);
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:52" *)
+  input blank;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
+  input hs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  output vga_output__blank;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  output vga_output__hs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  output vga_output__vs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
+  input vs;
+  assign vga_output__blank = blank;
+  assign vga_output__vs = vs;
+  assign vga_output__hs = hs;
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.rotozoom" *)
+(* generator = "nMigen" *)
+module rotozoom(clk, vga_output__vs, intensity, h_ctr, v_ctr, r, rst);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  wire \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  wire \$10 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
+  wire \$12 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
+  wire \$14 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:118" *)
+  wire [8:0] \$16 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:118" *)
+  wire [8:0] \$17 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  wire \$19 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  wire \$21 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
+  wire \$23 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
+  wire \$25 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:121" *)
+  wire [2:0] \$27 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:121" *)
+  wire [2:0] \$28 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  wire \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  wire [15:0] \$30 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
+  wire [15:0] \$32 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *)
+  wire [15:0] \$34 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *)
+  wire [9:0] \$35 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *)
+  wire [9:0] \$37 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:137" *)
+  wire [16:0] \$40 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:137" *)
+  wire [16:0] \$41 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:138" *)
+  wire [16:0] \$43 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:138" *)
+  wire [16:0] \$44 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:139" *)
+  wire [16:0] \$46 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:139" *)
+  wire [16:0] \$47 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:153" *)
+  wire [7:0] \$49 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:113" *)
+  wire [16:0] \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [27:0] \$50 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:125" *)
+  wire [25:0] \$51 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [31:0] \$53 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [31:0] \$54 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [27:0] \$56 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [31:0] \$58 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [31:0] \$59 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:113" *)
+  wire [16:0] \$6 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:126" *)
+  wire [25:0] \$61 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [27:0] \$63 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
+  wire [27:0] \$65 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:143" *)
+  wire \$67 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  wire \$8 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:106" *)
+  reg [7:0] H = 8'h00;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:106" *)
+  reg [7:0] \H$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:127" *)
+  wire [15:0] T;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:131" *)
+  wire [15:0] TT;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:125" *)
+  wire [15:0] X;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:129" *)
+  wire [15:0] XX;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:126" *)
+  wire [15:0] Y;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:130" *)
+  wire [15:0] YY;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:107" *)
+  reg [1:0] ctr = 2'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:107" *)
+  reg [1:0] \ctr$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:70" *)
+  reg [15:0] frame = 16'h0000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:70" *)
+  reg [15:0] \frame$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  input [9:0] h_ctr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:74" *)
+  input [7:0] intensity;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
+  output [7:0] r;
+  reg [7:0] r = 8'h00;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
+  reg [7:0] \r$next ;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
+  input [9:0] v_ctr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  input vga_output__vs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:110" *)
+  reg vsync_r = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:110" *)
+  reg \vsync_r$next ;
+  assign \$10  = \$8  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vga_output__vs;
+  assign \$12  = H == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *) 8'hbf;
+  assign \$14  = ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *) 1'h0;
+  assign \$17  = H + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:118" *) 1'h1;
+  assign \$1  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vsync_r;
+  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vsync_r;
+  assign \$21  = \$19  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vga_output__vs;
+  assign \$23  = H == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *) 8'hbf;
+  assign \$25  = ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *) 1'h0;
+  assign \$28  = ctr - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:121" *) 1'h1;
+  assign \$30  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *) h_ctr;
+  assign \$32  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *) v_ctr;
+  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *) frame[9:0];
+  assign \$37  = frame[10] ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *) \$35  : frame[9:0];
+  assign \$34  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *) \$37 ;
+  assign \$3  = \$1  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vga_output__vs;
+  assign \$41  = $signed(XX) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:137" *) $signed(16'h0140);
+  assign \$44  = $signed(YY) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:138" *) $signed(16'h00f0);
+  assign \$47  = $signed(TT) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:139" *) $signed(16'h0200);
+  assign \$51  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:125" *) $signed(X);
+  assign \$54  = $signed(Y) * (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(T);
+  assign \$56  = $signed(\$51 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(\$53 [31:6]);
+  assign \$59  = $signed(X) * (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(T);
+  assign \$61  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:126" *) $signed(Y);
+  assign \$63  = $signed(\$58 [31:6]) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(\$61 );
+  assign \$65  = $signed(\$56 ) & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(\$63 );
+  assign \$67  = \$50 [8:3] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:143" *) 1'h0;
+  assign \$49  = \$67  ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:153" *) intensity : 8'h00;
+  assign \$6  = frame + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:113" *) 1'h1;
+  assign \$8  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vsync_r;
+  always @(posedge clk)
+    r <= \r$next ;
+  always @(posedge clk)
+    ctr <= \ctr$next ;
+  always @(posedge clk)
+    H <= \H$next ;
+  always @(posedge clk)
+    frame <= \frame$next ;
+  always @(posedge clk)
+    vsync_r <= \vsync_r$next ;
+  always @* begin
+    if (\initial ) begin end
+    \vsync_r$next  = vga_output__vs;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \vsync_r$next  = 1'h0;
     endcase
   end
   always @* begin
     if (\initial ) begin end
-    fb_w_addr = 10'h000;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-    casez (\$14 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" */
+    \frame$next  = frame;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+    casez (\$3 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" */
       1'h1:
-          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-          casez ({ \$18 , \$16  })
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" */
-            2'b?1:
-                /* empty */;
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" */
-            2'b1?:
-                fb_w_addr = wb__adr[11:2];
-          endcase
+          \frame$next  = \$5 [15:0];
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \frame$next  = 16'h0000;
     endcase
   end
   always @* begin
     if (\initial ) begin end
-    fb_w_data = 1'h0;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-    casez (\$20 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" */
+    \r$next  = \$49 ;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
       1'h1:
-          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-          casez ({ \$24 , \$22  })
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" */
-            2'b?1:
-                /* empty */;
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" */
-            2'b1?:
-                fb_w_data = wb__dat_w[0];
-          endcase
+          \r$next  = 8'h00;
     endcase
   end
   always @* begin
     if (\initial ) begin end
-    fb_r_addr = 10'h000;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-    casez (\$26 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" */
+    \H$next  = H;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+    casez (\$10 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" */
       1'h1:
-          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-          casez ({ \$30 , \$28  })
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" */
-            2'b?1:
-                /* empty */;
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" */
-            2'b1?:
-                fb_r_addr = wb__adr[11:2];
-          endcase
-    endcase
-  end
-  always @* begin
-    if (\initial ) begin end
-    wb__dat_r = 32'd0;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-    casez (\$32 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" */
-      1'h1:
-          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-          casez ({ \$36 , \$34  })
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" */
-            2'b?1:
-                /* empty */;
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" */
-            2'b1?:
-                wb__dat_r = \$38 ;
-          endcase
-    endcase
-  end
-  always @* begin
-    if (\initial ) begin end
-    \wb__ack$next  = wb__ack;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" *)
-    casez (\$40 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:296" */
-      1'h1:
-          (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" *)
-          casez ({ \$44 , \$42  })
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:297" */
-            2'b?1:
-                /* empty */;
-            /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gol.py:303" */
-            2'b1?:
-                \wb__ack$next  = ack_r;
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
+          casez (\$12 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" */
+            1'h1:
+                \H$next  = 8'h00;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:116" */
+            default:
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
+                casez (\$14 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" */
+                  1'h1:
+                      \H$next  = \$16 [7:0];
+                endcase
           endcase
     endcase
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
-          \wb__ack$next  = 1'h0;
+          \H$next  = 8'h00;
     endcase
   end
-  assign dvid_out_clk = 1'h0;
-  assign dvid_out = 3'h0;
-  assign buf_io_out[7] = \$52 ;
-  assign buf_io_out[6] = 1'h0;
-  assign buf_io_out[5] = \$50 ;
-  assign buf_io_out[4] = 1'h0;
-  assign buf_io_out[3] = \$48 ;
-  assign buf_io_out[2] = 1'h0;
-  assign buf_io_out[1] = \$46 ;
-  assign buf_io_out[0] = 1'h0;
-  assign rst = reset;
+  always @* begin
+    if (\initial ) begin end
+    \ctr$next  = ctr;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+    casez (\$21 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" */
+      1'h1:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
+          casez (\$23 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" */
+            1'h1:
+                /* empty */;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:116" */
+            default:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
+                casez (\$25 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" */
+                  1'h1:
+                      \ctr$next  = 2'h3;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:120" */
+                  default:
+                      \ctr$next  = \$27 [1:0];
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \ctr$next  = 2'h0;
+    endcase
+  end
+  assign \$5  = \$6 ;
+  assign \$16  = \$17 ;
+  assign \$27  = \$28 ;
+  assign \$40  = \$41 ;
+  assign \$43  = \$44 ;
+  assign \$46  = \$47 ;
+  assign \$53  = \$54 ;
+  assign \$58  = \$59 ;
+  assign \$50  = \$65 ;
+  assign T = \$47 [15:0];
+  assign Y = \$44 [15:0];
+  assign X = \$41 [15:0];
+  assign TT = \$34 ;
+  assign YY = \$32 ;
+  assign XX = \$30 ;
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid.tmds_b" *)
+(* generator = "nMigen" *)
+module tmds_b(clk, blank_r, c0, encoded_blue, rst);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
+  wire \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [9:0] \$101 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [1:0] \$102 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [2:0] \$104 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [3:0] \$106 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [4:0] \$108 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *)
+  wire \$11 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [5:0] \$110 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [6:0] \$112 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$114 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [8:0] \$116 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$118 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$119 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [1:0] \$121 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$123 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$124 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [2:0] \$126 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$128 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$129 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *)
+  wire \$13 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [3:0] \$131 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$133 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$134 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [4:0] \$136 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$138 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$139 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [5:0] \$141 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$143 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$144 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [6:0] \$146 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$148 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$149 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  wire \$15 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$151 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$153 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$154 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [8:0] \$156 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [9:0] \$158 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  wire \$16 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$160 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$162 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$164 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  wire \$166 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *)
+  wire \$168 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *)
+  wire \$170 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$172 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$174 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$176 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$178 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$180 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$182 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$184 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$186 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$188 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  wire \$19 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$190 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  wire \$192 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  wire [4:0] \$194 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  wire [4:0] \$195 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  wire [4:0] \$197 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  wire [4:0] \$198 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  wire \$20 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$200 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$202 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$204 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$206 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$208 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$210 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$212 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+  wire \$214 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  wire [4:0] \$216 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  wire [4:0] \$217 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [5:0] \$219 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [4:0] \$220 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [5:0] \$222 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+  wire \$224 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [5:0] \$226 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [4:0] \$227 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [5:0] \$229 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  wire \$23 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  wire [4:0] \$231 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  wire [4:0] \$232 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  wire \$24 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  wire \$27 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  wire \$28 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *)
+  wire \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  wire \$31 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  wire \$32 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  wire \$35 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  wire \$36 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  wire \$39 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  wire \$40 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [8:0] \$43 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [1:0] \$44 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [2:0] \$46 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [3:0] \$48 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *)
+  wire \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [4:0] \$50 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [5:0] \$52 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [6:0] \$54 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [7:0] \$56 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [8:0] \$58 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$60 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$62 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$64 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$66 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$68 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *)
+  wire \$7 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$70 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$72 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$74 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$76 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$78 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *)
+  wire [8:0] \$80 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *)
+  wire [8:0] \$82 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [8:0] \$84 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [1:0] \$85 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [2:0] \$87 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [3:0] \$89 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *)
+  wire \$9 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [4:0] \$91 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [5:0] \$93 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [6:0] \$95 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [7:0] \$97 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [8:0] \$99 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:46" *)
+  wire [7:0] b;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  input [3:0] blank_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:95" *)
+  input [1:0] c0;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  reg [8:0] data_word = 9'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  reg [8:0] \data_word$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  reg [8:0] data_word_inv = 9'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  reg [8:0] \data_word_inv$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:117" *)
+  wire [3:0] data_word_ones;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:116" *)
+  wire [3:0] diff_q_m;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  reg [3:0] disparity = 4'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  reg [3:0] \disparity$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:101" *)
+  output [9:0] encoded_blue;
+  reg [9:0] encoded_blue = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:101" *)
+  reg [9:0] \encoded_blue$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
+  wire [3:0] ones;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
+  wire [8:0] xnored;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:75" *)
+  wire [8:0] xored;
+  assign \$9  = b[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *) xored[4];
+  assign \$99  = \$97  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[7];
+  assign \$102  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[0];
+  assign \$104  = \$102  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[1];
+  assign \$106  = \$104  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[2];
+  assign \$108  = \$106  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[3];
+  assign \$110  = \$108  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[4];
+  assign \$112  = \$110  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[5];
+  assign \$114  = \$112  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[6];
+  assign \$116  = \$114  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7];
+  assign \$11  = b[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *) xored[5];
+  assign \$119  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$121  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$118 [0];
+  assign \$124  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$126  = \$121  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$123 [1];
+  assign \$129  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$131  = \$126  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$128 [2];
+  assign \$134  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$136  = \$131  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$133 [3];
+  assign \$13  = b[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *) xored[6];
+  assign \$139  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$141  = \$136  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$138 [4];
+  assign \$144  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$146  = \$141  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$143 [5];
+  assign \$149  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$151  = \$146  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$148 [6];
+  assign \$154  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$156  = \$151  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$153 [7];
+  assign \$158  = \$116  - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$156 ;
+  assign \$160  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$162  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$164  = \$160  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$162 ;
+  assign \$166  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$168  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *) data_word[8];
+  assign \$16  = b[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) xnored[0];
+  assign \$170  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *) data_word[8];
+  assign \$172  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$174  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$176  = \$172  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$174 ;
+  assign \$178  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$15  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) \$16 ;
+  assign \$180  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$182  = \$178  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$180 ;
+  assign \$184  = \$176  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$182 ;
+  assign \$186  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$188  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$190  = \$186  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$188 ;
+  assign \$192  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$195  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
+  assign \$198  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
+  assign \$1  = b[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *) xored[0];
+  assign \$200  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$202  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$204  = \$200  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$202 ;
+  assign \$206  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$208  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$20  = b[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) xnored[1];
+  assign \$210  = \$206  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$208 ;
+  assign \$212  = \$204  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$210 ;
+  assign \$214  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *) 1'h0;
+  assign \$217  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
+  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) \$20 ;
+  assign \$220  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
+  assign \$222  = $signed(\$220 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(5'h02);
+  assign \$224  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *) 1'h0;
+  assign \$227  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
+  assign \$229  = $signed(\$227 ) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(5'h02);
+  assign \$232  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
+  assign \$24  = b[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) xnored[2];
+  assign \$23  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) \$24 ;
+  assign \$28  = b[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) xnored[3];
+  assign \$27  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) \$28 ;
+  assign \$32  = b[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) xnored[4];
+  assign \$31  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) \$32 ;
+  assign \$36  = b[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) xnored[5];
+  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) \$36 ;
+  assign \$3  = b[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *) xored[1];
+  assign \$40  = b[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) xnored[6];
+  assign \$39  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) \$40 ;
+  assign \$44  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[0];
+  assign \$46  = \$44  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[1];
+  assign \$48  = \$46  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[2];
+  assign \$50  = \$48  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[3];
+  assign \$52  = \$50  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[4];
+  assign \$54  = \$52  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[5];
+  assign \$56  = \$54  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[6];
+  assign \$58  = \$56  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[7];
+  assign \$5  = b[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *) xored[2];
+  assign \$60  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$62  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$64  = b[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$66  = \$62  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$64 ;
+  assign \$68  = \$60  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$66 ;
+  assign \$70  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$72  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$74  = b[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$76  = \$72  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$74 ;
+  assign \$78  = \$70  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$76 ;
+  assign \$7  = b[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *) xored[3];
+  assign \$80  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *) xnored;
+  assign \$82  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *) xored;
+  assign \$85  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[0];
+  assign \$87  = \$85  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[1];
+  assign \$89  = \$87  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[2];
+  assign \$91  = \$89  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[3];
+  assign \$93  = \$91  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[4];
+  assign \$95  = \$93  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[5];
+  assign \$97  = \$95  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[6];
+  always @(posedge clk)
+    disparity <= \disparity$next ;
+  always @(posedge clk)
+    encoded_blue <= \encoded_blue$next ;
+  always @(posedge clk)
+    data_word_inv <= \data_word_inv$next ;
+  always @(posedge clk)
+    data_word <= \data_word$next ;
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    casez (\$68 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      1'h1:
+          \data_word$next  = xnored;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      default:
+          \data_word$next  = xored;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \data_word$next  = 9'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    casez (\$78 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      1'h1:
+          \data_word_inv$next  = \$80 ;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      default:
+          \data_word_inv$next  = \$82 ;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \data_word_inv$next  = 9'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    casez (blank_r[0])
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      1'h1:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:122" *)
+          casez (c0)
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:123" */
+            2'h3:
+                \encoded_blue$next  = 10'h354;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:125" */
+            2'h1:
+                \encoded_blue$next  = 10'h0ab;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:127" */
+            2'h2:
+                \encoded_blue$next  = 10'h154;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:129" */
+            2'h0:
+                \encoded_blue$next  = 10'h2ab;
+          endcase
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      default:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          casez (\$164 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            1'h1:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                casez (\$166 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  1'h1:
+                      \encoded_blue$next  = { \$168 , data_word[8], data_word_inv[7:0] };
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  default:
+                      \encoded_blue$next  = { \$170 , data_word };
+                endcase
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            default:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                casez (\$184 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  1'h1:
+                      \encoded_blue$next  = { 1'h1, data_word[8], data_word_inv[7:0] };
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  default:
+                      \encoded_blue$next  = { 1'h0, data_word };
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \encoded_blue$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    casez (blank_r[0])
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      1'h1:
+          \disparity$next  = 4'h0;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      default:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          casez (\$190 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            1'h1:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                casez (\$192 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  1'h1:
+                      \disparity$next  = \$194 [3:0];
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  default:
+                      \disparity$next  = \$197 [3:0];
+                endcase
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            default:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                casez (\$212 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  1'h1:
+                      (* full_case = 32'd1 *)
+                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+                      casez (\$214 )
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" */
+                        1'h1:
+                            \disparity$next  = \$216 [3:0];
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:147" */
+                        default:
+                            \disparity$next  = \$219 [3:0];
+                      endcase
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  default:
+                      (* full_case = 32'd1 *)
+                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+                      casez (\$224 )
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" */
+                        1'h1:
+                            \disparity$next  = \$226 [3:0];
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:153" */
+                        default:
+                            \disparity$next  = \$231 [3:0];
+                      endcase
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \disparity$next  = 4'h0;
+    endcase
+  end
+  assign \$43  = \$58 ;
+  assign \$84  = \$99 ;
+  assign \$118  = \$119 ;
+  assign \$123  = \$124 ;
+  assign \$128  = \$129 ;
+  assign \$133  = \$134 ;
+  assign \$138  = \$139 ;
+  assign \$143  = \$144 ;
+  assign \$148  = \$149 ;
+  assign \$153  = \$154 ;
+  assign \$101  = \$158 ;
+  assign \$194  = \$195 ;
+  assign \$197  = \$198 ;
+  assign \$216  = \$217 ;
+  assign \$219  = \$222 ;
+  assign \$226  = \$229 ;
+  assign \$231  = \$232 ;
+  assign b = 8'h00;
+  assign diff_q_m = \$158 [3:0];
+  assign data_word_ones = \$99 [3:0];
+  assign ones = \$58 [3:0];
+  assign xnored = { 1'h0, \$39 , \$35 , \$31 , \$27 , \$23 , \$19 , \$15 , 1'h0 };
+  assign xored = { 1'h1, \$13 , \$11 , \$9 , \$7 , \$5 , \$3 , \$1 , 1'h0 };
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid.tmds_g" *)
+(* generator = "nMigen" *)
+module tmds_g(clk, blank_r, encoded_green, rst);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
+  wire \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [9:0] \$101 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [1:0] \$102 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [2:0] \$104 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [3:0] \$106 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [4:0] \$108 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *)
+  wire \$11 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [5:0] \$110 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [6:0] \$112 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$114 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [8:0] \$116 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$118 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$119 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [1:0] \$121 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$123 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$124 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [2:0] \$126 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$128 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$129 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *)
+  wire \$13 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [3:0] \$131 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$133 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$134 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [4:0] \$136 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$138 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$139 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [5:0] \$141 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$143 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$144 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [6:0] \$146 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$148 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$149 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  wire \$15 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$151 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$153 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$154 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [8:0] \$156 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [9:0] \$158 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  wire \$16 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$160 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$162 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$164 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  wire \$166 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *)
+  wire \$168 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *)
+  wire \$170 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$172 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$174 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$176 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$178 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$180 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$182 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$184 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$186 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$188 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  wire \$19 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$190 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  wire \$192 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  wire [4:0] \$194 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  wire [4:0] \$195 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  wire [4:0] \$197 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  wire [4:0] \$198 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  wire \$20 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$200 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$202 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$204 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$206 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$208 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$210 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$212 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+  wire \$214 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  wire [4:0] \$216 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  wire [4:0] \$217 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [5:0] \$219 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [4:0] \$220 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [5:0] \$222 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+  wire \$224 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [5:0] \$226 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [4:0] \$227 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [5:0] \$229 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  wire \$23 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  wire [4:0] \$231 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  wire [4:0] \$232 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  wire \$24 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  wire \$27 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  wire \$28 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *)
+  wire \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  wire \$31 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  wire \$32 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  wire \$35 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  wire \$36 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  wire \$39 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  wire \$40 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [8:0] \$43 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [1:0] \$44 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [2:0] \$46 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [3:0] \$48 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *)
+  wire \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [4:0] \$50 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [5:0] \$52 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [6:0] \$54 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [7:0] \$56 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [8:0] \$58 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$60 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$62 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$64 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$66 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$68 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *)
+  wire \$7 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$70 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$72 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$74 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$76 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$78 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *)
+  wire [8:0] \$80 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *)
+  wire [8:0] \$82 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [8:0] \$84 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [1:0] \$85 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [2:0] \$87 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [3:0] \$89 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *)
+  wire \$9 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [4:0] \$91 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [5:0] \$93 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [6:0] \$95 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [7:0] \$97 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [8:0] \$99 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  input [3:0] blank_r;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  reg [8:0] data_word = 9'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  reg [8:0] \data_word$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  reg [8:0] data_word_inv = 9'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  reg [8:0] \data_word_inv$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:117" *)
+  wire [3:0] data_word_ones;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:116" *)
+  wire [3:0] diff_q_m;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  reg [3:0] disparity = 4'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  reg [3:0] \disparity$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
+  output [9:0] encoded_green;
+  reg [9:0] encoded_green = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
+  reg [9:0] \encoded_green$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:45" *)
+  wire [7:0] g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
+  wire [3:0] ones;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
+  wire [8:0] xnored;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:75" *)
+  wire [8:0] xored;
+  assign \$9  = g[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *) xored[4];
+  assign \$99  = \$97  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[7];
+  assign \$102  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[0];
+  assign \$104  = \$102  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[1];
+  assign \$106  = \$104  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[2];
+  assign \$108  = \$106  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[3];
+  assign \$110  = \$108  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[4];
+  assign \$112  = \$110  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[5];
+  assign \$114  = \$112  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[6];
+  assign \$116  = \$114  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7];
+  assign \$11  = g[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *) xored[5];
+  assign \$119  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$121  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$118 [0];
+  assign \$124  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$126  = \$121  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$123 [1];
+  assign \$129  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$131  = \$126  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$128 [2];
+  assign \$134  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$136  = \$131  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$133 [3];
+  assign \$13  = g[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *) xored[6];
+  assign \$139  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$141  = \$136  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$138 [4];
+  assign \$144  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$146  = \$141  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$143 [5];
+  assign \$149  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$151  = \$146  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$148 [6];
+  assign \$154  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$156  = \$151  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$153 [7];
+  assign \$158  = \$116  - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$156 ;
+  assign \$160  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$162  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$164  = \$160  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$162 ;
+  assign \$166  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$168  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *) data_word[8];
+  assign \$16  = g[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) xnored[0];
+  assign \$170  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *) data_word[8];
+  assign \$172  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$174  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$176  = \$172  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$174 ;
+  assign \$178  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$15  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) \$16 ;
+  assign \$180  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$182  = \$178  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$180 ;
+  assign \$184  = \$176  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$182 ;
+  assign \$186  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$188  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$190  = \$186  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$188 ;
+  assign \$192  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$195  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
+  assign \$198  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
+  assign \$1  = g[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *) xored[0];
+  assign \$200  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$202  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$204  = \$200  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$202 ;
+  assign \$206  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$208  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$20  = g[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) xnored[1];
+  assign \$210  = \$206  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$208 ;
+  assign \$212  = \$204  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$210 ;
+  assign \$214  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *) 1'h0;
+  assign \$217  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
+  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) \$20 ;
+  assign \$220  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
+  assign \$222  = $signed(\$220 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(5'h02);
+  assign \$224  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *) 1'h0;
+  assign \$227  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
+  assign \$229  = $signed(\$227 ) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(5'h02);
+  assign \$232  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
+  assign \$24  = g[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) xnored[2];
+  assign \$23  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) \$24 ;
+  assign \$28  = g[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) xnored[3];
+  assign \$27  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) \$28 ;
+  assign \$32  = g[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) xnored[4];
+  assign \$31  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) \$32 ;
+  assign \$36  = g[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) xnored[5];
+  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) \$36 ;
+  assign \$3  = g[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *) xored[1];
+  assign \$40  = g[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) xnored[6];
+  assign \$39  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) \$40 ;
+  assign \$44  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[0];
+  assign \$46  = \$44  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[1];
+  assign \$48  = \$46  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[2];
+  assign \$50  = \$48  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[3];
+  assign \$52  = \$50  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[4];
+  assign \$54  = \$52  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[5];
+  assign \$56  = \$54  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[6];
+  assign \$58  = \$56  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[7];
+  assign \$5  = g[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *) xored[2];
+  assign \$60  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$62  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$64  = g[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$66  = \$62  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$64 ;
+  assign \$68  = \$60  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$66 ;
+  assign \$70  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$72  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$74  = g[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$76  = \$72  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$74 ;
+  assign \$78  = \$70  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$76 ;
+  assign \$7  = g[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *) xored[3];
+  assign \$80  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *) xnored;
+  assign \$82  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *) xored;
+  assign \$85  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[0];
+  assign \$87  = \$85  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[1];
+  assign \$89  = \$87  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[2];
+  assign \$91  = \$89  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[3];
+  assign \$93  = \$91  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[4];
+  assign \$95  = \$93  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[5];
+  assign \$97  = \$95  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[6];
+  always @(posedge clk)
+    disparity <= \disparity$next ;
+  always @(posedge clk)
+    encoded_green <= \encoded_green$next ;
+  always @(posedge clk)
+    data_word_inv <= \data_word_inv$next ;
+  always @(posedge clk)
+    data_word <= \data_word$next ;
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    casez (\$68 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      1'h1:
+          \data_word$next  = xnored;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      default:
+          \data_word$next  = xored;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \data_word$next  = 9'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    casez (\$78 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      1'h1:
+          \data_word_inv$next  = \$80 ;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      default:
+          \data_word_inv$next  = \$82 ;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \data_word_inv$next  = 9'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    casez (blank_r[0])
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      1'h1:
+          \encoded_green$next  = 10'h2ab;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      default:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          casez (\$164 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            1'h1:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                casez (\$166 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  1'h1:
+                      \encoded_green$next  = { \$168 , data_word[8], data_word_inv[7:0] };
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  default:
+                      \encoded_green$next  = { \$170 , data_word };
+                endcase
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            default:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                casez (\$184 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  1'h1:
+                      \encoded_green$next  = { 1'h1, data_word[8], data_word_inv[7:0] };
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  default:
+                      \encoded_green$next  = { 1'h0, data_word };
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \encoded_green$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    casez (blank_r[0])
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      1'h1:
+          \disparity$next  = 4'h0;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      default:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          casez (\$190 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            1'h1:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                casez (\$192 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  1'h1:
+                      \disparity$next  = \$194 [3:0];
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  default:
+                      \disparity$next  = \$197 [3:0];
+                endcase
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            default:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                casez (\$212 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  1'h1:
+                      (* full_case = 32'd1 *)
+                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+                      casez (\$214 )
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" */
+                        1'h1:
+                            \disparity$next  = \$216 [3:0];
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:147" */
+                        default:
+                            \disparity$next  = \$219 [3:0];
+                      endcase
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  default:
+                      (* full_case = 32'd1 *)
+                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+                      casez (\$224 )
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" */
+                        1'h1:
+                            \disparity$next  = \$226 [3:0];
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:153" */
+                        default:
+                            \disparity$next  = \$231 [3:0];
+                      endcase
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \disparity$next  = 4'h0;
+    endcase
+  end
+  assign \$43  = \$58 ;
+  assign \$84  = \$99 ;
+  assign \$118  = \$119 ;
+  assign \$123  = \$124 ;
+  assign \$128  = \$129 ;
+  assign \$133  = \$134 ;
+  assign \$138  = \$139 ;
+  assign \$143  = \$144 ;
+  assign \$148  = \$149 ;
+  assign \$153  = \$154 ;
+  assign \$101  = \$158 ;
+  assign \$194  = \$195 ;
+  assign \$197  = \$198 ;
+  assign \$216  = \$217 ;
+  assign \$219  = \$222 ;
+  assign \$226  = \$229 ;
+  assign \$231  = \$232 ;
+  assign g = 8'h00;
+  assign diff_q_m = \$158 [3:0];
+  assign data_word_ones = \$99 [3:0];
+  assign ones = \$58 [3:0];
+  assign xnored = { 1'h0, \$39 , \$35 , \$31 , \$27 , \$23 , \$19 , \$15 , 1'h0 };
+  assign xored = { 1'h1, \$13 , \$11 , \$9 , \$7 , \$5 , \$3 , \$1 , 1'h0 };
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid.tmds_r" *)
+(* generator = "nMigen" *)
+module tmds_r(clk, blank_r, encoded_red, r, rst);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
+  wire \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [9:0] \$101 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [1:0] \$102 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [2:0] \$104 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [3:0] \$106 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [4:0] \$108 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *)
+  wire \$11 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [5:0] \$110 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [6:0] \$112 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$114 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [8:0] \$116 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$118 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$119 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [1:0] \$121 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$123 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$124 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [2:0] \$126 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$128 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$129 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *)
+  wire \$13 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [3:0] \$131 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$133 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$134 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [4:0] \$136 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$138 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$139 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [5:0] \$141 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$143 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$144 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [6:0] \$146 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$148 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$149 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  wire \$15 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$151 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$153 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [7:0] \$154 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [8:0] \$156 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  wire [9:0] \$158 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  wire \$16 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$160 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$162 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$164 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  wire \$166 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *)
+  wire \$168 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *)
+  wire \$170 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$172 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$174 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$176 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$178 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$180 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$182 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$184 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$186 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$188 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  wire \$19 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  wire \$190 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  wire \$192 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  wire [4:0] \$194 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  wire [4:0] \$195 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  wire [4:0] \$197 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  wire [4:0] \$198 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  wire \$20 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$200 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$202 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$204 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$206 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$208 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  wire \$210 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  wire \$212 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+  wire \$214 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  wire [4:0] \$216 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  wire [4:0] \$217 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [5:0] \$219 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [4:0] \$220 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  wire [5:0] \$222 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+  wire \$224 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [5:0] \$226 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [4:0] \$227 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  wire [5:0] \$229 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  wire \$23 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  wire [4:0] \$231 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  wire [4:0] \$232 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  wire \$24 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  wire \$27 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  wire \$28 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *)
+  wire \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  wire \$31 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  wire \$32 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  wire \$35 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  wire \$36 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  wire \$39 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  wire \$40 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [8:0] \$43 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [1:0] \$44 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [2:0] \$46 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [3:0] \$48 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *)
+  wire \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [4:0] \$50 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [5:0] \$52 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [6:0] \$54 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [7:0] \$56 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  wire [8:0] \$58 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$60 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$62 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$64 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$66 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$68 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *)
+  wire \$7 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$70 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$72 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$74 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$76 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  wire \$78 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *)
+  wire [8:0] \$80 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *)
+  wire [8:0] \$82 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [8:0] \$84 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [1:0] \$85 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [2:0] \$87 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [3:0] \$89 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *)
+  wire \$9 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [4:0] \$91 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [5:0] \$93 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [6:0] \$95 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [7:0] \$97 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  wire [8:0] \$99 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  input [3:0] blank_r;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  reg [8:0] data_word = 9'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  reg [8:0] \data_word$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  reg [8:0] data_word_inv = 9'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  reg [8:0] \data_word_inv$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:117" *)
+  wire [3:0] data_word_ones;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:116" *)
+  wire [3:0] diff_q_m;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  reg [3:0] disparity = 4'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  reg [3:0] \disparity$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
+  output [9:0] encoded_red;
+  reg [9:0] encoded_red = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
+  reg [9:0] \encoded_red$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
+  wire [3:0] ones;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
+  input [7:0] r;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
+  wire [8:0] xnored;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:75" *)
+  wire [8:0] xored;
+  assign \$9  = r[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *) xored[4];
+  assign \$99  = \$97  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[7];
+  assign \$102  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[0];
+  assign \$104  = \$102  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[1];
+  assign \$106  = \$104  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[2];
+  assign \$108  = \$106  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[3];
+  assign \$110  = \$108  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[4];
+  assign \$112  = \$110  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[5];
+  assign \$114  = \$112  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[6];
+  assign \$116  = \$114  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7];
+  assign \$11  = r[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *) xored[5];
+  assign \$119  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$121  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$118 [0];
+  assign \$124  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$126  = \$121  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$123 [1];
+  assign \$129  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$131  = \$126  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$128 [2];
+  assign \$134  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$136  = \$131  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$133 [3];
+  assign \$13  = r[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *) xored[6];
+  assign \$139  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$141  = \$136  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$138 [4];
+  assign \$144  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$146  = \$141  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$143 [5];
+  assign \$149  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$151  = \$146  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$148 [6];
+  assign \$154  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$156  = \$151  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$153 [7];
+  assign \$158  = \$116  - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$156 ;
+  assign \$160  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$162  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$164  = \$160  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$162 ;
+  assign \$166  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$168  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *) data_word[8];
+  assign \$16  = r[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) xnored[0];
+  assign \$170  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *) data_word[8];
+  assign \$172  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$174  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$176  = \$172  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$174 ;
+  assign \$178  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$15  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) \$16 ;
+  assign \$180  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$182  = \$178  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$180 ;
+  assign \$184  = \$176  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$182 ;
+  assign \$186  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$188  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$190  = \$186  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$188 ;
+  assign \$192  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$195  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
+  assign \$198  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
+  assign \$1  = r[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *) xored[0];
+  assign \$200  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$202  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$204  = \$200  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$202 ;
+  assign \$206  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$208  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$20  = r[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) xnored[1];
+  assign \$210  = \$206  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$208 ;
+  assign \$212  = \$204  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$210 ;
+  assign \$214  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *) 1'h0;
+  assign \$217  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
+  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) \$20 ;
+  assign \$220  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
+  assign \$222  = $signed(\$220 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(5'h02);
+  assign \$224  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *) 1'h0;
+  assign \$227  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
+  assign \$229  = $signed(\$227 ) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(5'h02);
+  assign \$232  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
+  assign \$24  = r[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) xnored[2];
+  assign \$23  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) \$24 ;
+  assign \$28  = r[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) xnored[3];
+  assign \$27  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) \$28 ;
+  assign \$32  = r[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) xnored[4];
+  assign \$31  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) \$32 ;
+  assign \$36  = r[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) xnored[5];
+  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) \$36 ;
+  assign \$3  = r[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *) xored[1];
+  assign \$40  = r[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) xnored[6];
+  assign \$39  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) \$40 ;
+  assign \$44  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[0];
+  assign \$46  = \$44  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[1];
+  assign \$48  = \$46  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[2];
+  assign \$50  = \$48  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[3];
+  assign \$52  = \$50  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[4];
+  assign \$54  = \$52  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[5];
+  assign \$56  = \$54  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[6];
+  assign \$58  = \$56  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[7];
+  assign \$5  = r[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *) xored[2];
+  assign \$60  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$62  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$64  = r[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$66  = \$62  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$64 ;
+  assign \$68  = \$60  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$66 ;
+  assign \$70  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$72  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$74  = r[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$76  = \$72  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$74 ;
+  assign \$78  = \$70  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$76 ;
+  assign \$7  = r[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *) xored[3];
+  assign \$80  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *) xnored;
+  assign \$82  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *) xored;
+  assign \$85  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[0];
+  assign \$87  = \$85  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[1];
+  assign \$89  = \$87  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[2];
+  assign \$91  = \$89  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[3];
+  assign \$93  = \$91  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[4];
+  assign \$95  = \$93  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[5];
+  assign \$97  = \$95  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[6];
+  always @(posedge clk)
+    disparity <= \disparity$next ;
+  always @(posedge clk)
+    encoded_red <= \encoded_red$next ;
+  always @(posedge clk)
+    data_word_inv <= \data_word_inv$next ;
+  always @(posedge clk)
+    data_word <= \data_word$next ;
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    casez (\$68 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      1'h1:
+          \data_word$next  = xnored;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      default:
+          \data_word$next  = xored;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \data_word$next  = 9'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    casez (\$78 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      1'h1:
+          \data_word_inv$next  = \$80 ;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      default:
+          \data_word_inv$next  = \$82 ;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \data_word_inv$next  = 9'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    casez (blank_r[0])
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      1'h1:
+          \encoded_red$next  = 10'h2ab;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      default:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          casez (\$164 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            1'h1:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                casez (\$166 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  1'h1:
+                      \encoded_red$next  = { \$168 , data_word[8], data_word_inv[7:0] };
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  default:
+                      \encoded_red$next  = { \$170 , data_word };
+                endcase
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            default:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                casez (\$184 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  1'h1:
+                      \encoded_red$next  = { 1'h1, data_word[8], data_word_inv[7:0] };
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  default:
+                      \encoded_red$next  = { 1'h0, data_word };
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \encoded_red$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    casez (blank_r[0])
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      1'h1:
+          \disparity$next  = 4'h0;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      default:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          casez (\$190 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            1'h1:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                casez (\$192 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  1'h1:
+                      \disparity$next  = \$194 [3:0];
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  default:
+                      \disparity$next  = \$197 [3:0];
+                endcase
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            default:
+                (* full_case = 32'd1 *)
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                casez (\$212 )
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  1'h1:
+                      (* full_case = 32'd1 *)
+                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+                      casez (\$214 )
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" */
+                        1'h1:
+                            \disparity$next  = \$216 [3:0];
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:147" */
+                        default:
+                            \disparity$next  = \$219 [3:0];
+                      endcase
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  default:
+                      (* full_case = 32'd1 *)
+                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+                      casez (\$224 )
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" */
+                        1'h1:
+                            \disparity$next  = \$226 [3:0];
+                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:153" */
+                        default:
+                            \disparity$next  = \$231 [3:0];
+                      endcase
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \disparity$next  = 4'h0;
+    endcase
+  end
+  assign \$43  = \$58 ;
+  assign \$84  = \$99 ;
+  assign \$118  = \$119 ;
+  assign \$123  = \$124 ;
+  assign \$128  = \$129 ;
+  assign \$133  = \$134 ;
+  assign \$138  = \$139 ;
+  assign \$143  = \$144 ;
+  assign \$148  = \$149 ;
+  assign \$153  = \$154 ;
+  assign \$101  = \$158 ;
+  assign \$194  = \$195 ;
+  assign \$197  = \$198 ;
+  assign \$216  = \$217 ;
+  assign \$219  = \$222 ;
+  assign \$226  = \$229 ;
+  assign \$231  = \$232 ;
+  assign diff_q_m = \$158 [3:0];
+  assign data_word_ones = \$99 [3:0];
+  assign ones = \$58 [3:0];
+  assign xnored = { 1'h0, \$39 , \$35 , \$31 , \$27 , \$23 , \$19 , \$15 , r[0] };
+  assign xored = { 1'h1, \$13 , \$11 , \$9 , \$7 , \$5 , \$3 , \$1 , r[0] };
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga" *)
+(* generator = "nMigen" *)
+module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr, rst);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  wire \$1 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *)
+  wire \$11 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:115" *)
+  wire [10:0] \$13 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:115" *)
+  wire [10:0] \$14 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+  wire \$16 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:118" *)
+  wire [10:0] \$18 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:118" *)
+  wire [10:0] \$19 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  wire \$2 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+  wire \$21 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *)
+  wire \$23 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *)
+  wire \$25 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *)
+  wire \$27 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+  wire \$29 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *)
+  wire \$31 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *)
+  wire \$33 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *)
+  wire \$35 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+  wire \$37 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *)
+  wire \$39 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  wire \$4 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *)
+  wire \$41 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *)
+  wire \$43 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+  wire \$45 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *)
+  wire \$47 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *)
+  wire \$49 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *)
+  wire \$51 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  wire \$6 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+  wire \$9 ;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  output [9:0] h_ctr;
+  reg [9:0] h_ctr = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  reg [9:0] \h_ctr$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  reg h_en = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  reg \h_en$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:52" *)
+  wire output_blank;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
+  reg output_hs = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
+  reg \output_hs$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
+  reg output_vs = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
+  reg \output_vs$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  reg reset = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  reg \reset$next ;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
+  output [9:0] v_ctr;
+  reg [9:0] v_ctr = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
+  reg [9:0] \v_ctr$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  reg v_en = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  reg \v_en$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  output vga_output__blank;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  output vga_output__hs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  output vga_output__vs;
+  assign \$9  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *) 10'h31b;
+  assign \$11  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *) 10'h20a;
+  assign \$14  = v_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:115" *) 1'h1;
+  assign \$16  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *) 10'h31b;
+  assign \$19  = h_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:118" *) 1'h1;
+  assign \$21  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *) 1'h0;
+  assign \$23  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *) 10'h280;
+  assign \$25  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *) 10'h290;
+  assign \$27  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *) 10'h2f0;
+  assign \$2  = h_ctr < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) 10'h280;
+  assign \$29  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *) 1'h0;
+  assign \$31  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *) 10'h280;
+  assign \$33  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *) 10'h290;
+  assign \$35  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *) 10'h2f0;
+  assign \$37  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *) 1'h0;
+  assign \$39  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *) 9'h1e0;
+  assign \$41  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *) 9'h1ea;
+  assign \$43  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *) 9'h1ec;
+  assign \$45  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *) 1'h0;
+  assign \$47  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *) 9'h1e0;
+  assign \$4  = v_ctr < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) 9'h1e0;
+  assign \$49  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *) 9'h1ea;
+  assign \$51  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *) 9'h1ec;
+  assign \$6  = \$2  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) \$4 ;
+  assign \$1  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) \$6 ;
+  always @(posedge clk)
+    reset <= \reset$next ;
+  always @(posedge clk)
+    output_vs <= \output_vs$next ;
+  always @(posedge clk)
+    v_en <= \v_en$next ;
+  always @(posedge clk)
+    output_hs <= \output_hs$next ;
+  always @(posedge clk)
+    h_en <= \h_en$next ;
+  always @(posedge clk)
+    h_ctr <= \h_ctr$next ;
+  always @(posedge clk)
+    v_ctr <= \v_ctr$next ;
+  \output  \output  (
+    .blank(output_blank),
+    .hs(output_hs),
+    .vga_output__blank(vga_output__blank),
+    .vga_output__hs(vga_output__hs),
+    .vga_output__vs(vga_output__vs),
+    .vs(output_vs)
+  );
+  always @* begin
+    if (\initial ) begin end
+    \v_ctr$next  = v_ctr;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+    casez (\$9 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" */
+      1'h1:
+          (* full_case = 32'd1 *)
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *)
+          casez (\$11 )
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" */
+            1'h1:
+                \v_ctr$next  = 10'h000;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:114" */
+            default:
+                \v_ctr$next  = \$13 [9:0];
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    casez (reset)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      1'h1:
+          \v_ctr$next  = 10'h000;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \v_ctr$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+    casez (\$16 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" */
+      1'h1:
+          \h_ctr$next  = 10'h000;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:117" */
+      default:
+          \h_ctr$next  = \$18 [9:0];
+    endcase
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    casez (reset)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      1'h1:
+          \h_ctr$next  = 10'h31b;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \h_ctr$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \h_en$next  = h_en;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+    casez ({ \$27 , \$25 , \$23 , \$21  })
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" */
+      4'b???1:
+          \h_en$next  = 1'h1;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" */
+      4'b??1?:
+          \h_en$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \h_en$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \output_hs$next  = output_hs;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+    casez ({ \$35 , \$33 , \$31 , \$29  })
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" */
+      4'b???1:
+          /* empty */;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" */
+      4'b??1?:
+          /* empty */;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" */
+      4'b?1??:
+          \output_hs$next  = 1'h1;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" */
+      4'b1???:
+          \output_hs$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \output_hs$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \v_en$next  = v_en;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+    casez ({ \$43 , \$41 , \$39 , \$37  })
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" */
+      4'b???1:
+          \v_en$next  = 1'h1;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" */
+      4'b??1?:
+          \v_en$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \v_en$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \output_vs$next  = output_vs;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+    casez ({ \$51 , \$49 , \$47 , \$45  })
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" */
+      4'b???1:
+          /* empty */;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" */
+      4'b??1?:
+          /* empty */;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" */
+      4'b?1??:
+          \output_vs$next  = 1'h1;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" */
+      4'b1???:
+          \output_vs$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \output_vs$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \reset$next  = reset;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    casez (reset)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      1'h1:
+          \reset$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \reset$next  = 1'h0;
+    endcase
+  end
+  assign \$13  = \$14 ;
+  assign \$18  = \$19 ;
+  assign output_blank = \$1 ;
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid" *)
+(* generator = "nMigen" *)
+module vga2dvid(clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, shift_clk, shift_rst, r, rst);
+  reg \initial  = 0;
+  wire [4:0] \$1 ;
+  wire [4:0] \$11 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+  wire \$12 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:136" *)
+  wire [9:0] \$14 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+  wire \$2 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:134" *)
+  wire [9:0] \$4 ;
+  wire [4:0] \$6 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+  wire \$7 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:135" *)
+  wire [9:0] \$9 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  input [3:0] blank_r;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:60" *)
+  input [3:0] hs_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:117" *)
+  reg [9:0] latched_blue = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:117" *)
+  reg [9:0] \latched_blue$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:116" *)
+  reg [9:0] latched_green = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:116" *)
+  reg [9:0] \latched_green$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:115" *)
+  reg [9:0] latched_red = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:115" *)
+  reg [9:0] \latched_red$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:50" *)
+  output [1:0] pixel_b;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:51" *)
+  output [1:0] pixel_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:49" *)
+  output [1:0] pixel_g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:48" *)
+  output [1:0] pixel_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
+  input [7:0] r;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:113" *)
+  reg [9:0] shift_blue = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:113" *)
+  reg [9:0] \shift_blue$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  input shift_clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:109" *)
+  reg [9:0] shift_clock = 10'h01f;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:109" *)
+  reg [9:0] \shift_clock$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:112" *)
+  reg [9:0] shift_green = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:112" *)
+  reg [9:0] \shift_green$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:111" *)
+  reg [9:0] shift_red = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:111" *)
+  reg [9:0] \shift_red$next ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
+  input shift_rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:95" *)
+  wire [1:0] tmds_b_c0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:101" *)
+  wire [9:0] tmds_b_encoded_blue;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
+  wire [9:0] tmds_g_encoded_green;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
+  wire [9:0] tmds_r_encoded_red;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:61" *)
+  input [3:0] vs_r;
+  assign \$9  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:135" *) { 1'h0, shift_green[9:2] };
+  assign \$12  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$11 [4];
+  assign \$14  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:136" *) { 1'h0, shift_blue[9:2] };
+  assign \$2  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$1 [4];
+  assign \$4  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:134" *) { 1'h0, shift_red[9:2] };
+  assign \$7  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$6 [4];
+  always @(posedge shift_clk)
+    shift_clock <= \shift_clock$next ;
+  always @(posedge shift_clk)
+    shift_blue <= \shift_blue$next ;
+  always @(posedge shift_clk)
+    shift_green <= \shift_green$next ;
+  always @(posedge shift_clk)
+    shift_red <= \shift_red$next ;
+  always @(posedge clk)
+    latched_blue <= \latched_blue$next ;
+  always @(posedge clk)
+    latched_green <= \latched_green$next ;
+  always @(posedge clk)
+    latched_red <= \latched_red$next ;
+  tmds_b tmds_b (
+    .blank_r(blank_r),
+    .c0(tmds_b_c0),
+    .clk(clk),
+    .encoded_blue(tmds_b_encoded_blue),
+    .rst(rst)
+  );
+  tmds_g tmds_g (
+    .blank_r(blank_r),
+    .clk(clk),
+    .encoded_green(tmds_g_encoded_green),
+    .rst(rst)
+  );
+  tmds_r tmds_r (
+    .blank_r(blank_r),
+    .clk(clk),
+    .encoded_red(tmds_r_encoded_red),
+    .r(r),
+    .rst(rst)
+  );
+  always @* begin
+    if (\initial ) begin end
+    \latched_red$next  = tmds_r_encoded_red;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \latched_red$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+    casez (\$12 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" */
+      1'h1:
+          \shift_blue$next  = latched_blue;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:133" */
+      default:
+          \shift_blue$next  = \$14 ;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \shift_blue$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \shift_clock$next  = { shift_clock[1:0], shift_clock[9:2] };
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \shift_clock$next  = 10'h01f;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \latched_green$next  = tmds_g_encoded_green;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \latched_green$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \latched_blue$next  = tmds_b_encoded_blue;
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \latched_blue$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+    casez (\$2 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" */
+      1'h1:
+          \shift_red$next  = latched_red;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:133" */
+      default:
+          \shift_red$next  = \$4 ;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \shift_red$next  = 10'h000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    (* full_case = 32'd1 *)
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+    casez (\$7 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" */
+      1'h1:
+          \shift_green$next  = latched_green;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:133" */
+      default:
+          \shift_green$next  = \$9 ;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (shift_rst)
+      1'h1:
+          \shift_green$next  = 10'h000;
+    endcase
+  end
+  assign \$1  = 5'h1f;
+  assign \$6  = 5'h1f;
+  assign \$11  = 5'h1f;
+  assign pixel_clk = shift_clock[1:0];
+  assign pixel_b = shift_blue[1:0];
+  assign pixel_g = shift_green[1:0];
+  assign pixel_r = shift_red[1:0];
+  assign tmds_b_c0 = { vs_r[0], hs_r[0] };
+endmodule
+
+(* \nmigen.hierarchy  = "myip1.gfxdemo.wrapper" *)
+(* generator = "nMigen" *)
+module wrapper(pdm_in, cs, we, addr, write_data, clk, intensity, rst);
+  reg \initial  = 0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:17" *)
+  input [7:0] addr;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input clk;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:15" *)
+  input cs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
+  output [7:0] intensity;
+  reg [7:0] intensity = 8'hff;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
+  reg [7:0] \intensity$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:200" *)
+  output [15:0] pdm_in;
+  reg [15:0] pdm_in = 16'h0000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:200" *)
+  reg [15:0] \pdm_in$next ;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  input rst;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:16" *)
+  input we;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:18" *)
+  input [31:0] write_data;
+  always @(posedge clk)
+    pdm_in <= \pdm_in$next ;
+  always @(posedge clk)
+    intensity <= \intensity$next ;
+  always @* begin
+    if (\initial ) begin end
+    \intensity$next  = intensity;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    casez (cs)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          casez (we)
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            1'h1:
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                casez (addr)
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  8'h00:
+                      \intensity$next  = write_data[7:0];
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \intensity$next  = 8'hff;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \pdm_in$next  = pdm_in;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    casez (cs)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          casez (we)
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            1'h1:
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                casez (addr)
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  8'h00:
+                      /* empty */;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  8'h01:
+                      \pdm_in$next  = write_data[15:0];
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \pdm_in$next  = 16'h0000;
+    endcase
+  end
 endmodule
 
