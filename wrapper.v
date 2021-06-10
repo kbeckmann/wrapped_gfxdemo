@@ -77,27 +77,6 @@ module wrapped_myip1(
     assign buf_io_oeb = {`MPRJ_IO_PADS{1'b0}};
 
     // instantiate your module here, connecting what you need of the above signals
-    // myip1 myip1_0(
-    //     .clk        (wb_clk_i),
-    //     .reset      (la_data_in[0]),
-    //     .enc0_a     (io_in[8]),
-    //     .enc0_b     (io_in[9]),
-    //     .enc1_a     (io_in[10]),
-    //     .enc1_b     (io_in[11]),
-    //     .enc2_a     (io_in[12]),
-    //     .enc2_b     (io_in[13]),
-    //     .pwm0_out   (buf_io_out[14]),
-    //     .pwm1_out   (buf_io_out[15]),
-    //     .pwm2_out   (buf_io_out[16]));
-
-
-    // simple test
-    // myip1 myip1_0(
-    //     .clk        (wb_clk_i),
-    //     .reset      (la_data_in[0])
-    // );
-
-    // TMDS test
     myip1 myip1_0(
         .clk        (wb_clk_i),
         .reset      (la_data_in[0]),
@@ -115,67 +94,12 @@ module wrapped_myip1(
         .wb__we    (wbs_we_i),
         .wb__ack   (buf_wbs_ack_o),
 
-
-        // Route 9 output pins
+        // Route 8 + 1 + 3 output pins
         .buf_io_out (buf_io_out[16:8]),
 
         .buf_irq    (buf_irq)
 
     );
-
-    // GOL test
-    // myip1 myip1_0(
-    //     .clk        (wb_clk_i),
-    //     .reset      (la_data_in[0]),
-
-    //     // Fast clock
-    //     .shift_clk  (user_clock2),
-
-    //     // Route 8 output pins
-    //     .buf_io_out (buf_io_out[15:8]),
-
-    //     .wb__adr   (wbs_adr_i),
-    //     .wb__dat_w (wbs_dat_i),
-    //     .wb__dat_r (buf_wbs_dat_o),
-    //     //.wb__sel   (wbs_sel_i),
-    //     .sel       (wbs_sel_i),
-    //     .wb__cyc   (wbs_cyc_i),
-    //     .wb__stb   (wbs_stb_i),
-    //     .wb__we    (wbs_we_i),
-    //     .wb__ack   (buf_wbs_ack_o)
-    // );
-
-    // WB test
-    // myip1 myip1_0(
-    //     .clk        (wb_clk_i),
-    //     .reset      (la_data_in[0]),
-
-    //     .wb__adr   (wbs_adr_i),
-    //     .wb__dat_w (wbs_dat_i),
-    //     .wb__dat_r (buf_wbs_dat_o),
-    //     //.wb__sel   (wbs_sel_i),
-    //     .sel       (wbs_sel_i),
-    //     .wb__cyc   (wbs_cyc_i),
-    //     .wb__stb   (wbs_stb_i),
-    //     .wb__we    (wbs_we_i),
-    //     .wb__ack   (buf_wbs_ack_o)
-    // );
-
-    // WB test2
-    // myip1 myip1_0(
-    //     .clk        (wb_clk_i),
-    //     .reset      (la_data_in[0]),
-
-    //     .wb__adr   (wbs_adr_i),
-    //     .wb__dat_w (wbs_dat_i),
-    //     .wb__dat_r (buf_wbs_dat_o),
-    //     //.wb__sel   (wbs_sel_i),
-    //     .sel       (wbs_sel_i),
-    //     .wb__cyc   (wbs_cyc_i),
-    //     .wb__stb   (wbs_stb_i),
-    //     .wb__we    (wbs_we_i),
-    //     .wb__ack   (buf_wbs_ack_o)
-    // );
 
 endmodule 
 `default_nettype wire
