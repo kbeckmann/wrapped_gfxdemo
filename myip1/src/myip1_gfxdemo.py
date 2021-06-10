@@ -194,7 +194,7 @@ if __name__ == "__main__":
     wb = gfxdemo.wb
     sel = Signal(4)
 
-    with m.If(sel != 0):
+    with m.If(sel == 0b1111):
         m.d.comb += wb.sel.eq(1)
 
     # python myip1_tmds.py generate -t v > myip1.v
@@ -209,7 +209,6 @@ if __name__ == "__main__":
         wb.adr,
         wb.dat_w,
         wb.dat_r,
-        wb.sel,
         wb.cyc,
         wb.stb,
         wb.we,
@@ -220,6 +219,5 @@ if __name__ == "__main__":
 
         # out
         buf_io_out,
-
         buf_irq,
     ])
