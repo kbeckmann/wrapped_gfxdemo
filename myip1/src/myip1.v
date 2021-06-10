@@ -43,86 +43,86 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator" *)
 (* generator = "nMigen" *)
-module dvid_signal_generator(dvid_out_clk, dvid_out, irq, clk, intensity, shift_clk, shift_rst, rst);
+module dvid_signal_generator(dvid_out_clk, dvid_out, r, g, b, vga_output__vs, v_en, h_ctr, clk, shift_clk, shift_rst, h_en, reset, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:96" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:97" *)
-  wire \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:120" *)
-  wire \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:126" *)
-  wire [2:0] \$7 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:110" *)
+  wire [2:0] \$3 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input [7:0] b;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:148" *)
   output [2:0] dvid_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:147" *)
   output dvid_out_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
-  input [7:0] intensity;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:30" *)
-  output [1:0] irq;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:107" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  input [7:0] g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  output [9:0] h_ctr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  output h_en;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:91" *)
   reg [1:0] pixel_b_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:107" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:91" *)
   reg [1:0] \pixel_b_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:88" *)
   reg [1:0] pixel_clk_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:88" *)
   reg [1:0] \pixel_clk_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:106" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:90" *)
   reg [1:0] pixel_g_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:106" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:90" *)
   reg [1:0] \pixel_g_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:105" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:89" *)
   reg [1:0] pixel_r_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:105" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:89" *)
   reg [1:0] \pixel_r_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:74" *)
-  wire [7:0] rotozoom_intensity;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
+  input [7:0] r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  input reset;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
   input shift_clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
   input shift_rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  output v_en;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
   reg [3:0] vga2dvid_blank_r = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
   reg [3:0] \vga2dvid_blank_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:60" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:63" *)
   reg [3:0] vga2dvid_hs_r = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:60" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:63" *)
   reg [3:0] \vga2dvid_hs_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:50" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:56" *)
   wire [1:0] vga2dvid_pixel_b;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:51" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:57" *)
   wire [1:0] vga2dvid_pixel_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:49" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:55" *)
   wire [1:0] vga2dvid_pixel_g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:48" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:54" *)
   wire [1:0] vga2dvid_pixel_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
-  wire [7:0] vga2dvid_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:61" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:64" *)
   reg [3:0] vga2dvid_vs_r = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:61" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:64" *)
   reg [3:0] \vga2dvid_vs_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
-  wire [9:0] vga_h_ctr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
-  wire [9:0] vga_v_ctr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  output vga_output__vs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   wire vga_vga_output__blank;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   wire vga_vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
-  wire vga_vga_output__vs;
-  assign \$1  = vga_h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:96" *) 1'h0;
-  assign \$3  = vga_v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:97" *) 1'h0;
-  assign \$5  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:120" *) pixel_clk_r[0] : pixel_clk_r[1];
-  assign \$7  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:126" *) { pixel_r_r[0], pixel_g_r[0], pixel_b_r[0] } : { pixel_r_r[1], pixel_g_r[1], pixel_b_r[1] };
+  assign \$1  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *) pixel_clk_r[0] : pixel_clk_r[1];
+  assign \$3  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:110" *) { pixel_r_r[0], pixel_g_r[0], pixel_b_r[0] } : { pixel_r_r[1], pixel_g_r[1], pixel_b_r[1] };
+  always @(posedge shift_clk)
+    pixel_b_r <= \pixel_b_r$next ;
+  always @(posedge shift_clk)
+    pixel_g_r <= \pixel_g_r$next ;
   always @(posedge shift_clk)
     pixel_r_r <= \pixel_r_r$next ;
   always @(posedge shift_clk)
@@ -133,37 +133,28 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, irq, clk, intensity, shift_
     vga2dvid_hs_r <= \vga2dvid_hs_r$next ;
   always @(posedge clk)
     vga2dvid_blank_r <= \vga2dvid_blank_r$next ;
-  always @(posedge shift_clk)
-    pixel_b_r <= \pixel_b_r$next ;
-  always @(posedge shift_clk)
-    pixel_g_r <= \pixel_g_r$next ;
-  rotozoom rotozoom (
-    .clk(clk),
-    .h_ctr(vga_h_ctr),
-    .intensity(rotozoom_intensity),
-    .r(vga2dvid_r),
-    .rst(rst),
-    .v_ctr(vga_v_ctr),
-    .vga_output__vs(vga_vga_output__vs)
-  );
   vga vga (
     .clk(clk),
-    .h_ctr(vga_h_ctr),
+    .h_ctr(h_ctr),
+    .h_en(h_en),
+    .reset(reset),
     .rst(rst),
-    .v_ctr(vga_v_ctr),
+    .v_en(v_en),
     .vga_output__blank(vga_vga_output__blank),
     .vga_output__hs(vga_vga_output__hs),
-    .vga_output__vs(vga_vga_output__vs)
+    .vga_output__vs(vga_output__vs)
   );
   vga2dvid vga2dvid (
+    .b(b),
     .blank_r(vga2dvid_blank_r),
     .clk(clk),
+    .g(g),
     .hs_r(vga2dvid_hs_r),
     .pixel_b(vga2dvid_pixel_b),
     .pixel_clk(vga2dvid_pixel_clk),
     .pixel_g(vga2dvid_pixel_g),
     .pixel_r(vga2dvid_pixel_r),
-    .r(vga2dvid_r),
+    .r(r),
     .rst(rst),
     .shift_clk(shift_clk),
     .shift_rst(shift_rst),
@@ -189,7 +180,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, irq, clk, intensity, shift_
   end
   always @* begin
     if (\initial ) begin end
-    \vga2dvid_vs_r$next  = { vga_vga_output__vs, vga2dvid_vs_r[3:1] };
+    \vga2dvid_vs_r$next  = { vga_output__vs, vga2dvid_vs_r[3:1] };
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
@@ -232,53 +223,81 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, irq, clk, intensity, shift_
           \pixel_b_r$next  = 2'h0;
     endcase
   end
-  assign dvid_out = \$7 ;
-  assign dvid_out_clk = \$5 ;
-  assign irq = { \$3 , \$1  };
-  assign rotozoom_intensity = intensity;
+  assign dvid_out = \$3 ;
+  assign dvid_out_clk = \$1 ;
 endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo" *)
 (* generator = "nMigen" *)
-module gfxdemo(dvid_out_clk, dvid_out, pdm_out, irq, wb__we, wb__adr, wb__stb, wb__cyc, wb__dat_r, wb__dat_w, wb__ack, clk, shift_clk, shift_rst, rst);
+module gfxdemo(dvid_out_clk, dvid_out, pdm_out, irq, wb__we, wb__adr, wb__dat_w, wb__stb, wb__cyc, wb__ack, clk, shift_clk, shift_rst, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:228" *)
-  wire [16:0] \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$11 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$13 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$15 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$17 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$19 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$21 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$23 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$25 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$27 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$29 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$31 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$33 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-  wire \$7 ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *)
-  wire [7:0] \$9 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:258" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$10 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$12 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$14 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$16 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *)
+  wire \$18 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:255" *)
+  wire [16:0] \$2 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  wire \$20 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  wire \$22 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$24 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$26 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$28 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  wire \$30 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *)
+  wire \$32 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  wire \$34 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  wire \$36 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *)
+  wire \$38 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:279" *)
+  wire [7:0] \$4 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *)
+  wire \$40 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  wire \$42 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  wire \$44 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  wire \$46 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  wire \$48 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  wire \$50 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  wire \$52 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  wire \$54 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  wire \$56 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  wire \$58 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:280" *)
+  wire [7:0] \$6 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  wire \$60 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  wire \$62 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  wire \$64 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:281" *)
+  wire [7:0] \$8 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:321" *)
   reg ack_r = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:258" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:321" *)
   reg \ack_r$next ;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
@@ -286,100 +305,188 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, irq, wb__we, wb__adr, wb__stb, w
   output [2:0] dvid_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:147" *)
   output dvid_out_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
-  wire [7:0] dvid_signal_generator_intensity;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:30" *)
-  wire [1:0] dvid_signal_generator_irq;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *)
-  output [1:0] irq;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:227" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  wire [7:0] dvid_signal_generator_b;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  wire [7:0] dvid_signal_generator_g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  wire [9:0] dvid_signal_generator_h_ctr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  wire dvid_signal_generator_h_en;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
+  wire [7:0] dvid_signal_generator_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  wire dvid_signal_generator_reset;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  wire dvid_signal_generator_v_en;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  wire dvid_signal_generator_vga_output__vs;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:212" *)
+  output [2:0] irq;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:254" *)
   reg [16:0] pdm = 17'h00000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:227" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:254" *)
   reg [16:0] \pdm$next ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:161" *)
   output pdm_out;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:19" *)
-  wire [31:0] read_data;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:276" *)
+  wire pixel_on;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:161" *)
+  wire rbrenderer_pixel_on;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  wire [3:0] rowbuf_r_addr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  wire [31:0] rowbuf_r_data;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:263" *)
+  wire [3:0] rowbuf_w_addr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:263" *)
+  wire [31:0] rowbuf_w_data;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:263" *)
+  reg rowbuf_w_en;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
   input shift_clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
   input shift_rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:284" *)
+  reg v_sync_risen = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:284" *)
+  reg \v_sync_risen$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:285" *)
+  reg v_sync_strobe = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:285" *)
+  reg \v_sync_strobe$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   output wb__ack;
   reg wb__ack = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   reg \wb__ack$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__adr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__cyc;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
-  output [31:0] wb__dat_r;
-  reg [31:0] wb__dat_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__dat_w;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__stb;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__we;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:17" *)
-  wire [7:0] wrapper_addr;
+  wire [2:0] wrapper_addr;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:15" *)
   reg wrapper_cs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:200" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:213" *)
   wire [15:0] wrapper_pdm_in;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:271" *)
+  wire [23:0] wrapper_rgb_off;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:270" *)
+  wire [23:0] wrapper_rgb_on;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:16" *)
   wire wrapper_we;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:18" *)
-  reg [31:0] wrapper_write_data;
-  assign \$9  = + (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *) wb__adr[7:2];
-  assign \$11  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
-  assign \$13  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
-  assign \$15  = \$11  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$13 ;
-  assign \$17  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
-  assign \$1  = pdm[15:0] + (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:228" *) wrapper_pdm_in;
-  assign \$19  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
-  assign \$21  = \$17  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$19 ;
-  assign \$23  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
-  assign \$25  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
-  assign \$27  = \$23  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$25 ;
-  assign \$29  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
-  assign \$31  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
-  assign \$33  = \$29  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$31 ;
-  assign \$3  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) wb__cyc;
-  assign \$5  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) 22'h300000;
-  assign \$7  = \$3  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *) \$5 ;
+  wire [31:0] wrapper_write_data;
+  reg [31:0] rowbuf [9:0];
+  initial begin
+    rowbuf[0] = 32'd0;
+    rowbuf[1] = 32'd0;
+    rowbuf[2] = 32'd0;
+    rowbuf[3] = 32'd0;
+    rowbuf[4] = 32'd0;
+    rowbuf[5] = 32'd0;
+    rowbuf[6] = 32'd0;
+    rowbuf[7] = 32'd0;
+    rowbuf[8] = 32'd0;
+    rowbuf[9] = 32'd0;
+  end
+  reg [3:0] _0_;
+  always @(posedge clk) begin
+    _0_ <= rowbuf_r_addr;
+    if (rowbuf_w_en) rowbuf[rowbuf_w_addr] <= rowbuf_w_data;
+  end
+  assign rowbuf_r_data = rowbuf[_0_];
+  assign \$10  = v_sync_strobe == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$12  = v_sync_risen == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$14  = \$10  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) \$12 ;
+  assign \$16  = \$14  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) dvid_signal_generator_vga_output__vs;
+  assign \$18  = v_sync_strobe & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *) v_sync_risen;
+  assign \$20  = dvid_signal_generator_vga_output__vs == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) 1'h0;
+  assign \$22  = v_sync_risen & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) \$20 ;
+  assign \$24  = v_sync_strobe == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$26  = v_sync_risen == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$28  = \$24  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) \$26 ;
+  assign \$2  = pdm[15:0] + (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:255" *) wrapper_pdm_in;
+  assign \$30  = \$28  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) dvid_signal_generator_vga_output__vs;
+  assign \$32  = v_sync_strobe & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *) v_sync_risen;
+  assign \$34  = dvid_signal_generator_vga_output__vs == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) 1'h0;
+  assign \$36  = v_sync_risen & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) \$34 ;
+  assign \$38  = dvid_signal_generator_h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *) 10'h280;
+  assign \$40  = dvid_signal_generator_v_en & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *) \$38 ;
+  assign \$42  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$44  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$46  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$48  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$4  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:279" *) wrapper_rgb_on[7:0] : wrapper_rgb_off[7:0];
+  assign \$50  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$52  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$54  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$56  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$58  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$60  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$62  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$64  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$6  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:280" *) wrapper_rgb_on[15:8] : wrapper_rgb_off[15:8];
+  assign \$8  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:281" *) wrapper_rgb_on[23:16] : wrapper_rgb_off[23:16];
   always @(posedge clk)
     ack_r <= \ack_r$next ;
   always @(posedge clk)
     wb__ack <= \wb__ack$next ;
   always @(posedge clk)
+    v_sync_risen <= \v_sync_risen$next ;
+  always @(posedge clk)
+    v_sync_strobe <= \v_sync_strobe$next ;
+  always @(posedge clk)
     pdm <= \pdm$next ;
   dvid_signal_generator dvid_signal_generator (
+    .b(dvid_signal_generator_b),
     .clk(clk),
     .dvid_out(dvid_out),
     .dvid_out_clk(dvid_out_clk),
-    .intensity(dvid_signal_generator_intensity),
-    .irq(dvid_signal_generator_irq),
+    .g(dvid_signal_generator_g),
+    .h_ctr(dvid_signal_generator_h_ctr),
+    .h_en(dvid_signal_generator_h_en),
+    .r(dvid_signal_generator_r),
+    .reset(dvid_signal_generator_reset),
     .rst(rst),
     .shift_clk(shift_clk),
-    .shift_rst(shift_rst)
+    .shift_rst(shift_rst),
+    .v_en(dvid_signal_generator_v_en),
+    .vga_output__vs(dvid_signal_generator_vga_output__vs)
+  );
+  rbrenderer rbrenderer (
+    .clk(clk),
+    .h_ctr(dvid_signal_generator_h_ctr),
+    .h_en(dvid_signal_generator_h_en),
+    .pixel_on(rbrenderer_pixel_on),
+    .rowbuf_r_addr(rowbuf_r_addr),
+    .rowbuf_r_data(rowbuf_r_data),
+    .rst(rst)
   );
   wrapper wrapper (
     .addr(wrapper_addr),
     .clk(clk),
     .cs(wrapper_cs),
-    .intensity(dvid_signal_generator_intensity),
     .pdm_in(wrapper_pdm_in),
+    .reset(dvid_signal_generator_reset),
+    .rgb_off(wrapper_rgb_off),
+    .rgb_on(wrapper_rgb_on),
     .rst(rst),
     .we(wrapper_we),
     .write_data(wrapper_write_data)
   );
   always @* begin
     if (\initial ) begin end
-    \pdm$next  = \$1 ;
+    \pdm$next  = \$2 ;
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
@@ -388,42 +495,20 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, irq, wb__we, wb__adr, wb__stb, w
   end
   always @* begin
     if (\initial ) begin end
-    wrapper_cs = 1'h0;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-    casez (\$7 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
-      1'h1:
-          wrapper_cs = 1'h1;
-    endcase
-  end
-  always @* begin
-    if (\initial ) begin end
-    wb__dat_r = 32'd0;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-    casez (\$15 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
-      1'h1:
-          wb__dat_r = read_data;
-    endcase
-  end
-  always @* begin
-    if (\initial ) begin end
-    wrapper_write_data = 32'd0;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-    casez (\$21 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
-      1'h1:
-          wrapper_write_data = wb__dat_w;
-    endcase
-  end
-  always @* begin
-    if (\initial ) begin end
     \wb__ack$next  = wb__ack;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-    casez (\$27 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    casez (\$48 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
       1'h1:
-          \wb__ack$next  = ack_r;
+          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          casez ({ \$52 , \$50  })
+            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            2'b?1:
+                \wb__ack$next  = ack_r;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" */
+            2'b1?:
+                \wb__ack$next  = ack_r;
+          endcase
     endcase
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
@@ -433,13 +518,22 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, irq, wb__we, wb__adr, wb__stb, w
   end
   always @* begin
     if (\initial ) begin end
+    \ack_r$next  = ack_r;
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" *)
-    casez (\$33 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:260" */
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    casez (\$54 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
       1'h1:
-          \ack_r$next  = 1'h0;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:266" */
+          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          casez ({ \$58 , \$56  })
+            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            2'b?1:
+                \ack_r$next  = 1'h0;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" */
+            2'b1?:
+                \ack_r$next  = 1'h0;
+          endcase
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:336" */
       default:
           \ack_r$next  = 1'h1;
     endcase
@@ -449,30 +543,106 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, irq, wb__we, wb__adr, wb__stb, w
           \ack_r$next  = 1'h0;
     endcase
   end
-  assign read_data = 32'd0;
-  assign wrapper_addr = \$9 ;
+  always @* begin
+    if (\initial ) begin end
+    rowbuf_w_en = 1'h0;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    casez (\$60 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          casez ({ \$64 , \$62  })
+            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            2'b?1:
+                /* empty */;
+            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" */
+            2'b1?:
+                rowbuf_w_en = wb__we;
+          endcase
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \v_sync_strobe$next  = v_sync_strobe;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+    casez ({ \$22 , \$18 , \$16  })
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" */
+      3'b??1:
+          \v_sync_strobe$next  = 1'h1;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" */
+      3'b?1?:
+          \v_sync_strobe$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \v_sync_strobe$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \v_sync_risen$next  = v_sync_risen;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+    casez ({ \$36 , \$32 , \$30  })
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" */
+      3'b??1:
+          \v_sync_risen$next  = 1'h1;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" */
+      3'b?1?:
+          /* empty */;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" */
+      3'b1??:
+          \v_sync_risen$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \v_sync_risen$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    wrapper_cs = 1'h0;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    casez (\$42 )
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          casez ({ \$46 , \$44  })
+            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            2'b?1:
+                wrapper_cs = 1'h1;
+          endcase
+    endcase
+  end
+  assign rowbuf_w_data = wb__dat_w;
+  assign rowbuf_w_addr = wb__adr[5:2];
+  assign wrapper_write_data = wb__dat_w;
+  assign wrapper_addr = wb__adr[4:2];
   assign wrapper_we = wb__we;
-  assign irq = dvid_signal_generator_irq;
+  assign irq = { 1'h0, v_sync_strobe, \$40  };
+  assign dvid_signal_generator_b = \$8 ;
+  assign dvid_signal_generator_g = \$6 ;
+  assign dvid_signal_generator_r = \$4 ;
+  assign pixel_on = rbrenderer_pixel_on;
   assign pdm_out = pdm[16];
 endmodule
 
 (* \nmigen.hierarchy  = "myip1" *)
 (* top =  1  *)
 (* generator = "nMigen" *)
-module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb, wb__we, wb__ack, sel, buf_io_out, buf_irq, clk, rst, reset);
+module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__cyc, wb__stb, wb__we, wb__ack, sel, buf_io_out, buf_irq, clk, rst, reset);
   reg \initial  = 0;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:178" *)
   wire \$1 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *)
-  wire \$11 ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:181" *)
   wire \$3 ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:184" *)
   wire \$5 ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:187" *)
   wire \$7 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *)
-  wire [2:0] \$9 ;
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *)
+  wire \$9 ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:171" *)
   output [8:0] buf_io_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:173" *)
@@ -483,8 +653,8 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb
   wire [2:0] gfxdemo_dvid_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:147" *)
   wire gfxdemo_dvid_out_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *)
-  wire [1:0] gfxdemo_irq;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:212" *)
+  wire [2:0] gfxdemo_irq;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:161" *)
   wire gfxdemo_pdm_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
@@ -497,25 +667,23 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb
   input [3:0] sel;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:156" *)
   input shift_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   output wb__ack;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__adr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__cyc;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
-  output [31:0] wb__dat_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  input [31:0] wb__dat_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__dat_w;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
-  output wb__sel;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   reg wb__sel;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__stb;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__we;
-  assign \$9  = + (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:199" *) gfxdemo_irq;
-  assign \$11  = sel != (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *) 1'h0;
+  assign \$9  = sel == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *) 4'hf;
   assign \$1  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:178" *) gfxdemo_dvid_out_clk;
   assign \$3  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:181" *) gfxdemo_dvid_out[0];
   assign \$5  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:184" *) gfxdemo_dvid_out[1];
@@ -537,7 +705,6 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb
     .wb__ack(wb__ack),
     .wb__adr(wb__adr),
     .wb__cyc(wb__cyc),
-    .wb__dat_r(wb__dat_r),
     .wb__dat_w(wb__dat_w),
     .wb__stb(wb__stb),
     .wb__we(wb__we)
@@ -546,13 +713,13 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__sel, wb__cyc, wb__stb
     if (\initial ) begin end
     wb__sel = 1'h0;
     (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" *)
-    casez (\$11 )
+    casez (\$9 )
       /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:197" */
       1'h1:
           wb__sel = 1'h1;
     endcase
   end
-  assign buf_irq = \$9 ;
+  assign buf_irq = gfxdemo_irq;
   assign buf_io_out[8] = gfxdemo_pdm_out;
   assign buf_io_out[7] = \$7 ;
   assign buf_io_out[6] = gfxdemo_dvid_out[2];
@@ -567,16 +734,16 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga.output" *)
 (* generator = "nMigen" *)
-module \output (vga_output__hs, vga_output__vs, blank, hs, vs, vga_output__blank);
+module \output (vga_output__blank, vga_output__hs, blank, hs, vs, vga_output__vs);
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:52" *)
   input blank;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
   input hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__blank;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__vs;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
   input vs;
@@ -585,288 +752,134 @@ module \output (vga_output__hs, vga_output__vs, blank, hs, vs, vga_output__blank
   assign vga_output__hs = hs;
 endmodule
 
-(* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.rotozoom" *)
+(* \nmigen.hierarchy  = "myip1.gfxdemo.rbrenderer" *)
 (* generator = "nMigen" *)
-module rotozoom(clk, vga_output__vs, intensity, h_ctr, v_ctr, r, rst);
+module rbrenderer(pixel_on, h_ctr, clk, h_en, rowbuf_r_addr, rowbuf_r_data, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
-  wire \$10 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
-  wire \$12 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
-  wire \$14 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:118" *)
-  wire [8:0] \$16 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:118" *)
-  wire [8:0] \$17 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
-  wire \$19 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
-  wire \$21 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
-  wire \$23 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
-  wire \$25 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:121" *)
-  wire [2:0] \$27 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:121" *)
-  wire [2:0] \$28 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:190" *)
   wire \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
-  wire [15:0] \$30 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
-  wire [15:0] \$32 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *)
-  wire [15:0] \$34 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *)
-  wire [9:0] \$35 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *)
-  wire [9:0] \$37 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:137" *)
-  wire [16:0] \$40 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:137" *)
-  wire [16:0] \$41 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:138" *)
-  wire [16:0] \$43 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:138" *)
-  wire [16:0] \$44 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:139" *)
-  wire [16:0] \$46 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:139" *)
-  wire [16:0] \$47 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:153" *)
-  wire [7:0] \$49 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:113" *)
-  wire [16:0] \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [27:0] \$50 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:125" *)
-  wire [25:0] \$51 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [31:0] \$53 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [31:0] \$54 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [27:0] \$56 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [31:0] \$58 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [31:0] \$59 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:113" *)
-  wire [16:0] \$6 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:126" *)
-  wire [25:0] \$61 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [27:0] \$63 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *)
-  wire [27:0] \$65 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:143" *)
-  wire \$67 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
-  wire \$8 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:106" *)
-  reg [7:0] H = 8'h00;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:106" *)
-  reg [7:0] \H$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:127" *)
-  wire [15:0] T;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:131" *)
-  wire [15:0] TT;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:125" *)
-  wire [15:0] X;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:129" *)
-  wire [15:0] XX;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:126" *)
-  wire [15:0] Y;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:130" *)
-  wire [15:0] YY;
+  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *)
+  wire [31:0] \$5 ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:171" *)
+  reg [9:0] addr_r = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:171" *)
+  reg [9:0] \addr_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:172" *)
+  reg [9:0] addr_r_r = 10'h000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:172" *)
+  reg [9:0] \addr_r_r$next ;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:107" *)
-  reg [1:0] ctr = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:107" *)
-  reg [1:0] \ctr$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:70" *)
-  reg [15:0] frame = 16'h0000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:70" *)
-  reg [15:0] \frame$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
   input [9:0] h_ctr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:74" *)
-  input [7:0] intensity;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
-  output [7:0] r;
-  reg [7:0] r = 8'h00;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
-  reg [7:0] \r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  input h_en;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:173" *)
+  reg h_en_r = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:173" *)
+  reg \h_en_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:174" *)
+  reg h_en_r_r = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:174" *)
+  reg \h_en_r_r$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:161" *)
+  output pixel_on;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  output [3:0] rowbuf_r_addr;
+  reg [3:0] rowbuf_r_addr;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  input [31:0] rowbuf_r_data;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
-  input [9:0] v_ctr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
-  input vga_output__vs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:110" *)
-  reg vsync_r = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:110" *)
-  reg \vsync_r$next ;
-  assign \$10  = \$8  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vga_output__vs;
-  assign \$12  = H == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *) 8'hbf;
-  assign \$14  = ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *) 1'h0;
-  assign \$17  = H + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:118" *) 1'h1;
-  assign \$1  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vsync_r;
-  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vsync_r;
-  assign \$21  = \$19  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vga_output__vs;
-  assign \$23  = H == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *) 8'hbf;
-  assign \$25  = ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *) 1'h0;
-  assign \$28  = ctr - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:121" *) 1'h1;
-  assign \$30  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *) h_ctr;
-  assign \$32  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *) v_ctr;
-  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *) frame[9:0];
-  assign \$37  = frame[10] ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *) \$35  : frame[9:0];
-  assign \$34  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:123" *) \$37 ;
-  assign \$3  = \$1  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vga_output__vs;
-  assign \$41  = $signed(XX) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:137" *) $signed(16'h0140);
-  assign \$44  = $signed(YY) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:138" *) $signed(16'h00f0);
-  assign \$47  = $signed(TT) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:139" *) $signed(16'h0200);
-  assign \$51  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:125" *) $signed(X);
-  assign \$54  = $signed(Y) * (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(T);
-  assign \$56  = $signed(\$51 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(\$53 [31:6]);
-  assign \$59  = $signed(X) * (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(T);
-  assign \$61  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:126" *) $signed(Y);
-  assign \$63  = $signed(\$58 [31:6]) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(\$61 );
-  assign \$65  = $signed(\$56 ) & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:142" *) $signed(\$63 );
-  assign \$67  = \$50 [8:3] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:143" *) 1'h0;
-  assign \$49  = \$67  ? (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:153" *) intensity : 8'h00;
-  assign \$6  = frame + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:113" *) 1'h1;
-  assign \$8  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *) vsync_r;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:182" *)
+  reg [31:0] shiftreg = 32'd0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:182" *)
+  reg [31:0] \shiftreg$next ;
+  assign \$1  = addr_r_r[5:0] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" *) 1'h0;
+  assign \$3  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:190" *) addr_r_r[0];
+  assign \$5  = + (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *) shiftreg[31:1];
   always @(posedge clk)
-    r <= \r$next ;
+    shiftreg <= \shiftreg$next ;
   always @(posedge clk)
-    ctr <= \ctr$next ;
+    h_en_r_r <= \h_en_r_r$next ;
   always @(posedge clk)
-    H <= \H$next ;
+    h_en_r <= \h_en_r$next ;
   always @(posedge clk)
-    frame <= \frame$next ;
+    addr_r_r <= \addr_r_r$next ;
   always @(posedge clk)
-    vsync_r <= \vsync_r$next ;
+    addr_r <= \addr_r$next ;
   always @* begin
     if (\initial ) begin end
-    \vsync_r$next  = vga_output__vs;
+    \addr_r$next  = h_ctr;
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
-          \vsync_r$next  = 1'h0;
+          \addr_r$next  = 10'h000;
     endcase
   end
   always @* begin
     if (\initial ) begin end
-    \frame$next  = frame;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
-    casez (\$3 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" */
-      1'h1:
-          \frame$next  = \$5 [15:0];
-    endcase
+    \addr_r_r$next  = addr_r;
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
-          \frame$next  = 16'h0000;
+          \addr_r_r$next  = 10'h000;
     endcase
   end
   always @* begin
     if (\initial ) begin end
-    \r$next  = \$49 ;
+    \h_en_r$next  = h_en;
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
-          \r$next  = 8'h00;
+          \h_en_r$next  = 1'h0;
     endcase
   end
   always @* begin
     if (\initial ) begin end
-    \H$next  = H;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
-    casez (\$10 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" */
-      1'h1:
-          (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
-          casez (\$12 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" */
-            1'h1:
-                \H$next  = 8'h00;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:116" */
-            default:
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
-                casez (\$14 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" */
-                  1'h1:
-                      \H$next  = \$16 [7:0];
-                endcase
-          endcase
-    endcase
+    \h_en_r_r$next  = h_en_r;
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
-          \H$next  = 8'h00;
+          \h_en_r_r$next  = 1'h0;
     endcase
   end
   always @* begin
     if (\initial ) begin end
-    \ctr$next  = ctr;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" *)
-    casez (\$21 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:112" */
+    rowbuf_r_addr = 4'h0;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:185" *)
+    casez (h_en)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:185" */
       1'h1:
-          (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" *)
-          casez (\$23 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:114" */
-            1'h1:
-                /* empty */;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:116" */
-            default:
-                (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" *)
-                casez (\$25 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:117" */
-                  1'h1:
-                      \ctr$next  = 2'h3;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga_testimage.py:120" */
-                  default:
-                      \ctr$next  = \$27 [1:0];
-                endcase
-          endcase
+          rowbuf_r_addr = addr_r[9:6];
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \shiftreg$next  = shiftreg;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" *)
+    casez ({ \$3 , \$1  })
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" */
+      2'b?1:
+          \shiftreg$next  = rowbuf_r_data;
+      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:190" */
+      2'b1?:
+          \shiftreg$next  = \$5 ;
     endcase
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
-          \ctr$next  = 2'h0;
+          \shiftreg$next  = 32'd0;
     endcase
   end
-  assign \$5  = \$6 ;
-  assign \$16  = \$17 ;
-  assign \$27  = \$28 ;
-  assign \$40  = \$41 ;
-  assign \$43  = \$44 ;
-  assign \$46  = \$47 ;
-  assign \$53  = \$54 ;
-  assign \$58  = \$59 ;
-  assign \$50  = \$65 ;
-  assign T = \$47 [15:0];
-  assign Y = \$44 [15:0];
-  assign X = \$41 [15:0];
-  assign TT = \$34 ;
-  assign YY = \$32 ;
-  assign XX = \$30 ;
+  assign pixel_on = shiftreg[0];
 endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid.tmds_b" *)
 (* generator = "nMigen" *)
-module tmds_b(clk, blank_r, c0, encoded_blue, rst);
+module tmds_b(b, clk, blank_r, c0, encoded_blue, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
   wire \$1 ;
@@ -1118,9 +1131,9 @@ module tmds_b(clk, blank_r, c0, encoded_blue, rst);
   wire [7:0] \$97 ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$99 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:46" *)
-  wire [7:0] b;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input [7:0] b;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:95" *)
   input [1:0] c0;
@@ -1447,17 +1460,16 @@ module tmds_b(clk, blank_r, c0, encoded_blue, rst);
   assign \$219  = \$222 ;
   assign \$226  = \$229 ;
   assign \$231  = \$232 ;
-  assign b = 8'h00;
   assign diff_q_m = \$158 [3:0];
   assign data_word_ones = \$99 [3:0];
   assign ones = \$58 [3:0];
-  assign xnored = { 1'h0, \$39 , \$35 , \$31 , \$27 , \$23 , \$19 , \$15 , 1'h0 };
-  assign xored = { 1'h1, \$13 , \$11 , \$9 , \$7 , \$5 , \$3 , \$1 , 1'h0 };
+  assign xnored = { 1'h0, \$39 , \$35 , \$31 , \$27 , \$23 , \$19 , \$15 , b[0] };
+  assign xored = { 1'h1, \$13 , \$11 , \$9 , \$7 , \$5 , \$3 , \$1 , b[0] };
 endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid.tmds_g" *)
 (* generator = "nMigen" *)
-module tmds_g(clk, blank_r, encoded_green, rst);
+module tmds_g(g, clk, blank_r, encoded_green, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
   wire \$1 ;
@@ -1709,7 +1721,7 @@ module tmds_g(clk, blank_r, encoded_green, rst);
   wire [7:0] \$97 ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$99 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
@@ -1734,8 +1746,8 @@ module tmds_g(clk, blank_r, encoded_green, rst);
   reg [9:0] encoded_green = 10'h000;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
   reg [9:0] \encoded_green$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:45" *)
-  wire [7:0] g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  input [7:0] g;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
@@ -2021,17 +2033,16 @@ module tmds_g(clk, blank_r, encoded_green, rst);
   assign \$219  = \$222 ;
   assign \$226  = \$229 ;
   assign \$231  = \$232 ;
-  assign g = 8'h00;
   assign diff_q_m = \$158 [3:0];
   assign data_word_ones = \$99 [3:0];
   assign ones = \$58 [3:0];
-  assign xnored = { 1'h0, \$39 , \$35 , \$31 , \$27 , \$23 , \$19 , \$15 , 1'h0 };
-  assign xored = { 1'h1, \$13 , \$11 , \$9 , \$7 , \$5 , \$3 , \$1 , 1'h0 };
+  assign xnored = { 1'h0, \$39 , \$35 , \$31 , \$27 , \$23 , \$19 , \$15 , g[0] };
+  assign xored = { 1'h1, \$13 , \$11 , \$9 , \$7 , \$5 , \$3 , \$1 , g[0] };
 endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid.tmds_r" *)
 (* generator = "nMigen" *)
-module tmds_r(clk, blank_r, encoded_red, r, rst);
+module tmds_r(r, clk, blank_r, encoded_red, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
   wire \$1 ;
@@ -2283,7 +2294,7 @@ module tmds_r(clk, blank_r, encoded_red, r, rst);
   wire [7:0] \$97 ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$99 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
@@ -2310,7 +2321,7 @@ module tmds_r(clk, blank_r, encoded_red, r, rst);
   reg [9:0] \encoded_red$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
   input [7:0] r;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
@@ -2604,7 +2615,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga" *)
 (* generator = "nMigen" *)
-module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr, rst);
+module vga(vga_output__vs, v_en, h_ctr, clk, vga_output__blank, vga_output__hs, h_en, reset, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
   wire \$1 ;
@@ -2668,6 +2679,7 @@ module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr,
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
   reg [9:0] \h_ctr$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  output h_en;
   reg h_en = 1'h0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
   reg \h_en$next ;
@@ -2682,25 +2694,23 @@ module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr,
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
   reg \output_vs$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
-  reg reset = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
-  reg \reset$next ;
+  input reset;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
-  output [9:0] v_ctr;
   reg [9:0] v_ctr = 10'h000;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
   reg [9:0] \v_ctr$next ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  output v_en;
   reg v_en = 1'h0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
   reg \v_en$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__blank;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:38" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__vs;
   assign \$9  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *) 10'h31b;
   assign \$11  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *) 10'h20a;
@@ -2727,8 +2737,6 @@ module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr,
   assign \$51  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *) 9'h1ec;
   assign \$6  = \$2  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) \$4 ;
   assign \$1  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) \$6 ;
-  always @(posedge clk)
-    reset <= \reset$next ;
   always @(posedge clk)
     output_vs <= \output_vs$next ;
   always @(posedge clk)
@@ -2795,7 +2803,7 @@ module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr,
     casez (reset)
       /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
       1'h1:
-          \h_ctr$next  = 10'h31b;
+          \h_ctr$next  = 10'h000;
     endcase
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
@@ -2813,6 +2821,12 @@ module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr,
           \h_en$next  = 1'h1;
       /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" */
       4'b??1?:
+          \h_en$next  = 1'h0;
+    endcase
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    casez (reset)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      1'h1:
           \h_en$next  = 1'h0;
     endcase
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
@@ -2857,6 +2871,12 @@ module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr,
       4'b??1?:
           \v_en$next  = 1'h0;
     endcase
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    casez (reset)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      1'h1:
+          \v_en$next  = 1'h0;
+    endcase
     (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
@@ -2887,21 +2907,6 @@ module vga(clk, vga_output__blank, vga_output__hs, vga_output__vs, h_ctr, v_ctr,
           \output_vs$next  = 1'h0;
     endcase
   end
-  always @* begin
-    if (\initial ) begin end
-    \reset$next  = reset;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
-    casez (reset)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
-      1'h1:
-          \reset$next  = 1'h0;
-    endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
-    casez (rst)
-      1'h1:
-          \reset$next  = 1'h0;
-    endcase
-  end
   assign \$13  = \$14 ;
   assign \$18  = \$19 ;
   assign output_blank = \$1 ;
@@ -2909,7 +2914,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid" *)
 (* generator = "nMigen" *)
-module vga2dvid(clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, shift_clk, shift_rst, r, rst);
+module vga2dvid(r, g, b, clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, shift_clk, shift_rst, rst);
   reg \initial  = 0;
   wire [4:0] \$1 ;
   wire [4:0] \$11 ;
@@ -2926,11 +2931,15 @@ module vga2dvid(clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, 
   wire \$7 ;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:135" *)
   wire [9:0] \$9 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:59" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  input [7:0] b;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:60" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  input [7:0] g;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:63" *)
   input [3:0] hs_r;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:117" *)
   reg [9:0] latched_blue = 10'h000;
@@ -2944,15 +2953,15 @@ module vga2dvid(clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, 
   reg [9:0] latched_red = 10'h000;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:115" *)
   reg [9:0] \latched_red$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:50" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:56" *)
   output [1:0] pixel_b;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:51" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:57" *)
   output [1:0] pixel_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:49" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:55" *)
   output [1:0] pixel_g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:48" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:54" *)
   output [1:0] pixel_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:44" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
   input [7:0] r;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
@@ -2984,7 +2993,7 @@ module vga2dvid(clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, 
   wire [9:0] tmds_g_encoded_green;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
   wire [9:0] tmds_r_encoded_red;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:61" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:64" *)
   input [3:0] vs_r;
   assign \$9  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:135" *) { 1'h0, shift_green[9:2] };
   assign \$12  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$11 [4];
@@ -3007,6 +3016,7 @@ module vga2dvid(clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, 
   always @(posedge clk)
     latched_red <= \latched_red$next ;
   tmds_b tmds_b (
+    .b(b),
     .blank_r(blank_r),
     .c0(tmds_b_c0),
     .clk(clk),
@@ -3017,6 +3027,7 @@ module vga2dvid(clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, 
     .blank_r(blank_r),
     .clk(clk),
     .encoded_green(tmds_g_encoded_green),
+    .g(g),
     .rst(rst)
   );
   tmds_r tmds_r (
@@ -3128,24 +3139,34 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.wrapper" *)
 (* generator = "nMigen" *)
-module wrapper(pdm_in, cs, we, addr, write_data, clk, intensity, rst);
+module wrapper(pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, clk, reset, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:17" *)
-  input [7:0] addr;
+  input [2:0] addr;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input clk;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:15" *)
   input cs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
-  output [7:0] intensity;
-  reg [7:0] intensity = 8'hff;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:29" *)
-  reg [7:0] \intensity$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:200" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:213" *)
   output [15:0] pdm_in;
   reg [15:0] pdm_in = 16'h0000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:200" *)
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:213" *)
   reg [15:0] \pdm_in$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  output reset;
+  reg reset = 1'h0;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  reg \reset$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:271" *)
+  output [23:0] rgb_off;
+  reg [23:0] rgb_off = 24'h000000;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:271" *)
+  reg [23:0] \rgb_off$next ;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:270" *)
+  output [23:0] rgb_on;
+  reg [23:0] rgb_on = 24'hffffff;
+  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:270" *)
+  reg [23:0] \rgb_on$next ;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   input rst;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:16" *)
@@ -3153,34 +3174,13 @@ module wrapper(pdm_in, cs, we, addr, write_data, clk, intensity, rst);
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:18" *)
   input [31:0] write_data;
   always @(posedge clk)
+    reset <= \reset$next ;
+  always @(posedge clk)
     pdm_in <= \pdm_in$next ;
   always @(posedge clk)
-    intensity <= \intensity$next ;
-  always @* begin
-    if (\initial ) begin end
-    \intensity$next  = intensity;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
-    casez (cs)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
-      1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
-          casez (we)
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
-            1'h1:
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
-                casez (addr)
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
-                  8'h00:
-                      \intensity$next  = write_data[7:0];
-                endcase
-          endcase
-    endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
-    casez (rst)
-      1'h1:
-          \intensity$next  = 8'hff;
-    endcase
-  end
+    rgb_off <= \rgb_off$next ;
+  always @(posedge clk)
+    rgb_on <= \rgb_on$next ;
   always @* begin
     if (\initial ) begin end
     \pdm_in$next  = pdm_in;
@@ -3195,10 +3195,7 @@ module wrapper(pdm_in, cs, we, addr, write_data, clk, intensity, rst);
                 (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
                 casez (addr)
                   /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
-                  8'h00:
-                      /* empty */;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
-                  8'h01:
+                  3'h0:
                       \pdm_in$next  = write_data[15:0];
                 endcase
           endcase
@@ -3207,6 +3204,99 @@ module wrapper(pdm_in, cs, we, addr, write_data, clk, intensity, rst);
     casez (rst)
       1'h1:
           \pdm_in$next  = 16'h0000;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \reset$next  = reset;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    casez (cs)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          casez (we)
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            1'h1:
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                casez (addr)
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h0:
+                      /* empty */;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h1:
+                      \reset$next  = write_data[0];
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \reset$next  = 1'h0;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \rgb_on$next  = rgb_on;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    casez (cs)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          casez (we)
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            1'h1:
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                casez (addr)
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h0:
+                      /* empty */;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h1:
+                      /* empty */;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h2:
+                      \rgb_on$next  = write_data[23:0];
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \rgb_on$next  = 24'hffffff;
+    endcase
+  end
+  always @* begin
+    if (\initial ) begin end
+    \rgb_off$next  = rgb_off;
+    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    casez (cs)
+      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      1'h1:
+          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          casez (we)
+            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            1'h1:
+                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                casez (addr)
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h0:
+                      /* empty */;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h1:
+                      /* empty */;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h2:
+                      /* empty */;
+                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  3'h3:
+                      \rgb_off$next  = write_data[23:0];
+                endcase
+          endcase
+    endcase
+    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    casez (rst)
+      1'h1:
+          \rgb_off$next  = 24'h000000;
     endcase
   end
 endmodule
