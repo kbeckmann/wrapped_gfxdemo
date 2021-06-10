@@ -1,17 +1,9 @@
-from types import SimpleNamespace
 from nmigen import *
 from nmigen.cli import main_parser, main_runner
-from nmigen.lib.fifo import SyncFIFOBuffered
 from nmigen.lib.cdc import ResetSynchronizer
 
-from random import randint
-
 from pergola.applets.gfxdemo import GFXDemo
-
-from pergola.gateware.tmds import TMDSEncoder
-from pergola.gateware.vga import VGAOutput, VGAOutputSubtarget, VGAParameters
-from pergola.gateware.vga2dvid import VGA2DVID
-from pergola.gateware.vga_testimage import TestImageGenerator, RotozoomImageGenerator
+from pergola.applets.gfxdemo import dvid_configs
 
 
 if __name__ == "__main__":
@@ -33,7 +25,7 @@ if __name__ == "__main__":
     m.domains += ClockDomain("shift")
     m.submodules += ResetSynchronizer(reset, domain="shift")
 
-    dvid_config = GFXDemo.dvid_configs["640x480p60"]
+    dvid_config = dvid_configs["640x480p60"]
 
     pdm_out = Signal()
     m.submodules.gfxdemo = gfxdemo = GFXDemo(
@@ -45,12 +37,12 @@ if __name__ == "__main__":
         emulate_ddr=True)
 
     # Raw output signals
-    buf_io_out = Signal(9)
+    buf_io_out = Signal(13)
 
     buf_irq = Signal(3)
 
-    # Fake differential signals
     m.d.comb += [
+        # DVI-D emulated differential signals
         buf_io_out[0].eq( dvid_out_clk),
         buf_io_out[1].eq(~dvid_out_clk),
 
@@ -63,7 +55,15 @@ if __name__ == "__main__":
         buf_io_out[6].eq( dvid_out[2]),
         buf_io_out[7].eq(~dvid_out[2]),
 
+        # DAC
         buf_io_out[8].eq(pdm_out),
+
+        # VGA signals
+        buf_io_out[9].eq(gfxdemo.dvid.vga_output.hs),
+        buf_io_out[10].eq(gfxdemo.dvid.vga_output.vs),
+        buf_io_out[11].eq(gfxdemo.dvid.r),
+        buf_io_out[11].eq(gfxdemo.dvid.g),
+        buf_io_out[12].eq(gfxdemo.dvid.b),
 
         buf_irq.eq(gfxdemo.irq),
     ]
