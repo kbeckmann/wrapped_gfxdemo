@@ -55,18 +55,16 @@ void main()
 
     */
 
-    // 6 inputs for encoder
-    reg_mprj_io_8 =   GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_9 =   GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_10 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_11 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_12 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-    reg_mprj_io_13 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
-
-    // 3 outputs for PWM, starting at 8
-    reg_mprj_io_14 =  GPIO_MODE_USER_STD_OUTPUT;
-    reg_mprj_io_15 =  GPIO_MODE_USER_STD_OUTPUT;
-    reg_mprj_io_16 =  GPIO_MODE_USER_STD_OUTPUT;
+    // Output pins
+    reg_mprj_io_8  = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_9  = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_10 = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_11 = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_12 = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_13 = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_14 = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_15 = GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_16 = GPIO_MODE_USER_STD_OUTPUT;
 
     /* Apply configuration */
     reg_mprj_xfer = 1;
@@ -77,13 +75,11 @@ void main()
     reg_la1_oenb = 0; // output enable on
     reg_la1_data = 1 << 0;
 
-
     // reset design with 0bit of 1st bank of LA
     reg_la0_iena = 0;
     reg_la0_oenb = 0;
     reg_la0_data = 1;
     reg_la0_data = 0;
-
 
 #if 0
     reg_spimaster_config = 0xa002;	// Enable, prescaler = 2,
@@ -122,24 +118,18 @@ void main()
     reg_spimaster_config = 0x2102;	// Release housekeeping SPI
 #endif
 
-    // *FB0 = 0x01010101;
-    // *FB1 = 0x02020202;
-    // *FB2 = 0x04040404;
-    // *FB3 = 0x08080808;
+    // TODO: Write a proper IRQ test
+    // reg_mprj_irq = 0b011;
 
-    // *REG0 = *FB0;
-    // *REG1 = *FB1;
-    // *REG2 = *FB2;
-    // *REG3 = *FB3;
+    *REG0 = 0x1234;     // DAC
+    *REG1 = 0x0;        // VGA reset=0
+    *REG2 = 0x00AABBCC; // pixel on
+    *REG3 = 0x00112233; // pixel off
 
-    *REG0 = 0x01020304;
-    *REG1 = 0x10203040;
-    // *REG2 = 0x11223344;
-    // *REG3 = 0xcafef00d;
-    // *REG0 = *REG1;
-    // *REG1 = *REG2;
-    // *REG2 = *REG3;
-    // *REG3 = *REG0;
+    *FB0 = 0x01010101;
+    *FB1 = 0x02020202;
+    *FB2 = 0x04040404;
+    *FB3 = 0x08080808;
 
 }
 
