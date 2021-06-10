@@ -43,7 +43,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator" *)
 (* generator = "nMigen" *)
-module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output__vs, r, g, b, v_en, h_ctr, clk, shift_clk, shift_rst, h_en, reset, rst);
+module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output__vs, r, g, b, clk, shift_clk, v_en, h_ctr, shift_rst, h_en, reset, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *)
   wire \$1 ;
@@ -229,7 +229,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo" *)
 (* generator = "nMigen" *)
-module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, r, g, b, irq, wb__we, wb__adr, wb__dat_w, wb__stb, wb__cyc, wb__ack, clk, shift_clk, shift_rst, rst);
+module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, r, g, b, clk, shift_clk, irq, wb__we, wb__adr, wb__dat_w, wb__stb, wb__cyc, wb__ack, shift_rst, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$10 ;
@@ -644,10 +644,10 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__cyc, wb__stb, wb__we,
   wire \$5 ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:56" *)
   wire \$7 ;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:74" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:79" *)
   wire \$9 ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:40" *)
-  output [12:0] buf_io_out;
+  output [15:0] buf_io_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:42" *)
   output [2:0] buf_irq;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
@@ -676,7 +676,7 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__cyc, wb__stb, wb__we,
   input reset;
   (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
   output rst;
-  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:72" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:77" *)
   input [3:0] sel;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_clk;
@@ -696,7 +696,7 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__cyc, wb__stb, wb__we,
   input wb__stb;
   (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__we;
-  assign \$9  = sel == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:74" *) 4'hf;
+  assign \$9  = sel == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:79" *) 4'hf;
   assign \$1  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:47" *) gfxdemo_dvid_out_clk;
   assign \$3  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:50" *) gfxdemo_dvid_out[0];
   assign \$5  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:53" *) gfxdemo_dvid_out[1];
@@ -730,16 +730,19 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__cyc, wb__stb, wb__we,
   always @* begin
     if (\initial ) begin end
     wb__sel = 1'h0;
-    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:74" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:79" *)
     casez (\$9 )
-      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:74" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:79" */
       1'h1:
           wb__sel = 1'h1;
     endcase
   end
   assign buf_irq = gfxdemo_irq;
-  assign buf_io_out[12] = gfxdemo_b[0];
-  assign buf_io_out[11] = gfxdemo_g[0];
+  assign buf_io_out[15] = shift_clk;
+  assign buf_io_out[14] = clk;
+  assign buf_io_out[13] = gfxdemo_b[0];
+  assign buf_io_out[12] = gfxdemo_g[0];
+  assign buf_io_out[11] = gfxdemo_r[0];
   assign buf_io_out[10] = gfxdemo_vga_output__vs;
   assign buf_io_out[9] = gfxdemo_vga_output__hs;
   assign buf_io_out[8] = gfxdemo_pdm_out;
@@ -776,7 +779,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.rbrenderer" *)
 (* generator = "nMigen" *)
-module rbrenderer(pixel_on, h_ctr, clk, h_en, rowbuf_r_addr, rowbuf_r_data, rst);
+module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" *)
   wire \$1 ;
@@ -2637,7 +2640,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga" *)
 (* generator = "nMigen" *)
-module vga(vga_output__hs, vga_output__vs, v_en, h_ctr, clk, vga_output__blank, h_en, reset, rst);
+module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, h_en, reset, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
   wire \$1 ;
@@ -2936,7 +2939,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga2dvid" *)
 (* generator = "nMigen" *)
-module vga2dvid(r, g, b, clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, shift_clk, shift_rst, rst);
+module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r, pixel_g, pixel_b, shift_rst, rst);
   reg \initial  = 0;
   wire [4:0] \$1 ;
   wire [4:0] \$11 ;
@@ -3161,7 +3164,7 @@ endmodule
 
 (* \nmigen.hierarchy  = "myip1.gfxdemo.wrapper" *)
 (* generator = "nMigen" *)
-module wrapper(pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, clk, reset, rst);
+module wrapper(clk, pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, reset, rst);
   reg \initial  = 0;
   (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:17" *)
   input [2:0] addr;
