@@ -37,7 +37,7 @@ if __name__ == "__main__":
         emulate_ddr=True)
 
     # Raw output signals
-    buf_io_out = Signal(13)
+    buf_io_out = Signal(16)
 
     buf_irq = Signal(3)
 
@@ -62,9 +62,14 @@ if __name__ == "__main__":
         buf_io_out[9].eq(gfxdemo.dvid.vga_output.hs),
         buf_io_out[10].eq(gfxdemo.dvid.vga_output.vs),
         buf_io_out[11].eq(gfxdemo.dvid.r),
-        buf_io_out[11].eq(gfxdemo.dvid.g),
-        buf_io_out[12].eq(gfxdemo.dvid.b),
+        buf_io_out[12].eq(gfxdemo.dvid.g),
+        buf_io_out[13].eq(gfxdemo.dvid.b),
 
+        # Clock signals
+        buf_io_out[14].eq(ClockSignal("sync")),
+        buf_io_out[15].eq(ClockSignal("shift")),
+
+        # IRQ
         buf_irq.eq(gfxdemo.irq),
     ]
 
