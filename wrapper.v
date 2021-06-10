@@ -94,8 +94,11 @@ module wrapped_myip1(
         .wb__we    (wbs_we_i),
         .wb__ack   (buf_wbs_ack_o),
 
-        // Route 8 + 1 + 3 output pins
-        .buf_io_out (buf_io_out[16:8]),
+        // Route output pins for
+        // dvid [ 7:0]
+        // dac  [ 8:8]
+        // vga  [12:9]
+        .buf_io_out (buf_io_out[21:8]),
 
         .buf_irq    (buf_irq)
 
