@@ -4,9 +4,9 @@
 (* generator = "nMigen" *)
 module \U$$0 (shift_clk, shift_rst, reset);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:163" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/lib/cdc.py:162" *)
   wire async_ff_clk;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:163" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/lib/cdc.py:162" *)
   wire async_ff_rst;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:20" *)
   input reset;
@@ -14,13 +14,13 @@ module \U$$0 (shift_clk, shift_rst, reset);
   input shift_clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   output shift_rst;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:164" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/lib/cdc.py:163" *)
   reg stage0 = 1'h1;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:164" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/lib/cdc.py:163" *)
   reg \stage0$next ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:164" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/lib/cdc.py:163" *)
   reg stage1 = 1'h1;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/lib/cdc.py:164" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/lib/cdc.py:163" *)
   reg \stage1$next ;
   always @(posedge async_ff_clk, posedge async_ff_rst)
     if (async_ff_rst) stage1 <= 1'h1;
@@ -45,80 +45,80 @@ endmodule
 (* generator = "nMigen" *)
 module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output__vs, r, g, b, clk, shift_clk, v_en, h_ctr, shift_rst, h_en, reset, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:104" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:110" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:110" *)
   wire [2:0] \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:217" *)
   input [7:0] b;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:17" *)
   output [2:0] dvid_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:16" *)
   output dvid_out_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:216" *)
   input [7:0] g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:91" *)
   output [9:0] h_ctr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:93" *)
   output h_en;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:91" *)
   reg [1:0] pixel_b_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:91" *)
   reg [1:0] \pixel_b_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:88" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:88" *)
   reg [1:0] pixel_clk_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:88" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:88" *)
   reg [1:0] \pixel_clk_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:90" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:90" *)
   reg [1:0] pixel_g_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:90" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:90" *)
   reg [1:0] \pixel_g_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:89" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:89" *)
   reg [1:0] pixel_r_r = 2'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:89" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:89" *)
   reg [1:0] \pixel_r_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:215" *)
   input [7:0] r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:101" *)
   input reset;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:94" *)
   output v_en;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:62" *)
   reg [3:0] vga2dvid_blank_r = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:62" *)
   reg [3:0] \vga2dvid_blank_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:63" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:63" *)
   reg [3:0] vga2dvid_hs_r = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:63" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:63" *)
   reg [3:0] \vga2dvid_hs_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:56" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:56" *)
   wire [1:0] vga2dvid_pixel_b;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:57" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:57" *)
   wire [1:0] vga2dvid_pixel_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:55" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:55" *)
   wire [1:0] vga2dvid_pixel_g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:54" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:54" *)
   wire [1:0] vga2dvid_pixel_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:64" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:64" *)
   reg [3:0] vga2dvid_vs_r = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:64" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:64" *)
   reg [3:0] \vga2dvid_vs_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__vs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   wire vga_vga_output__blank;
-  assign \$1  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:104" *) pixel_clk_r[0] : pixel_clk_r[1];
-  assign \$3  = shift_clk ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:110" *) { pixel_r_r[0], pixel_g_r[0], pixel_b_r[0] } : { pixel_r_r[1], pixel_g_r[1], pixel_b_r[1] };
+  assign \$1  = shift_clk ? (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:104" *) pixel_clk_r[0] : pixel_clk_r[1];
+  assign \$3  = shift_clk ? (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:110" *) { pixel_r_r[0], pixel_g_r[0], pixel_b_r[0] } : { pixel_r_r[1], pixel_g_r[1], pixel_b_r[1] };
   always @(posedge shift_clk)
     pixel_b_r <= \pixel_b_r$next ;
   always @(posedge shift_clk)
@@ -163,7 +163,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output_
   always @* begin
     if (\initial ) begin end
     \vga2dvid_blank_r$next  = { vga_vga_output__blank, vga2dvid_blank_r[3:1] };
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \vga2dvid_blank_r$next  = 4'h0;
@@ -172,7 +172,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output_
   always @* begin
     if (\initial ) begin end
     \vga2dvid_hs_r$next  = { vga_output__hs, vga2dvid_hs_r[3:1] };
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \vga2dvid_hs_r$next  = 4'h0;
@@ -181,7 +181,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output_
   always @* begin
     if (\initial ) begin end
     \vga2dvid_vs_r$next  = { vga_output__vs, vga2dvid_vs_r[3:1] };
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \vga2dvid_vs_r$next  = 4'h0;
@@ -190,7 +190,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output_
   always @* begin
     if (\initial ) begin end
     \pixel_clk_r$next  = vga2dvid_pixel_clk;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \pixel_clk_r$next  = 2'h0;
@@ -199,7 +199,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output_
   always @* begin
     if (\initial ) begin end
     \pixel_r_r$next  = vga2dvid_pixel_r;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \pixel_r_r$next  = 2'h0;
@@ -208,7 +208,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output_
   always @* begin
     if (\initial ) begin end
     \pixel_g_r$next  = vga2dvid_pixel_g;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \pixel_g_r$next  = 2'h0;
@@ -217,7 +217,7 @@ module dvid_signal_generator(dvid_out_clk, dvid_out, vga_output__hs, vga_output_
   always @* begin
     if (\initial ) begin end
     \pixel_b_r$next  = vga2dvid_pixel_b;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \pixel_b_r$next  = 2'h0;
@@ -231,162 +231,162 @@ endmodule
 (* generator = "nMigen" *)
 module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, r, g, b, clk, shift_clk, irq, wb__we, wb__adr, wb__dat_w, wb__stb, wb__cyc, wb__ack, shift_rst, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$10 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$12 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$14 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$16 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:289" *)
   wire \$18 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:255" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:255" *)
   wire [16:0] \$2 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *)
   wire \$20 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *)
   wire \$22 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$24 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$26 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$28 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
   wire \$30 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:289" *)
   wire \$32 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *)
   wire \$34 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *)
   wire \$36 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:296" *)
   wire \$38 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:279" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:279" *)
   wire [7:0] \$4 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:296" *)
   wire \$40 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
   wire \$42 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
   wire \$44 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *)
   wire \$46 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
   wire \$48 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
   wire \$50 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *)
   wire \$52 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
   wire \$54 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
   wire \$56 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *)
   wire \$58 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:280" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:280" *)
   wire [7:0] \$6 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
   wire \$60 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
   wire \$62 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *)
   wire \$64 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:281" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:281" *)
   wire [7:0] \$8 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:321" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:321" *)
   reg ack_r = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:321" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:321" *)
   reg \ack_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:217" *)
   output [7:0] b;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:17" *)
   output [2:0] dvid_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:16" *)
   output dvid_out_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:91" *)
   wire [9:0] dvid_signal_generator_h_ctr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:93" *)
   wire dvid_signal_generator_h_en;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:101" *)
   wire dvid_signal_generator_reset;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:94" *)
   wire dvid_signal_generator_v_en;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:216" *)
   output [7:0] g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:212" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:212" *)
   output [2:0] irq;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:254" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:254" *)
   reg [16:0] pdm = 17'h00000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:254" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:254" *)
   reg [16:0] \pdm$next ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:30" *)
   output pdm_out;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:276" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:276" *)
   wire pixel_on;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:215" *)
   output [7:0] r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:161" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:161" *)
   wire rbrenderer_pixel_on;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:262" *)
   wire [3:0] rowbuf_r_addr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:262" *)
   wire [31:0] rowbuf_r_data;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:263" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:263" *)
   wire [3:0] rowbuf_w_addr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:263" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:263" *)
   wire [31:0] rowbuf_w_data;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:263" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:263" *)
   reg rowbuf_w_en;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_clk;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:284" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:284" *)
   reg v_sync_risen = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:284" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:284" *)
   reg \v_sync_risen$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:285" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:285" *)
   reg v_sync_strobe = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:285" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:285" *)
   reg \v_sync_strobe$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__vs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   output wb__ack;
   reg wb__ack = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   reg \wb__ack$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__adr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__cyc;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__dat_w;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__stb;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__we;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:17" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:17" *)
   wire [2:0] wrapper_addr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:15" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:15" *)
   reg wrapper_cs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:213" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:213" *)
   wire [15:0] wrapper_pdm_in;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:271" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:271" *)
   wire [23:0] wrapper_rgb_off;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:270" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:270" *)
   wire [23:0] wrapper_rgb_on;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:16" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:16" *)
   wire wrapper_we;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:18" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:18" *)
   wire [31:0] wrapper_write_data;
   reg [31:0] rowbuf [9:0];
   initial begin
@@ -407,38 +407,38 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
     if (rowbuf_w_en) rowbuf[rowbuf_w_addr] <= rowbuf_w_data;
   end
   assign rowbuf_r_data = rowbuf[_0_];
-  assign \$10  = v_sync_strobe == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
-  assign \$12  = v_sync_risen == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
-  assign \$14  = \$10  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) \$12 ;
-  assign \$16  = \$14  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) vga_output__vs;
-  assign \$18  = v_sync_strobe & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *) v_sync_risen;
-  assign \$20  = vga_output__vs == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) 1'h0;
-  assign \$22  = v_sync_risen & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) \$20 ;
-  assign \$24  = v_sync_strobe == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
-  assign \$26  = v_sync_risen == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
-  assign \$28  = \$24  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) \$26 ;
-  assign \$2  = pdm[15:0] + (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:255" *) wrapper_pdm_in;
-  assign \$30  = \$28  & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *) vga_output__vs;
-  assign \$32  = v_sync_strobe & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" *) v_sync_risen;
-  assign \$34  = vga_output__vs == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) 1'h0;
-  assign \$36  = v_sync_risen & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" *) \$34 ;
-  assign \$38  = dvid_signal_generator_h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *) 10'h280;
-  assign \$40  = dvid_signal_generator_v_en & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:296" *) \$38 ;
-  assign \$42  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
-  assign \$44  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
-  assign \$46  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
-  assign \$48  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
-  assign \$4  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:279" *) wrapper_rgb_on[7:0] : wrapper_rgb_off[7:0];
-  assign \$50  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
-  assign \$52  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
-  assign \$54  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
-  assign \$56  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
-  assign \$58  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
-  assign \$60  = wb__stb & (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
-  assign \$62  = wb__adr[31:5] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
-  assign \$64  = wb__adr[31:8] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
-  assign \$6  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:280" *) wrapper_rgb_on[15:8] : wrapper_rgb_off[15:8];
-  assign \$8  = pixel_on ? (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:281" *) wrapper_rgb_on[23:16] : wrapper_rgb_off[23:16];
+  assign \$10  = v_sync_strobe == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$12  = v_sync_risen == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$14  = \$10  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) \$12 ;
+  assign \$16  = \$14  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) vga_output__vs;
+  assign \$18  = v_sync_strobe & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:289" *) v_sync_risen;
+  assign \$20  = vga_output__vs == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *) 1'h0;
+  assign \$22  = v_sync_risen & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *) \$20 ;
+  assign \$24  = v_sync_strobe == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$26  = v_sync_risen == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) 1'h0;
+  assign \$28  = \$24  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) \$26 ;
+  assign \$2  = pdm[15:0] + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:255" *) wrapper_pdm_in;
+  assign \$30  = \$28  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *) vga_output__vs;
+  assign \$32  = v_sync_strobe & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:289" *) v_sync_risen;
+  assign \$34  = vga_output__vs == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *) 1'h0;
+  assign \$36  = v_sync_risen & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" *) \$34 ;
+  assign \$38  = dvid_signal_generator_h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:296" *) 10'h280;
+  assign \$40  = dvid_signal_generator_v_en & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:296" *) \$38 ;
+  assign \$42  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$44  = wb__adr[31:5] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$46  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$48  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$4  = pixel_on ? (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:279" *) wrapper_rgb_on[7:0] : wrapper_rgb_off[7:0];
+  assign \$50  = wb__adr[31:5] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$52  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$54  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$56  = wb__adr[31:5] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$58  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$60  = wb__stb & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *) wb__cyc;
+  assign \$62  = wb__adr[31:5] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *) 25'h1800000;
+  assign \$64  = wb__adr[31:8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" *) 22'h300001;
+  assign \$6  = pixel_on ? (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:280" *) wrapper_rgb_on[15:8] : wrapper_rgb_off[15:8];
+  assign \$8  = pixel_on ? (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:281" *) wrapper_rgb_on[23:16] : wrapper_rgb_off[23:16];
   always @(posedge clk)
     ack_r <= \ack_r$next ;
   always @(posedge clk)
@@ -490,7 +490,7 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
   always @* begin
     if (\initial ) begin end
     \pdm$next  = \$2 ;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \pdm$next  = 17'h00000;
@@ -499,21 +499,21 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
   always @* begin
     if (\initial ) begin end
     \wb__ack$next  = wb__ack;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
     casez (\$48 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
           casez ({ \$52 , \$50  })
-            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" */
             2'b?1:
                 \wb__ack$next  = ack_r;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" */
             2'b1?:
                 \wb__ack$next  = ack_r;
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \wb__ack$next  = 1'h0;
@@ -523,24 +523,24 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
     if (\initial ) begin end
     \ack_r$next  = ack_r;
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
     casez (\$54 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
           casez ({ \$58 , \$56  })
-            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" */
             2'b?1:
                 \ack_r$next  = 1'h0;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" */
             2'b1?:
                 \ack_r$next  = 1'h0;
           endcase
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:336" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:336" */
       default:
           \ack_r$next  = 1'h1;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \ack_r$next  = 1'h0;
@@ -549,16 +549,16 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
   always @* begin
     if (\initial ) begin end
     rowbuf_w_en = 1'h0;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
     casez (\$60 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
           casez ({ \$64 , \$62  })
-            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" */
             2'b?1:
                 /* empty */;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:332" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:332" */
             2'b1?:
                 rowbuf_w_en = wb__we;
           endcase
@@ -567,16 +567,16 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
   always @* begin
     if (\initial ) begin end
     \v_sync_strobe$next  = v_sync_strobe;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
     casez ({ \$22 , \$18 , \$16  })
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" */
       3'b??1:
           \v_sync_strobe$next  = 1'h1;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:289" */
       3'b?1?:
           \v_sync_strobe$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \v_sync_strobe$next  = 1'h0;
@@ -585,19 +585,19 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
   always @* begin
     if (\initial ) begin end
     \v_sync_risen$next  = v_sync_risen;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" *)
     casez ({ \$36 , \$32 , \$30  })
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:286" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:286" */
       3'b??1:
           \v_sync_risen$next  = 1'h1;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:289" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:289" */
       3'b?1?:
           /* empty */;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:291" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:291" */
       3'b1??:
           \v_sync_risen$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \v_sync_risen$next  = 1'h0;
@@ -606,13 +606,13 @@ module gfxdemo(dvid_out_clk, dvid_out, pdm_out, vga_output__hs, vga_output__vs, 
   always @* begin
     if (\initial ) begin end
     wrapper_cs = 1'h0;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" *)
     casez (\$42 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:327" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:327" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" *)
           casez ({ \$46 , \$44  })
-            /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:328" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:328" */
             2'b?1:
                 wrapper_cs = 1'h1;
           endcase
@@ -650,51 +650,51 @@ module myip1(shift_clk, wb__adr, wb__dat_w, wb__dat_r, wb__cyc, wb__stb, wb__we,
   output [15:0] buf_io_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:42" *)
   output [2:0] buf_irq;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:217" *)
   wire [7:0] gfxdemo_b;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:17" *)
   wire [2:0] gfxdemo_dvid_out;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:16" *)
   wire gfxdemo_dvid_out_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:216" *)
   wire [7:0] gfxdemo_g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:212" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:212" *)
   wire [2:0] gfxdemo_irq;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:30" *)
   wire gfxdemo_pdm_out;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:215" *)
   wire [7:0] gfxdemo_r;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   wire gfxdemo_shift_rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   wire gfxdemo_vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   wire gfxdemo_vga_output__vs;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:20" *)
   input reset;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   output rst;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:77" *)
   input [3:0] sel;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   output wb__ack;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__adr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__cyc;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__dat_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input [31:0] wb__dat_w;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   reg wb__sel;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__stb;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:244" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:244" *)
   input wb__we;
   assign \$9  = sel == (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:79" *) 4'hf;
   assign \$1  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:47" *) gfxdemo_dvid_out_clk;
@@ -760,17 +760,17 @@ endmodule
 (* \nmigen.hierarchy  = "myip1.gfxdemo.dvid_signal_generator.vga.output" *)
 (* generator = "nMigen" *)
 module \output (vga_output__vs, vga_output__blank, blank, hs, vs, vga_output__hs);
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:52" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:52" *)
   input blank;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:50" *)
   input hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__blank;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__vs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:51" *)
   input vs;
   assign vga_output__blank = blank;
   assign vga_output__vs = vs;
@@ -781,50 +781,50 @@ endmodule
 (* generator = "nMigen" *)
 module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:188" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:190" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:190" *)
   wire \$3 ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ast.py:266" *)
   wire [31:0] \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:171" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:171" *)
   reg [9:0] addr_r = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:171" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:171" *)
   reg [9:0] \addr_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:172" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:172" *)
   reg [9:0] addr_r_r = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:172" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:172" *)
   reg [9:0] \addr_r_r$next ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:91" *)
   input [9:0] h_ctr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:93" *)
   input h_en;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:173" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:173" *)
   reg h_en_r = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:173" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:173" *)
   reg \h_en_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:174" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:174" *)
   reg h_en_r_r = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:174" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:174" *)
   reg \h_en_r_r$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:161" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:161" *)
   output pixel_on;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:262" *)
   output [3:0] rowbuf_r_addr;
   reg [3:0] rowbuf_r_addr;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:262" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:262" *)
   input [31:0] rowbuf_r_data;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:182" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:182" *)
   reg [31:0] shiftreg = 32'd0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:182" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:182" *)
   reg [31:0] \shiftreg$next ;
-  assign \$1  = addr_r_r[5:0] == (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" *) 1'h0;
-  assign \$3  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:190" *) addr_r_r[0];
-  assign \$5  = + (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ast.py:269" *) shiftreg[31:1];
+  assign \$1  = addr_r_r[5:0] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:188" *) 1'h0;
+  assign \$3  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:190" *) addr_r_r[0];
+  assign \$5  = + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ast.py:266" *) shiftreg[31:1];
   always @(posedge clk)
     shiftreg <= \shiftreg$next ;
   always @(posedge clk)
@@ -838,7 +838,7 @@ module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst)
   always @* begin
     if (\initial ) begin end
     \addr_r$next  = h_ctr;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \addr_r$next  = 10'h000;
@@ -847,7 +847,7 @@ module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst)
   always @* begin
     if (\initial ) begin end
     \addr_r_r$next  = addr_r;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \addr_r_r$next  = 10'h000;
@@ -856,7 +856,7 @@ module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst)
   always @* begin
     if (\initial ) begin end
     \h_en_r$next  = h_en;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \h_en_r$next  = 1'h0;
@@ -865,7 +865,7 @@ module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst)
   always @* begin
     if (\initial ) begin end
     \h_en_r_r$next  = h_en_r;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \h_en_r_r$next  = 1'h0;
@@ -874,9 +874,9 @@ module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst)
   always @* begin
     if (\initial ) begin end
     rowbuf_r_addr = 4'h0;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:185" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:185" *)
     casez (h_en)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:185" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:185" */
       1'h1:
           rowbuf_r_addr = addr_r[9:6];
     endcase
@@ -884,16 +884,16 @@ module rbrenderer(clk, pixel_on, h_ctr, h_en, rowbuf_r_addr, rowbuf_r_data, rst)
   always @* begin
     if (\initial ) begin end
     \shiftreg$next  = shiftreg;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:188" *)
     casez ({ \$3 , \$1  })
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:188" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:188" */
       2'b?1:
           \shiftreg$next  = rowbuf_r_data;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:190" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:190" */
       2'b1?:
           \shiftreg$next  = \$5 ;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \shiftreg$next  = 32'd0;
@@ -906,401 +906,401 @@ endmodule
 (* generator = "nMigen" *)
 module tmds_b(b, clk, blank_r, c0, encoded_blue, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:78" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [9:0] \$101 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [1:0] \$102 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [2:0] \$104 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [3:0] \$106 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [4:0] \$108 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:83" *)
   wire \$11 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [5:0] \$110 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [6:0] \$112 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$114 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [8:0] \$116 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$118 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$119 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [1:0] \$121 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$123 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$124 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [2:0] \$126 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$128 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$129 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:84" *)
   wire \$13 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [3:0] \$131 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$133 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$134 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [4:0] \$136 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$138 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$139 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [5:0] \$141 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$143 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$144 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [6:0] \$146 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$148 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$149 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *)
   wire \$15 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$151 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$153 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$154 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [8:0] \$156 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [9:0] \$158 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *)
   wire \$16 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$160 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$162 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$164 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
   wire \$166 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:136" *)
   wire \$168 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:139" *)
   wire \$170 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$172 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$174 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$176 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$178 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$180 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$182 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$184 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$186 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$188 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *)
   wire \$19 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$190 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
   wire \$192 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *)
   wire [4:0] \$194 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *)
   wire [4:0] \$195 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *)
   wire [4:0] \$197 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *)
   wire [4:0] \$198 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *)
   wire \$20 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$200 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$202 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$204 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$206 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$208 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$210 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$212 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *)
   wire \$214 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *)
   wire [4:0] \$216 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *)
   wire [4:0] \$217 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [5:0] \$219 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [4:0] \$220 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [5:0] \$222 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *)
   wire \$224 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [5:0] \$226 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [4:0] \$227 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [5:0] \$229 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *)
   wire \$23 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *)
   wire [4:0] \$231 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *)
   wire [4:0] \$232 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *)
   wire \$24 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *)
   wire \$27 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *)
   wire \$28 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:79" *)
   wire \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *)
   wire \$31 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *)
   wire \$32 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *)
   wire \$35 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *)
   wire \$36 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *)
   wire \$39 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *)
   wire \$40 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [8:0] \$43 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [1:0] \$44 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [2:0] \$46 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [3:0] \$48 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:80" *)
   wire \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [4:0] \$50 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [5:0] \$52 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [6:0] \$54 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [7:0] \$56 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [8:0] \$58 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$60 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$62 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$64 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$66 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$68 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:81" *)
   wire \$7 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$70 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$72 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$74 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$76 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$78 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:110" *)
   wire [8:0] \$80 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:113" *)
   wire [8:0] \$82 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$84 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [1:0] \$85 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [2:0] \$87 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [3:0] \$89 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:82" *)
   wire \$9 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [4:0] \$91 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [5:0] \$93 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [6:0] \$95 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [7:0] \$97 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$99 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:217" *)
   input [7:0] b;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:95" *)
   input [1:0] c0;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:104" *)
   reg [8:0] data_word = 9'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:104" *)
   reg [8:0] \data_word$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:105" *)
   reg [8:0] data_word_inv = 9'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:105" *)
   reg [8:0] \data_word_inv$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:117" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:117" *)
   wire [3:0] data_word_ones;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:116" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:116" *)
   wire [3:0] diff_q_m;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:106" *)
   reg [3:0] disparity = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:106" *)
   reg [3:0] \disparity$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:101" *)
   output [9:0] encoded_blue;
   reg [9:0] encoded_blue = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:101" *)
   reg [9:0] \encoded_blue$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:88" *)
   wire [8:0] xnored;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:75" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:75" *)
   wire [8:0] xored;
-  assign \$9  = b[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *) xored[4];
-  assign \$99  = \$97  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[7];
-  assign \$102  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[0];
-  assign \$104  = \$102  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[1];
-  assign \$106  = \$104  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[2];
-  assign \$108  = \$106  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[3];
-  assign \$110  = \$108  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[4];
-  assign \$112  = \$110  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[5];
-  assign \$114  = \$112  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[6];
-  assign \$116  = \$114  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7];
-  assign \$11  = b[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *) xored[5];
-  assign \$119  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$121  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$118 [0];
-  assign \$124  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$126  = \$121  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$123 [1];
-  assign \$129  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$131  = \$126  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$128 [2];
-  assign \$134  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$136  = \$131  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$133 [3];
-  assign \$13  = b[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *) xored[6];
-  assign \$139  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$141  = \$136  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$138 [4];
-  assign \$144  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$146  = \$141  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$143 [5];
-  assign \$149  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$151  = \$146  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$148 [6];
-  assign \$154  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$156  = \$151  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$153 [7];
-  assign \$158  = \$116  - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$156 ;
-  assign \$160  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
-  assign \$162  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
-  assign \$164  = \$160  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$162 ;
-  assign \$166  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
-  assign \$168  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *) data_word[8];
-  assign \$16  = b[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) xnored[0];
-  assign \$170  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *) data_word[8];
-  assign \$172  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
-  assign \$174  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
-  assign \$176  = \$172  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$174 ;
-  assign \$178  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
-  assign \$15  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) \$16 ;
-  assign \$180  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
-  assign \$182  = \$178  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$180 ;
-  assign \$184  = \$176  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$182 ;
-  assign \$186  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
-  assign \$188  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
-  assign \$190  = \$186  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$188 ;
-  assign \$192  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
-  assign \$195  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
-  assign \$198  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
-  assign \$1  = b[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *) xored[0];
-  assign \$200  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
-  assign \$202  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
-  assign \$204  = \$200  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$202 ;
-  assign \$206  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
-  assign \$208  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
-  assign \$20  = b[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) xnored[1];
-  assign \$210  = \$206  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$208 ;
-  assign \$212  = \$204  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$210 ;
-  assign \$214  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *) 1'h0;
-  assign \$217  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
-  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) \$20 ;
-  assign \$220  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
-  assign \$222  = $signed(\$220 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(5'h02);
-  assign \$224  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *) 1'h0;
-  assign \$227  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
-  assign \$229  = $signed(\$227 ) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(5'h02);
-  assign \$232  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
-  assign \$24  = b[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) xnored[2];
-  assign \$23  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) \$24 ;
-  assign \$28  = b[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) xnored[3];
-  assign \$27  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) \$28 ;
-  assign \$32  = b[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) xnored[4];
-  assign \$31  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) \$32 ;
-  assign \$36  = b[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) xnored[5];
-  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) \$36 ;
-  assign \$3  = b[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *) xored[1];
-  assign \$40  = b[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) xnored[6];
-  assign \$39  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) \$40 ;
-  assign \$44  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[0];
-  assign \$46  = \$44  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[1];
-  assign \$48  = \$46  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[2];
-  assign \$50  = \$48  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[3];
-  assign \$52  = \$50  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[4];
-  assign \$54  = \$52  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[5];
-  assign \$56  = \$54  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[6];
-  assign \$58  = \$56  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) b[7];
-  assign \$5  = b[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *) xored[2];
-  assign \$60  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$62  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$64  = b[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
-  assign \$66  = \$62  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$64 ;
-  assign \$68  = \$60  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$66 ;
-  assign \$70  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$72  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$74  = b[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
-  assign \$76  = \$72  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$74 ;
-  assign \$78  = \$70  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$76 ;
-  assign \$7  = b[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *) xored[3];
-  assign \$80  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *) xnored;
-  assign \$82  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *) xored;
-  assign \$85  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[0];
-  assign \$87  = \$85  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[1];
-  assign \$89  = \$87  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[2];
-  assign \$91  = \$89  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[3];
-  assign \$93  = \$91  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[4];
-  assign \$95  = \$93  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[5];
-  assign \$97  = \$95  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[6];
+  assign \$9  = b[5] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:82" *) xored[4];
+  assign \$99  = \$97  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[7];
+  assign \$102  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[0];
+  assign \$104  = \$102  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[1];
+  assign \$106  = \$104  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[2];
+  assign \$108  = \$106  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[3];
+  assign \$110  = \$108  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[4];
+  assign \$112  = \$110  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[5];
+  assign \$114  = \$112  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[6];
+  assign \$116  = \$114  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7];
+  assign \$11  = b[6] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:83" *) xored[5];
+  assign \$119  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$121  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$118 [0];
+  assign \$124  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$126  = \$121  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$123 [1];
+  assign \$129  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$131  = \$126  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$128 [2];
+  assign \$134  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$136  = \$131  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$133 [3];
+  assign \$13  = b[7] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:84" *) xored[6];
+  assign \$139  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$141  = \$136  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$138 [4];
+  assign \$144  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$146  = \$141  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$143 [5];
+  assign \$149  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$151  = \$146  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$148 [6];
+  assign \$154  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$156  = \$151  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$153 [7];
+  assign \$158  = \$116  - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$156 ;
+  assign \$160  = $signed(disparity) == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$162  = data_word_ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$164  = \$160  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) \$162 ;
+  assign \$166  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$168  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:136" *) data_word[8];
+  assign \$16  = b[1] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *) xnored[0];
+  assign \$170  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:139" *) data_word[8];
+  assign \$172  = $signed(disparity) > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$174  = data_word_ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$176  = \$172  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$174 ;
+  assign \$178  = $signed(disparity) < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$15  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *) \$16 ;
+  assign \$180  = data_word_ones < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$182  = \$178  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) \$180 ;
+  assign \$184  = \$176  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$182 ;
+  assign \$186  = $signed(disparity) == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$188  = data_word_ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$190  = \$186  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) \$188 ;
+  assign \$192  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$195  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
+  assign \$198  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
+  assign \$1  = b[1] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:78" *) xored[0];
+  assign \$200  = $signed(disparity) > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$202  = data_word_ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$204  = \$200  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$202 ;
+  assign \$206  = $signed(disparity) < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$208  = data_word_ones < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$20  = b[2] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *) xnored[1];
+  assign \$210  = \$206  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) \$208 ;
+  assign \$212  = \$204  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$210 ;
+  assign \$214  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *) 1'h0;
+  assign \$217  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
+  assign \$19  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *) \$20 ;
+  assign \$220  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
+  assign \$222  = $signed(\$220 ) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *) $signed(5'h02);
+  assign \$224  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *) 1'h0;
+  assign \$227  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
+  assign \$229  = $signed(\$227 ) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *) $signed(5'h02);
+  assign \$232  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
+  assign \$24  = b[3] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *) xnored[2];
+  assign \$23  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *) \$24 ;
+  assign \$28  = b[4] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *) xnored[3];
+  assign \$27  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *) \$28 ;
+  assign \$32  = b[5] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *) xnored[4];
+  assign \$31  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *) \$32 ;
+  assign \$36  = b[6] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *) xnored[5];
+  assign \$35  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *) \$36 ;
+  assign \$3  = b[2] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:79" *) xored[1];
+  assign \$40  = b[7] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *) xnored[6];
+  assign \$39  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *) \$40 ;
+  assign \$44  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[0];
+  assign \$46  = \$44  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[1];
+  assign \$48  = \$46  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[2];
+  assign \$50  = \$48  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[3];
+  assign \$52  = \$50  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[4];
+  assign \$54  = \$52  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[5];
+  assign \$56  = \$54  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[6];
+  assign \$58  = \$56  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) b[7];
+  assign \$5  = b[3] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:80" *) xored[2];
+  assign \$60  = ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$62  = ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$64  = b[0] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$66  = \$62  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$64 ;
+  assign \$68  = \$60  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$66 ;
+  assign \$70  = ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$72  = ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$74  = b[0] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$76  = \$72  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$74 ;
+  assign \$78  = \$70  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$76 ;
+  assign \$7  = b[4] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:81" *) xored[3];
+  assign \$80  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:110" *) xnored;
+  assign \$82  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:113" *) xored;
+  assign \$85  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[0];
+  assign \$87  = \$85  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[1];
+  assign \$89  = \$87  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[2];
+  assign \$91  = \$89  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[3];
+  assign \$93  = \$91  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[4];
+  assign \$95  = \$93  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[5];
+  assign \$97  = \$95  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[6];
   always @(posedge clk)
     disparity <= \disparity$next ;
   always @(posedge clk)
@@ -1312,16 +1312,16 @@ module tmds_b(b, clk, blank_r, c0, encoded_blue, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
     casez (\$68 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" */
       1'h1:
           \data_word$next  = xnored;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:111" */
       default:
           \data_word$next  = xored;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \data_word$next  = 9'h000;
@@ -1330,16 +1330,16 @@ module tmds_b(b, clk, blank_r, c0, encoded_blue, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
     casez (\$78 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" */
       1'h1:
           \data_word_inv$next  = \$80 ;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:111" */
       default:
           \data_word_inv$next  = \$82 ;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \data_word_inv$next  = 9'h000;
@@ -1348,58 +1348,58 @@ module tmds_b(b, clk, blank_r, c0, encoded_blue, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" *)
     casez (blank_r[0])
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" */
       1'h1:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:122" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:122" *)
           casez (c0)
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:123" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:123" */
             2'h3:
                 \encoded_blue$next  = 10'h354;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:125" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:125" */
             2'h1:
                 \encoded_blue$next  = 10'h0ab;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:127" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:127" */
             2'h2:
                 \encoded_blue$next  = 10'h154;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:129" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:129" */
             2'h0:
                 \encoded_blue$next  = 10'h2ab;
           endcase
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:133" */
       default:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
           casez (\$164 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" */
             1'h1:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
                 casez (\$166 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" */
                   1'h1:
                       \encoded_blue$next  = { \$168 , data_word[8], data_word_inv[7:0] };
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:138" */
                   default:
                       \encoded_blue$next  = { \$170 , data_word };
                 endcase
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:141" */
             default:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
                 casez (\$184 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" */
                   1'h1:
                       \encoded_blue$next  = { 1'h1, data_word[8], data_word_inv[7:0] };
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:149" */
                   default:
                       \encoded_blue$next  = { 1'h0, data_word };
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \encoded_blue$next  = 10'h000;
@@ -1408,61 +1408,61 @@ module tmds_b(b, clk, blank_r, c0, encoded_blue, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" *)
     casez (blank_r[0])
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" */
       1'h1:
           \disparity$next  = 4'h0;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:133" */
       default:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
           casez (\$190 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" */
             1'h1:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
                 casez (\$192 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" */
                   1'h1:
                       \disparity$next  = \$194 [3:0];
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:138" */
                   default:
                       \disparity$next  = \$197 [3:0];
                 endcase
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:141" */
             default:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
                 casez (\$212 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" */
                   1'h1:
                       (* full_case = 32'd1 *)
-                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+                      (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *)
                       casez (\$214 )
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" */
                         1'h1:
                             \disparity$next  = \$216 [3:0];
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:147" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:147" */
                         default:
                             \disparity$next  = \$219 [3:0];
                       endcase
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:149" */
                   default:
                       (* full_case = 32'd1 *)
-                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+                      (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *)
                       casez (\$224 )
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" */
                         1'h1:
                             \disparity$next  = \$226 [3:0];
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:153" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:153" */
                         default:
                             \disparity$next  = \$231 [3:0];
                       endcase
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \disparity$next  = 4'h0;
@@ -1496,399 +1496,399 @@ endmodule
 (* generator = "nMigen" *)
 module tmds_g(g, clk, blank_r, encoded_green, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:78" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [9:0] \$101 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [1:0] \$102 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [2:0] \$104 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [3:0] \$106 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [4:0] \$108 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:83" *)
   wire \$11 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [5:0] \$110 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [6:0] \$112 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$114 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [8:0] \$116 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$118 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$119 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [1:0] \$121 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$123 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$124 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [2:0] \$126 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$128 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$129 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:84" *)
   wire \$13 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [3:0] \$131 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$133 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$134 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [4:0] \$136 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$138 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$139 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [5:0] \$141 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$143 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$144 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [6:0] \$146 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$148 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$149 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *)
   wire \$15 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$151 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$153 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$154 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [8:0] \$156 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [9:0] \$158 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *)
   wire \$16 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$160 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$162 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$164 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
   wire \$166 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:136" *)
   wire \$168 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:139" *)
   wire \$170 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$172 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$174 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$176 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$178 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$180 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$182 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$184 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$186 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$188 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *)
   wire \$19 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$190 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
   wire \$192 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *)
   wire [4:0] \$194 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *)
   wire [4:0] \$195 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *)
   wire [4:0] \$197 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *)
   wire [4:0] \$198 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *)
   wire \$20 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$200 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$202 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$204 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$206 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$208 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$210 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$212 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *)
   wire \$214 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *)
   wire [4:0] \$216 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *)
   wire [4:0] \$217 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [5:0] \$219 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [4:0] \$220 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [5:0] \$222 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *)
   wire \$224 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [5:0] \$226 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [4:0] \$227 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [5:0] \$229 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *)
   wire \$23 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *)
   wire [4:0] \$231 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *)
   wire [4:0] \$232 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *)
   wire \$24 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *)
   wire \$27 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *)
   wire \$28 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:79" *)
   wire \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *)
   wire \$31 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *)
   wire \$32 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *)
   wire \$35 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *)
   wire \$36 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *)
   wire \$39 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *)
   wire \$40 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [8:0] \$43 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [1:0] \$44 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [2:0] \$46 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [3:0] \$48 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:80" *)
   wire \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [4:0] \$50 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [5:0] \$52 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [6:0] \$54 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [7:0] \$56 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [8:0] \$58 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$60 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$62 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$64 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$66 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$68 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:81" *)
   wire \$7 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$70 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$72 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$74 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$76 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$78 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:110" *)
   wire [8:0] \$80 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:113" *)
   wire [8:0] \$82 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$84 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [1:0] \$85 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [2:0] \$87 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [3:0] \$89 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:82" *)
   wire \$9 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [4:0] \$91 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [5:0] \$93 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [6:0] \$95 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [7:0] \$97 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$99 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:104" *)
   reg [8:0] data_word = 9'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:104" *)
   reg [8:0] \data_word$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:105" *)
   reg [8:0] data_word_inv = 9'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:105" *)
   reg [8:0] \data_word_inv$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:117" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:117" *)
   wire [3:0] data_word_ones;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:116" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:116" *)
   wire [3:0] diff_q_m;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:106" *)
   reg [3:0] disparity = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:106" *)
   reg [3:0] \disparity$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:100" *)
   output [9:0] encoded_green;
   reg [9:0] encoded_green = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:100" *)
   reg [9:0] \encoded_green$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:216" *)
   input [7:0] g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:88" *)
   wire [8:0] xnored;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:75" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:75" *)
   wire [8:0] xored;
-  assign \$9  = g[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *) xored[4];
-  assign \$99  = \$97  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[7];
-  assign \$102  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[0];
-  assign \$104  = \$102  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[1];
-  assign \$106  = \$104  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[2];
-  assign \$108  = \$106  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[3];
-  assign \$110  = \$108  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[4];
-  assign \$112  = \$110  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[5];
-  assign \$114  = \$112  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[6];
-  assign \$116  = \$114  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7];
-  assign \$11  = g[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *) xored[5];
-  assign \$119  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$121  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$118 [0];
-  assign \$124  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$126  = \$121  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$123 [1];
-  assign \$129  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$131  = \$126  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$128 [2];
-  assign \$134  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$136  = \$131  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$133 [3];
-  assign \$13  = g[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *) xored[6];
-  assign \$139  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$141  = \$136  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$138 [4];
-  assign \$144  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$146  = \$141  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$143 [5];
-  assign \$149  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$151  = \$146  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$148 [6];
-  assign \$154  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$156  = \$151  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$153 [7];
-  assign \$158  = \$116  - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$156 ;
-  assign \$160  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
-  assign \$162  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
-  assign \$164  = \$160  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$162 ;
-  assign \$166  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
-  assign \$168  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *) data_word[8];
-  assign \$16  = g[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) xnored[0];
-  assign \$170  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *) data_word[8];
-  assign \$172  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
-  assign \$174  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
-  assign \$176  = \$172  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$174 ;
-  assign \$178  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
-  assign \$15  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) \$16 ;
-  assign \$180  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
-  assign \$182  = \$178  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$180 ;
-  assign \$184  = \$176  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$182 ;
-  assign \$186  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
-  assign \$188  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
-  assign \$190  = \$186  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$188 ;
-  assign \$192  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
-  assign \$195  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
-  assign \$198  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
-  assign \$1  = g[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *) xored[0];
-  assign \$200  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
-  assign \$202  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
-  assign \$204  = \$200  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$202 ;
-  assign \$206  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
-  assign \$208  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
-  assign \$20  = g[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) xnored[1];
-  assign \$210  = \$206  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$208 ;
-  assign \$212  = \$204  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$210 ;
-  assign \$214  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *) 1'h0;
-  assign \$217  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
-  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) \$20 ;
-  assign \$220  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
-  assign \$222  = $signed(\$220 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(5'h02);
-  assign \$224  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *) 1'h0;
-  assign \$227  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
-  assign \$229  = $signed(\$227 ) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(5'h02);
-  assign \$232  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
-  assign \$24  = g[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) xnored[2];
-  assign \$23  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) \$24 ;
-  assign \$28  = g[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) xnored[3];
-  assign \$27  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) \$28 ;
-  assign \$32  = g[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) xnored[4];
-  assign \$31  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) \$32 ;
-  assign \$36  = g[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) xnored[5];
-  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) \$36 ;
-  assign \$3  = g[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *) xored[1];
-  assign \$40  = g[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) xnored[6];
-  assign \$39  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) \$40 ;
-  assign \$44  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[0];
-  assign \$46  = \$44  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[1];
-  assign \$48  = \$46  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[2];
-  assign \$50  = \$48  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[3];
-  assign \$52  = \$50  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[4];
-  assign \$54  = \$52  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[5];
-  assign \$56  = \$54  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[6];
-  assign \$58  = \$56  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) g[7];
-  assign \$5  = g[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *) xored[2];
-  assign \$60  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$62  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$64  = g[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
-  assign \$66  = \$62  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$64 ;
-  assign \$68  = \$60  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$66 ;
-  assign \$70  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$72  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$74  = g[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
-  assign \$76  = \$72  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$74 ;
-  assign \$78  = \$70  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$76 ;
-  assign \$7  = g[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *) xored[3];
-  assign \$80  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *) xnored;
-  assign \$82  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *) xored;
-  assign \$85  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[0];
-  assign \$87  = \$85  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[1];
-  assign \$89  = \$87  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[2];
-  assign \$91  = \$89  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[3];
-  assign \$93  = \$91  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[4];
-  assign \$95  = \$93  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[5];
-  assign \$97  = \$95  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[6];
+  assign \$9  = g[5] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:82" *) xored[4];
+  assign \$99  = \$97  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[7];
+  assign \$102  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[0];
+  assign \$104  = \$102  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[1];
+  assign \$106  = \$104  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[2];
+  assign \$108  = \$106  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[3];
+  assign \$110  = \$108  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[4];
+  assign \$112  = \$110  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[5];
+  assign \$114  = \$112  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[6];
+  assign \$116  = \$114  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7];
+  assign \$11  = g[6] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:83" *) xored[5];
+  assign \$119  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$121  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$118 [0];
+  assign \$124  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$126  = \$121  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$123 [1];
+  assign \$129  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$131  = \$126  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$128 [2];
+  assign \$134  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$136  = \$131  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$133 [3];
+  assign \$13  = g[7] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:84" *) xored[6];
+  assign \$139  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$141  = \$136  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$138 [4];
+  assign \$144  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$146  = \$141  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$143 [5];
+  assign \$149  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$151  = \$146  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$148 [6];
+  assign \$154  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$156  = \$151  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$153 [7];
+  assign \$158  = \$116  - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$156 ;
+  assign \$160  = $signed(disparity) == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$162  = data_word_ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$164  = \$160  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) \$162 ;
+  assign \$166  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$168  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:136" *) data_word[8];
+  assign \$16  = g[1] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *) xnored[0];
+  assign \$170  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:139" *) data_word[8];
+  assign \$172  = $signed(disparity) > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$174  = data_word_ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$176  = \$172  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$174 ;
+  assign \$178  = $signed(disparity) < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$15  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *) \$16 ;
+  assign \$180  = data_word_ones < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$182  = \$178  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) \$180 ;
+  assign \$184  = \$176  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$182 ;
+  assign \$186  = $signed(disparity) == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$188  = data_word_ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$190  = \$186  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) \$188 ;
+  assign \$192  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$195  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
+  assign \$198  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
+  assign \$1  = g[1] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:78" *) xored[0];
+  assign \$200  = $signed(disparity) > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$202  = data_word_ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$204  = \$200  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$202 ;
+  assign \$206  = $signed(disparity) < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$208  = data_word_ones < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$20  = g[2] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *) xnored[1];
+  assign \$210  = \$206  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) \$208 ;
+  assign \$212  = \$204  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$210 ;
+  assign \$214  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *) 1'h0;
+  assign \$217  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
+  assign \$19  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *) \$20 ;
+  assign \$220  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
+  assign \$222  = $signed(\$220 ) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *) $signed(5'h02);
+  assign \$224  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *) 1'h0;
+  assign \$227  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
+  assign \$229  = $signed(\$227 ) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *) $signed(5'h02);
+  assign \$232  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
+  assign \$24  = g[3] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *) xnored[2];
+  assign \$23  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *) \$24 ;
+  assign \$28  = g[4] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *) xnored[3];
+  assign \$27  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *) \$28 ;
+  assign \$32  = g[5] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *) xnored[4];
+  assign \$31  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *) \$32 ;
+  assign \$36  = g[6] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *) xnored[5];
+  assign \$35  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *) \$36 ;
+  assign \$3  = g[2] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:79" *) xored[1];
+  assign \$40  = g[7] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *) xnored[6];
+  assign \$39  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *) \$40 ;
+  assign \$44  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[0];
+  assign \$46  = \$44  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[1];
+  assign \$48  = \$46  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[2];
+  assign \$50  = \$48  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[3];
+  assign \$52  = \$50  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[4];
+  assign \$54  = \$52  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[5];
+  assign \$56  = \$54  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[6];
+  assign \$58  = \$56  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) g[7];
+  assign \$5  = g[3] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:80" *) xored[2];
+  assign \$60  = ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$62  = ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$64  = g[0] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$66  = \$62  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$64 ;
+  assign \$68  = \$60  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$66 ;
+  assign \$70  = ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$72  = ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$74  = g[0] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$76  = \$72  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$74 ;
+  assign \$78  = \$70  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$76 ;
+  assign \$7  = g[4] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:81" *) xored[3];
+  assign \$80  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:110" *) xnored;
+  assign \$82  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:113" *) xored;
+  assign \$85  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[0];
+  assign \$87  = \$85  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[1];
+  assign \$89  = \$87  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[2];
+  assign \$91  = \$89  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[3];
+  assign \$93  = \$91  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[4];
+  assign \$95  = \$93  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[5];
+  assign \$97  = \$95  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[6];
   always @(posedge clk)
     disparity <= \disparity$next ;
   always @(posedge clk)
@@ -1900,16 +1900,16 @@ module tmds_g(g, clk, blank_r, encoded_green, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
     casez (\$68 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" */
       1'h1:
           \data_word$next  = xnored;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:111" */
       default:
           \data_word$next  = xored;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \data_word$next  = 9'h000;
@@ -1918,16 +1918,16 @@ module tmds_g(g, clk, blank_r, encoded_green, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
     casez (\$78 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" */
       1'h1:
           \data_word_inv$next  = \$80 ;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:111" */
       default:
           \data_word_inv$next  = \$82 ;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \data_word_inv$next  = 9'h000;
@@ -1936,43 +1936,43 @@ module tmds_g(g, clk, blank_r, encoded_green, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" *)
     casez (blank_r[0])
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" */
       1'h1:
           \encoded_green$next  = 10'h2ab;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:133" */
       default:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
           casez (\$164 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" */
             1'h1:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
                 casez (\$166 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" */
                   1'h1:
                       \encoded_green$next  = { \$168 , data_word[8], data_word_inv[7:0] };
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:138" */
                   default:
                       \encoded_green$next  = { \$170 , data_word };
                 endcase
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:141" */
             default:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
                 casez (\$184 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" */
                   1'h1:
                       \encoded_green$next  = { 1'h1, data_word[8], data_word_inv[7:0] };
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:149" */
                   default:
                       \encoded_green$next  = { 1'h0, data_word };
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \encoded_green$next  = 10'h000;
@@ -1981,61 +1981,61 @@ module tmds_g(g, clk, blank_r, encoded_green, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" *)
     casez (blank_r[0])
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" */
       1'h1:
           \disparity$next  = 4'h0;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:133" */
       default:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
           casez (\$190 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" */
             1'h1:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
                 casez (\$192 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" */
                   1'h1:
                       \disparity$next  = \$194 [3:0];
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:138" */
                   default:
                       \disparity$next  = \$197 [3:0];
                 endcase
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:141" */
             default:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
                 casez (\$212 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" */
                   1'h1:
                       (* full_case = 32'd1 *)
-                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+                      (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *)
                       casez (\$214 )
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" */
                         1'h1:
                             \disparity$next  = \$216 [3:0];
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:147" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:147" */
                         default:
                             \disparity$next  = \$219 [3:0];
                       endcase
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:149" */
                   default:
                       (* full_case = 32'd1 *)
-                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+                      (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *)
                       casez (\$224 )
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" */
                         1'h1:
                             \disparity$next  = \$226 [3:0];
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:153" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:153" */
                         default:
                             \disparity$next  = \$231 [3:0];
                       endcase
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \disparity$next  = 4'h0;
@@ -2069,399 +2069,399 @@ endmodule
 (* generator = "nMigen" *)
 module tmds_r(r, clk, blank_r, encoded_red, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:78" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [9:0] \$101 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [1:0] \$102 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [2:0] \$104 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [3:0] \$106 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [4:0] \$108 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:83" *)
   wire \$11 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [5:0] \$110 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [6:0] \$112 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$114 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [8:0] \$116 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$118 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$119 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [1:0] \$121 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$123 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$124 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [2:0] \$126 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$128 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$129 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:84" *)
   wire \$13 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [3:0] \$131 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$133 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$134 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [4:0] \$136 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$138 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$139 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [5:0] \$141 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$143 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$144 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [6:0] \$146 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$148 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$149 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *)
   wire \$15 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$151 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$153 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [7:0] \$154 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [8:0] \$156 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *)
   wire [9:0] \$158 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *)
   wire \$16 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$160 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$162 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$164 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
   wire \$166 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:136" *)
   wire \$168 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:139" *)
   wire \$170 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$172 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$174 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$176 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$178 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$180 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$182 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$184 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$186 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$188 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *)
   wire \$19 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
   wire \$190 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
   wire \$192 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *)
   wire [4:0] \$194 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *)
   wire [4:0] \$195 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *)
   wire [4:0] \$197 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *)
   wire [4:0] \$198 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *)
   wire \$20 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$200 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$202 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$204 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$206 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$208 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *)
   wire \$210 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
   wire \$212 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *)
   wire \$214 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *)
   wire [4:0] \$216 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *)
   wire [4:0] \$217 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [5:0] \$219 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [4:0] \$220 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *)
   wire [5:0] \$222 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *)
   wire \$224 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [5:0] \$226 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [4:0] \$227 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *)
   wire [5:0] \$229 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *)
   wire \$23 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *)
   wire [4:0] \$231 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *)
   wire [4:0] \$232 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *)
   wire \$24 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *)
   wire \$27 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *)
   wire \$28 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:79" *)
   wire \$3 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *)
   wire \$31 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *)
   wire \$32 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *)
   wire \$35 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *)
   wire \$36 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *)
   wire \$39 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *)
   wire \$40 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [8:0] \$43 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [1:0] \$44 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [2:0] \$46 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [3:0] \$48 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:80" *)
   wire \$5 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [4:0] \$50 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [5:0] \$52 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [6:0] \$54 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [7:0] \$56 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *)
   wire [8:0] \$58 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$60 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$62 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$64 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$66 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$68 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:81" *)
   wire \$7 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$70 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$72 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$74 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$76 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
   wire \$78 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:110" *)
   wire [8:0] \$80 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:113" *)
   wire [8:0] \$82 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$84 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [1:0] \$85 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [2:0] \$87 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [3:0] \$89 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:82" *)
   wire \$9 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [4:0] \$91 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [5:0] \$93 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [6:0] \$95 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [7:0] \$97 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *)
   wire [8:0] \$99 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:104" *)
   reg [8:0] data_word = 9'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:104" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:104" *)
   reg [8:0] \data_word$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:105" *)
   reg [8:0] data_word_inv = 9'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:105" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:105" *)
   reg [8:0] \data_word_inv$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:117" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:117" *)
   wire [3:0] data_word_ones;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:116" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:116" *)
   wire [3:0] diff_q_m;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:106" *)
   reg [3:0] disparity = 4'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:106" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:106" *)
   reg [3:0] \disparity$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:99" *)
   output [9:0] encoded_red;
   reg [9:0] encoded_red = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:99" *)
   reg [9:0] \encoded_red$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:101" *)
   wire [3:0] ones;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:215" *)
   input [7:0] r;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:88" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:88" *)
   wire [8:0] xnored;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:75" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:75" *)
   wire [8:0] xored;
-  assign \$9  = r[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:82" *) xored[4];
-  assign \$99  = \$97  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[7];
-  assign \$102  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[0];
-  assign \$104  = \$102  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[1];
-  assign \$106  = \$104  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[2];
-  assign \$108  = \$106  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[3];
-  assign \$110  = \$108  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[4];
-  assign \$112  = \$110  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[5];
-  assign \$114  = \$112  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[6];
-  assign \$116  = \$114  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7];
-  assign \$11  = r[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:83" *) xored[5];
-  assign \$119  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$121  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$118 [0];
-  assign \$124  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$126  = \$121  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$123 [1];
-  assign \$129  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$131  = \$126  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$128 [2];
-  assign \$134  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$136  = \$131  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$133 [3];
-  assign \$13  = r[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:84" *) xored[6];
-  assign \$139  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$141  = \$136  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$138 [4];
-  assign \$144  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$146  = \$141  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$143 [5];
-  assign \$149  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$151  = \$146  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$148 [6];
-  assign \$154  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) data_word[7:0];
-  assign \$156  = \$151  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$153 [7];
-  assign \$158  = \$116  - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:119" *) \$156 ;
-  assign \$160  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
-  assign \$162  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
-  assign \$164  = \$160  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$162 ;
-  assign \$166  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
-  assign \$168  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:136" *) data_word[8];
-  assign \$16  = r[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) xnored[0];
-  assign \$170  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:139" *) data_word[8];
-  assign \$172  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
-  assign \$174  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
-  assign \$176  = \$172  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$174 ;
-  assign \$178  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
-  assign \$15  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:91" *) \$16 ;
-  assign \$180  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
-  assign \$182  = \$178  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$180 ;
-  assign \$184  = \$176  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$182 ;
-  assign \$186  = $signed(disparity) == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) $signed(4'h0);
-  assign \$188  = data_word_ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) 3'h4;
-  assign \$190  = \$186  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *) \$188 ;
-  assign \$192  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *) 1'h0;
-  assign \$195  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
-  assign \$198  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
-  assign \$1  = r[1] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:78" *) xored[0];
-  assign \$200  = $signed(disparity) > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) $signed(4'h0);
-  assign \$202  = data_word_ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) 3'h4;
-  assign \$204  = \$200  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$202 ;
-  assign \$206  = $signed(disparity) < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) $signed(4'h0);
-  assign \$208  = data_word_ones < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) 3'h4;
-  assign \$20  = r[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) xnored[1];
-  assign \$210  = \$206  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:143" *) \$208 ;
-  assign \$212  = \$204  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *) \$210 ;
-  assign \$214  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *) 1'h0;
-  assign \$217  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
-  assign \$19  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:92" *) \$20 ;
-  assign \$220  = $signed(disparity) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
-  assign \$222  = $signed(\$220 ) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:148" *) $signed(5'h02);
-  assign \$224  = data_word[8] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *) 1'h0;
-  assign \$227  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
-  assign \$229  = $signed(\$227 ) - (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:152" *) $signed(5'h02);
-  assign \$232  = $signed(disparity) + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
-  assign \$24  = r[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) xnored[2];
-  assign \$23  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:93" *) \$24 ;
-  assign \$28  = r[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) xnored[3];
-  assign \$27  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:94" *) \$28 ;
-  assign \$32  = r[5] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) xnored[4];
-  assign \$31  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:95" *) \$32 ;
-  assign \$36  = r[6] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) xnored[5];
-  assign \$35  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:96" *) \$36 ;
-  assign \$3  = r[2] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:79" *) xored[1];
-  assign \$40  = r[7] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) xnored[6];
-  assign \$39  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:97" *) \$40 ;
-  assign \$44  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[0];
-  assign \$46  = \$44  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[1];
-  assign \$48  = \$46  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[2];
-  assign \$50  = \$48  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[3];
-  assign \$52  = \$50  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[4];
-  assign \$54  = \$52  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[5];
-  assign \$56  = \$54  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[6];
-  assign \$58  = \$56  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:102" *) r[7];
-  assign \$5  = r[3] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:80" *) xored[2];
-  assign \$60  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$62  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$64  = r[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
-  assign \$66  = \$62  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$64 ;
-  assign \$68  = \$60  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$66 ;
-  assign \$70  = ones > (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$72  = ones == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 3'h4;
-  assign \$74  = r[0] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) 1'h0;
-  assign \$76  = \$72  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$74 ;
-  assign \$78  = \$70  | (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *) \$76 ;
-  assign \$7  = r[4] ^ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:81" *) xored[3];
-  assign \$80  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:110" *) xnored;
-  assign \$82  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:113" *) xored;
-  assign \$85  = 1'h0 + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[0];
-  assign \$87  = \$85  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[1];
-  assign \$89  = \$87  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[2];
-  assign \$91  = \$89  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[3];
-  assign \$93  = \$91  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[4];
-  assign \$95  = \$93  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[5];
-  assign \$97  = \$95  + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:118" *) data_word[6];
+  assign \$9  = r[5] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:82" *) xored[4];
+  assign \$99  = \$97  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[7];
+  assign \$102  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[0];
+  assign \$104  = \$102  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[1];
+  assign \$106  = \$104  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[2];
+  assign \$108  = \$106  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[3];
+  assign \$110  = \$108  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[4];
+  assign \$112  = \$110  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[5];
+  assign \$114  = \$112  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[6];
+  assign \$116  = \$114  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7];
+  assign \$11  = r[6] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:83" *) xored[5];
+  assign \$119  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$121  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$118 [0];
+  assign \$124  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$126  = \$121  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$123 [1];
+  assign \$129  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$131  = \$126  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$128 [2];
+  assign \$134  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$136  = \$131  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$133 [3];
+  assign \$13  = r[7] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:84" *) xored[6];
+  assign \$139  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$141  = \$136  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$138 [4];
+  assign \$144  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$146  = \$141  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$143 [5];
+  assign \$149  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$151  = \$146  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$148 [6];
+  assign \$154  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) data_word[7:0];
+  assign \$156  = \$151  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$153 [7];
+  assign \$158  = \$116  - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:119" *) \$156 ;
+  assign \$160  = $signed(disparity) == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$162  = data_word_ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$164  = \$160  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) \$162 ;
+  assign \$166  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$168  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:136" *) data_word[8];
+  assign \$16  = r[1] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *) xnored[0];
+  assign \$170  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:139" *) data_word[8];
+  assign \$172  = $signed(disparity) > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$174  = data_word_ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$176  = \$172  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$174 ;
+  assign \$178  = $signed(disparity) < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$15  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:91" *) \$16 ;
+  assign \$180  = data_word_ones < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$182  = \$178  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) \$180 ;
+  assign \$184  = \$176  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$182 ;
+  assign \$186  = $signed(disparity) == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) $signed(4'h0);
+  assign \$188  = data_word_ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) 3'h4;
+  assign \$190  = \$186  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *) \$188 ;
+  assign \$192  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *) 1'h0;
+  assign \$195  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:137" *) $signed(diff_q_m);
+  assign \$198  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:140" *) $signed(diff_q_m);
+  assign \$1  = r[1] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:78" *) xored[0];
+  assign \$200  = $signed(disparity) > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) $signed(4'h0);
+  assign \$202  = data_word_ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) 3'h4;
+  assign \$204  = \$200  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$202 ;
+  assign \$206  = $signed(disparity) < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) $signed(4'h0);
+  assign \$208  = data_word_ones < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) 3'h4;
+  assign \$20  = r[2] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *) xnored[1];
+  assign \$210  = \$206  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:143" *) \$208 ;
+  assign \$212  = \$204  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *) \$210 ;
+  assign \$214  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *) 1'h0;
+  assign \$217  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:146" *) $signed(diff_q_m);
+  assign \$19  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:92" *) \$20 ;
+  assign \$220  = $signed(disparity) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *) $signed(diff_q_m);
+  assign \$222  = $signed(\$220 ) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:148" *) $signed(5'h02);
+  assign \$224  = data_word[8] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *) 1'h0;
+  assign \$227  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *) $signed(diff_q_m);
+  assign \$229  = $signed(\$227 ) - (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:152" *) $signed(5'h02);
+  assign \$232  = $signed(disparity) + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:154" *) $signed(diff_q_m);
+  assign \$24  = r[3] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *) xnored[2];
+  assign \$23  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:93" *) \$24 ;
+  assign \$28  = r[4] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *) xnored[3];
+  assign \$27  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:94" *) \$28 ;
+  assign \$32  = r[5] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *) xnored[4];
+  assign \$31  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:95" *) \$32 ;
+  assign \$36  = r[6] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *) xnored[5];
+  assign \$35  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:96" *) \$36 ;
+  assign \$3  = r[2] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:79" *) xored[1];
+  assign \$40  = r[7] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *) xnored[6];
+  assign \$39  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:97" *) \$40 ;
+  assign \$44  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[0];
+  assign \$46  = \$44  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[1];
+  assign \$48  = \$46  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[2];
+  assign \$50  = \$48  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[3];
+  assign \$52  = \$50  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[4];
+  assign \$54  = \$52  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[5];
+  assign \$56  = \$54  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[6];
+  assign \$58  = \$56  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:102" *) r[7];
+  assign \$5  = r[3] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:80" *) xored[2];
+  assign \$60  = ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$62  = ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$64  = r[0] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$66  = \$62  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$64 ;
+  assign \$68  = \$60  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$66 ;
+  assign \$70  = ones > (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$72  = ones == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 3'h4;
+  assign \$74  = r[0] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) 1'h0;
+  assign \$76  = \$72  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$74 ;
+  assign \$78  = \$70  | (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *) \$76 ;
+  assign \$7  = r[4] ^ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:81" *) xored[3];
+  assign \$80  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:110" *) xnored;
+  assign \$82  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:113" *) xored;
+  assign \$85  = 1'h0 + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[0];
+  assign \$87  = \$85  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[1];
+  assign \$89  = \$87  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[2];
+  assign \$91  = \$89  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[3];
+  assign \$93  = \$91  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[4];
+  assign \$95  = \$93  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[5];
+  assign \$97  = \$95  + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:118" *) data_word[6];
   always @(posedge clk)
     disparity <= \disparity$next ;
   always @(posedge clk)
@@ -2473,16 +2473,16 @@ module tmds_r(r, clk, blank_r, encoded_red, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
     casez (\$68 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" */
       1'h1:
           \data_word$next  = xnored;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:111" */
       default:
           \data_word$next  = xored;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \data_word$next  = 9'h000;
@@ -2491,16 +2491,16 @@ module tmds_r(r, clk, blank_r, encoded_red, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" *)
     casez (\$78 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:108" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:108" */
       1'h1:
           \data_word_inv$next  = \$80 ;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:111" */
       default:
           \data_word_inv$next  = \$82 ;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \data_word_inv$next  = 9'h000;
@@ -2509,43 +2509,43 @@ module tmds_r(r, clk, blank_r, encoded_red, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" *)
     casez (blank_r[0])
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" */
       1'h1:
           \encoded_red$next  = 10'h2ab;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:133" */
       default:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
           casez (\$164 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" */
             1'h1:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
                 casez (\$166 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" */
                   1'h1:
                       \encoded_red$next  = { \$168 , data_word[8], data_word_inv[7:0] };
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:138" */
                   default:
                       \encoded_red$next  = { \$170 , data_word };
                 endcase
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:141" */
             default:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
                 casez (\$184 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" */
                   1'h1:
                       \encoded_red$next  = { 1'h1, data_word[8], data_word_inv[7:0] };
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:149" */
                   default:
                       \encoded_red$next  = { 1'h0, data_word };
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \encoded_red$next  = 10'h000;
@@ -2554,61 +2554,61 @@ module tmds_r(r, clk, blank_r, encoded_red, rst);
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" *)
     casez (blank_r[0])
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:121" */
       1'h1:
           \disparity$next  = 4'h0;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:133" */
       default:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" *)
           casez (\$190 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:134" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:134" */
             1'h1:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" *)
                 casez (\$192 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:135" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:135" */
                   1'h1:
                       \disparity$next  = \$194 [3:0];
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:138" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:138" */
                   default:
                       \disparity$next  = \$197 [3:0];
                 endcase
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:141" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:141" */
             default:
                 (* full_case = 32'd1 *)
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" *)
                 casez (\$212 )
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:142" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:142" */
                   1'h1:
                       (* full_case = 32'd1 *)
-                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" *)
+                      (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" *)
                       casez (\$214 )
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:145" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:145" */
                         1'h1:
                             \disparity$next  = \$216 [3:0];
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:147" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:147" */
                         default:
                             \disparity$next  = \$219 [3:0];
                       endcase
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:149" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:149" */
                   default:
                       (* full_case = 32'd1 *)
-                      (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" *)
+                      (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" *)
                       casez (\$224 )
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:151" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:151" */
                         1'h1:
                             \disparity$next  = \$226 [3:0];
-                        /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/tmds.py:153" */
+                        /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/tmds.py:153" */
                         default:
                             \disparity$next  = \$231 [3:0];
                       endcase
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \disparity$next  = 4'h0;
@@ -2642,126 +2642,126 @@ endmodule
 (* generator = "nMigen" *)
 module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, h_en, reset, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *)
   wire \$1 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:112" *)
   wire \$11 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:115" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:115" *)
   wire [10:0] \$13 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:115" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:115" *)
   wire [10:0] \$14 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" *)
   wire \$16 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:118" *)
   wire [10:0] \$18 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:118" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:118" *)
   wire [10:0] \$19 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *)
   wire \$2 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" *)
   wire \$21 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:121" *)
   wire \$23 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:123" *)
   wire \$25 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:125" *)
   wire \$27 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" *)
   wire \$29 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:121" *)
   wire \$31 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:123" *)
   wire \$33 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:125" *)
   wire \$35 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" *)
   wire \$37 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:129" *)
   wire \$39 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *)
   wire \$4 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:131" *)
   wire \$41 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:133" *)
   wire \$43 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" *)
   wire \$45 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:129" *)
   wire \$47 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:131" *)
   wire \$49 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:133" *)
   wire \$51 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *)
   wire \$6 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" *)
   wire \$9 ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:91" *)
   output [9:0] h_ctr;
   reg [9:0] h_ctr = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:91" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:91" *)
   reg [9:0] \h_ctr$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:93" *)
   output h_en;
   reg h_en = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:93" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:93" *)
   reg \h_en$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:52" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:52" *)
   wire output_blank;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:50" *)
   reg output_hs = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:50" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:50" *)
   reg \output_hs$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:51" *)
   reg output_vs = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:51" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:51" *)
   reg \output_vs$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:101" *)
   input reset;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:92" *)
   reg [9:0] v_ctr = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:92" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:92" *)
   reg [9:0] \v_ctr$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:94" *)
   output v_en;
   reg v_en = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:94" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:94" *)
   reg \v_en$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__blank;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__hs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:32" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:32" *)
   output vga_output__vs;
-  assign \$9  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *) 10'h31b;
-  assign \$11  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *) 10'h20a;
-  assign \$14  = v_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:115" *) 1'h1;
-  assign \$16  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *) 10'h31b;
-  assign \$19  = h_ctr + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:118" *) 1'h1;
-  assign \$21  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *) 1'h0;
-  assign \$23  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *) 10'h280;
-  assign \$25  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *) 10'h290;
-  assign \$27  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *) 10'h2f0;
-  assign \$2  = h_ctr < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) 10'h280;
-  assign \$29  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *) 1'h0;
-  assign \$31  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" *) 10'h280;
-  assign \$33  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" *) 10'h290;
-  assign \$35  = h_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" *) 10'h2f0;
-  assign \$37  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *) 1'h0;
-  assign \$39  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *) 9'h1e0;
-  assign \$41  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *) 9'h1ea;
-  assign \$43  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *) 9'h1ec;
-  assign \$45  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *) 1'h0;
-  assign \$47  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" *) 9'h1e0;
-  assign \$4  = v_ctr < (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) 9'h1e0;
-  assign \$49  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" *) 9'h1ea;
-  assign \$51  = v_ctr == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" *) 9'h1ec;
-  assign \$6  = \$2  & (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) \$4 ;
-  assign \$1  = ~ (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:108" *) \$6 ;
+  assign \$9  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" *) 10'h31b;
+  assign \$11  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:112" *) 10'h20a;
+  assign \$14  = v_ctr + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:115" *) 1'h1;
+  assign \$16  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" *) 10'h31b;
+  assign \$19  = h_ctr + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:118" *) 1'h1;
+  assign \$21  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" *) 1'h0;
+  assign \$23  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:121" *) 10'h280;
+  assign \$25  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:123" *) 10'h290;
+  assign \$27  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:125" *) 10'h2f0;
+  assign \$2  = h_ctr < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *) 10'h280;
+  assign \$29  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" *) 1'h0;
+  assign \$31  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:121" *) 10'h280;
+  assign \$33  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:123" *) 10'h290;
+  assign \$35  = h_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:125" *) 10'h2f0;
+  assign \$37  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" *) 1'h0;
+  assign \$39  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:129" *) 9'h1e0;
+  assign \$41  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:131" *) 9'h1ea;
+  assign \$43  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:133" *) 9'h1ec;
+  assign \$45  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" *) 1'h0;
+  assign \$47  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:129" *) 9'h1e0;
+  assign \$4  = v_ctr < (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *) 9'h1e0;
+  assign \$49  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:131" *) 9'h1ea;
+  assign \$51  = v_ctr == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:133" *) 9'h1ec;
+  assign \$6  = \$2  & (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *) \$4 ;
+  assign \$1  = ~ (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:108" *) \$6 ;
   always @(posedge clk)
     output_vs <= \output_vs$next ;
   always @(posedge clk)
@@ -2785,28 +2785,28 @@ module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, 
   always @* begin
     if (\initial ) begin end
     \v_ctr$next  = v_ctr;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" *)
     casez (\$9 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" */
       1'h1:
           (* full_case = 32'd1 *)
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:112" *)
           casez (\$11 )
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:112" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:112" */
             1'h1:
                 \v_ctr$next  = 10'h000;
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:114" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:114" */
             default:
                 \v_ctr$next  = \$13 [9:0];
           endcase
     endcase
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" *)
     casez (reset)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" */
       1'h1:
           \v_ctr$next  = 10'h000;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \v_ctr$next  = 10'h000;
@@ -2815,22 +2815,22 @@ module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, 
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" *)
     casez (\$16 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:111" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:111" */
       1'h1:
           \h_ctr$next  = 10'h000;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:117" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:117" */
       default:
           \h_ctr$next  = \$18 [9:0];
     endcase
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" *)
     casez (reset)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" */
       1'h1:
           \h_ctr$next  = 10'h000;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \h_ctr$next  = 10'h000;
@@ -2839,22 +2839,22 @@ module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, 
   always @* begin
     if (\initial ) begin end
     \h_en$next  = h_en;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" *)
     casez ({ \$27 , \$25 , \$23 , \$21  })
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" */
       4'b???1:
           \h_en$next  = 1'h1;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:121" */
       4'b??1?:
           \h_en$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" *)
     casez (reset)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" */
       1'h1:
           \h_en$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \h_en$next  = 1'h0;
@@ -2863,22 +2863,22 @@ module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, 
   always @* begin
     if (\initial ) begin end
     \output_hs$next  = output_hs;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" *)
     casez ({ \$35 , \$33 , \$31 , \$29  })
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:119" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:119" */
       4'b???1:
           /* empty */;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:121" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:121" */
       4'b??1?:
           /* empty */;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:123" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:123" */
       4'b?1??:
           \output_hs$next  = 1'h1;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:125" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:125" */
       4'b1???:
           \output_hs$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \output_hs$next  = 1'h0;
@@ -2887,22 +2887,22 @@ module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, 
   always @* begin
     if (\initial ) begin end
     \v_en$next  = v_en;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" *)
     casez ({ \$43 , \$41 , \$39 , \$37  })
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" */
       4'b???1:
           \v_en$next  = 1'h1;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:129" */
       4'b??1?:
           \v_en$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" *)
     casez (reset)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:147" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:147" */
       1'h1:
           \v_en$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \v_en$next  = 1'h0;
@@ -2911,22 +2911,22 @@ module vga(vga_output__hs, vga_output__vs, clk, v_en, h_ctr, vga_output__blank, 
   always @* begin
     if (\initial ) begin end
     \output_vs$next  = output_vs;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" *)
     casez ({ \$51 , \$49 , \$47 , \$45  })
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:127" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:127" */
       4'b???1:
           /* empty */;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:129" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:129" */
       4'b??1?:
           /* empty */;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:131" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:131" */
       4'b?1??:
           \output_vs$next  = 1'h1;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:133" */
       4'b1???:
           \output_vs$next  = 1'h0;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \output_vs$next  = 1'h0;
@@ -2943,89 +2943,89 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   reg \initial  = 0;
   wire [4:0] \$1 ;
   wire [4:0] \$11 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *)
   wire \$12 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:136" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:136" *)
   wire [9:0] \$14 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *)
   wire \$2 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:134" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:134" *)
   wire [9:0] \$4 ;
   wire [4:0] \$6 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *)
   wire \$7 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:135" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:135" *)
   wire [9:0] \$9 ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:217" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:217" *)
   input [7:0] b;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:62" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:62" *)
   input [3:0] blank_r;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:216" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:216" *)
   input [7:0] g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:63" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:63" *)
   input [3:0] hs_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:117" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:117" *)
   reg [9:0] latched_blue = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:117" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:117" *)
   reg [9:0] \latched_blue$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:116" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:116" *)
   reg [9:0] latched_green = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:116" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:116" *)
   reg [9:0] \latched_green$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:115" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:115" *)
   reg [9:0] latched_red = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:115" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:115" *)
   reg [9:0] \latched_red$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:56" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:56" *)
   output [1:0] pixel_b;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:57" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:57" *)
   output [1:0] pixel_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:55" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:55" *)
   output [1:0] pixel_g;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:54" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:54" *)
   output [1:0] pixel_r;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:215" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:215" *)
   input [7:0] r;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:113" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:113" *)
   reg [9:0] shift_blue = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:113" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:113" *)
   reg [9:0] \shift_blue$next ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:109" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:109" *)
   reg [9:0] shift_clock = 10'h01f;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:109" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:109" *)
   reg [9:0] \shift_clock$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:112" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:112" *)
   reg [9:0] shift_green = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:112" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:112" *)
   reg [9:0] \shift_green$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:111" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:111" *)
   reg [9:0] shift_red = 10'h000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:111" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:111" *)
   reg [9:0] \shift_red$next ;
   (* src = "/mnt/extra/asic/wrapped_myip1/myip1/src/myip1_gfxdemo.py:25" *)
   input shift_rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:95" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:95" *)
   wire [1:0] tmds_b_c0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:101" *)
   wire [9:0] tmds_b_encoded_blue;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:100" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:100" *)
   wire [9:0] tmds_g_encoded_green;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:99" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:99" *)
   wire [9:0] tmds_r_encoded_red;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:64" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:64" *)
   input [3:0] vs_r;
-  assign \$9  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:135" *) { 1'h0, shift_green[9:2] };
-  assign \$12  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$11 [4];
-  assign \$14  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:136" *) { 1'h0, shift_blue[9:2] };
-  assign \$2  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$1 [4];
-  assign \$4  = + (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:134" *) { 1'h0, shift_red[9:2] };
-  assign \$7  = shift_clock[5:4] == (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *) \$6 [4];
+  assign \$9  = + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:135" *) { 1'h0, shift_green[9:2] };
+  assign \$12  = shift_clock[5:4] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *) \$11 [4];
+  assign \$14  = + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:136" *) { 1'h0, shift_blue[9:2] };
+  assign \$2  = shift_clock[5:4] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *) \$1 [4];
+  assign \$4  = + (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:134" *) { 1'h0, shift_red[9:2] };
+  assign \$7  = shift_clock[5:4] == (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *) \$6 [4];
   always @(posedge shift_clk)
     shift_clock <= \shift_clock$next ;
   always @(posedge shift_clk)
@@ -3065,7 +3065,7 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   always @* begin
     if (\initial ) begin end
     \latched_red$next  = tmds_r_encoded_red;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \latched_red$next  = 10'h000;
@@ -3074,16 +3074,16 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *)
     casez (\$12 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" */
       1'h1:
           \shift_blue$next  = latched_blue;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:133" */
       default:
           \shift_blue$next  = \$14 ;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \shift_blue$next  = 10'h000;
@@ -3092,7 +3092,7 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   always @* begin
     if (\initial ) begin end
     \shift_clock$next  = { shift_clock[1:0], shift_clock[9:2] };
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \shift_clock$next  = 10'h01f;
@@ -3101,7 +3101,7 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   always @* begin
     if (\initial ) begin end
     \latched_green$next  = tmds_g_encoded_green;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \latched_green$next  = 10'h000;
@@ -3110,7 +3110,7 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   always @* begin
     if (\initial ) begin end
     \latched_blue$next  = tmds_b_encoded_blue;
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \latched_blue$next  = 10'h000;
@@ -3119,16 +3119,16 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *)
     casez (\$2 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" */
       1'h1:
           \shift_red$next  = latched_red;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:133" */
       default:
           \shift_red$next  = \$4 ;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \shift_red$next  = 10'h000;
@@ -3137,16 +3137,16 @@ module vga2dvid(r, g, b, clk, shift_clk, blank_r, hs_r, vs_r, pixel_clk, pixel_r
   always @* begin
     if (\initial ) begin end
     (* full_case = 32'd1 *)
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" *)
     casez (\$7 )
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:129" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:129" */
       1'h1:
           \shift_green$next  = latched_green;
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga2dvid.py:133" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga2dvid.py:133" */
       default:
           \shift_green$next  = \$9 ;
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (shift_rst)
       1'h1:
           \shift_green$next  = 10'h000;
@@ -3166,37 +3166,37 @@ endmodule
 (* generator = "nMigen" *)
 module wrapper(clk, pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, reset, rst);
   reg \initial  = 0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:17" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:17" *)
   input [2:0] addr;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input clk;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:15" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:15" *)
   input cs;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:213" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:213" *)
   output [15:0] pdm_in;
   reg [15:0] pdm_in = 16'h0000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:213" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:213" *)
   reg [15:0] \pdm_in$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:101" *)
   output reset;
   reg reset = 1'h0;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/vga.py:101" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/vga.py:101" *)
   reg \reset$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:271" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:271" *)
   output [23:0] rgb_off;
   reg [23:0] rgb_off = 24'h000000;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:271" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:271" *)
   reg [23:0] \rgb_off$next ;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:270" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:270" *)
   output [23:0] rgb_on;
   reg [23:0] rgb_on = 24'hffffff;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/applets/gfxdemo/__init__.py:270" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/applets/gfxdemo/__init__.py:270" *)
   reg [23:0] \rgb_on$next ;
-  (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/ir.py:526" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/ir.py:524" *)
   input rst;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:16" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:16" *)
   input we;
-  (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:18" *)
+  (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:18" *)
   input [31:0] write_data;
   always @(posedge clk)
     reset <= \reset$next ;
@@ -3209,23 +3209,23 @@ module wrapper(clk, pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, reset, rs
   always @* begin
     if (\initial ) begin end
     \pdm_in$next  = pdm_in;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" *)
     casez (cs)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" *)
           casez (we)
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" */
             1'h1:
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:78" *)
                 casez (addr)
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h0:
                       \pdm_in$next  = write_data[15:0];
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \pdm_in$next  = 16'h0000;
@@ -3234,26 +3234,26 @@ module wrapper(clk, pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, reset, rs
   always @* begin
     if (\initial ) begin end
     \reset$next  = reset;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" *)
     casez (cs)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" *)
           casez (we)
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" */
             1'h1:
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:78" *)
                 casez (addr)
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h0:
                       /* empty */;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h1:
                       \reset$next  = write_data[0];
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \reset$next  = 1'h0;
@@ -3262,29 +3262,29 @@ module wrapper(clk, pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, reset, rs
   always @* begin
     if (\initial ) begin end
     \rgb_on$next  = rgb_on;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" *)
     casez (cs)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" *)
           casez (we)
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" */
             1'h1:
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:78" *)
                 casez (addr)
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h0:
                       /* empty */;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h1:
                       /* empty */;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h2:
                       \rgb_on$next  = write_data[23:0];
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \rgb_on$next  = 24'hffffff;
@@ -3293,32 +3293,32 @@ module wrapper(clk, pdm_in, rgb_on, rgb_off, cs, we, addr, write_data, reset, rs
   always @* begin
     if (\initial ) begin end
     \rgb_off$next  = rgb_off;
-    (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" *)
     casez (cs)
-      /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:76" */
+      /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:76" */
       1'h1:
-          (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" *)
+          (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" *)
           casez (we)
-            /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:77" */
+            /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:77" */
             1'h1:
-                (* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:78" *)
+                (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:78" *)
                 casez (addr)
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h0:
                       /* empty */;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h1:
                       /* empty */;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h2:
                       /* empty */;
-                  /* src = "/home/konrad/dev/pergola_projects/pergola/gateware/bus/buswrapper.py:80" */
+                  /* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/pergola/gateware/bus/buswrapper.py:80" */
                   3'h3:
                       \rgb_off$next  = write_data[23:0];
                 endcase
           endcase
     endcase
-    (* src = "/home/konrad/dev/litex/nmigen/nmigen/hdl/xfrm.py:519" *)
+    (* src = "/mnt/extra/asic/wrapped_myip1/env/lib/python3.9/site-packages/nmigen/hdl/xfrm.py:519" *)
     casez (rst)
       1'h1:
           \rgb_off$next  = 24'h000000;

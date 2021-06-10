@@ -11,6 +11,23 @@ You need to fill in the fields of [info.yaml](info.yaml)
 
 See [here for more information](https://github.com/mattvenn/multi_project_tools/blob/main/docs/project_spec.md)
 
+## Setting up environment for nMigen
+
+```bash
+$ virtualenv -p python3 env                                              
+$ source env/bin/activate
+$ pip install -r requirements.txt
+
+# Build and run simulation in realtime
+$ python -m unittest -vc pergola.applets.gfxdemo.DVIDSim.test_dvid_cxxrtl
+
+# Generate verilog output for gfxdemo
+$ python myip1/src/myip1_gfxdemo.py generate -t v > myip1/src/myip1.v
+
+```
+
+
+
 # Build GDS
 
 ```bash

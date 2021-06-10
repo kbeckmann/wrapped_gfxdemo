@@ -1,2 +1,4 @@
-runs
-properties
+runs/
+properties/
+build/
+
