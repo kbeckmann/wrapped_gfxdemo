@@ -13,12 +13,9 @@ set ::env(FP_SIZING) absolute
 
 set ::env(SYNTH_DEFINES) "MPRJ_IO_PADS=38"
 
-# Fill this
-set ::env(CLOCK_PERIOD) "1"
+# Setup primary clock to run at max 100MHz (we need 25MHz)
+set ::env(CLOCK_PERIOD) "10"
 set ::env(CLOCK_PORT) "wb_clk_i"
-# set ::env(CLOCK_PORT) "user_clock2"
-
-#set ::env(CLOCK_NET) "wb_clk_i"
 
 set ::env(DESIGN_IS_CORE) 0
 set ::env(GLB_RT_MAXLAYER) 5
@@ -40,8 +37,9 @@ set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
 # ******************************************************************
 # ** Code for shimming SDC file to allow for 2nd clock constraint **
 # ******************************************************************
+# Setup secondary clock to run at max 250MHz (we need both edges of 125MHz)
 # clock2 period is ns
-set ::env(CLOCK2_PERIOD) "5"
+set ::env(CLOCK2_PERIOD) "4"
 set ::env(CLOCK2_PORT) "user_clock2"
 
 set ::env(BASE_SDC_FILE_SHIM) "$::env(DESIGN_DIR)/shim.sdc"
