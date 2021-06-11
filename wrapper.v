@@ -100,7 +100,7 @@ module wrapped_myip1(
         // vga        [13: 9]
         // clk        [14:14]
         // shift_clk  [15:15]
-        .buf_io_out (buf_io_out[24:8]),
+        .buf_io_out (buf_io_out[23:8]),
 
         .buf_irq    (buf_irq)
 
