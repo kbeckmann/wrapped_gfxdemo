@@ -24,7 +24,7 @@ $ python -m unittest -vc pergola.applets.gfxdemo.DVIDSim.test_dvid_cxxrtl
 $ python -m pergola run gfxdemo --xdr 2 --config 640x480p60
 
 # Generate verilog output for gfxdemo (should match what is in the repo, but with different paths)
-$ python myip1/src/myip1_gfxdemo.py generate -t v > myip1/src/myip1.v
+$ python gfxdemo/src/gfxdemo.py generate -t v > gfxdemo/src/gfxdemo.v
 
 ```
 
@@ -33,7 +33,7 @@ $ python myip1/src/myip1_gfxdemo.py generate -t v > myip1/src/myip1.v
 ```bash
 docker run -it -v $OPENLANE_ROOT:/openLANE_flow -v $PWD:/proj -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.15 '/bin/bash' '-c' 'cd /proj; /openLANE_flow/flow.tcl -design .'
 
-cp ./runs/.../results/{magic/wrapped_myip1.{gds,lef},lvs/wrapped_myip1.lvs.powered.v} gds/
+cp ./runs/.../results/{magic/wrapped_gfxdemo.{gds,lef},lvs/wrapped_gfxdemo.lvs.powered.v} gds/
 
 ```
 

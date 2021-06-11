@@ -2,7 +2,7 @@
 `ifdef FORMAL
     `define MPRJ_IO_PADS 38    
 `endif
-module wrapped_myip1(
+module wrapped_gfxdemo(
 `ifdef USE_POWER_PINS
     inout vdda1,	// User area 1 3.3V supply
     inout vdda2,	// User area 2 3.3V supply
@@ -77,7 +77,7 @@ module wrapped_myip1(
     assign buf_io_oeb = {`MPRJ_IO_PADS{1'b0}};
 
     // instantiate your module here, connecting what you need of the above signals
-    myip1 myip1_0(
+    gfxdemo gfxdemo_0(
         .clk        (wb_clk_i),
         .reset      (la_data_in[0]),
 

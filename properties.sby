@@ -5,10 +5,10 @@ mode prove
 smtbmc
 
 [script]
-read -formal wrapper.v myip1.v
-prep -top wrapped_myip1
+read -formal wrapper.v gfxdemo.v
+prep -top wrapped_gfxdemo
 
 [files]
 wrapper.v
 properties.v
-myip1/src/myip1.v
+gfxdemo/src/gfxdemo.v

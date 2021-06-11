@@ -25,26 +25,4 @@ async def test_all(dut):
 
     await ClockCycles(dut.clk, 2)
 
-
     await ClockCycles(dut.clk, 200)
-
-    # await reset(dut)
-
-    # # pwm should all be low at start
-    # assert dut.pwm0_out == 0
-    # assert dut.pwm1_out == 0
-    # assert dut.pwm2_out == 0
-
-    # dut.enc0_a <= 1
-    # await ClockCycles(dut.clk, 2)
-
-    # assert dut.pwm0_out == 1
-    # assert dut.pwm1_out == 0
-    # assert dut.pwm2_out == 0
-
-    # dut.enc1_a <= 1
-    # await ClockCycles(dut.clk, 2)
-
-    # assert dut.pwm0_out == 1
-    # assert dut.pwm1_out == 1
-    # assert dut.pwm2_out == 0

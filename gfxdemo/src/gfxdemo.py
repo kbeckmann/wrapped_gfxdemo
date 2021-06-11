@@ -79,8 +79,8 @@ if __name__ == "__main__":
     with m.If(sel == 0b1111):
         m.d.comb += wb.sel.eq(1)
 
-    # python myip1_tmds.py generate -t v > myip1.v
-    main_runner(parser, args, m, name="myip1", ports=[
+    # python gfxdemo.py generate -t v > gfxdemo.v
+    main_runner(parser, args, m, name="gfxdemo", ports=[
         # reset -> rst
         reset,
 

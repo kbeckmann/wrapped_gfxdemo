@@ -1,11 +1,11 @@
 # User config
 set script_dir [file dirname [file normalize [info script]]]
 
-set ::env(DESIGN_NAME) wrapped_myip1
+set ::env(DESIGN_NAME) wrapped_gfxdemo
 
 # Change if needed
 set ::env(VERILOG_FILES) "$::env(DESIGN_DIR)/wrapper.v \
-    $::env(DESIGN_DIR)/myip1/src/myip1.v"
+    $::env(DESIGN_DIR)/gfxdemo/src/gfxdemo.v"
 
 set ::env(PL_TARGET_DENSITY) 0.50
 set ::env(DIE_AREA) "0 0 300 300"
