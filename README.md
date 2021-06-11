@@ -37,6 +37,14 @@ cp ./runs/.../results/{magic/wrapped_myip1.{gds,lef},lvs/wrapped_myip1.lvs.power
 
 ```
 
+## Git commits
+
+```
+OpenLANE: v0.15
+nmigen @ git+https://github.com/nmigen/nmigen@e974a31022d8ba1ee67bd49c82a11fa7a0a71145
+pergola-projects @ git+https://github.com/kbeckmann/pergola_projects@564c1e3a0e4431ad719a0fd9b406661b759ced6e
+```
+
 # License
 
 This project is [licensed under Apache 2](LICENSE)
