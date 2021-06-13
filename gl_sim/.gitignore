@@ -1,0 +1,5 @@
+sim_build
+__pycache__
+results.xml
+wrapped_gfxdemo.lvs.powered.patched.v
+wrapper.vcd
