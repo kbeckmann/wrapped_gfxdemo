@@ -7,14 +7,14 @@ set ::env(DESIGN_NAME) wrapped_gfxdemo
 set ::env(VERILOG_FILES) "$::env(DESIGN_DIR)/wrapper.v \
     $::env(DESIGN_DIR)/gfxdemo/src/gfxdemo.v"
 
-set ::env(PL_TARGET_DENSITY) 0.50
-set ::env(DIE_AREA) "0 0 300 300"
+set ::env(PL_TARGET_DENSITY) 0.40
+set ::env(DIE_AREA) "0 0 400 400"
 set ::env(FP_SIZING) absolute
 
 set ::env(SYNTH_DEFINES) "MPRJ_IO_PADS=38"
 
 # Setup primary clock to run at max 100MHz (we need 25MHz)
-set ::env(CLOCK_PERIOD) "10"
+set ::env(CLOCK_PERIOD) "30"
 set ::env(CLOCK_PORT) "wb_clk_i"
 
 set ::env(DESIGN_IS_CORE) 0
@@ -23,8 +23,8 @@ set ::env(GLB_RT_MAXLAYER) 5
 # set ::env(DIODE_INSERTION_STRATEGY) "3"
 
 
-set ::env(VDD_NETS) [list {vccd1} {vccd2} {vdda1} {vdda2}]
-set ::env(GND_NETS) [list {vssd1} {vssd2} {vssa1} {vssa2}]
+set ::env(VDD_NETS) [list {vccd1}]
+set ::env(GND_NETS) [list {vssd1}]
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
@@ -50,3 +50,8 @@ if {! [string match $::env(BASE_SDC_FILE) $::env(BASE_SDC_FILE_SHIM)]} {
 }
 
 set ::env(BASE_SDC_FILE) $::env(BASE_SDC_FILE_SHIM)
+
+# fix for hold violation
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.8
+set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.8
+
