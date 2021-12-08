@@ -37,6 +37,8 @@ SIM?=RTL
 
 # include the modules that cocotb needs for test
 export PYTHONPATH := $(UPRJ_RTL_PATH)/wrapped_gfxdemo/gfxdemo/test
+export COCOTB_REDUCED_LOG_FMT=1
+export LIBPYTHON_LOC=$(shell cocotb-config --libpython)
 
 .SUFFIXES:
 

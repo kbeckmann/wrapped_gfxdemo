@@ -5,7 +5,6 @@ project:
   description: "gfxdemo"
   author: "Konrad Beckmann"
   picture: doc/gfxdemo.png
-  github: https://github.com/kbeckmann/wrapped_gfxdemo
   license: APACHE
 
 # test within caravel

@@ -26,10 +26,10 @@ async def test_start(dut):
     dut.RSTB <= 1
 
     # wait for the project to become active
-    await RisingEdge(dut.uut.mprj.wrapped_gfxdemo.active)
+    await RisingEdge(dut.uut.mprj.wrapped_gfxdemo_12.active)
 
     # wait for reset to go low
-    await FallingEdge(dut.uut.mprj.wrapped_gfxdemo.gfxdemo_0.reset)
+    await FallingEdge(dut.uut.mprj.wrapped_gfxdemo_12.gfxdemo_0.reset)
 
     # wait
     await ClockCycles(dut.clk, 6000)
